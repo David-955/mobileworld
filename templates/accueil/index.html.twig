@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+
+    <div class="accueil">
+        <h1>Mobile World</h1>
+        
+        <ul id="news-container">
+            {% for article in data.articles %}
+                <li>
+                    <h2>{{ article.title }}</h2>
+                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}">
+                    <p>{{ article.description }}</p>
+                    <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">Lire plus</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+
