@@ -11,7 +11,9 @@
             {% for article in data.articles %}
                 <li>
                     <h2>{{ article.title }}</h2>
+                    <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
                     <img src="{{ article.urlToImage }}" alt="{{ article.title }}">
+                    </a>
                     <p>{{ article.description }}</p>
                     <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">Lire plus</a>
                 </li>
