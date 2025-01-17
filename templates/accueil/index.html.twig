@@ -6,13 +6,26 @@
 
     <div class="accueil">
         <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
+        <a href="{{ path('app_boutique') }}">
+			<button>Boutique</button>
+		</a>
+
+        <a href="">
+			<button>S'inscrire</button>
+		</a>
+
+		<a href="">
+			<button>Se connecter</button>
+		</a>
+
+
         
         <ul id="news-container">
             {% for article in pagination.items %} {# modification pour pagination #}
                 <li>
                     <h2>{{ article.title }}</h2>
                     <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
-                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}">
+                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="150px">
                     </a>
                     <p>{{ article.description }}</p>
                     <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">Lire plus</a>

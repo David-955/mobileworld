@@ -35,7 +35,8 @@ final class AccueilController extends AbstractController
         ]);
     }
 
-    #[Route('/{title}', name: 'app_article')]
+    // préfixe /article pour les routes dynamiques sinon erreur avec la route /boutique 
+    #[Route('/article/{title}', name: 'app_article')]
     public function article($title): Response
     {
         $title = urldecode($title);
@@ -54,5 +55,7 @@ final class AccueilController extends AbstractController
             'title' => $title,
         ]);
     }
+
+
 }
 
