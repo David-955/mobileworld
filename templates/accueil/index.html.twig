@@ -8,7 +8,7 @@
         <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
         
         <ul id="news-container">
-            {% for article in data.articles %}
+            {% for article in pagination.items %} {# modification pour pagination #}
                 <li>
                     <h2>{{ article.title }}</h2>
                     <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
@@ -19,6 +19,10 @@
                 </li>
             {% endfor %}
         </ul>
+
+        <div class="pagination"> {# modification pour pagination #}
+            {{ knp_pagination_render(pagination) }}
+        </div>
     </div>
 {% endblock %}
 

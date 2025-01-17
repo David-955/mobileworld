@@ -12,8 +12,8 @@
                 <li>
                     <h2>{{ article.title }}</h2>
                     <img src="{{ article.urlToImage }}" alt="{{ article.title }}">
-                    <p>{{ article.description }}</p>
-                    <a href="{{ article.url }}" target="_blank">Source</a>
+                    <p>{{ article.content }}</p> {# Limite de 200 caractères pour la version gratuite #}
+                    <a href="{{ article.url }}" target="_blank">Source pour lire l'article en entier</a>
                 </li>
         </ul>
     </div>
