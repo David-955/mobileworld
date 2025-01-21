@@ -17,7 +17,7 @@ class Produit
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 0)]
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $prix = null;
 
     #[ORM\Column(length: 255)]
@@ -25,6 +25,9 @@ class Produit
 
     #[ORM\Column(length: 255)]
     private ?string $alias = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $description = null;
 
     public function getId(): ?int
     {
@@ -82,6 +85,18 @@ class Produit
     public function setAlias(string $alias): static
     {
         $this->alias = $alias;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): static
+    {
+        $this->description = $description;
 
         return $this;
     }

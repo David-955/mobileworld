@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique :
+	{{ app.request.uri|split('/')|last }}
+{% endblock %}
+
+{% block body %}
+
+	<h1>
+		<a href="{{ path('app_accueil') }}">Mobile World</a>
+	</h1>
+
+	<h2 style="text-align: center;">Boutique :
+		{{ app.request.uri|split('/')|last }}</h2>
+
+	{% for products in products %}
+		{% if products.alias starts with (app.request.uri|split('/')|last) %}
+			<p>{{ products.nom }}</p>
+			<img src="{{ products.image }}" alt="{{ products.nom }}">
+			<p>{{ products.description }}</p>
+			<p>{{ products.prix }}€</p>
+			<button onclick="addToCart('{{ products.id }}')">Ajouter au panier</button>
+		{% endif %}
+	{% endfor %}
+	<br><br>
+	<a href="{{ path('app_boutique') }}">Revenir à la boutique</a>
+{% endblock %}
+
