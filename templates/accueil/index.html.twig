@@ -4,44 +4,59 @@
 
 {% block body %}
 
-    <div class="accueil">
-        <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
-        <a href="{{ path('app_boutique') }}">
+	<div class="accueil">
+		<h1>
+			<a href="{{ path('app_accueil') }}">Mobile World</a>
+		</h1>
+		<a href="{{ path('app_boutique') }}">
 			<button>Boutique</button>
 		</a>
 
-        <a href="{{ path('app_register') }}">
-			<button>S'inscrire</button>
-		</a>
+        {# La variable app est une variable globale de Symfony qui contient des informations sur l'application. #}
+        {# Si app.user est pas défini, c'est qu'un utilisateur est pas connecté #}
+        {% if not app.user %}
+            {# page inscription affiché si pas connecté #}
+            <a href="{{ path('app_register') }}">
+                <button>S'inscrire</button>
+            </a>
 
-		<a href="{{ path('app_login') }}">
-			<button>Se connecter</button>
-		</a>
-
-        {# La variable app est une variable globale de Symfony qui contient des informations sur l'application. Si app.user est défini, c'est qu'un utilisateur est connecté #}
-        {% if app.user %}
-            <a href="{{ path('app_logout') }}">
-                <button>Déconnexion</button>
+            {# page de connexion affiché si pas connecté #}
+            <a href="{{ path('app_login') }}">
+                <button>Se connecter</button>
             </a>
         {% endif %}
-        
-        <ul id="news-container">
-            {% for article in pagination.items %} {# modification pour pagination #}
-                <li>
-                    <h2>{{ article.title }}</h2>
-                    <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
-                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="150px">
-                    </a>
-                    <p>{{ article.description }}</p>
-                    <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">Lire plus</a>
-                </li>
-            {% endfor %}
-        </ul>
 
-        <div class="pagination"> {# modification pour pagination #}
-            {{ knp_pagination_render(pagination) }}
-        </div>
-    </div>
+		{# Si app.user est défini, c'est qu'un utilisateur est connecté #}
+		{% if app.user %}
+			<a href="{{ path('app_logout') }}">
+				<button>Déconnexion</button>
+			</a>
+
+			{# page profil #}
+			{# <a href="{{ path('app_profil') }}">
+			                <button>Profil</button>
+			            </a> #}
+
+		{% endif %}
+
+		<ul id="news-container">
+			{% for article in pagination.items %}
+				{# modification pour pagination #}
+				<li>
+					<h2>{{ article.title }}</h2>
+					<a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
+						<img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="150px">
+					</a>
+					<p>{{ article.description }}</p>
+					<a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">Lire plus</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+		<div
+			class="pagination">
+			{# modification pour pagination #}
+			{{ knp_pagination_render(pagination) }}
+		</div>
+	</div>
 {% endblock %}
-
-

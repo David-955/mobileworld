@@ -25,29 +25,28 @@ class RegistrationFormType extends AbstractType
             ->add('ville')
             ->add('codepostal')
             ->add('tel')
-            ->add('role')
+            // le role n'est pas là car est attribué par défaut : client
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter les conditions d\'utilisation pour vous inscrire.',
                     ]),
                 ],
             ])
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+                // lu et encodé directement dans le controller
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Entrez un mot de passe s\'il vous plaît',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Minimum de 6 caractères pour le mot de passe, et maximum de 100',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => 100,
                     ]),
                 ],
             ])

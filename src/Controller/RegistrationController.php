@@ -25,13 +25,15 @@ class RegistrationController extends AbstractController
             /** @var string $plainPassword */
             $plainPassword = $form->get('plainPassword')->getData();
 
-            // encode the plain password
+            // hashage du mot de passe (sécurité)
             $user->setMotdepasse($userPasswordHasher->hashPassword($user, $plainPassword));
-
+            // Attribuer un rôle par défaut : client
+            $user->setRole('ROLE_CLIENT');
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // do anything else you need here, like send an email
+
+            // se rappeler d'envoyer un mail de confirmation ici
 
             return $security->login($user, 'form_login', 'main');
         }

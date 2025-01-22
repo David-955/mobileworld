@@ -2,12 +2,15 @@
 
 namespace App\Entity;
 
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UtilisateurRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
+// Vérifier si l'email est unique à l'inscription
+#[UniqueEntity(fields: ['email'], message: 'ERREUR : Cet email est déjà utilisé.')]
 class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
 {
     #[ORM\Id]
