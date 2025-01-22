@@ -10,15 +10,20 @@
 			<button>Boutique</button>
 		</a>
 
-        <a href="{{ path('app_login') }}">
+        <a href="{{ path('app_register') }}">
 			<button>S'inscrire</button>
 		</a>
 
-		<a href="{{ path('app_register') }}">
+		<a href="{{ path('app_login') }}">
 			<button>Se connecter</button>
 		</a>
 
-
+        {# La variable app est une variable globale de Symfony qui contient des informations sur l'application. Si app.user est défini, c'est qu'un utilisateur est connecté #}
+        {% if app.user %}
+            <a href="{{ path('app_logout') }}">
+                <button>Déconnexion</button>
+            </a>
+        {% endif %}
         
         <ul id="news-container">
             {% for article in pagination.items %} {# modification pour pagination #}

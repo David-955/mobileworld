@@ -5,9 +5,10 @@ namespace App\Entity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
-class Utilisateur implements PasswordAuthenticatedUserInterface
+class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -180,5 +181,23 @@ class Utilisateur implements PasswordAuthenticatedUserInterface
     public function getPassword(): ?string
     {
         return $this->motdepasse;
+    }
+
+    // nécessaire pour implémenter UserInterface
+    public function getRoles(): array
+    {
+        // conversion role en tableau
+        return [$this->role];
+    }
+
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    public function getUserIdentifier(): string
+    {
+        return $this->email;
     }
 }
