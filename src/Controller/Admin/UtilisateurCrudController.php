@@ -15,6 +15,14 @@ class UtilisateurCrudController extends AbstractCrudController
         return Utilisateur::class;
     }
 
+    public function createEntity(string $entityFqcn)
+    {
+        $entity = new Utilisateur();
+        $entity->setNom(''); // Set your default value here
+
+        return $entity;
+    }
+
     /*
     public function configureFields(string $pageName): iterable
     {

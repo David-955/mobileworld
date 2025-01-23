@@ -5,14 +5,15 @@ namespace App\Form;
 use App\Entity\Utilisateur;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -39,22 +40,30 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('plainPassword', PasswordType::class, [
-                // lu et encodé directement dans le controller
+
+            // Champ de formulaire nommé plainPassword en utilisant le type RepeatedType de Symfony
+            // RepeatedType est un type de champ de formulaire spécial qui permet de créer deux champs de saisie pour une même donnée
+            // Cela permet de demander à l'utilisateur de saisir son mot de passe deux fois pour éviter les erreurs de frappe
+            ->add('plainPassword', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'invalid_message' => 'Les mots de passe doivent correspondre',
+                'options' => ['attr' => ['class' => 'password-field']],
+                'required' => true,
+                'first_options' => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Répéter le mot de passe'],
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Entrez un mot de passe s\'il vous plaît',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Minimum de 6 caractères pour le mot de passe, et maximum de 100',
-                        // max length allowed by Symfony for security reasons
+                        'minMessage' => 'Minimum de 6 caractères pour le mot de passe, et maximum de 100 caractères.',
                         'max' => 100,
                     ]),
                 ],
             ])
+
         ;
     }
 

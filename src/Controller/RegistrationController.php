@@ -24,24 +24,14 @@ class RegistrationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var string $plainPassword */
             $plainPassword = $form->get('plainPassword')->getData();
-
-            // hashage du mot de passe (sécurité)
+            // Hashage du mot de passe dans la bdd (sécurité)
             $user->setMotdepasse($userPasswordHasher->hashPassword($user, $plainPassword));
-            // Attribuer un rôle par défaut : ROLE_CLIENT
+            // Attribuer un rôle par défaut à l'inscription : ROLE_CLIENT
             $user->setRole('ROLE_CLIENT');
-            // vide pour l'instant car non obligatoire mais sera demandé à la page de paiement
-            $user->setAdresse('');
-            $user->setCodepostal(0);
-            $user->setVille('');
-            $user->setTel(0);
-            $user->setNom('');
-            $user->setPrenom('');
-
+            // persist pour dire à doctrine (gère les interactions dans les bdd) de prendre en compte l'entité $user pour mettre dans la bdd ensuite avec flush
             $entityManager->persist($user);
+            // méthode flush pour enregistrer les données dans la bdd, execute les opérations de persistance: insert $user dans la bdd dans la table correspondante
             $entityManager->flush();
-
-
-            // se rappeler d'envoyer un mail de confirmation ici
 
             return $security->login($user, 'form_login', 'main');
         }
