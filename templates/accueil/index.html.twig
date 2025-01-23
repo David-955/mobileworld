@@ -24,20 +24,12 @@
             <a href="{{ path('app_login') }}">
                 <button>Se connecter</button>
             </a>
+        {% else %}
+            {# Sinon si app.user est défini, c'est qu'un utilisateur est connecté #}
+            <a href="{{ path('app_logout') }}">
+                <button>Déconnexion</button>
+            </a>
         {% endif %}
-
-		{# Si app.user est défini, c'est qu'un utilisateur est connecté #}
-		{% if app.user %}
-			<a href="{{ path('app_logout') }}">
-				<button>Déconnexion</button>
-			</a>
-
-			{# page profil #}
-			{# <a href="{{ path('app_profil') }}">
-			                <button>Profil</button>
-			            </a> #}
-
-		{% endif %}
 
 		<ul id="news-container">
 			{% for article in pagination.items %}

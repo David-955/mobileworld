@@ -9,9 +9,10 @@
         {% endif %}
 
         {% if app.user %}
-            <div class="mb-3">
-                Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-            </div>
+        {# si déjà connecté, on redirige la personne sur la page d'accueil #}
+            <script type="text/javascript">
+                window.location.href = "{{ path('app_accueil') }}";
+            </script>
         {% endif %}
 
         <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>

@@ -27,8 +27,16 @@ class RegistrationController extends AbstractController
 
             // hashage du mot de passe (sécurité)
             $user->setMotdepasse($userPasswordHasher->hashPassword($user, $plainPassword));
-            // Attribuer un rôle par défaut : client
+            // Attribuer un rôle par défaut : ROLE_CLIENT
             $user->setRole('ROLE_CLIENT');
+            // vide pour l'instant car non obligatoire mais sera demandé à la page de paiement
+            $user->setAdresse('');
+            $user->setCodepostal(0);
+            $user->setVille('');
+            $user->setTel(0);
+            $user->setNom('');
+            $user->setPrenom('');
+
             $entityManager->persist($user);
             $entityManager->flush();
 

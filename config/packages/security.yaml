@@ -39,7 +39,8 @@ security:
          - { path: ^/admin, roles: ROLE_ADMIN } # easyadmin pour administrer le site
          - { path: ^/profile, roles: ROLE_CLIENT }
         #  Pour les utilisateurs anonymes qui puissent se connecter, pour bloquer l'accès à ceux connectés
-         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        #  bug de redirection détécté sur la page de connexion quand on n'est pas connecté, ne pas utiliser
+        #  - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
 when@test:
     security:
