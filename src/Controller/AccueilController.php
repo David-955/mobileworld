@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Utilisateur;
 use App\Service\ApiService;
+use App\Entity\Personnalisation;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
+use App\Repository\PersonnalisationRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 final class AccueilController extends AbstractController
 {
@@ -55,7 +58,6 @@ final class AccueilController extends AbstractController
             'title' => $title,
         ]);
     }
-
 
 }
 

@@ -8,6 +8,7 @@
 		<h1>
 			<a href="{{ path('app_accueil') }}">Mobile World</a>
 		</h1>
+
 		<a href="{{ path('app_boutique') }}">
 			<button>Boutique</button>
 		</a>
@@ -26,6 +27,10 @@
             </a>
         {% else %}
             {# Sinon si app.user est défini, c'est qu'un utilisateur est connecté #}
+            <a href="{{ path('app_profil') }}">
+                <button>Profil</button>
+            </a>
+
             <a href="{{ path('app_logout') }}">
                 <button>Déconnexion</button>
             </a>

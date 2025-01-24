@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mobile World : Profil{% endblock %}
+
+{% block body %}
+    <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
+    
+    <a href="{{ path('app_profil_update') }}" class="btn btn-primary">Mettre à jour</a>
+    
+    {% if personnalisation is not null %}
+        <h1>{{ personnalisation.presentation }}</h1>
+    {% else %}
+        <h1>Rien</h1>
+    {% endif %}
+    {# <img src="{{ asset('images/' ~ personnalisation.image) }}" alt="Image de profil">
+    <p>{{ personnalisation.message }}</p> #}
+{% endblock %}

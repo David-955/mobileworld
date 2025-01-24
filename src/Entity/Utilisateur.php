@@ -203,4 +203,6 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     {
         return $this->email;
     }
+
+    
 }
