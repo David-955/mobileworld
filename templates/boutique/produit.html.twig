@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Boutique :
-	{{ app.request.uri|split('/')|last }}
-{% endblock %}
+{% block title %}Boutique : {{category.nom}}{% endblock %}
 
 {% block body %}
 
@@ -10,17 +8,15 @@
 		<a href="{{ path('app_accueil') }}">Mobile World</a>
 	</h1>
 
-	<h2 style="text-align: center;">Boutique :
-		{{ app.request.uri|split('/')|last }}</h2>
+	<h2 style="text-align: center;">Boutique : {{category.nom}}</h2>
 
-	{% for products in products %}
-		{% if products.alias starts with (app.request.uri|split('/')|last) %}
-			<p>{{ products.nom }}</p>
-			<img src="{{ products.image }}" alt="{{ products.nom }}">
-			<p>{{ products.description }}</p>
-			<p>{{ products.prix }}€</p>
-			<button onclick="addToCart('{{ products.id }}')">Ajouter au panier</button>
-		{% endif %}
+	{% for product in products %}
+			<p>{{ product.nom }}</p>
+			{# chemin d'accès de l'image /public/image/produits #}
+			<img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}">
+			<p>{{ product.description }}</p>
+			<p>{{ product.prix }}€</p>
+			<button onclick="addToCart('{{ product.id }}')">Ajouter au panier</button>
 	{% endfor %}
 	<br><br>
 	<a href="{{ path('app_boutique') }}">Revenir à la boutique</a>

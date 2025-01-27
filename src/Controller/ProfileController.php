@@ -16,9 +16,7 @@ final class ProfileController extends AbstractController
     {
         $user = $this->getUser();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
-        $presentation = $personnalisation ? $personnalisation->getpresentation() : 'Bonjour à tous, je suis nouveau sur Mobile World';
         return $this->render('profile/index.html.twig', [
-            'presentation' => $presentation,
             'personnalisation' => $personnalisation,
         ]);
     }
@@ -30,6 +28,7 @@ final class ProfileController extends AbstractController
         $entityManager = $doctrine->getManager();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
 
+        // vérif si l'objet personnalisation existe déjà, sinon on le crée
         if (!$personnalisation) {
             $personnalisation = new Personnalisation();
             // l'id de l'utilisateur sera associé à l'objet de personnalisation et stocké dans la colonne utilisateur_id de la table personnalisation
@@ -38,7 +37,9 @@ final class ProfileController extends AbstractController
 
         $request = $requestStack->getCurrentRequest();
         $presentation = $request->request->get('presentation');
+        $avatar = $request->request->get('avatar');
         $personnalisation->setPresentation($presentation);
+        $personnalisation->setAvatar($avatar);
 
         $entityManager->persist($personnalisation);
         $entityManager->flush();

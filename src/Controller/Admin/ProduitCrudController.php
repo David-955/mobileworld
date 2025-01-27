@@ -3,10 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Produit;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ProduitCrudController extends AbstractCrudController
 {
@@ -15,14 +16,21 @@ class ProduitCrudController extends AbstractCrudController
         return Produit::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            // configuration champs nom, description, prix, image et categorie
+            TextField::new('nom', 'Nom du produit'),
+            TextEditorField::new('description', 'Description du produit'),
+            TextField::new('prix', 'Prix du produit'),
+            // Upload d'une image
+            ImageField::new('image', 'Image')
+                ->setUploadDir('public/image/produits')
+                ->setBasePath('uploads/images')
+                ->setRequired(false),
+                // Ajout champs pour la clé étrangère categorie_id
+            AssociationField::new('categorie', 'Catégorie du produit')
+                ->setCrudController(CategorieCrudController::class),
         ];
     }
-    */
 }

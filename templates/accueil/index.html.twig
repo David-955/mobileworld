@@ -13,6 +13,13 @@
 			<button>Boutique</button>
 		</a>
 
+		{# bouton que pour les roles admin #}
+		{% if is_granted('ROLE_ADMIN') %}
+			<a href="{{ path('admin') }}">
+				<button>Admin</button>
+			</a>
+		{% endif %}
+
         {# La variable app est une variable globale de Symfony qui contient des informations sur l'application. #}
         {# Si app.user est pas défini, c'est qu'un utilisateur est pas connecté #}
         {% if not app.user %}

@@ -14,31 +14,24 @@ class Produit
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $prix = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description = null;
+
+    #[ORM\Column(length: 50)]
     private ?string $image = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $alias = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    #[ORM\ManyToOne(inversedBy: 'produits')]
+    private ?categorie $categorie = null;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function setId(int $id): static
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     public function getNom(): ?string
@@ -65,6 +58,18 @@ class Produit
         return $this;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
     public function getImage(): ?string
     {
         return $this->image;
@@ -77,26 +82,14 @@ class Produit
         return $this;
     }
 
-    public function getAlias(): ?string
+    public function getCategorie(): ?categorie
     {
-        return $this->alias;
+        return $this->categorie;
     }
 
-    public function setAlias(string $alias): static
+    public function setCategorie(?categorie $categorie): static
     {
-        $this->alias = $alias;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): static
-    {
-        $this->description = $description;
+        $this->categorie = $categorie;
 
         return $this;
     }

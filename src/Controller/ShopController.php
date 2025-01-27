@@ -3,29 +3,38 @@
 namespace App\Controller;
 
 use App\Repository\ProduitRepository;
+use App\Repository\CategorieRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\CategoriesBoutiqueRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class ShopController extends AbstractController
 {
-    public function __construct(private CategoriesBoutiqueRepository $categoriesBoutiqueRepository, private ProduitRepository $produitRepository) {}
+    public function __construct(private CategorieRepository $categorieRepository, private ProduitRepository $produitRepository) {}
 
     #[Route('/boutique', name: 'app_boutique')]
     public function shop(): Response
     {
-        $categories = $this->categoriesBoutiqueRepository->findAll();
+        $categories = $this->categorieRepository->findAll();
         return $this->render('boutique/index.html.twig', [
-            'categories_boutique' => $categories,
+            'categories' => $categories,
         ]);
     }
 
-    #[Route('/boutique/{alias}', name: 'app_produit')]
-    public function product(): Response
+    #[Route('/boutique/{id}', name: 'app_categorie')]
+    public function product(int $id): Response
     {
-        $products = $this->produitRepository->findAll();
+        $category = $this->categorieRepository->find($id);
+
+        if (!$category) {
+            throw $this->createNotFoundException('Catégorie non trouvée');
+        }
+
+        $products = $this->produitRepository->findBy(['categorie' => $category]);
+
         return $this->render('boutique/produit.html.twig', [
+            // Je me sert de category pour retrouver la catégorie dans produit.html.twig
+            'category' => $category,
             'products' => $products,
         ]);
     }

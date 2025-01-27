@@ -6,9 +6,9 @@
     <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
     <h2 style="text-align: center;">Bienvenue sur ma boutique</h2>
 
-    {% for categories in categories_boutique %}
-        <a href= "{{ path('app_produit', {'alias': categories.alias}) }}"> <img src="{{ categories.image }}" alt="{{ categories.nom }}" width="150px"></a>
-        <p>{{categories.nom}}</p>
+    {% for categorie in categories %}
+        <a href= "{{ path('app_categorie', { 'id': categorie.id }) }}"> <img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}" width="150px"></a>
+        <p>{{categorie.nom}}</p>
     {% endfor %}
 {% endblock %}
 

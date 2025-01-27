@@ -2,14 +2,15 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\CategoriesBoutique;
 use App\Entity\Produit;
+use App\Entity\Categorie;
+use App\Entity\Personnalisation;
 use App\Entity\Utilisateur;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -32,9 +33,10 @@ class DashboardController extends AbstractDashboardController
         // Lien vers le site
         yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'app_accueil');
         // Relier les CRUDs
-        yield MenuItem::linkToCrud('Catégories de la boutique', 'fas fa-list', CategoriesBoutique::class);
+        yield MenuItem::linkToCrud('Catégories de la boutique', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('Produits de la boutique', 'fas fa-list', Produit::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Utilisateur::class);
+        yield MenuItem::linkToCrud('Personnalisations', 'fas fa-list', Personnalisation::class);
     }
 }
 
