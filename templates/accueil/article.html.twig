@@ -3,19 +3,34 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block body %}
-
     <div class="article">
         <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
         
         <ul id="news-container">
-
-                <li>
-                    <h2>{{ article.title }}</h2>
-                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="150px">
-                    <p>{{ article.content }}</p> {# Limite de 200 caractères pour la version gratuite #}
-                    <a href="{{ article.url }}" target="_blank">Source pour lire l'article en entier</a>
-                </li>
+            <li>
+                <h2>{{ article.title }}</h2>
+                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="150px">
+                <p>{{ article.content }}</p> {# Limite de 200 caractères pour la version gratuite #}
+                <a href="{{ article.url }}" target="_blank">Source pour lire l'article en entier</a>
+            </li>
         </ul>
     </div>
-{% endblock %}
 
+    <div class="commentaires">
+        <h2>Commentaires</h2>
+        <ul>
+            {% for commentaire in commentaires %}
+                <li>
+                    <strong>Posté par {{ commentaire.utilisateur }}</strong>, le : {{commentaire.date|date('d/m/Y')}} 
+                    <p>{{ commentaire.contenu }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2>Ajouter un commentaire</h2>
+        {{ form_start(form) }}
+            {{ form_row(form.contenu) }}
+            <button type="submit">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

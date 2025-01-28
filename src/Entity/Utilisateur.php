@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UtilisateurRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -47,6 +49,17 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $role = null;
+
+    /**
+     * @var Collection<int, Commentaire>
+     */
+    #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'utilisateur')]
+    private Collection $commentaires;
+
+    public function __construct()
+    {
+        $this->commentaires = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -204,5 +217,39 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
         return $this->email;
     }
 
-    
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaire $commentaire): static
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires->add($commentaire);
+            $commentaire->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaire $commentaire): static
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getUtilisateur() === $this) {
+                $commentaire->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    // convertir en string pour stocker dans entité commentaire
+    public function __toString(): string
+    {
+        return $this->nom;
+    }
 }

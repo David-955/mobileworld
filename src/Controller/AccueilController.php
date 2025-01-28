@@ -2,15 +2,15 @@
 
 namespace App\Controller;
 
-use App\Entity\Utilisateur;
 use App\Service\ApiService;
-use App\Entity\Personnalisation;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
-use App\Repository\PersonnalisationRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Commentaire;
+use App\Form\CommentaireType;
+use Doctrine\Persistence\ManagerRegistry;
 
 final class AccueilController extends AbstractController
 {
@@ -40,7 +40,7 @@ final class AccueilController extends AbstractController
 
     // préfixe /article pour les routes dynamiques sinon erreur avec la route /boutique 
     #[Route('/article/{title}', name: 'app_article')]
-    public function article($title): Response
+    public function article($title, Request $request, ManagerRegistry $doctrine): Response
     {
         $title = urldecode($title);
         $data = $this->apiService->fetchData("https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c");
@@ -52,10 +52,39 @@ final class AccueilController extends AbstractController
                 break;
             }
         }
+
+        if (!$article) {
+            throw $this->createNotFoundException('Article non trouvé');
+        }
+
+        $commentaire = new Commentaire();
+        $form = $this->createForm(CommentaireType::class, $commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Générer l'URL de la page actuelle
+            $articleUrl = $this->generateUrl('app_article', ['title' => urlencode($title)], true);
+            // Enregistrer l'URL de la page actuelle pour retrouver les commentaires associés
+            $commentaire->setArticle($articleUrl); 
+            $commentaire->setUtilisateur($this->getUser());
+            $commentaire->setDate(new \DateTime());
+
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($commentaire);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_article', ['title' => urlencode($title)]);
+        }
+
+        // Récupérer les commentaires associés à cet article
+        $commentaires = $doctrine->getRepository(Commentaire::class)->findBy(['article' => $this->generateUrl('app_article', ['title' => urlencode($title)], true)]);
+
         return $this->render('accueil/article.html.twig', [
             'controller_name' => 'AccueilController',
             'article' => $article,
             'title' => $title,
+            'form' => $form->createView(),
+            'commentaires' => $commentaires,
         ]);
     }
 
