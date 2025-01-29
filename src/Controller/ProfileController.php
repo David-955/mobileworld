@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 
 final class ProfileController extends AbstractController
@@ -31,21 +30,46 @@ final class ProfileController extends AbstractController
 
         $avatarFile = $request->files->get('avatar');
         if ($avatarFile) {
-            $newFilename = uniqid().'.'.$avatarFile->guessExtension();
+            $newFilename = uniqid().'.webp';
+            $uploadDir = $this->getParameter('avatars_directory');
 
-            try {
-                $avatarFile->move(
-                    // voir dans services.yaml
-                    $this->getParameter('avatars_directory'),
-                    $newFilename
-                );
-            } catch (FileException $e) {
-                // handle exception if something happens during file upload
+            $currentAvatar = $personnalisation->getAvatar();
+            if ($currentAvatar && $currentAvatar !== '/images/profils/defaut.png') {
+                $currentAvatarPath = $this->getParameter('kernel.project_dir').'/public'.$currentAvatar;
+                if (file_exists($currentAvatarPath)) {
+                    unlink($currentAvatarPath);
+                }
             }
 
-            // chemin de l'avatar dans la bdd
-            $personnalisation->setAvatar('/images/profils/'.$newFilename);
-            $doctrine->getManager()->flush();
+            // Convertir l'image en .webp
+            $image = null;
+            switch ($avatarFile->getMimeType()) {
+                case 'image/jpeg':
+                    $image = imagecreatefromjpeg($avatarFile->getPathname());
+                    break;
+                case 'image/png':
+                    $image = imagecreatefrompng($avatarFile->getPathname());
+                    break;
+                case 'image/gif':
+                    $image = imagecreatefromgif($avatarFile->getPathname());
+                    break;
+                default:
+                    throw new \Exception('Format d\'image non supporté');
+            }
+
+            if ($image) {
+                // Redimensionner l'image à 350x350 pixels
+                $resizedImage = imagescale($image, 350, 350);
+
+                // Convertir l'image redimensionnée en .webp
+                imagewebp($resizedImage, $uploadDir.'/'.$newFilename);
+                imagedestroy($image);
+                imagedestroy($resizedImage);
+
+                // Mettre à jour le chemin de l'avatar dans la base de données
+                $personnalisation->setAvatar('/images/profils/'.$newFilename);
+                $doctrine->getManager()->flush();
+            }
         }
 
         return $this->redirectToRoute('app_profil');
@@ -56,10 +80,6 @@ final class ProfileController extends AbstractController
     {
         $user = $this->getUser();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
-
-        if (!$personnalisation) {
-            throw $this->createNotFoundException('Personnalisation non trouvée');
-        }
 
         // Définir l'avatar par défaut
         $personnalisation->setAvatar('/images/profils/defaut.png');
@@ -105,12 +125,9 @@ final class ProfileController extends AbstractController
     {
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['pseudo' => $pseudo]);
 
-        if (!$personnalisation) {
-            throw $this->createNotFoundException('Personnalisation non trouvée');
-        }
-
         return $this->render('profile/show.html.twig', [
             'personnalisation' => $personnalisation,
         ]);
     }
 }
+

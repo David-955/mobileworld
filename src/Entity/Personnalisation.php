@@ -2,11 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\PersonnalisationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PersonnalisationRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: PersonnalisationRepository::class)]
+// Vérifier si le pseudo est unique
+#[UniqueEntity(fields: ['pseudo'], message: 'ERREUR : Ce pseudo est déjà utilisé.')]
 class Personnalisation
 {
     #[ORM\Id]
