@@ -6,18 +6,29 @@
     <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
     
     <h2>Mon profil</h2>
+    <p>Mon pseudo : {{ personnalisation.pseudo }}</p>
+    
     <img src="{{ personnalisation.avatar }}" alt="Avatar"></img>
     <p>{{ personnalisation.presentation }}</p>
+
+    <form action="{{ path('app_profil_update_pseudo') }}" method="post">
+        <label for="pseudo">Changer le pseudo :</label>
+        <input type="text" id="pseudo" name="pseudo" value="{{ personnalisation.pseudo }}">
+        <button type="submit">Mettre à jour le pseudo</button>
+    </form>
 
     <form action="{{ path('app_profil_update_avatar') }}" method="post" enctype="multipart/form-data">
         <label for="avatar">Changer l'avatar :</label>
         <input type="file" id="avatar" name="avatar">
         <button type="submit">Mettre à jour l'avatar</button>
+        <button type="submit" formaction="{{ path('app_profil_reset_avatar') }}">Remettre l'avatar par défaut</button>
     </form>
 
     <form action="{{ path('app_profil_update_presentation') }}" method="post">
         <label for="presentation">Personnaliser la présentation :</label>
-        <textarea id="presentation" name="presentation">{{ personnalisation ? personnalisation.presentation : '' }}</textarea>
+        <textarea id="presentation" name="presentation"></textarea>
         <button type="submit">Mettre à jour mon message de présentation</button>
     </form>
+
+
 {% endblock %}

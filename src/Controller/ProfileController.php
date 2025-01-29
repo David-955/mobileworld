@@ -29,10 +29,6 @@ final class ProfileController extends AbstractController
         $user = $this->getUser();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
 
-        if (!$personnalisation) {
-            throw $this->createNotFoundException('Personnalisation non trouvée');
-        }
-
         $avatarFile = $request->files->get('avatar');
         if ($avatarFile) {
             $newFilename = uniqid().'.'.$avatarFile->guessExtension();
@@ -55,6 +51,23 @@ final class ProfileController extends AbstractController
         return $this->redirectToRoute('app_profil');
     }
 
+    #[Route('/profil/reset/avatar', name: 'app_profil_reset_avatar', methods: ['POST'])]
+    public function resetAvatar(Request $request, ManagerRegistry $doctrine): Response
+    {
+        $user = $this->getUser();
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
+
+        if (!$personnalisation) {
+            throw $this->createNotFoundException('Personnalisation non trouvée');
+        }
+
+        // Définir l'avatar par défaut
+        $personnalisation->setAvatar('/images/profils/defaut.png');
+        $doctrine->getManager()->flush();
+
+        return $this->redirectToRoute('app_profil');
+    }
+
     #[Route('/profil/update', name: 'app_profil_update_presentation', methods: ['GET', 'POST'])]
     public function updateProfile(ManagerRegistry $doctrine, RequestStack $requestStack): Response
     {
@@ -63,20 +76,25 @@ final class ProfileController extends AbstractController
         $entityManager = $doctrine->getManager();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
 
-        // vérif si l'objet personnalisation existe déjà, sinon on le crée
-        // par défaut non
-        if (!$personnalisation) {
-            $personnalisation = new Personnalisation();
-            // l'id de l'utilisateur sera associé à l'objet de personnalisation et stocké dans la colonne utilisateur_id de la table personnalisation
-            $personnalisation->setUtilisateur($user);
-        }
-
         $request = $requestStack->getCurrentRequest();
         $presentation = $request->request->get('presentation');
         $personnalisation->setPresentation($presentation);
 
         $entityManager->persist($personnalisation);
         $entityManager->flush();
+
+        return $this->redirectToRoute('app_profil');
+    }
+
+    #[Route('/profil/update/pseudo', name: 'app_profil_update_pseudo', methods: ['POST'])]
+    public function updatePseudo(Request $request, ManagerRegistry $doctrine): Response
+    {
+        $user = $this->getUser();
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
+
+        $pseudo = $request->request->get('pseudo');
+        $personnalisation->setPseudo($pseudo);
+        $doctrine->getManager()->flush();
 
         return $this->redirectToRoute('app_profil');
     }
