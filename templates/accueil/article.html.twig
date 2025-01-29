@@ -21,7 +21,7 @@
         <ul>
             {% for commentaire in commentaires %}
                 <li>
-                    <strong>Posté par {{ commentaire.utilisateur }}</strong>, le : {{commentaire.date|date('d/m/Y')}} 
+                    <strong>Posté par {{ personnalisation.pseudo }}</strong>, le : {{ commentaire.date|date('d/m/Y') }} 
                     <p>{{ commentaire.contenu }}</p>
                 </li>
             {% endfor %}

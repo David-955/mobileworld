@@ -2,15 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Commentaire;
 use App\Service\ApiService;
+use App\Form\CommentaireType;
+use App\Entity\Personnalisation;
+use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Entity\Commentaire;
-use App\Form\CommentaireType;
-use Doctrine\Persistence\ManagerRegistry;
 
 final class AccueilController extends AbstractController
 {
@@ -79,12 +80,18 @@ final class AccueilController extends AbstractController
         // Récupérer les commentaires associés à cet article
         $commentaires = $doctrine->getRepository(Commentaire::class)->findBy(['article' => $this->generateUrl('app_article', ['title' => urlencode($title)], true)]);
 
+        // Récupérer la personnalisation de l'utilisateur actuel
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $this->getUser()]);
+        // Récupérer l'avatar de l'utilisateur actuel
+
         return $this->render('accueil/article.html.twig', [
             'controller_name' => 'AccueilController',
             'article' => $article,
             'title' => $title,
             'form' => $form->createView(),
             'commentaires' => $commentaires,
+            // Récupérer l'avatar de l'utilisateur actuel
+            'personnalisation' => $personnalisation,
         ]);
     }
 

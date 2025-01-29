@@ -37,6 +37,9 @@ class RegistrationController extends AbstractController
             $personnalisation->setUtilisateur($user);
             $personnalisation->setPresentation('Bonjour, ceci est un message de présentation par défaut.');
             $personnalisation->setAvatar('/images/profils/defaut.png'); // Définir l'image par défaut
+            // pseudo par défaut commençaant par 'utilisateur' suivi d'un nombre aléatoire entre 10000 et 99999
+            $pseudo = 'utilisateur' . random_int(10000, 99999);
+            $personnalisation->setPseudo($pseudo);
             $entityManager->persist($personnalisation);
 
 

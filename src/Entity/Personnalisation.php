@@ -24,6 +24,9 @@ class Personnalisation
     #[ORM\JoinColumn(nullable: false)]
     private ?utilisateur $utilisateur = null;
 
+    #[ORM\Column(length: 50)]
+    private ?string $pseudo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +64,18 @@ class Personnalisation
     public function setUtilisateur(utilisateur $utilisateur): static
     {
         $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo(string $pseudo): static
+    {
+        $this->pseudo = $pseudo;
 
         return $this;
     }

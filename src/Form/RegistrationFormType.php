@@ -30,8 +30,6 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-
-            ->add('pseudo')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
