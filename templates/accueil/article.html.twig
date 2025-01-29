@@ -21,7 +21,7 @@
         <ul>
             {% for commentaire in commentaires %}
                 <li>
-                    <strong>Posté par {{ personnalisation.pseudo }}</strong>, le : {{ commentaire.date|date('d/m/Y') }} 
+                    <strong>Posté par <a href="{{ path('app_profil_pseudo', {pseudo: personnalisation.pseudo}) }}">{{ personnalisation.pseudo }}</a></strong>, le : {{ commentaire.date|date('d/m/Y') }} 
                     <p>{{ commentaire.contenu }}</p>
                 </li>
             {% endfor %}

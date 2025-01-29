@@ -52,7 +52,7 @@ final class ProfileController extends AbstractController
     }
 
     #[Route('/profil/reset/avatar', name: 'app_profil_reset_avatar', methods: ['POST'])]
-    public function resetAvatar(Request $request, ManagerRegistry $doctrine): Response
+    public function resetAvatar(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
@@ -97,5 +97,20 @@ final class ProfileController extends AbstractController
         $doctrine->getManager()->flush();
 
         return $this->redirectToRoute('app_profil');
+    }
+
+    // Page de profil pour chaque utilisateur
+    #[Route('/profil/{pseudo}', name: 'app_profil_pseudo')]
+    public function profileByPseudo($pseudo, ManagerRegistry $doctrine): Response
+    {
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['pseudo' => $pseudo]);
+
+        if (!$personnalisation) {
+            throw $this->createNotFoundException('Personnalisation non trouvée');
+        }
+
+        return $this->render('profile/show.html.twig', [
+            'personnalisation' => $personnalisation,
+        ]);
     }
 }

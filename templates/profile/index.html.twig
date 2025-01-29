@@ -7,6 +7,8 @@
     
     <h2>Mon profil</h2>
     <p>Mon pseudo : {{ personnalisation.pseudo }}</p>
+    <a href="{{ path('app_profil_pseudo', {pseudo: personnalisation.pseudo}) }}"> Voir l'aperçu de mon profil</a>
+    <br><br>
     
     <img src="{{ personnalisation.avatar }}" alt="Avatar"></img>
     <p>{{ personnalisation.presentation }}</p>
