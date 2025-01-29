@@ -75,8 +75,6 @@ final class ProfileController extends AbstractController
         $presentation = $request->request->get('presentation');
         $personnalisation->setPresentation($presentation);
 
-
-
         $entityManager->persist($personnalisation);
         $entityManager->flush();
 

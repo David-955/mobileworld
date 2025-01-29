@@ -31,6 +31,15 @@ class RegistrationController extends AbstractController
             $user->setRole('ROLE_CLIENT');
             // persist pour dire à doctrine (gère les interactions dans les bdd) de prendre en compte l'entité $user pour mettre dans la bdd ensuite avec flush
             $entityManager->persist($user);
+
+            // Créer une instance de Personnalisation et la lier à l'utilisateur
+            $personnalisation = new Personnalisation();
+            $personnalisation->setUtilisateur($user);
+            $personnalisation->setPresentation('Bonjour, ceci est un message de présentation par défaut.');
+            $personnalisation->setAvatar('/images/profils/defaut.png'); // Définir l'image par défaut
+            $entityManager->persist($personnalisation);
+
+
             // méthode flush pour enregistrer les données dans la bdd, execute les opérations de persistance: insert $user dans la bdd dans la table correspondante
             $entityManager->flush();
 

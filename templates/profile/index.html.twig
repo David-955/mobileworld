@@ -6,10 +6,8 @@
     <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
     
     <h2>Mon profil</h2>
-    {# image par défaut si avatar est NULL #}
-    <img src="{{ personnalisation.avatar ? personnalisation.avatar : '/images/profils/defaut.png' }}" alt="Avatar"></img>
-    <p>{{ personnalisation.presentation ? personnalisation.presentation : 'Bonjour, ceci est un message de présentation par défaut.' }}</p>
-    <br>
+    <img src="{{ personnalisation.avatar }}" alt="Avatar"></img>
+    <p>{{ personnalisation.presentation }}</p>
 
     <form action="{{ path('app_profil_update_avatar') }}" method="post" enctype="multipart/form-data">
         <label for="avatar">Changer l'avatar :</label>
@@ -19,7 +17,7 @@
 
     <form action="{{ path('app_profil_update_presentation') }}" method="post">
         <label for="presentation">Personnaliser la présentation :</label>
-        <textarea id="presentation" name="presentation">{{ personnalisation.presentation }}</textarea>
+        <textarea id="presentation" name="presentation">{{ personnalisation ? personnalisation.presentation : '' }}</textarea>
         <button type="submit">Mettre à jour mon message de présentation</button>
     </form>
 {% endblock %}

@@ -11,8 +11,9 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
-// Vérifier si l'email est unique à l'inscription
+// Vérifier si l'email et le pseudo sont unique à l'inscription
 #[UniqueEntity(fields: ['email'], message: 'ERREUR : Cet email est déjà utilisé.')]
+#[UniqueEntity(fields: ['pseudo'], message: 'ERREUR : Ce pseudo est déjà utilisé.')]
 class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
 {
     #[ORM\Id]
@@ -247,7 +248,7 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
         return $this;
     }
 
-    // convertir en string pour stocker dans entité commentaire
+    // convertir en string pour stocker dans commentaire
     public function __toString(): string
     {
         return $this->nom;
