@@ -80,9 +80,9 @@ final class AccueilController extends AbstractController
         // Récupérer les commentaires associés à cet article
         $commentaires = $doctrine->getRepository(Commentaire::class)->findBy(['article' => $this->generateUrl('app_article', ['title' => urlencode($title)], true)]);
 
-        // Récupérer la personnalisation de l'utilisateur actuel
-        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $this->getUser()]);
-        // Récupérer l'avatar de l'utilisateur actuel
+        // Récupérer la personnalisation de l'Utilisateur actuel
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $this->getUser()]);
+        // Récupérer l'avatar de l'Utilisateur actuel
 
         return $this->render('accueil/article.html.twig', [
             'controller_name' => 'AccueilController',
@@ -90,7 +90,7 @@ final class AccueilController extends AbstractController
             'title' => $title,
             'form' => $form->createView(),
             'commentaires' => $commentaires,
-            // Récupérer l'avatar de l'utilisateur actuel
+            // Récupérer l'avatar de l'Utilisateur actuel
             'personnalisation' => $personnalisation,
         ]);
     }

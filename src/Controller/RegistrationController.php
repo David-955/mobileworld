@@ -23,29 +23,28 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var string $plainPassword */
-            $plainPassword = $form->get('plainPassword')->getData();
-            // Hashage du mot de passe dans la bdd (sécurité)
-            $user->setMotdepasse($userPasswordHasher->hashPassword($user, $plainPassword));
-            // Attribuer un rôle par défaut à l'inscription : ROLE_CLIENT
+            // Hashage du mot de passe
+            $user->setMotdepasse($userPasswordHasher->hashPassword($user, $form->get('plainPassword')->getData()));
+
+            // Attribuer un rôle par défaut
             $user->setRole('ROLE_CLIENT');
-            // persist pour dire à doctrine (gère les interactions dans les bdd) de prendre en compte l'entité $user pour mettre dans la bdd ensuite avec flush
-            $entityManager->persist($user);
 
-            // Créer une instance de Personnalisation et la lier à l'utilisateur
+            // Créer une Personnalisation et l'associer à l'utilisateur
             $personnalisation = new Personnalisation();
-            $personnalisation->setUtilisateur($user);
             $personnalisation->setPresentation('Bonjour, ceci est un message de présentation par défaut.');
-            $personnalisation->setAvatar('/images/profils/defaut.png'); // Définir l'image par défaut
-            // pseudo par défaut commençaant par 'utilisateur' suivi d'un nombre aléatoire entre 10000 et 99999
-            $pseudo = 'utilisateur' . random_int(10000, 99999);
-            $personnalisation->setPseudo($pseudo);
+            $personnalisation->setAvatar('/images/profils/defaut.png');
+            $personnalisation->setPseudo('utilisateur' . random_int(10000, 99999));
+
+            // Associer la Personnalisation à l'utilisateur (relation bidirectionnelle)
+            $user->setPersonnalisation($personnalisation);
+            $personnalisation->setUtilisateur($user); // Définir la relation inverse
+
+            // Persist et flush
+            $entityManager->persist($user);
             $entityManager->persist($personnalisation);
-
-
-            // méthode flush pour enregistrer les données dans la bdd, execute les opérations de persistance: insert $user dans la bdd dans la table correspondante
             $entityManager->flush();
 
+            // Connecter l'utilisateur
             return $security->login($user, 'form_login', 'main');
         }
 

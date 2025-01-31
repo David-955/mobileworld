@@ -16,7 +16,7 @@ final class ProfileController extends AbstractController
     public function profile(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
-        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
         return $this->render('profile/index.html.twig', [
             'personnalisation' => $personnalisation,
         ]);
@@ -26,7 +26,7 @@ final class ProfileController extends AbstractController
     public function updateAvatar(Request $request, ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
-        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
         $avatarFile = $request->files->get('avatar');
         if ($avatarFile) {
@@ -79,7 +79,7 @@ final class ProfileController extends AbstractController
     public function resetAvatar(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
-        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
         // Définir l'avatar par défaut
         $personnalisation->setAvatar('/images/profils/defaut.png');
@@ -94,7 +94,7 @@ final class ProfileController extends AbstractController
 
         $user = $this->getUser();
         $entityManager = $doctrine->getManager();
-        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
         $request = $requestStack->getCurrentRequest();
         $presentation = $request->request->get('presentation');
@@ -110,7 +110,7 @@ final class ProfileController extends AbstractController
     public function updatePseudo(Request $request, ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
-        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['utilisateur' => $user]);
+        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
         $pseudo = $request->request->get('pseudo');
         $personnalisation->setPseudo($pseudo);

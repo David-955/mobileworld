@@ -25,7 +25,7 @@ class Personnalisation
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?utilisateur $utilisateur = null;
+    private ?Utilisateur $Utilisateur = null;
 
     #[ORM\Column(length: 50)]
     private ?string $pseudo = null;
@@ -59,14 +59,14 @@ class Personnalisation
         return $this;
     }
 
-    public function getUtilisateur(): ?utilisateur
+    public function getUtilisateur(): ?Utilisateur
     {
-        return $this->utilisateur;
+        return $this->Utilisateur;
     }
 
-    public function setUtilisateur(utilisateur $utilisateur): static
+    public function setUtilisateur(Utilisateur $Utilisateur): static
     {
-        $this->utilisateur = $utilisateur;
+        $this->Utilisateur = $Utilisateur;
 
         return $this;
     }

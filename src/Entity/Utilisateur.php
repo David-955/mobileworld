@@ -50,8 +50,11 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     /**
      * @var Collection<int, Commentaire>
      */
-    #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'utilisateur')]
+    #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'Utilisateur')]
     private Collection $commentaires;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Personnalisation $Personnalisation = null;
 
     public function __construct()
     {
@@ -228,6 +231,18 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
                 $commentaire->setUtilisateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPersonnalisation(): ?Personnalisation
+    {
+        return $this->Personnalisation;
+    }
+
+    public function setPersonnalisation(?Personnalisation $Personnalisation): static
+    {
+        $this->Personnalisation = $Personnalisation;
 
         return $this;
     }

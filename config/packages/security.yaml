@@ -36,8 +36,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # Les rôles doivent être préfixé par ROLE_ avec symfony donc mettre ADMIN seul bug
-         - { path: ^/admin, roles: ROLE_ADMIN } # easyadmin pour administrer le site
-         - { path: ^/profil, roles: [ROLE_CLIENT, ROLE_ADMIN] } # Profil de l'utilisateur accessible par les clients et les admins
+        - { path: ^/admin, roles: ROLE_ADMIN } # easyadmin pour administrer le site
+        - { path: ^/profil, roles: [ROLE_CLIENT, ROLE_ADMIN] } # Profil de l'utilisateur accessible par les clients et les admins
         #  Pour les utilisateurs anonymes qui puissent se connecter, pour bloquer l'accès à ceux connectés
         #  bug de redirection détécté sur la page de connexion quand on n'est pas connecté, ne pas utiliser
         #  - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
