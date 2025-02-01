@@ -15,11 +15,12 @@
 
         {# Afficher le contenu complet récupéré via Diffbot #}
         <div class="full-content">
-            {# Le filtre nl2br de Twig convertit les sauts de ligne (\n) en balises <br>. Pour aérer le texte #}
-            <p>{{ article.fullContent | nl2br }}</p>
+            {# Convertit les sauts de ligne (\n) en deux balises <br> #}
+            <p>{{ article.fullContent | replace({'\n': '<br><br>'}) | raw }}</p>
         </div>
 
-        <a href="{{ article.url }}" target="_blank">Lire l'article original</a>
+        <a href="{{ article.url }}" target="_blank">Source pour lire l'article original : {{ article.source.name }} - {{ article.publishedAt|date('d/m/Y H:i') }}</a>
+            
     </div>
 
     <div class="commentaires">
@@ -30,6 +31,8 @@
                     <strong>Posté par <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">{{ commentaire.utilisateur.personnalisation.pseudo }}</a></strong>, le : {{ commentaire.date|date('d/m/Y') }} 
                     <p>{{ commentaire.contenu }}</p>
                 </li>
+            {% else %}
+                <li>Aucun commentaire pour le moment.</li>
             {% endfor %}
         </ul>
 
