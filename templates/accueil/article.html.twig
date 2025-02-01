@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ article.title }}{% endblock %}
+{% block title %}Mobile World : {{ article.title }}{% endblock %}
 
 {% block body %}
     <div class="article">
@@ -28,10 +28,14 @@
             {% endfor %}
         </ul>
 
-        <h2>Ajouter un commentaire</h2>
-        {{ form_start(form) }}
-            {{ form_row(form.contenu) }}
-            <button type="submit">Envoyer</button>
-        {{ form_end(form) }}
+        {% if app.user %}
+            <h2>Ajouter un commentaire</h2>
+            {{ form_start(form) }}
+                {{ form_row(form.contenu) }}
+                <button type="submit">Envoyer</button>
+            {{ form_end(form) }}
+        {% else %}
+            <p>Vous devez être <a href="{{ path('app_login') }}">connecté</a> pour pouvoir poster un commentaire.</p>
+        {% endif %}
     </div>
 {% endblock %}
