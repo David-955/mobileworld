@@ -17,7 +17,7 @@ class ComparateurController extends AbstractController
         $marque2 = $request->query->get('marque2');
         $modelId2 = $request->query->get('modelId2');
 
-        $marquesValides = ['xiaomi', 'honor'];
+        $marquesValides = ['apple', 'samsung', 'google', 'xiaomi', 'honor', 'oneplus','sony'];
         $data1 = null;
         $modelData1 = null;
         $data2 = null;

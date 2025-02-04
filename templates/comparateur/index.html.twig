@@ -43,7 +43,9 @@
                 <div class="smartphone">
                     <h2>{{ modelData1.name }}</h2>
                     <img src="{{ modelData1.img }}" alt="{{ modelData1.name }}">
-                    <p>{{ modelData1.description }}</p>
+                    {# replace({'. ': '.<br>'}) : Remplace chaque point suivi d'un espace par .<br> #}
+                    {# |raw : Indique à Twig de ne pas échapper le HTML, afin que la balise <br> soit interprétée correctement. #}
+                    <p>{{ modelData1.description|replace({'. ': '.<br>'})|raw }}</p>
                 </div>
             {% endif %}
         </div>
@@ -82,7 +84,7 @@
                 <div class="smartphone">
                     <h2>{{ modelData2.name }}</h2>
                     <img src="{{ modelData2.img }}" alt="{{ modelData2.name }}">
-                    <p>{{ modelData2.description }}</p>
+                    <p>{{ modelData2.description|replace({'. ': '.<br>'})|raw }}</p>
                 </div>
             {% endif %}
         </div>
