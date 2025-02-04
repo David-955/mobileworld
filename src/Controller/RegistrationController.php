@@ -32,7 +32,7 @@ class RegistrationController extends AbstractController
             // Créer une Personnalisation et l'associer à l'utilisateur
             $personnalisation = new Personnalisation();
             $personnalisation->setPresentation('Bonjour, ceci est un message de présentation par défaut.');
-            $personnalisation->setAvatar('/images/profils/defaut.png');
+            $personnalisation->setAvatar('/images/profils/defaut.webp');
             $personnalisation->setPseudo('utilisateur' . random_int(10000, 99999));
 
             // Associer la Personnalisation à l'utilisateur (relation bidirectionnelle)

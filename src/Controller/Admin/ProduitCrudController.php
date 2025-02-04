@@ -21,11 +21,11 @@ class ProduitCrudController extends AbstractCrudController
         return [
             // configuration champs nom, description, prix, image et categorie
             TextField::new('nom', 'Nom du produit'),
-            TextEditorField::new('description', 'Description du produit'),
+            TextField::new('description', 'Description du produit'),
             TextField::new('prix', 'Prix du produit'),
             // Upload d'une image
             ImageField::new('image', 'Image')
-                ->setUploadDir('public/image/produits')
+                ->setUploadDir('public/images/produits')
                 ->setBasePath('uploads/images')
                 ->setRequired(false),
                 // Ajout champs pour la clé étrangère categorie_id

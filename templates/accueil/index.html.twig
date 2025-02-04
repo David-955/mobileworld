@@ -13,6 +13,10 @@
 			<button>Boutique</button>
 		</a>
 
+		<a href="{{ path('app_comparateur') }}">
+			<button>Comparateur de smartphones</button>
+		</a>
+
 		{# bouton que pour les roles admin #}
 		{% if is_granted('ROLE_ADMIN') %}
 			<a href="{{ path('admin') }}">

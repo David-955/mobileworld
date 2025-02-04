@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mobile World : Comparateur de smartphones{% endblock %}
+
+{% block body %}
+    <h1>
+        <a href="{{ path('app_accueil') }}">Mobile World</a>
+    </h1>
+    <h2>Comparateur de smartphones</h2>
+    
+    <form method="GET" action="{{ path('app_comparateur') }}">
+        <label for="marque">Choisissez une marque :</label>
+        <select name="marque" id="marque" onchange="this.form.submit()">
+            <option value="">-- Sélectionnez une marque --</option>
+            {% for marque in marques %}
+                <option value="{{ marque }}" {% if marque == selectedMarque %}selected{% endif %}>{{ marque | capitalize }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    {% if models is not empty %}
+        <form method="GET" action="{{ path('app_comparateur') }}">
+            <input type="hidden" name="marque" value="{{ selectedMarque }}">
+            <label for="model">Choisissez un modèle :</label>
+            <select name="modelId" id="model" onchange="this.form.submit()">
+                <option value="">-- Sélectionnez un modèle --</option>
+                {% for model in models %}
+                    <option value="{{ model.id }}" {% if model.id == selectedModelId %}selected{% endif %}>{{ model.name }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    {% endif %}
+
+    {% if modelData %}
+        <div class="smartphone">
+            <h2>{{ modelData.name }}</h2>
+            <img src="{{ modelData.img }}" alt="{{ modelData.name }}">
+            <p>{{ modelData.description }}</p>
+        </div>
+    {% endif %}
+{% endblock %}

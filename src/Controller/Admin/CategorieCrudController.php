@@ -21,7 +21,7 @@ class CategorieCrudController extends AbstractCrudController
             TextField::new('nom', 'Nom de la catégorie'),
             // Téléverser une image
             ImageField::new('image', 'Image')
-            ->setUploadDir('public/image/categories')
+            ->setUploadDir('public/images/categories')
             ->setBasePath('uploads/images')
             ->setRequired(false),
         ];

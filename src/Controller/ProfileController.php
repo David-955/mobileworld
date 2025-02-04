@@ -34,7 +34,7 @@ final class ProfileController extends AbstractController
             $uploadDir = $this->getParameter('avatars_directory');
 
             $currentAvatar = $personnalisation->getAvatar();
-            if ($currentAvatar && $currentAvatar !== '/images/profils/defaut.png') {
+            if ($currentAvatar && $currentAvatar !== '/images/profils/defaut.webp') {
                 $currentAvatarPath = $this->getParameter('kernel.project_dir').'/public'.$currentAvatar;
                 if (file_exists($currentAvatarPath)) {
                     unlink($currentAvatarPath);
@@ -52,6 +52,9 @@ final class ProfileController extends AbstractController
                     break;
                 case 'image/gif':
                     $image = imagecreatefromgif($avatarFile->getPathname());
+                    break;
+                case 'image/webp':
+                    $image = imagecreatefromwebp($avatarFile->getPathname());
                     break;
                 default:
                     throw new \Exception('Format d\'image non supporté');
@@ -82,7 +85,7 @@ final class ProfileController extends AbstractController
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
         // Définir l'avatar par défaut
-        $personnalisation->setAvatar('/images/profils/defaut.png');
+        $personnalisation->setAvatar('/images/profils/defaut.webp');
         $doctrine->getManager()->flush();
 
         return $this->redirectToRoute('app_profil');

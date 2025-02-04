@@ -1,0 +1,2614 @@
+{
+  "models": [
+    {
+      "id": "xiaomi_redmi_note_14_pro+_5g_(global)-13612",
+      "name": "Redmi Note 14 Pro+ 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-pro-plus-5g-gl.jpg",
+      "description": "Xiaomi Redmi Note 14 Pro+ 5G (Global) Smartphone Android. Annoncé en janvier 2025. Comprend un écran de 6,67 pouces, un chipset Snapdragon 7s Gen 3, une batterie de 5110 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_redmi_note_14_pro_5g_(global)-13613",
+      "name": "Redmi Note 14 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-pro-5g-gl.jpg",
+      "description": "Xiaomi Redmi Note 14 Pro 5G (Global) Smartphone Android. Annoncé en janvier 2025. Caractéristiques : écran 6,67″, chipset Dimensity 7300 Ultra, batterie 5110 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_redmi_note_14_pro_4g_(global)-13614",
+      "name": "Redmi Note 14 Pro 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-pro-4g-gl.jpg",
+      "description": "Xiaomi Redmi Note 14 Pro 4G (Global) Smartphone Android. Annoncé en janvier 2025. Comprend un écran de 6,67 pouces, un chipset Helio G100 Ultra, une batterie de 5 500 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_redmi_note_14_5g_(global)-13615",
+      "name": "Redmi Note 14 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-5g-gl.jpg",
+      "description": "Xiaomi Redmi Note 14 5G (Global) Smartphone Android. Annoncé en janvier 2025. Caractéristiques : écran 6,67″, chipset Dimensity 7025 Ultra, batterie 5110 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_14_4g_(global)-13616",
+      "name": "Redmi Note 14 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-4g-gl.jpg",
+      "description": "Xiaomi Redmi Note 14 4G (Global) Smartphone Android. Annoncé en janvier 2025. Comprend un écran de 6,67 pouces, un chipset Helio G99 Ultra, une batterie de 5 500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_x7_pro-13582",
+      "name": "Poco X7 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x7-pro.jpg",
+      "description": "Smartphone Android Xiaomi Poco X7 Pro. Annoncé en janvier 2025. Caractéristiques : écran 6,67″, chipset Dimensity 8400 Ultra, batterie 6000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 7i."
+    },
+    {
+      "id": "xiaomi_poco_x7-13604",
+      "name": "Poco X7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x7.jpg",
+      "description": "Smartphone Android Xiaomi Poco X7. Annoncé en janvier 2025. Comprend un écran de 6,67 pouces, un chipset Dimensity 7300 Ultra, une batterie de 5110 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_redmi_14c_5g-13595",
+      "name": "Redmi 14C 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-14c.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 14C 5G. Annoncé en janvier 2025. Comprend un écran de 6,88 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 5160 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_redmi_14c_(china)-13627",
+      "name": "Redmi 14C (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-14c-cn.jpg",
+      "description": "Xiaomi Redmi 14C (Chine) Smartphone Android. Annoncé en décembre 2024. Comprend un écran de 6,88 pouces, un chipset Helio G81 Ultra, une batterie de 5160 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_turbo_4-13598",
+      "name": "Redmi Turbo 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-turbo4.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Turbo 4. Annoncé en janvier 2025. Comprend un écran de 6,67 pouces, un chipset Dimensity 8400 Ultra, une batterie de 6 550 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_poco_m7_pro_5g-13570",
+      "name": "Poco M7 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m7-pro-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Poco M7 Pro 5G. Annoncé en décembre 2024. Caractéristiques : écran 6,67″, chipset Dimensity 7025 Ultra, batterie 5110 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_c75_5g-13571",
+      "name": "Poco C75 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c75-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Poco C75 5G. Annoncé en décembre 2024. Comprend un écran de 6,88 pouces, un chipset Snapdragon 4s Gen 2, une batterie de 5160 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_14-13559",
+      "name": "Redmi Note 14 5G (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-5g-in.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 14. Annoncé en décembre 2024. Caractéristiques : écran 6,67″, chipset Dimensity 7025 Ultra, batterie 5110 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_14_pro-13355",
+      "name": "Redmi Note 14 Pro 5G (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-pro-5g.jpg",
+      "description": "Xiaomi Redmi Note 14 Pro Smartphone Android. Annoncé en septembre 2024. Comprend un écran de 6,67 pouces, un chipset Dimensity 7300 Ultra, une batterie de 5 500 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_redmi_note_14_pro+-13364",
+      "name": "Redmi Note 14 Pro+ 5G (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-pro-plus-5g.jpg",
+      "description": "Xiaomi Redmi Note 14 Pro+ Smartphone Android. Annoncé en septembre 2024. Comprend un écran de 6,67 pouces, un chipset Snapdragon 7s Gen 3, une batterie de 6 200 mAh, 512 Go de stockage, 16 Go de RAM, Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_redmi_k80_pro-13524",
+      "name": "Redmi K80 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k80-pro-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K80 Pro. Annoncé en novembre 2024. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8 Elite, une batterie de 6000 mAh, un stockage de 1024 Go, une RAM de 16 Go, un verre Longjing 2."
+    },
+    {
+      "id": "xiaomi_redmi_k80-13525",
+      "name": "Redmi K80",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k80-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K80. Annoncé en novembre 2024. Caractéristiques : écran 6,67″, chipset Snapdragon 8 Gen 3, batterie 6550 mAh, stockage 1024 Go, RAM 16 Go, Corning Gorilla Glass 7i."
+    },
+    {
+      "id": "xiaomi_pad_7_pro-13474",
+      "name": "Pad 7 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-7-pro.jpg",
+      "description": "Tablette Android Xiaomi Pad 7 Pro. Annoncée en octobre 2024. Comprend un écran de 11,2 pouces, un chipset Snapdragon 8s Gen 3, une batterie de 8850 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_pad_7-13475",
+      "name": "Pad 7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-7-pro.jpg",
+      "description": "Tablette Android Xiaomi Pad 7. Annoncée en octobre 2024. Comprend un écran de 11,2 pouces, un chipset Snapdragon 7+ Gen 3, une batterie de 8850 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_watch_s4-13476",
+      "name": "Watch S4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-s4.jpg",
+      "description": "Montre Xiaomi Watch S4. Annoncée en octobre 2024. Comprend un écran de 1,43 \", une batterie de 486 mAh, un verre résistant aux rayures et aux chutes."
+    },
+    {
+      "id": "xiaomi_15_pro-13473",
+      "name": "15 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-15-pro.jpg",
+      "description": "Smartphone Android Xiaomi 15 Pro. Annoncé en octobre 2024. Caractéristiques Écran 6,73″, chipset Snapdragon 8 Elite, batterie 6100 mAh, stockage 1024 Go, RAM 16 Go, verre incassable (génération 2024)."
+    },
+    {
+      "id": "xiaomi_15-13472",
+      "name": "15",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-15.jpg",
+      "description": "Smartphone Android Xiaomi 15. Annoncé en octobre 2024. Comprend un écran de 6,36 pouces, un chipset Snapdragon 8 Elite, une batterie de 5400 mAh, un stockage de 1024 Go, une RAM de 16 Go et un verre incassable."
+    },
+    {
+      "id": "xiaomi_poco_c75-13435",
+      "name": "Poco C75",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c75-.jpg",
+      "description": "Smartphone Android Xiaomi Poco C75. Annoncé en octobre 2024. Comprend un écran de 6,88 pouces, un chipset Helio G81 Ultra, une batterie de 5160 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_a4-13444",
+      "name": "Redmi A4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a4-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A4. Annoncé en octobre 2024. Comprend un écran de 6,88 pouces, un chipset Snapdragon 4s Gen 2, une batterie de 5160 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_a3_pro-13432",
+      "name": "Redmi A3 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a3-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A3 Pro. Annoncé en octobre 2024. Comprend un écran de 6,88 pouces, un chipset Helio G81 Ultra, une batterie de 5160 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_14t_pro-13328",
+      "name": "14T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14t-pro.jpg",
+      "description": "Smartphone Android Xiaomi 14T Pro. Annoncé en septembre 2024. Comprend un écran de 6,67 pouces, un chipset Dimensity 9300+, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_14t-13329",
+      "name": "14T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14t.jpg",
+      "description": "Smartphone Android Xiaomi 14T. Annoncé en septembre 2024. Comprend un écran de 6,67 pouces, un chipset Dimensity 8300 Ultra, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_14_(china)-13366",
+      "name": "Redmi Note 14 5G (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-5g.jpg",
+      "description": "Xiaomi Redmi Note 14 (Chine) Smartphone Android. Annoncé en septembre 2024. Caractéristiques : écran 6,67″, chipset Dimensity 7025 Ultra, batterie 5110 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_watch_5_lite-13361",
+      "name": "Redmi Watch 5 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch5-lite.jpg",
+      "description": "Montre Xiaomi Redmi Watch 5 Lite. Annoncée en septembre 2024. Comprend un écran de 1,96″, une batterie de 470 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_14r-13338",
+      "name": "Redmi 14R",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-14r.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 14R. Annoncé en septembre 2024. Comprend un écran de 6,88 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 5160 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_14c-13291",
+      "name": "Redmi 14C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-14c.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 14C. Annoncé en août 2024. Comprend un écran de 6,88 pouces, un chipset Helio G81 Ultra, une batterie de 5160 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_watch_5_active-13286",
+      "name": "Redmi Watch 5 Active",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch-5-active.jpg",
+      "description": "Montre Xiaomi Redmi Watch 5 Active. Annoncée en août 2024. Comprend un écran de 2,0 pouces et une batterie de 470 mAh."
+    },
+    {
+      "id": "xiaomi_poco_pad_5g-13279",
+      "name": "Poco Pad 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-pad-5g.jpg",
+      "description": "Tablette Android Xiaomi Poco Pad 5G. Annoncée en août 2024. Comprend un écran de 12,1 pouces, un chipset Snapdragon 7s Gen 2, une batterie de 10 000 mAh, 256 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_m6_plus-13119",
+      "name": "Poco M6 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m6-plus-5g.jpg",
+      "description": "Smartphone Android Xiaomi Poco M6 Plus. Annoncé en août 2024. Comprend un écran de 6,79 pouces, un chipset Snapdragon 4 Gen 2 AE, une batterie de 5030 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_pad_se_8_7-13225",
+      "name": "Redmi Pad SE 8.7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-pad-se-4g-1.jpg",
+      "description": "Tablette Android Xiaomi Redmi Pad SE 8.7. Annoncée en juillet 2024. Comprend un écran de 8,7 pouces, un chipset Helio G85, une batterie de 6 650 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mix_flip-13221",
+      "name": "Mix Flip",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mix-flip.jpg",
+      "description": "Smartphone Android Xiaomi Mix Flip. Annoncé en juillet 2024. Comprend un écran de 6,86 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 4780 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_redmi_k70_ultra-13215",
+      "name": "Redmi K70 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k70-ultra-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K70 Ultra. Annoncé en juillet 2024. Comprend un écran de 6,67 pouces, un chipset Dimensity 9300+, une batterie de 5 500 mAh, un stockage de 1 024 Go, une RAM de 24 Go et un verre résistant aux rayures et aux chutes."
+    },
+    {
+      "id": "xiaomi_mix_fold_4-13222",
+      "name": "Mix Fold 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mix-fold4.jpg",
+      "description": "Smartphone Android Xiaomi Mix Fold 4. Annoncé en juillet 2024. Comprend un écran de 7,98 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5100 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_watch_s4_sport-13223",
+      "name": "Watch S4 Sport",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-s4-sport.jpg",
+      "description": "Montre de sport Xiaomi Watch S4. Annoncée en juillet 2024. Comprend un écran de 1,43″, une batterie de 586 mAh, un stockage de 32 Go et un verre en cristal de saphir."
+    },
+    {
+      "id": "xiaomi_redmi_13_5g-13157",
+      "name": "Redmi 13 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-13-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 13 5G. Annoncé en juillet 2024. Comprend un écran de 6,79 pouces, un chipset Snapdragon 4 Gen 2 AE, une batterie de 5030 mAh, 256 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_m6_4g-13131",
+      "name": "Poco M6 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m6-4g.jpg",
+      "description": "Smartphone Android Xiaomi Poco M6 4G. Annoncé en juin 2024. Caractéristiques Écran 6,79″, chipset Helio G91 Ultra, batterie 5030 mAh, stockage 256 Go, RAM 8 Go, non spécifié."
+    },
+    {
+      "id": "xiaomi_14_civi-13056",
+      "name": "14 Civi",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14-civi-.jpg",
+      "description": "Smartphone Android Xiaomi 14 Civi. Annoncé en juin 2024. Comprend un écran de 6,55 pouces, un chipset Snapdragon 8s Gen 3, une batterie de 4700 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_redmi_13-13102",
+      "name": "Redmi 13",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-13-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 13. Annoncé en juin 2024. Comprend un écran de 6,79 pouces, un chipset Helio G91 Ultra, une batterie de 5030 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_pad_pro_5g-13071",
+      "name": "Redmi Pad Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-pad-pro-5g.jpg",
+      "description": "Tablette Android Xiaomi Redmi Pad Pro 5G. Annoncée en mai 2024. Caractéristiques Écran 12,1″, chipset Snapdragon 7s Gen 2, batterie 10000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_a3x-13053",
+      "name": "Redmi A3x",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-a3x-new.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A3x. Annoncé en mai 2024. Caractéristiques : écran 6,71″, chipset Unisoc T603, batterie 5000 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_f6_pro-12992",
+      "name": "Poco F6 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f6-pro.jpg",
+      "description": "Smartphone Android Xiaomi Poco F6 Pro. Annoncé en mai 2024. Caractéristiques : écran 6,67″, chipset Snapdragon 8 Gen 2, batterie 5000 mAh, stockage 1024 Go, RAM 16 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_f6-13000",
+      "name": "Poco F6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f6.jpg",
+      "description": "Smartphone Android Xiaomi Poco F6. Annoncé en mai 2024. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8s Gen 3, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_poco_pad-12953",
+      "name": "Poco Pad",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-pad.jpg",
+      "description": "Tablette Android Xiaomi Poco Pad. Annoncée en mai 2024. Caractéristiques Écran 12,1″, chipset Snapdragon 7s Gen 2, batterie 10000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_13r-13011",
+      "name": "Redmi Note 13R",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13r.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 13R. Annoncé en mai 2024. Comprend un écran de 6,79 pouces, un chipset Snapdragon 4+ Gen 2, une batterie de 5030 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_redmi_pad_pro-12922",
+      "name": "Redmi Pad Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-pad-pro.jpg",
+      "description": "Tablette Android Xiaomi Redmi Pad Pro. Annoncée en avril 2024. Caractéristiques Écran 12,1″, chipset Snapdragon 7s Gen 2, batterie 10000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_turbo_3-12920",
+      "name": "Redmi Turbo 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-turbo3.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Turbo 3. Annoncé en avril 2024. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8s Gen 3, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_poco_c61-12886",
+      "name": "Poco C61",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c61.jpg",
+      "description": "Smartphone Android Xiaomi Poco C61. Annoncé en mars 2024. Comprend un écran de 6,71 pouces, un chipset Helio G36, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_civi_4_pro-12888",
+      "name": "Civi 4 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-civi-4-pro.jpg",
+      "description": "Smartphone Android Xiaomi Civi 4 Pro. Annoncé en mars 2024. Comprend un écran de 6,55 pouces, un chipset Snapdragon 8s Gen 3, une batterie de 4700 mAh, un stockage de 512 Go, une RAM de 16 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "xiaomi_poco_x6_neo-12863",
+      "name": "Poco X6 Neo",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x6-neo-.jpg",
+      "description": "Smartphone Android Xiaomi Poco X6 Neo. Annoncé en mars 2024. Caractéristiques : écran 6,67″, chipset Dimensity 6080, batterie 5000 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_14-12626",
+      "name": "14",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14-new.jpg",
+      "description": "Smartphone Android Xiaomi 14. Annoncé en octobre 2023. Caractéristiques Écran 6,36″, chipset Snapdragon 8 Gen 3, batterie 4610 mAh, stockage 1024 Go, RAM 16 Go, Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_14_ultra-12827",
+      "name": "14 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14-ultra-new.jpg",
+      "description": "Smartphone Android Xiaomi 14 Ultra. Annoncé en février 2024. Comprend un écran de 6,73 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go, un verre Xiaomi Shield Glass / Xiaomi Longjing Glass."
+    },
+    {
+      "id": "xiaomi_pad_6s_pro_12_4-12838",
+      "name": "Pad 6S Pro 12.4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-6s-pro-124.jpg",
+      "description": "Tablette Android Xiaomi Pad 6S Pro 12.4. Annoncée en février 2024. Caractéristiques Écran 12,4″, chipset Snapdragon 8 Gen 2, batterie 10000 mAh, stockage 1024 Go, RAM 16 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_watch_2-12828",
+      "name": "Watch 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch2.jpg",
+      "description": "Montre Android Xiaomi Watch 2. Annoncée en février 2024. Comprend un écran de 1,43 », un chipset Snapdragon W5+ Gen 1, une batterie de 495 mAh, un stockage de 32 Go, une mémoire RAM de 2 Go."
+    },
+    {
+      "id": "xiaomi_watch_s3-12834",
+      "name": "Watch S3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-s3.jpg",
+      "description": "Montre Xiaomi Watch S3. Annoncée en octobre 2023. Comprend un écran de 1,43 \", une batterie de 486 mAh, un verre résistant aux rayures et aux chutes."
+    },
+    {
+      "id": "xiaomi_redmi_a3-12822",
+      "name": "Redmi A3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a3.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A3. Annoncé en février 2024. Comprend un écran de 6,71 pouces, un chipset Helio G36, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_13_pro_4g-12749",
+      "name": "Redmi Note 13 Pro 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13-pro-4g.jpg",
+      "description": "Xiaomi Redmi Note 13 Pro Smartphone Android 4G. Annoncé en janvier 2024. Comprend un écran de 6,67 pouces, un chipset Helio G99 Ultra, une batterie de 5000 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_13_4g-12750",
+      "name": "Redmi Note 13 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13-4g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 13 4G. Annoncé en janvier 2024. Caractéristiques : écran 6,67″, chipset Snapdragon 685, batterie 5000 mAh, stockage 512 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_13_pro+-12572",
+      "name": "Redmi Note 13 Pro+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13-pro-plus-int.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 13 Pro+. Annoncé en septembre 2023. Caractéristiques : écran 6,67″, chipset Dimensity 7200 Ultra, batterie 5000 mAh, stockage 512 Go, RAM 16 Go, Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_note_13_pro-12581",
+      "name": "Redmi Note 13 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13-pro-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 13 Pro. Annoncé en septembre 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 7s Gen 2, une batterie de 5100 mAh, un stockage de 512 Go, une RAM de 16 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_note_13-12776",
+      "name": "Redmi Note 13",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 13. Annoncé en janvier 2024. Caractéristiques : écran 6,67″, chipset Dimensity 6080, batterie 5000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_x6_pro-12717",
+      "name": "Poco X6 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x6-pro.jpg",
+      "description": "Smartphone Android Xiaomi Poco X6 Pro. Annoncé en janvier 2024. Caractéristiques : écran 6,67″, chipset Dimensity 8300 Ultra, batterie 5000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_x6-12723",
+      "name": "Poco X6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x6.jpg",
+      "description": "Smartphone Android Xiaomi Poco X6. Annoncé en janvier 2024. Comprend un écran de 6,67 pouces, un chipset Snapdragon 7s Gen 2, une batterie de 5100 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_poco_m6_pro-12779",
+      "name": "Poco M6 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m6-pro-4g.jpg",
+      "description": "Smartphone Android Xiaomi Poco M6 Pro. Annoncé en janvier 2024. Comprend un écran de 6,67 pouces, un chipset Helio G99 Ultra, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_m6-12737",
+      "name": "Poco M6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m6-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Poco M6. Annoncé en décembre 2023. Comprend un écran de 6,74 pouces, un chipset Dimensity 6100+, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_13r-12735",
+      "name": "Redmi 13R",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-13r-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 13R. Annoncé en décembre 2023. Comprend un écran de 6,74 pouces, un chipset Dimensity 6100+, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_13c_5g-12726",
+      "name": "Redmi 13C 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-13c-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 13C 5G. Annoncé en décembre 2023. Comprend un écran de 6,74 pouces, un chipset Dimensity 6100+, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_k70_pro-12714",
+      "name": "Redmi K70 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k70-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K70 Pro. Annoncé en novembre 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 24 Go."
+    },
+    {
+      "id": "xiaomi_redmi_k70-12715",
+      "name": "Redmi K70",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k70.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K70. Annoncé en novembre 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_redmi_k70e-12716",
+      "name": "Redmi K70E",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k70e.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K70E. Annoncé en novembre 2023. Comprend un écran de 6,67 pouces, un chipset Dimensity 8300 Ultra, une batterie de 5 500 mAh, un stockage de 1 024 Go et une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_redmi_watch_4-12711",
+      "name": "Redmi Watch 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch4.jpg",
+      "description": "Montre Xiaomi Redmi Watch 4. Annoncée en novembre 2023. Comprend un écran de 1,97″, une batterie de 470 mAh, un stockage de 16 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_13r_pro-12697",
+      "name": "Redmi Note 13R Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13r-pro.jpg",
+      "description": "Xiaomi Redmi Note 13R Pro Smartphone Android. Annoncé en novembre 2023. Caractéristiques Écran 6,67″, chipset Dimensity 6080, batterie 5000 mAh, stockage 256 Go, RAM 12 Go, verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_13c-12689",
+      "name": "Redmi 13C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-13c.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 13C. Annoncé en novembre 2023. Comprend un écran de 6,74 pouces, un chipset MT6769Z Helio G85, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_poco_c65-12684",
+      "name": "Poco C65",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c65.jpg",
+      "description": "Smartphone Android Xiaomi Poco C65. Annoncé en novembre 2023. Comprend un écran de 6,74 pouces, un chipset MT6769Z Helio G85, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_14_pro-12643",
+      "name": "14 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14-pro.jpg",
+      "description": "Smartphone Android Xiaomi 14 Pro. Annoncé en octobre 2023. Comprend un écran de 6,73 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 4880 mAh, un stockage de 1024 Go, une RAM de 16 Go et un verre incassable."
+    },
+    {
+      "id": "xiaomi_13t_pro-12388",
+      "name": "13T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13t-pro.jpg",
+      "description": "Smartphone Android Xiaomi 13T Pro. Annoncé en septembre 2023. Comprend un écran de 6,67 pouces, un chipset Dimensity 9200+, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_13t-12389",
+      "name": "13T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13t.jpg",
+      "description": "Smartphone Android Xiaomi 13T. Annoncé en septembre 2023. Comprend un écran de 6,67 pouces, un chipset Dimensity 8200 Ultra, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_watch_2_pro-12587",
+      "name": "Watch 2 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-2-pro.jpg",
+      "description": "Montre Android Xiaomi Watch 2 Pro. Annoncée en septembre 2023. Comprend un écran de 1,43 », un chipset Snapdragon W5+ Gen 1, une batterie de 495 mAh, 32 Go de stockage, 2 Go de RAM."
+    },
+    {
+      "id": "xiaomi_redmi_note_13_(china)-12582",
+      "name": "Redmi Note 13 (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13.jpg",
+      "description": "Xiaomi Redmi Note 13 (Chine) Smartphone Android. Annoncé en septembre 2023. Caractéristiques : écran 6,67″, chipset Dimensity 6080, batterie 5000 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_pad_se-12466",
+      "name": "Redmi Pad SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-se.jpg",
+      "description": "Tablette Android Xiaomi Redmi Pad SE. Annoncé en août 2023. Comprend un écran de 11,0 pouces, un chipset Snapdragon 680 4G, une batterie de 8 000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_k60_ultra-12470",
+      "name": "Redmi K60 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k60-ultra.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K60 Ultra. Annoncé en août 2023. Caractéristiques Écran 6,67″, chipset Dimensity 9200+, batterie 5000 mAh, stockage 1024 Go, RAM 24 Go, non spécifié."
+    },
+    {
+      "id": "xiaomi_mix_fold_3-12468",
+      "name": "Mix Fold 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mix-fold3-.jpg",
+      "description": "Smartphone Android Xiaomi Mix Fold 3. Annoncé en août 2023. Comprend un écran de 8,03 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 4800 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_pad_6_max_14-12463",
+      "name": "Pad 6 Max 14",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-6-max-14.jpg",
+      "description": "Tablette Android Xiaomi Pad 6 Max 14. Annoncée en août 2023. Comprend un écran de 14,0 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 10 000 mAh, un stockage de 1 024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_poco_m6_pro_5g-12452",
+      "name": "Poco M6 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m6-pro-5g.jpg",
+      "description": "Smartphone Android Xiaomi Poco M6 Pro 5G. Annoncé en août 2023. Comprend un écran de 6,79 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_watch_3_active-12449",
+      "name": "Redmi Watch 3 Active",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch-3-active.jpg",
+      "description": "Montre Xiaomi Redmi Watch 3 Active. Annoncée en août 2023. Comprend un écran de 1,83″, une batterie de 289 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_12_5g-12446",
+      "name": "Redmi 12 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-12-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 12 5G. Annoncé en août 2023. Comprend un écran de 6,79 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_note_12r-12392",
+      "name": "Redmi Note 12R",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12r.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 12R. Annoncé en juin 2023. Comprend un écran de 6,79 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12r_pro-12245",
+      "name": "Redmi Note 12R Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12r-pro-.jpg",
+      "description": "Xiaomi Redmi Note 12R Pro Smartphone Android. Annoncé en juin 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 4 Gen 1, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_redmi_12-12328",
+      "name": "Redmi 12",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-12-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 12. Annoncé en juin 2023. Comprend un écran de 6,79 pouces, un chipset MT6769H Helio G88, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12t_pro-12298",
+      "name": "Redmi Note 12T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12t-pro.jpg",
+      "description": "Xiaomi Redmi Note 12T Pro Smartphone Android. Annoncé en mai 2023. Comprend un écran de 6,6 pouces, un chipset Dimensity 8200 Ultra, une batterie de 5080 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_civi_3-12134",
+      "name": "Civi 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-civi-3.jpg",
+      "description": "Smartphone Android Xiaomi Civi 3. Annoncé en mai 2023. Caractéristiques : écran 6,55″, chipset Dimensity 8200 Ultra, batterie 4500 mAh, stockage 1024 Go, RAM 16 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_f5_pro-12257",
+      "name": "Poco F5 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f5-pro-2.jpg",
+      "description": "Smartphone Android Xiaomi Poco F5 Pro. Annoncé en mai 2023. Caractéristiques : écran 6,67″, chipset Snapdragon 8+ Gen 1, batterie 5160 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_f5-12258",
+      "name": "Poco F5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f5-2.jpg",
+      "description": "Smartphone Android Xiaomi Poco F5. Annoncé en mai 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 7+ Gen 2, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_13_ultra-12236",
+      "name": "13 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13-ultra.jpg",
+      "description": "Smartphone Android Xiaomi 13 Ultra. Annoncé en avril 2023. Caractéristiques Écran 6,73″, chipset Snapdragon 8 Gen 2, batterie 5000 mAh, stockage 1024 Go, RAM 16 Go, Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_pad_6_pro-12238",
+      "name": "Pad 6 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad6-pro.jpg",
+      "description": "Tablette Android Xiaomi Pad 6 Pro. Annoncée en avril 2023. Caractéristiques Écran 11,0″, chipset Snapdragon 8+ Gen 1, batterie 8600 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_pad_6-12237",
+      "name": "Pad 6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad6.jpg",
+      "description": "Tablette Android Xiaomi Pad 6. Annoncée en avril 2023. Caractéristiques Écran 11,0″, chipset Snapdragon 870 5G, batterie 8840 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_c51-12215",
+      "name": "Poco C51",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c51.jpg",
+      "description": "Smartphone Android Xiaomi Poco C51. Annoncé en avril 2023. Comprend un écran de 6,52 pouces, un chipset Helio G36, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12s-12218",
+      "name": "Redmi Note 12S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12s.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 12S. Annoncé en mars 2023. Comprend un écran de 6,43 pouces, un chipset MT6781 Helio G96, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_pro_4g-12209",
+      "name": "Redmi Note 12 Pro 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-pro-4g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 12 Pro 4G. Annoncé en mars 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 732G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_turbo-12181",
+      "name": "Redmi Note 12 Turbo",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-turbo.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 12 Turbo. Annoncé en mars 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 7+ Gen 2, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_redmi_a2+-12197",
+      "name": "Redmi A2+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a2-plus.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A2+. Annoncé en mars 2023. Comprend un écran de 6,52 pouces, un chipset Helio G36, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_a2-12124",
+      "name": "Redmi A2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a2-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A2. Annoncé en mars 2023. Comprend un écran de 6,52 pouces, un chipset Helio G36, une batterie de 5000 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_4g-12188",
+      "name": "Redmi Note 12 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/redmi-note-12-4g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 12 4G. Annoncé en mars 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 685, une batterie de 5000 mAh, 256 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_13_pro-11962",
+      "name": "13 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13-pro-black.jpg",
+      "description": "Smartphone Android Xiaomi 13 Pro. Annoncé en décembre 2022. Comprend un écran de 6,73 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 4820 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_13-12013",
+      "name": "13",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13-red.jpg",
+      "description": "Smartphone Android Xiaomi 13. Annoncé en décembre 2022. Comprend un écran de 6,36 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 4 500 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_13_lite-12072",
+      "name": "13 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13-lite.jpg",
+      "description": "Smartphone Android Xiaomi 13 Lite. Annoncé en février 2023. Comprend un écran de 6,55 pouces, un chipset Snapdragon 7 Gen 1, une batterie de 4 500 mAh, 256 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_c55-12126",
+      "name": "Poco C55",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c55.jpg",
+      "description": "Smartphone Android Xiaomi Poco C55. Annoncé en février 2023. Comprend un écran de 6,71 pouces, un chipset MT6769Z Helio G85, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go et un verre Panda."
+    },
+    {
+      "id": "xiaomi_poco_x5_pro-12094",
+      "name": "Poco X5 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x5-pro-5g.jpg",
+      "description": "Smartphone Android Xiaomi Poco X5 Pro. Annoncé en février 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 778G 5G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_x5-12092",
+      "name": "Poco X5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x5-5g.jpg",
+      "description": "Smartphone Android Xiaomi Poco X5. Annoncé en février 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5000 mAh, 256 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_12-12063",
+      "name": "Redmi Note 12",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/redmi-note-12-5g-international.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 12. Annoncé en octobre 2022. Caractéristiques : écran 6,67″, chipset Snapdragon 4 Gen 1, batterie 5000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_c50-12053",
+      "name": "Poco C50",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c50.jpg",
+      "description": "Smartphone Android Xiaomi Poco C50. Annoncé en janvier 2023. Comprend un écran de 6,52 pouces, un chipset MT6761 Helio A22, une batterie de 5000 mAh, un stockage de 32 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_pro_speed-12045",
+      "name": "Redmi Note 12 Pro Speed",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-pro-speed.jpg",
+      "description": "Xiaomi Redmi Note 12 Pro Smartphone Android rapide. Annoncé en décembre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 778G 5G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_redmi_k60_pro-12046",
+      "name": "Redmi K60 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k60-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K60 Pro. Annoncé en décembre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_redmi_k60e-12047",
+      "name": "Redmi K60E",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k60e.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K60E. Annoncé en décembre 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 8200, une batterie de 5 500 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_k60-11975",
+      "name": "Redmi K60",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k60.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K60. Annoncé en décembre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5 500 mAh, un stockage de 1 024 Go et une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_redmi_watch_3-12048",
+      "name": "Redmi Watch 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch3.jpg",
+      "description": "Montre Xiaomi Redmi Watch 3. Annoncée en décembre 2022. Comprend un écran de 1,75″, une batterie de 289 mAh."
+    },
+    {
+      "id": "xiaomi_watch_s2-12023",
+      "name": "Watch S2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-s2.jpg",
+      "description": "Montre Xiaomi Watch S2. Annoncée en décembre 2022. Comprend un écran de 1,43″, une batterie de 500 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_12c-12051",
+      "name": "Redmi 12C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-12c.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 12C. Annoncé en décembre 2022. Comprend un écran de 6,71 pouces, un chipset MT6769Z Helio G85, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_discovery-11953",
+      "name": "Redmi Note 12 Discovery",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-pro-discovery-explorer.jpg",
+      "description": "Xiaomi Redmi Note 12 Discovery Smartphone Android. Annoncé en octobre 2022. Caractéristiques Écran 6,67″, chipset Dimensity 1080, batterie 4300 mAh, stockage 256 Go, RAM 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_pro+-11954",
+      "name": "Redmi Note 12 Pro+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-pro-plus.jpg",
+      "description": "Xiaomi Redmi Note 12 Pro+ Smartphone Android. Annoncé en octobre 2022. Caractéristiques : écran 6,67″, chipset Dimensity 1080, batterie 5000 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_pro-11955",
+      "name": "Redmi Note 12 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 12 Pro. Annoncé en octobre 2022. Caractéristiques : écran 6,67″, chipset Dimensity 1080, batterie 5000 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_12_(china)-11956",
+      "name": "Redmi Note 12 (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-5g.jpg",
+      "description": "Xiaomi Redmi Note 12 (Chine) Smartphone Android. Annoncé en octobre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 4 Gen 1, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_12t_pro-11887",
+      "name": "12T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12t-pro-.jpg",
+      "description": "Smartphone Android Xiaomi 12T Pro. Annoncé en octobre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_12t-11888",
+      "name": "12T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12t-.jpg",
+      "description": "Smartphone Android Xiaomi 12T. Annoncé en octobre 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 8100 Ultra, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_pad-11911",
+      "name": "Redmi Pad",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-pad.jpg",
+      "description": "Tablette Android Xiaomi Redmi Pad. Annoncée en octobre 2022. Comprend un écran de 10,61 pouces, un chipset Helio G99, une batterie de 8000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_11r-11904",
+      "name": "Redmi Note 11R",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11r.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 11R. Annoncé en septembre 2022. Comprend un écran de 6,58 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_a1+-11909",
+      "name": "Redmi A1+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a1-plus-new.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A1+. Annoncé en septembre 2022. Comprend un écran de 6,52 pouces, un chipset MT6761 Helio A22, une batterie de 5000 mAh, un stockage de 32 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "xiaomi_civi_2-11906",
+      "name": "Civi 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-civi2.jpg",
+      "description": "Smartphone Android Xiaomi Civi 2. Annoncé en septembre 2022. Comprend un écran de 6,55 pouces, un chipset Snapdragon 7 Gen 1, une batterie de 4 500 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_11_prime-11855",
+      "name": "Redmi 11 Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-11-prime-4g.jpg",
+      "description": "Xiaomi Redmi 11 Prime Smartphone Android. Annoncé en septembre 2022. Comprend un écran de 6,58 pouces, un chipset Helio G99, une batterie de 5000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_11_prime_5g-11834",
+      "name": "Redmi 11 Prime 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-5g.jpg",
+      "description": "Xiaomi Redmi 11 Prime 5G Smartphone Android. Annoncé en septembre 2022. Comprend un écran de 6,58 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_a1-11848",
+      "name": "Redmi A1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-a1.jpg",
+      "description": "Smartphone Android Xiaomi Redmi A1. Annoncé en septembre 2022. Comprend un écran de 6,52 pouces, un chipset MT6761 Helio A22, une batterie de 5000 mAh, un stockage de 32 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "xiaomi_poco_m5s-11832",
+      "name": "Poco M5s",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m5s.jpg",
+      "description": "Smartphone Android Xiaomi Poco M5s. Annoncé en septembre 2022. Comprend un écran de 6,43 pouces, un chipset MT6785V, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_m5-11850",
+      "name": "Poco M5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m5.jpg",
+      "description": "Smartphone Android Xiaomi Poco M5. Annoncé en septembre 2022. Comprend un écran de 6,58 pouces, un chipset Helio G99, une batterie de 5000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_m5_(india)-11869",
+      "name": "Poco M5 (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m5.jpg",
+      "description": "Xiaomi Poco M5 (Inde) Smartphone Android. Annoncé en septembre 2022. Comprend un écran de 6,58 pouces, un chipset Helio G99, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_se_(india)-11819",
+      "name": "Redmi Note 11 SE (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note10s.jpg",
+      "description": "Xiaomi Redmi Note 11 SE (Inde) Smartphone Android. Annoncé en août 2022. Comprend un écran de 6,43 pouces, un chipset MT6785V, une batterie de 5000 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_m4_5g-11762",
+      "name": "Poco M4 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m4-5g-global.jpg",
+      "description": "Smartphone Android Xiaomi Poco M4 5G. Annoncé en août 2022. Comprend un écran de 6,58 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla (version non spécifiée)."
+    },
+    {
+      "id": "xiaomi_watch_s1_pro-11760",
+      "name": "Watch S1 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-s1-pro.jpg",
+      "description": "Montre Xiaomi Watch S1 Pro. Annoncée en août 2022. Comprend un écran de 1,47 pouce, une batterie de 500 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_k50_ultra-11580",
+      "name": "Redmi K50 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k50-ultra.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K50 Ultra. Annoncé en août 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_mix_fold_2-11758",
+      "name": "Mix Fold 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mix-fold-2.jpg",
+      "description": "Smartphone Android Xiaomi Mix Fold 2. Annoncé en août 2022. Comprend un écran de 8,02 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4 500 mAh, un stockage de 1 024 Go, une RAM de 12 Go et un verre Schott UTG."
+    },
+    {
+      "id": "xiaomi_pad_5_pro_12_4-11759",
+      "name": "Pad 5 Pro 12.4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-pad-5-pro-124.jpg",
+      "description": "Tablette Android Xiaomi Pad 5 Pro 12.4. Annoncée en août 2022. Comprend un écran de 12,4 pouces, un chipset Snapdragon 870 5G, une batterie de 10 000 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_k50i-11653",
+      "name": "Redmi K50i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k50i-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K50i. Annoncé en juillet 2022. Caractéristiques : écran 6,6″, chipset Dimensity 8100, batterie 5080 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_12_lite-11472",
+      "name": "12 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12-lite-5g-new.jpg",
+      "description": "Smartphone Android Xiaomi 12 Lite. Annoncé en juillet 2022. Caractéristiques : écran 6,55″, chipset Snapdragon 778G 5G, batterie 4300 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_12s_ultra-11614",
+      "name": "12S Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12s-ultra.jpg",
+      "description": "Smartphone Android Xiaomi 12S Ultra. Annoncé en juillet 2022. Comprend un écran de 6,73 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4860 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_12s_pro-11651",
+      "name": "12S Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12s-pro.jpg",
+      "description": "Smartphone Android Xiaomi 12S Pro. Annoncé en juillet 2022. Comprend un écran de 6,73 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4600 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_12s-11645",
+      "name": "12S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12s.jpg",
+      "description": "Smartphone Android Xiaomi 12S. Annoncé en juillet 2022. Comprend un écran de 6,28 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4 500 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_12_pro_(dimensity)-11652",
+      "name": "12 Pro (Dimensity)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12-pro-dimensity.jpg",
+      "description": "Xiaomi 12 Pro (Dimensity) Smartphone Android. Annoncé en juillet 2022. Comprend un écran de 6,73 pouces, un chipset Dimensity 9000+, une batterie de 5160 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_poco_f4-11627",
+      "name": "Poco F4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f4-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Poco F4. Annoncé en juin 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_x4_gt-11626",
+      "name": "Poco X4 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x4-gt.jpg",
+      "description": "Smartphone Android Xiaomi Poco X4 GT. Annoncé en juin 2022. Caractéristiques : écran 6,6″, chipset Dimensity 8100, batterie 5080 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_c40-11468",
+      "name": "Poco C40",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c40.jpg",
+      "description": "Smartphone Android Xiaomi Poco C40. Annoncé en juin 2022. Comprend un écran de 6,71 pouces, un chipset JLQ JR510, une batterie de 6000 mAh, un stockage de 64 Go, une RAM de 4 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_note_11t_pro+-11549",
+      "name": "Redmi Note 11T Pro+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11t-pro-plus.jpg",
+      "description": "Xiaomi Redmi Note 11T Pro+ Smartphone Android. Annoncé en mai 2022. Comprend un écran de 6,6 pouces, un chipset Dimensity 8100, une batterie de 4400 mAh, un stockage de 512 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_11t_pro-11550",
+      "name": "Redmi Note 11T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11t-pro.jpg",
+      "description": "Xiaomi Redmi Note 11T Pro Smartphone Android. Annoncé en mai 2022. Comprend un écran de 6,6 pouces, un chipset Dimensity 8100, une batterie de 5080 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_11se-11551",
+      "name": "Redmi Note 11SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11se.jpg",
+      "description": "Xiaomi Redmi Note 11SE Smartphone Android. Annoncé en mai 2022. Comprend un écran de 6,5 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_10_prime_2022-11519",
+      "name": "Redmi 10 Prime 2022",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-.jpg",
+      "description": "Xiaomi Redmi 10 Prime 2022 Smartphone Android. Annoncé en mai 2022. Comprend un écran de 6,5 pouces, un chipset MT6769H Helio G88, une batterie de 6000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_m4_5g_(india)-11427",
+      "name": "Poco M4 5G (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m4-5g.jpg",
+      "description": "Xiaomi Poco M4 5G (Inde) Smartphone Android. Annoncé en avril 2022. Caractéristiques : écran 6,58″, chipset Dimensity 700, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_f4_gt-11479",
+      "name": "Poco F4 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f4-gt.jpg",
+      "description": "Smartphone Android Xiaomi Poco F4 GT. Annoncé en avril 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4700 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_poco_watch-11495",
+      "name": "Poco Watch",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch2.jpg",
+      "description": "Montre Xiaomi Poco Watch. Annoncée en avril 2022. Comprend un écran de 1,6″, une batterie de 225 mAh."
+    },
+    {
+      "id": "xiaomi_civi_1s-11487",
+      "name": "Civi 1S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-civi-1s.jpg",
+      "description": "Smartphone Android Xiaomi Civi 1S. Annoncé en avril 2022. Comprend un écran de 6,55 pouces, un chipset Snapdragon 778G+ 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_10_power-11486",
+      "name": "Redmi 10 Power",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-power-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10 Power. Annoncé en avril 2022. Caractéristiques : écran 6,7″, chipset Snapdragon 680 4G, batterie 6000 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_black_shark_5_pro-11453",
+      "name": "Black Shark 5 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-5-pro.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 5 Pro. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4650 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_black_shark_5-11454",
+      "name": "Black Shark 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-5-.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 5. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4650 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_black_shark_5_rs-11455",
+      "name": "Black Shark 5 RS",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-5-rs.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 5 RS. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 888, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_redmi_10a-11449",
+      "name": "Redmi 10A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10a.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10A. Annoncé en mars 2022. Comprend un écran de 6,53 pouces, un chipset MT6762G Helio G25, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_11s_5g-11419",
+      "name": "Redmi Note 11S 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11s-5g.jpg",
+      "description": "Xiaomi Redmi Note 11S 5G Smartphone Android. Annoncé en mars 2022. Caractéristiques Écran 6,6″, chipset Dimensity 810, batterie 5000 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_10_5g-11425",
+      "name": "Redmi 10 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10 5G. Annoncé en mars 2022. Caractéristiques : écran 6,58″, chipset Dimensity 700, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_pro+_5g-11180",
+      "name": "Redmi Note 11 Pro+ 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note11-pro-plus-new.jpg",
+      "description": "Xiaomi Redmi Note 11 Pro+ 5G Smartphone Android. Annoncé en octobre 2021. Caractéristiques Écran 6,67″, chipset Dimensity 920, batterie 4500 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k50_pro-11372",
+      "name": "Redmi K50 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k50-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K50 Pro. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 9000, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_k50-11430",
+      "name": "Redmi K50",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k50.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K50. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 8100, une batterie de 5 500 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_k40s-11431",
+      "name": "Redmi K40S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k40s.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K40S. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_12_pro-11287",
+      "name": "12 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12-pro.jpg",
+      "description": "Smartphone Android Xiaomi 12 Pro. Annoncé en décembre 2021. Comprend un écran de 6,73 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4600 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_12-11285",
+      "name": "12",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12.jpg",
+      "description": "Smartphone Android Xiaomi 12. Annoncé en décembre 2021. Comprend un écran de 6,28 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4 500 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_12x-11292",
+      "name": "12X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12x.jpg",
+      "description": "Smartphone Android Xiaomi 12X. Annoncé en décembre 2021. Comprend un écran de 6,28 pouces, un chipset Snapdragon 870 5G, une batterie de 4 500 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_watch_s1_active-11422",
+      "name": "Watch S1 Active",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-s1-active.jpg",
+      "description": "Montre Xiaomi Watch S1 Active. Annoncée en mars 2022. Comprend un écran de 1,43″, une batterie de 470 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_10_(india)-11424",
+      "name": "Redmi 10 (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-india.jpg",
+      "description": "Xiaomi Redmi 10 (Inde) Smartphone Android. Annoncé en mars 2022. Comprend un écran de 6,7 pouces, un chipset Snapdragon 680 4G, une batterie de 6000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_10c-11418",
+      "name": "Redmi 10C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10c.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10C. Annoncé en mars 2022. Comprend un écran de 6,71 pouces, un chipset Snapdragon 680 4G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go et un verre Corning Gorilla."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_pro+_5g_(india)-11412",
+      "name": "Redmi Note 11 Pro+ 5G (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-note-11-pro-plus-5g.jpg",
+      "description": "Xiaomi Redmi Note 11 Pro+ 5G (Inde) Smartphone Android. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_11e_pro-11395",
+      "name": "Redmi Note 11E Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11e-pro.jpg",
+      "description": "Xiaomi Redmi Note 11E Pro Smartphone Android. Annoncé en mars 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_11e-11396",
+      "name": "Redmi Note 11E",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11e.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 11E. Annoncé en mars 2022. Comprend un écran de 6,58 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_poco_x4_pro_5g-11371",
+      "name": "Poco X4 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x4-pro.jpg",
+      "description": "Smartphone Android Xiaomi Poco X4 Pro 5G. Annoncé en février 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_m4_pro-11388",
+      "name": "Poco M4 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m4-pro.jpg",
+      "description": "Smartphone Android Xiaomi Poco M4 Pro. Annoncé en février 2022. Comprend un écran de 6,43 pouces, un chipset MT6781 Helio G96, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_k50_gaming-11362",
+      "name": "Redmi K50 Gaming",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k50-gaming.jpg",
+      "description": "Smartphone Android de jeu Xiaomi Redmi K50. Annoncé en février 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4700 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_10_2022-11357",
+      "name": "Redmi 10 2022",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11-4g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10 2022. Annoncé en février 2022. Comprend un écran de 6,5 pouces, un chipset MT6769H Helio G88, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_pro_5g-11333",
+      "name": "Redmi Note 11 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11-pro-5g-global.jpg",
+      "description": "Xiaomi Redmi Note 11 Pro 5G Smartphone Android. Annoncé en janvier 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5000 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_pro-11334",
+      "name": "Redmi Note 11 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11-pro-global.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 11 Pro. Annoncé en janvier 2022. Comprend un écran de 6,67 pouces, un chipset MT6781 Helio G96, une batterie de 5000 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_11s-11335",
+      "name": "Redmi Note 11S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11s-global.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 11S. Annoncé en janvier 2022. Comprend un écran de 6,43 pouces, un chipset MT6781 Helio G96, une batterie de 5000 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_11-11336",
+      "name": "Redmi Note 11",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11-global.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 11. Annoncé en janvier 2022. Comprend un écran de 6,43 pouces, un chipset Snapdragon 680 4G, une batterie de 5000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_11i_hypercharge_5g-11186",
+      "name": "11i HyperCharge 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-11i-hypercharge.jpg",
+      "description": "Smartphone Android Xiaomi 11i HyperCharge 5G. Annoncé en janvier 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 920, une batterie de 4 500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_11i-11185",
+      "name": "11i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-11i.jpg",
+      "description": "Smartphone Android Xiaomi 11i. Annoncé en janvier 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 920, une batterie de 5160 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_watch_s1-11293",
+      "name": "Watch S1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-s1.jpg",
+      "description": "Montre Xiaomi Watch S1. Annoncée en décembre 2021. Comprend un écran de 1,43″, une batterie de 470 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_note_11t_5g-11217",
+      "name": "Redmi Note 11T 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11t-5g.jpg",
+      "description": "Xiaomi Redmi Note 11T 5G Smartphone Android. Annoncé en novembre 2021. Caractéristiques : écran 6,6″, chipset Dimensity 810, batterie 5000 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_4g-11241",
+      "name": "Redmi Note 11 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11-4g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 11 4G. Annoncé en novembre 2021. Comprend un écran de 6,5 pouces, un chipset MT6769H Helio G88, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_poco_m4_pro_5g-11193",
+      "name": "Poco M4 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m4-pro-5g.jpg",
+      "description": "Xiaomi Poco M4 Pro 5G Smartphone Android. Annoncé en novembre 2021. Caractéristiques : écran 6,6″, chipset Dimensity 810, batterie 5000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_pro_(china)-11159",
+      "name": "Redmi Note 11 Pro (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note11-pro.jpg",
+      "description": "Xiaomi Redmi Note 11 Pro (Chine) Smartphone Android. Annoncé en octobre 2021. Caractéristiques Écran 6,67″, chipset Dimensity 920, batterie 5160 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_11_(china)-11181",
+      "name": "Redmi Note 11 (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note11.jpg",
+      "description": "Xiaomi Redmi Note 11 (Chine) Smartphone Android. Annoncé en octobre 2021. Comprend un écran de 6,6 pouces, un chipset Dimensity 810, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_watch_2_lite-11187",
+      "name": "Redmi Watch 2 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch2-lite.jpg",
+      "description": "Montre Xiaomi Redmi Watch 2 Lite. Annoncée en novembre 2021. Comprend un écran de 1,55″, une batterie de 262 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_watch_2-11182",
+      "name": "Redmi Watch 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch2.jpg",
+      "description": "Montre Xiaomi Redmi Watch 2. Annoncée en octobre 2021. Comprend un écran de 1,6″, une batterie de 225 mAh."
+    },
+    {
+      "id": "xiaomi_black_shark_4s_pro-11152",
+      "name": "Black Shark 4S Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-4s-pro.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 4S Pro. Annoncé en octobre 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 888+ 5G, une batterie de 4500 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_black_shark_4s-11153",
+      "name": "Black Shark 4S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-4s.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 4S. Annoncé en octobre 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_10_lite-11137",
+      "name": "Redmi Note 10 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-10-lite.jpg",
+      "description": "Xiaomi Redmi Note 10 Lite Smartphone Android. Annoncé en octobre 2021. Caractéristiques Écran 6,67″, chipset Snapdragon 720G, batterie 5020 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_civi-11119",
+      "name": "Civi",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-civi.jpg",
+      "description": "Smartphone Android Xiaomi Civi. Annoncé en septembre 2021. Comprend un écran de 6,55 pouces, un chipset Snapdragon 778G 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go et un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_watch_color_2-11126",
+      "name": "Watch Color 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-color2.jpg",
+      "description": "Montre Xiaomi Watch Color 2. Annoncée en septembre 2021. Comprend un écran de 1,43″, une batterie de 470 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_9i_sport-11129",
+      "name": "Redmi 9i Sport",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9i-sport.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9i Sport. Annoncé en septembre 2021. Comprend un écran de 6,53 pouces, un chipset MT6762G Helio G25, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_9a_sport-11128",
+      "name": "Redmi 9A Sport",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9a-sport.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9A Sport. Annoncé en septembre 2021. Comprend un écran de 6,53 pouces, un chipset MT6762G Helio G25, une batterie de 5000 mAh, un stockage de 32 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "xiaomi_poco_c31-11134",
+      "name": "Poco C31",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c31.jpg",
+      "description": "Smartphone Android Xiaomi Poco C31. Annoncé en septembre 2021. Comprend un écran de 6,53 pouces, un chipset MT6765G Helio G35, une batterie de 5000 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_9_activ-11127",
+      "name": "Redmi 9 Activ",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9-activ.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9 Activ. Annoncé en septembre 2021. Comprend un écran de 6,53 pouces, un chipset MT6765G Helio G35, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_11t_pro-11100",
+      "name": "11T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-11t-pro.jpg",
+      "description": "Smartphone Android Xiaomi 11T Pro. Annoncé en septembre 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 888 5G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_11t-11099",
+      "name": "11T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-11t.jpg",
+      "description": "Smartphone Android Xiaomi 11T. Annoncé en septembre 2021. Comprend un écran de 6,67 pouces, un chipset Dimensity 1200, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_11_lite_5g_ne-11101",
+      "name": "11 Lite 5G NE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-11-lite-5g-ne.jpg",
+      "description": "Xiaomi 11 Lite 5G NE Smartphone Android. Annoncé en septembre 2021. Comprend un écran de 6,55 pouces, un chipset Snapdragon 778G 5G, une batterie de 4250 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_10_prime-11079",
+      "name": "Redmi 10 Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10 Prime. Annoncé en septembre 2021. Comprend un écran de 6,5 pouces, un chipset MT6769H Helio G88, une batterie de 6000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_10-11060",
+      "name": "Redmi 10",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10. Annoncé en août 2021. Comprend un écran de 6,5 pouces, un chipset MT6769H Helio G88, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_pad_5_pro-11043",
+      "name": "Pad 5 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-5-pro.jpg",
+      "description": "Tablette Android Xiaomi Pad 5 Pro. Annoncée en août 2021. Comprend un écran de 11,0 pouces, un chipset Snapdragon 870 5G, une batterie de 8 600 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "xiaomi_pad_5-11042",
+      "name": "Pad 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-5.jpg",
+      "description": "Tablette Android Xiaomi Pad 5. Annoncée en août 2021. Comprend un écran de 11,0 pouces, un chipset Snapdragon 860, une batterie de 8720 mAh, un stockage de 256 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_mix_4-11040",
+      "name": "Mix 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-mix-4.jpg",
+      "description": "Smartphone Android Xiaomi Mix 4. Annoncé en août 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 888+ 5G, une batterie de 4 500 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_poco_x3_gt-10949",
+      "name": "Poco X3 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-10-pro-china-new.jpg",
+      "description": "Smartphone Android Xiaomi Poco X3 GT. Annoncé en juillet 2021. Comprend un écran de 6,6 pouces, un chipset Dimensity 1100, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_poco_f3_gt-10886",
+      "name": "Poco F3 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f3-gt.jpg",
+      "description": "Xiaomi Poco F3 GT Smartphone Android. Annoncé en juillet 2021. Caractéristiques : écran 6,67″, chipset Dimensity 1200, batterie 5065 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_10t_5g-11008",
+      "name": "Redmi Note 10T 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-10t-5g.jpg",
+      "description": "Xiaomi Redmi Note 10T 5G Smartphone Android. Annoncé en juillet 2021. Caractéristiques Écran 6,5″, chipset Dimensity 700, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_watch_revolve_active-10977",
+      "name": "Mi Watch Revolve Active",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-watch-revolve-active.jpg",
+      "description": "Montre Xiaomi Mi Watch Revolve Active. Annoncée en juin 2021. Comprend un écran de 1,39″, une batterie de 420 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_note_10_pro_(china)-10930",
+      "name": "Redmi Note 10 Pro (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-10-pro-china-new.jpg",
+      "description": "Xiaomi Redmi Note 10 Pro (Chine) Smartphone Android. Annoncé en mai 2021. Caractéristiques Écran 6,6″, chipset Dimensity 1100, batterie 5000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_note_8_2021-10919",
+      "name": "Redmi Note 8 2021",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note8-2021.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 8 2021. Annoncé en mai 2021. Caractéristiques : écran 6,3″, chipset MT6769Z Helio G85, batterie 4000 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_m3_pro_5g-10857",
+      "name": "Poco M3 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m3-pro-5g.jpg",
+      "description": "Xiaomi Poco M3 Pro 5G Smartphone Android. Annoncé en mai 2021. Caractéristiques : écran 6,5″, chipset Dimensity 700, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_k40_gaming-10880",
+      "name": "Redmi K40 Gaming",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k40-gaming.jpg",
+      "description": "Smartphone Android de jeu Xiaomi Redmi K40. Annoncé en avril 2021. Comprend un écran de 6,67 pouces, un chipset Dimensity 1200, une batterie de 5065 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_11x_pro-10776",
+      "name": "Mi 11X Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi11x-pro.jpg",
+      "description": "Xiaomi Mi 11X Pro Smartphone Android. Annoncé en avril 2021. Caractéristiques Écran 6,67″, chipset Snapdragon 888 5G, batterie 4520 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_11x-10775",
+      "name": "Mi 11X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi11x.jpg",
+      "description": "Smartphone Android Xiaomi Mi 11X. Annoncé en avril 2021. Caractéristiques : écran 6,67″, chipset Snapdragon 870 5G, batterie 4520 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_m2_reloaded-10867",
+      "name": "Poco M2 Reloaded",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m2-reloaded.jpg",
+      "description": "Xiaomi Poco M2 Reloaded Smartphone Android. Annoncé en avril 2021. Comprend un écran de 6,53 pouces, un chipset MT6769V, une batterie de 5000 mAh, un stockage de 64 Go, une RAM de 4 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_mix_fold-10817",
+      "name": "Mi Mix Fold",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-mix-fold.jpg",
+      "description": "Smartphone Android Xiaomi Mi Mix Fold. Annoncé en mars 2021. Comprend un écran de 8,01 pouces, un chipset Snapdragon 888 5G, une batterie de 5020 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_mi_11_ultra-10737",
+      "name": "Mi 11 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi11-ultra-5g-k1.jpg",
+      "description": "Smartphone Android Xiaomi Mi 11 Ultra. Annoncé en mars 2021. Comprend un écran de 6,81 pouces, un chipset Snapdragon 888 5G, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_mi_11_pro-10816",
+      "name": "Mi 11 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-11-pro-5g.jpg",
+      "description": "Smartphone Android Xiaomi Mi 11 Pro. Annoncé en mars 2021. Comprend un écran de 6,81 pouces, un chipset Snapdragon 888 5G, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_mi_11i-10777",
+      "name": "Mi 11i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-11i-5g.jpg",
+      "description": "Smartphone Android Xiaomi Mi 11i. Annoncé en mars 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 888 5G, une batterie de 4520 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_11_lite_5g-10815",
+      "name": "Mi 11 Lite 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-11-lite-5g.jpg",
+      "description": "Xiaomi Mi 11 Lite 5G Smartphone Android. Annoncé en mars 2021. Comprend un écran de 6,55 pouces, un chipset Snapdragon 780G, une batterie de 4250 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 6."
+    },
+    {
+      "id": "xiaomi_mi_11_lite-10665",
+      "name": "Mi 11 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-11-lite-4g.jpg",
+      "description": "Xiaomi Mi 11 Lite Smartphone Android. Annoncé en mars 2021. Comprend un écran de 6,55 pouces, un chipset Snapdragon 732G, une batterie de 4250 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_black_shark_4_pro-10805",
+      "name": "Black Shark 4 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-4-pro.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 4 Pro. Annoncé en mars 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 888 5G, une batterie de 4500 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "xiaomi_black_shark_4-10714",
+      "name": "Black Shark 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-4.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 4. Annoncé en mars 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_poco_x3_pro-10802",
+      "name": "Poco X3 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x3-pro-.jpg",
+      "description": "Smartphone Android Xiaomi Poco X3 Pro. Annoncé en mars 2021. Caractéristiques : écran 6,67″, chipset Snapdragon 860, batterie 5160 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "xiaomi_poco_f3-10758",
+      "name": "Poco F3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f3.jpg",
+      "description": "Smartphone Android Xiaomi Poco F3. Annoncé en mars 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4520 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_10s-10780",
+      "name": "Mi 10S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10s.jpg",
+      "description": "Smartphone Android Xiaomi Mi 10S. Annoncé en mars 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4780 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_10_pro-10662",
+      "name": "Redmi Note 10 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note10-pro.jpg",
+      "description": "Xiaomi Redmi Note 10 Pro Smartphone Android. Annoncé en mars 2021. Caractéristiques Écran 6,67″, chipset Snapdragon 732G, batterie 5020 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_10_5g-10768",
+      "name": "Redmi Note 10 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note10-5g.jpg",
+      "description": "Xiaomi Redmi Note 10 5G Smartphone Android. Annoncé en mars 2021. Caractéristiques Écran 6,5″, chipset Dimensity 700, batterie 5000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_10s-10769",
+      "name": "Redmi Note 10S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note10s.jpg",
+      "description": "Xiaomi Redmi Note 10S Smartphone Android. Annoncé en mars 2021. Comprend un écran de 6,43 pouces, un chipset MT6785V, une batterie de 5000 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_10-10247",
+      "name": "Redmi Note 10",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note10--.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 10. Annoncé en mars 2021. Caractéristiques : écran 6,43″, chipset Snapdragon 678, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note_10_pro_max-10770",
+      "name": "Redmi Note 10 Pro Max",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note10-pro-india.jpg",
+      "description": "Xiaomi Redmi Note 10 Pro Max Smartphone Android. Annoncé en mars 2021. Caractéristiques Écran 6,67″, chipset Snapdragon 732G, batterie 5020 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_10_pro_(india)-10771",
+      "name": "Redmi Note 10 Pro (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note10-pro-india.jpg",
+      "description": "Xiaomi Redmi Note 10 Pro (Inde) Smartphone Android. Annoncé en mars 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 732G, une batterie de 5020 mAh, un stockage de 128 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k40_pro+-10752",
+      "name": "Redmi K40 Pro+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k40-pro-plus.jpg",
+      "description": "Xiaomi Redmi K40 Pro+ Smartphone Android. Annoncé en février 2021. Caractéristiques : écran 6,67″, chipset Snapdragon 888 5G, batterie 4520 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k40_pro-10727",
+      "name": "Redmi K40 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k40-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K40 Pro. Annoncé en février 2021. Caractéristiques : écran 6,67″, chipset Snapdragon 888 5G, batterie 4520 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k40-10728",
+      "name": "Redmi K40",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k40.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K40. Annoncé en février 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 870 5G, une batterie de 4520 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9t-10661",
+      "name": "Redmi Note 9T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9t-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 9T. Annoncé en janvier 2021. Comprend un écran de 6,53 pouces, un chipset Dimensity 800U, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_9t-10670",
+      "name": "Redmi 9T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9-power.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9T. Annoncé en janvier 2021. Comprend un écran de 6,53 pouces, un chipset Snapdragon 662, une batterie de 6000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_10i_5g-10615",
+      "name": "Mi 10i 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10i-5g.jpg",
+      "description": "Smartphone Android Xiaomi Mi 10i 5G. Annoncé en janvier 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 750G 5G, une batterie de 4820 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_11-10656",
+      "name": "Mi 11",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi11.jpg",
+      "description": "Smartphone Android Xiaomi Mi 11. Annoncé en décembre 2020. Comprend un écran de 6,81 pouces, un chipset Snapdragon 888 5G, une batterie de 4600 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "xiaomi_redmi_9_power-10616",
+      "name": "Redmi 9 Power",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9-power.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9 Power. Annoncé en décembre 2020. Comprend un écran de 6,53 pouces, un chipset Snapdragon 662, une batterie de 6000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_watch_lite-10633",
+      "name": "Mi Watch Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch.jpg",
+      "description": "Montre Xiaomi Mi Watch Lite. Annoncée en décembre 2020. Comprend un écran de 1,4″, une batterie de 230 mAh."
+    },
+    {
+      "id": "xiaomi_redmi_note_9_pro_5g-10582",
+      "name": "Redmi Note 9 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note9-pro.jpg",
+      "description": "Xiaomi Redmi Note 9 Pro 5G Smartphone Android. Annoncé en novembre 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 750G 5G, une batterie de 4820 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9_5g-10581",
+      "name": "Redmi Note 9 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9-5g.jpg",
+      "description": "Xiaomi Redmi Note 9 5G Smartphone Android. Annoncé en novembre 2020. Caractéristiques : écran 6,53 pouces, chipset Dimensity 800U, batterie 5000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9_4g-10609",
+      "name": "Redmi Note 9 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note9-4g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 9 4G. Annoncé en novembre 2020. Caractéristiques : écran 6,53 pouces, chipset Snapdragon 662, batterie 6000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_watch-10610",
+      "name": "Redmi Watch",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-watch.jpg",
+      "description": "Montre Xiaomi Redmi Watch. Annoncée en novembre 2020. Comprend un écran de 1,4″, une batterie de 230 mAh."
+    },
+    {
+      "id": "xiaomi_poco_m3-10599",
+      "name": "Poco M3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m3-.jpg",
+      "description": "Smartphone Android Xiaomi Poco M3. Annoncé en novembre 2020. Comprend un écran de 6,53 pouces, un chipset Snapdragon 662, une batterie de 6000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_k30s-10517",
+      "name": "Redmi K30S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10t-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K30S. Annoncé en octobre 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 865 5G, batterie 5000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_watch_color_sports-10541",
+      "name": "Mi Watch Color Sports",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-watch-color-sports-edition.jpg",
+      "description": "Montre de sport Xiaomi Mi Watch Color. Annoncée en octobre 2020. Comprend un écran de 1,39 pouce, une batterie de 420 mAh."
+    },
+    {
+      "id": "xiaomi_poco_c3-10482",
+      "name": "Poco C3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-c3.jpg",
+      "description": "Smartphone Android Xiaomi Poco C3. Annoncé en octobre 2020. Comprend un écran de 6,43 pouces, un chipset MT6765G Helio G35, une batterie de 5000 mAh, un stockage de 64 Go, une RAM de 4 Go et un verre Panda."
+    },
+    {
+      "id": "xiaomi_mi_10t_pro_5g-10437",
+      "name": "Mi 10T Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10t-5g-pro.jpg",
+      "description": "Xiaomi Mi 10T Pro 5G Smartphone Android. Annoncé en septembre 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 865 5G, batterie 5000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_10t_5g-10473",
+      "name": "Mi 10T 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10t-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Mi 10T 5G. Annoncé en septembre 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 865 5G, batterie 5000 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_10t_lite_5g-10480",
+      "name": "Mi 10T Lite 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10t-lite-.jpg",
+      "description": "Xiaomi Mi 10T Lite 5G Smartphone Android. Annoncé en septembre 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 750G 5G, batterie 4820 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_watch-10481",
+      "name": "Mi Watch",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-watch.jpg",
+      "description": "Montre Xiaomi Mi Watch. Annoncée en septembre 2020. Comprend un écran de 1,39 pouce, une batterie de 420 mAh."
+    },
+    {
+      "id": "xiaomi_mi_watch_revolve-10305",
+      "name": "Mi Watch Revolve",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-watch-revolve.jpg",
+      "description": "Montre Xiaomi Mi Watch Revolve. Annoncée en septembre 2020. Comprend un écran de 1,39 pouce, une batterie de 420 mAh, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_9at-10591",
+      "name": "Redmi 9AT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9a-1.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9AT. Annoncé en septembre 2020. Comprend un écran de 6,53 pouces, un chipset MT6762G Helio G25, une batterie de 5000 mAh, un stockage de 32 Go, une RAM de 2 Go."
+    },
+    {
+      "id": "xiaomi_redmi_9i-10399",
+      "name": "Redmi 9i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9a-1.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9i. Annoncé en septembre 2020. Comprend un écran de 6,53 pouces, un chipset MT6762G Helio G25, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_poco_m2-10434",
+      "name": "Poco M2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m2-mzb9921in.jpg",
+      "description": "Smartphone Android Xiaomi Poco M2. Annoncé en septembre 2020. Comprend un écran de 6,53 pouces, un chipset MT6769V, une batterie de 5000 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_poco_x3-10461",
+      "name": "Poco X3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x3.jpg",
+      "description": "Smartphone Android Xiaomi Poco X3. Annoncé en septembre 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 732G, une batterie de 6000 mAh, 128 Go de stockage, 8 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_x3_nfc-10415",
+      "name": "Poco X3 NFC",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x3-nfc.jpg",
+      "description": "Smartphone Android Xiaomi Poco X3 NFC. Annoncé en septembre 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 732G, une batterie de 5160 mAh, un stockage de 128 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_9_(india)-10398",
+      "name": "Redmi 9 (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9-india.jpg",
+      "description": "Xiaomi Redmi 9 (Inde) Smartphone Android. Annoncé en août 2020. Comprend un écran de 6,53 pouces, un chipset MT6765G Helio G35, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_mi_10_ultra-10361",
+      "name": "Mi 10 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi10-ultra.jpg",
+      "description": "Smartphone Android Xiaomi Mi 10 Ultra. Annoncé en août 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 865 5G, batterie 4500 mAh, stockage 512 Go, RAM 16 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k30_ultra-10349",
+      "name": "Redmi K30 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k30-ultra.jpg",
+      "description": "Xiaomi Redmi K30 Ultra Smartphone Android. Annoncé en août 2020. Caractéristiques : écran 6,67″, chipset Dimensity 1000+, batterie 4500 mAh, stockage 512 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_9_prime-10353",
+      "name": "Redmi 9 Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9.jpg",
+      "description": "Xiaomi Redmi 9 Prime Smartphone Android. Annoncé en août 2020. Comprend un écran de 6,53 pouces, un chipset MT6769V, une batterie de 5020 mAh, 128 Go de stockage, 4 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_black_shark_3s-10350",
+      "name": "Black Shark 3S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-3s.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 3S. Annoncé en juillet 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 865 5G, une batterie de 4729 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_poco_m2_pro-10318",
+      "name": "Poco M2 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/poco-m2-pro.jpg",
+      "description": "Smartphone Android Xiaomi Poco M2 Pro. Annoncé en juillet 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 720G, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_9a-10279",
+      "name": "Redmi 9A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9a-1.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9A. Annoncé en juin 2020. Comprend un écran de 6,53 pouces, un chipset MT6762G Helio G25, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_redmi_9c_nfc-10277",
+      "name": "Redmi 9C NFC",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9c-.jpg",
+      "description": "Smartphone Android NFC Xiaomi Redmi 9C. Annoncé en août 2020. Comprend un écran de 6,53 pouces, un chipset MT6765G Helio G35, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_9c-10278",
+      "name": "Redmi 9C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9c-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9C. Annoncé en juin 2020. Comprend un écran de 6,53 pouces, un chipset MT6765G Helio G35, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_9-10233",
+      "name": "Redmi 9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-9.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 9. Annoncé en juin 2020. Comprend un écran de 6,53 pouces, un chipset MT6769V, une batterie de 5020 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_10x_pro_5g-10267",
+      "name": "Redmi 10X Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10x-pro-5g.jpg",
+      "description": "Xiaomi Redmi 10X Pro 5G Smartphone Android. Annoncé en mai 2020. Caractéristiques : écran 6,57″, chipset Dimensity 820, batterie 4520 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_10x_5g-10266",
+      "name": "Redmi 10X 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10x-5g.jpg",
+      "description": "Xiaomi Redmi 10X 5G Smartphone Android. Annoncé en mai 2020. Caractéristiques Écran 6,57″, chipset Dimensity 820, batterie 4520 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_10x_4g-10202",
+      "name": "Redmi 10X 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10x-4g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 10X 4G. Annoncé en mai 2020. Comprend un écran de 6,53 pouces, un chipset MT6769Z Helio G85, une batterie de 5020 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k30i_5g-10200",
+      "name": "Redmi K30i 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k30i-5g-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K30i 5G. Annoncé en mai 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 765G 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_f2_pro-10220",
+      "name": "Poco F2 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-f2-pro.jpg",
+      "description": "Xiaomi Poco F2 Pro Smartphone Android. Annoncé en mai 2020. Caractéristiques Écran 6,67″, chipset Snapdragon 865 5G, batterie 4700 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k30_5g_racing-10235",
+      "name": "Redmi K30 5G Racing",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k30-5g-racing-edition1.jpg",
+      "description": "Xiaomi Redmi K30 5G Smartphone Android de course. Annoncé en mai 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 768G 5G, une batterie de 4500 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9_pro-10217",
+      "name": "Redmi Note 9 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9-pro-global-.jpg",
+      "description": "Xiaomi Redmi Note 9 Pro Smartphone Android. Annoncé en avril 2020. Caractéristiques Écran 6,67″, chipset Snapdragon 720G, batterie 5020 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9-10192",
+      "name": "Redmi Note 9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 9. Annoncé en avril 2020. Comprend un écran de 6,53 pouces, un chipset MT6769Z Helio G85, une batterie de 5020 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_note_10_lite-10183",
+      "name": "Mi Note 10 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-note-10-lite-.jpg",
+      "description": "Xiaomi Mi Note 10 Lite Smartphone Android. Annoncé en avril 2020. Caractéristiques Écran 6,47″, chipset Snapdragon 730G, batterie 5260 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_10_youth_5g-10207",
+      "name": "Mi 10 Youth 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10-youth-5g-.jpg",
+      "description": "Xiaomi Mi 10 Youth 5G Smartphone Android. Annoncé en avril 2020. Caractéristiques : écran 6,57″, chipset Snapdragon 765G 5G, batterie 4160 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_10_lite_5g-10159",
+      "name": "Mi 10 Lite 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi10-lite-5g.jpg",
+      "description": "Xiaomi Mi 10 Lite 5G Smartphone Android. Annoncé en mars 2020. Caractéristiques : écran 6,57″, chipset Snapdragon 765G 5G, batterie 4160 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k30_pro_zoom-10150",
+      "name": "Redmi K30 Pro Zoom",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k30-pro-zoom.jpg",
+      "description": "Xiaomi Redmi K30 Pro Zoom Smartphone Android. Annoncé en mars 2020. Caractéristiques Écran 6,67″, chipset Snapdragon 865 5G, batterie 4700 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k30_pro-10140",
+      "name": "Redmi K30 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k30-pro.jpg",
+      "description": "Xiaomi Redmi K30 Pro Smartphone Android. Annoncé en mars 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 865 5G, batterie 4700 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9s-10147",
+      "name": "Redmi Note 9S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 9S. Annoncé en mars 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 720G, batterie 5020 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9_pro_max-10126",
+      "name": "Redmi Note 9 Pro Max",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9-pro-max.jpg",
+      "description": "Xiaomi Redmi Note 9 Pro Max Smartphone Android. Annoncé en mars 2020. Caractéristiques Écran 6,67″, chipset Snapdragon 720G, batterie 5020 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_9_pro_(india)-10120",
+      "name": "Redmi Note 9 Pro (India)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9-pro.jpg",
+      "description": "Xiaomi Redmi Note 9 Pro (Inde) Smartphone Android. Annoncé en mars 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 720G, une batterie de 5020 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_black_shark_3_pro-10109",
+      "name": "Black Shark 3 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-3-pro.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 3 Pro. Annoncé en mars 2020. Comprend un écran de 7,1 pouces, un chipset Snapdragon 865 5G, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_black_shark_3-10110",
+      "name": "Black Shark 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-3.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 3. Annoncé en mars 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 865 5G, une batterie de 4720 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_mi_10_pro_5g-10055",
+      "name": "Mi 10 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10-pro-5g.jpg",
+      "description": "Xiaomi Mi 10 Pro 5G Smartphone Android. Annoncé en février 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 865 5G, batterie 4500 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_10_5g-10082",
+      "name": "Mi 10 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10-5g.jpg",
+      "description": "Smartphone Android Xiaomi Mi 10 5G. Annoncé en février 2020. Caractéristiques : écran 6,67″, chipset Snapdragon 865 5G, batterie 4780 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_8a_pro-10169",
+      "name": "Redmi 8A Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-8a-dual.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 8A Pro. Annoncé en avril 2020. Caractéristiques : écran 6,22″, chipset Snapdragon 439, batterie 5000 mAh, stockage 32 Go, RAM 3 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_8a_dual-10078",
+      "name": "Redmi 8A Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-8a-dual.jpg",
+      "description": "Xiaomi Redmi 8A Smartphone double Android. Annoncé en février 2020. Comprend un écran de 6,22 pouces, un chipset Snapdragon 439, une batterie de 5000 mAh, un stockage de 64 Go, une RAM de 3 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_x2-10050",
+      "name": "Poco X2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x2.jpg",
+      "description": "Smartphone Android Xiaomi Poco X2. Annoncé en février 2020. Comprend un écran de 6,67 pouces, un chipset Snapdragon 730G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k30-9991",
+      "name": "Redmi K30",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k30.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K30. Annoncé en décembre 2019. Comprend un écran de 6,67 pouces, un chipset Snapdragon 730G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k30_5g-9979",
+      "name": "Redmi K30 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k30-5g.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K30 5G. Annoncé en décembre 2019. Comprend un écran de 6,67 pouces, un chipset Snapdragon 765G 5G, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_8t-9946",
+      "name": "Redmi Note 8T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-8t.jpg",
+      "description": "Xiaomi Redmi Note 8T Smartphone Android. Annoncé en novembre 2019. Caractéristiques : écran 6,3″, chipset Snapdragon 665, batterie 4000 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_note_10_pro-9945",
+      "name": "Mi Note 10 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-note10-.jpg",
+      "description": "Xiaomi Mi Note 10 Pro Smartphone Android. Annoncé en novembre 2019. Caractéristiques : écran 6,47″, chipset Snapdragon 730G, batterie 5260 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_note_10-9936",
+      "name": "Mi Note 10",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-note10-.jpg",
+      "description": "Smartphone Android Xiaomi Mi Note 10. Annoncé en novembre 2019. Caractéristiques : écran 6,47″, chipset Snapdragon 730G, batterie 5260 mAh, stockage 256 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_cc9_pro-9935",
+      "name": "Mi CC9 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-cc9-pro-.jpg",
+      "description": "Smartphone Android Xiaomi Mi CC9 Pro. Annoncé en novembre 2019. Caractéristiques : écran 6,47″, chipset Snapdragon 730G, batterie 5260 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_watch_color-10014",
+      "name": "Watch Color",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-watch-color-.jpg",
+      "description": "Montre Xiaomi Watch Color. Annoncée en janvier 2020. Comprend un écran de 1,39 pouce, une batterie de 420 mAh."
+    },
+    {
+      "id": "xiaomi_mi_watch_(china)-9941",
+      "name": "Mi Watch (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-watch-.jpg",
+      "description": "Montre Xiaomi Mi Watch (Chine). Annoncée en novembre 2019. Comprend un écran de 1,78 pouce, un chipset Snapdragon Wear 3100, une batterie de 590 mAh, 8 Go de stockage, 1 000 Mo de RAM, un verre Corning Gorilla Glass 3 ou un verre en cristal de saphir."
+    },
+    {
+      "id": "xiaomi_redmi_8-9800",
+      "name": "Redmi 8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-8.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 8. Annoncé en octobre 2019. Caractéristiques : écran 6,22″, chipset Snapdragon 439, batterie 5000 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_8a-9897",
+      "name": "Redmi 8A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-8a.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 8A. Annoncé en septembre 2019. Caractéristiques : écran 6,22″, chipset Snapdragon 439, batterie 5000 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_mix_alpha-9893",
+      "name": "Mi Mix Alpha",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-mix-alpha.jpg",
+      "description": "Smartphone Android Xiaomi Mi Mix Alpha. Annoncé en septembre 2019. Comprend un écran de 7,92 pouces, un chipset Snapdragon 855+, une batterie de 4050 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_mi_9_pro_5g-9892",
+      "name": "Mi 9 Pro 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-9-pro-5g.jpg",
+      "description": "Xiaomi Mi 9 Pro 5G Smartphone Android. Annoncé en septembre 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 855+, batterie 4000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "xiaomi_mi_9_pro-9891",
+      "name": "Mi 9 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-9-pro.jpg",
+      "description": "Smartphone Android Xiaomi Mi 9 Pro. Annoncé en septembre 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 855+, batterie 4000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "xiaomi_redmi_k20_pro_premium-9884",
+      "name": "Redmi K20 Pro Premium",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k20pro-.jpg",
+      "description": "Xiaomi Redmi K20 Pro Smartphone Android Premium. Annoncé en septembre 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 855+, batterie 4000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_9_lite-9862",
+      "name": "Mi 9 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-cc9-.jpg",
+      "description": "Xiaomi Mi 9 Lite Smartphone Android. Annoncé en septembre 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 710, batterie 4030 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_8_pro-9812",
+      "name": "Redmi Note 8 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-8-pro-.jpg",
+      "description": "Xiaomi Redmi Note 8 Pro Smartphone Android. Annoncé en août 2019. Comprend un écran de 6,53 pouces, un chipset MT6785V, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_black_shark_2_pro-9779",
+      "name": "Black Shark 2 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark2-pro-.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 2 Pro. Annoncé en juillet 2019. Comprend un écran de 6,39 pouces, un chipset Snapdragon 855+, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_mi_a3-9769",
+      "name": "Mi A3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-a3.jpg",
+      "description": "Smartphone Android Xiaomi Mi A3. Annoncé en juillet 2019. Caractéristiques : écran 6,09 pouces, chipset Snapdragon 665, batterie 4030 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_7a-9716",
+      "name": "Redmi 7A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-7a-mzb8008in.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 7A. Annoncé en mai 2019. Comprend un écran de 5,45 pouces, un chipset Snapdragon 439, une batterie de 4000 mAh, un stockage de 32 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "xiaomi_mi_cc9e-9759",
+      "name": "Mi CC9e",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-cc9e-.jpg",
+      "description": "Smartphone Android Xiaomi Mi CC9e. Annoncé en juillet 2019. Caractéristiques : écran 6,01″, chipset Snapdragon 665, batterie 4030 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_cc9-9749",
+      "name": "Mi CC9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-cc9-.jpg",
+      "description": "Smartphone Android Xiaomi Mi CC9. Annoncé en juillet 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 710, batterie 4030 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_8-9814",
+      "name": "Redmi Note 8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-8-1.jpg",
+      "description": "Xiaomi Redmi Note 8 Smartphone Android. Annoncé en août 2019. Caractéristiques Écran 6,3″, chipset Snapdragon 665, batterie 4000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_9t_pro-9791",
+      "name": "Mi 9T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-9t.jpg",
+      "description": "Xiaomi Mi 9T Pro Smartphone Android. Annoncé en août 2019. Caractéristiques Écran 6,39″, chipset Snapdragon 855, batterie 4000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_9t-9738",
+      "name": "Mi 9T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-9t.jpg",
+      "description": "Smartphone Android Xiaomi Mi 9T. Annoncé en juin 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 730, batterie 4000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k20-9720",
+      "name": "Redmi K20",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k20pro-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi K20. Annoncé en mai 2019. Caractéristiques : écran 6,39″, chipset Snapdragon 730, batterie 4000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_k20_pro-9708",
+      "name": "Redmi K20 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-k20pro-.jpg",
+      "description": "Xiaomi Redmi K20 Pro Smartphone Android. Annoncé en mai 2019. Caractéristiques Écran 6,39″, chipset Snapdragon 855, batterie 4000 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_7s-9707",
+      "name": "Redmi Note 7S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-7s.jpg",
+      "description": "Xiaomi Redmi Note 7S Smartphone Android. Annoncé en mai 2019. Caractéristiques Écran 6,3″, chipset Snapdragon 660, batterie 4000 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_y3-9674",
+      "name": "Redmi Y3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-y3.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Y3. Annoncé en avril 2019. Caractéristiques : écran 6,26 pouces, chipset Snapdragon 632, batterie 4000 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_black_shark_2-9639",
+      "name": "Black Shark 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark-2.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark 2. Annoncé en mars 2019. Comprend un écran de 6,39 pouces, un chipset Snapdragon 855, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "xiaomi_redmi_7-9498",
+      "name": "Redmi 7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-7.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 7. Annoncé en mars 2019. Caractéristiques : écran 6,26″, chipset Snapdragon 632, batterie 4000 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_7_pro-9521",
+      "name": "Redmi Note 7 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-7-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 7 Pro. Annoncé en février 2019. Caractéristiques : écran 6,3″, chipset Snapdragon 675, batterie 4000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_mix_3_5g-9602",
+      "name": "Mi Mix 3 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-mix3.jpg",
+      "description": "Xiaomi Mi Mix 3 5G Smartphone Android. Annoncé en février 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 855, batterie 3800 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_9_explorer-9584",
+      "name": "Mi 9 Explorer",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-9-explore.jpg",
+      "description": "Xiaomi Mi 9 Explorer Smartphone Android. Annoncé en février 2019. Caractéristiques Écran 6,39″, chipset Snapdragon 855, batterie 3300 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "xiaomi_mi_9_se-9583",
+      "name": "Mi 9 SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-9-se.jpg",
+      "description": "Xiaomi Mi 9 SE Smartphone Android. Annoncé en février 2019. Caractéristiques Écran 5,97″, chipset Snapdragon 712, batterie 3070 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_9-9507",
+      "name": "Mi 9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-9-.jpg",
+      "description": "Smartphone Android Xiaomi Mi 9. Annoncé en février 2019. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 855, batterie 3300 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "xiaomi_redmi_go-9534",
+      "name": "Redmi Go",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-go.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Go. Annoncé en janvier 2019. Comprend un écran de 5,0 pouces, un chipset Snapdragon 425, une batterie de 3000 mAh, un stockage de 16 Go, une RAM de 1000 Mo."
+    },
+    {
+      "id": "xiaomi_redmi_note_7-9513",
+      "name": "Redmi Note 7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-7.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 7. Annoncé en janvier 2019. Caractéristiques : écran 6,3″, chipset Snapdragon 660, batterie 4000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_play-9499",
+      "name": "Mi Play",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-miplay.jpg",
+      "description": "Smartphone Android Xiaomi Mi Play. Annoncé en décembre 2018. Comprend un écran de 5,84 pouces, un chipset MT6765 Helio P35, une batterie de 3000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_black_shark_helo-9382",
+      "name": "Black Shark Helo",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark2.jpg",
+      "description": "Xiaomi Black Shark Helo Smartphone Android. Annoncé en octobre 2018. Caractéristiques Écran 6,01″, chipset Snapdragon 845, double : 12 MP (f/1,8, 1,25µm) + 20 MP caméra principale, caméra frontale 20 MP, batterie 4000 mAh, stockage 256 Go, RAM 10 Go."
+    },
+    {
+      "id": "xiaomi_mi_mix_3-9378",
+      "name": "Mi Mix 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-mix3.jpg",
+      "description": "Smartphone Android Xiaomi Mi Mix 3. Annoncé en octobre 2018. Caractéristiques : écran 6,39 pouces, chipset Snapdragon 845, batterie 3200 mAh, stockage 256 Go, RAM 10 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_note_6_pro-9333",
+      "name": "Redmi Note 6 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-6-pro-r.jpg",
+      "description": "Xiaomi Redmi Note 6 Pro Smartphone Android. Annoncé en septembre 2018. Caractéristiques : écran 6,26″, chipset Snapdragon 636, batterie 4000 mAh, stockage 64 Go, RAM 6 Go, verre Corning Gorilla Glass (version non spécifiée)."
+    },
+    {
+      "id": "xiaomi_mi_8_pro-9336",
+      "name": "Mi 8 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-8-pro-.jpg",
+      "description": "Xiaomi Mi 8 Pro Smartphone Android. Annoncé en septembre 2018. Caractéristiques : écran 6,21″, chipset Snapdragon 845, batterie 3000 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_8_lite-9329",
+      "name": "Mi 8 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-8-lite-.jpg",
+      "description": "Smartphone Android Xiaomi Mi 8 Lite. Annoncé en septembre 2018. Comprend un écran de 6,26 pouces, un chipset Snapdragon 660, une batterie de 3350 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_pocophone_f1-9293",
+      "name": "Pocophone F1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pocophone-f1-.jpg",
+      "description": "Xiaomi Pocophone F1 Smartphone Android. Annoncé en août 2018. Comprend un écran de 6,18 pouces, un chipset Snapdragon 845, une batterie de 4000 mAh, 256 Go de stockage, 8 Go de RAM, Corning Gorilla Glass (version non spécifiée)."
+    },
+    {
+      "id": "xiaomi_mi_a2_(mi_6x)-9140",
+      "name": "Mi A2 (Mi 6X)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-a2-.jpg",
+      "description": "Xiaomi Mi A2 (Mi 6X) Smartphone Android. Annoncé en juillet 2018. Caractéristiques Écran 5,99″, chipset Snapdragon 660, double : 12 MP (f/1.8, 1/2.9″, 1.25µm) + 20 MP caméra principale, caméra frontale 20 MP, batterie 3000 mAh, stockage 128 Go, RAM 6 Go."
+    },
+    {
+      "id": "xiaomi_mi_a2_lite_(redmi_6_pro)-9247",
+      "name": "Mi A2 Lite (Redmi 6 Pro)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-a2-lite.jpg",
+      "description": "Xiaomi Mi A2 Lite (Redmi 6 Pro) Smartphone Android. Annoncé en juillet 2018. Caractéristiques Écran 5,84″, chipset Snapdragon 625, double : 12 MP (f/2.2, 1,25 μm, PDAF) + 5 MP caméra principale, caméra frontale 5 MP, batterie 4000 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_mi_max_3-8963",
+      "name": "Mi Max 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-max3-.jpg",
+      "description": "Xiaomi Mi Max 3 Smartphone Android. Annoncé en juillet 2018. Caractéristiques Écran 6,9″, chipset Snapdragon 636, double : 12 MP (f/1.9, 1.4μm, dual pixel PDAF) + 5 MP caméra principale, caméra frontale 8 MP, batterie 5500 mAh, stockage 128 Go, RAM 6 Go, à confirmer."
+    },
+    {
+      "id": "xiaomi_mi_pad_4_plus-9295",
+      "name": "Mi Pad 4 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-pad-4-plus.jpg",
+      "description": "Tablette Android Xiaomi Mi Pad 4 Plus. Annoncée en août 2018. Caractéristiques Écran 10,1″, chipset Snapdragon 660, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 8620 mAh, stockage 128 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_mi_pad_4-9249",
+      "name": "Mi Pad 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-pad-4.jpg",
+      "description": "Tablette Android Xiaomi Mi Pad 4. Annoncée en juin 2018. Caractéristiques Écran 8,0″, chipset Snapdragon 660, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 6000 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_6-9237",
+      "name": "Redmi 6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-6.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 6. Annoncé en juin 2018. Caractéristiques Écran 5,45″, chipset MT6762 Helio P22, double : 12 MP (f/2.2, 1,25 μm, PDAF) + 5 MP caméra principale, caméra frontale 5 MP, batterie 3000 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_6a-9217",
+      "name": "Redmi 6A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-6a.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 6A. Annoncé en juin 2018. Caractéristiques : écran 5,45″, chipset MT6761 Helio A22, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3000 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_mi_8_explorer-9218",
+      "name": "Mi 8 Explorer",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi8-explore-.jpg",
+      "description": "Xiaomi Mi 8 Explorer Smartphone Android. Annoncé en mai 2018. Caractéristiques Écran 6,21″, chipset Snapdragon 845, batterie 3000 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_8-9065",
+      "name": "Mi 8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi8.jpg",
+      "description": "Smartphone Android Xiaomi Mi 8. Annoncé en mai 2018. Caractéristiques : écran 6,21″, chipset Snapdragon 845, batterie 3400 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_8_se-9219",
+      "name": "Mi 8 SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi8-se.jpg",
+      "description": "Xiaomi Mi 8 SE Smartphone Android. Annoncé en mai 2018. Caractéristiques Écran 5,88″, chipset Snapdragon 710, double : 12 MP (f/1.9, 1.4µm, dual pixel PDAF) + 5 MP caméra principale, caméra frontale 20 MP, batterie 3120 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_s2_(redmi_y2)-9185",
+      "name": "Redmi S2 (Redmi Y2)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-s2-.jpg",
+      "description": "Xiaomi Redmi S2 (Redmi Y2) Smartphone Android. Annoncé en mai 2018. Caractéristiques Écran 5,99″, chipset Snapdragon 625, double : 12 MP (f/2.2, 1.25μm, PDAF) + 5 MP caméra principale, caméra frontale 16 MP, batterie 3080 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_mi_mix_2s-9067",
+      "name": "Mi Mix 2S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-mix-2s.jpg",
+      "description": "Xiaomi Mi Mix 2S Smartphone Android. Annoncé en mars 2018. Caractéristiques Écran 5,99″, chipset Snapdragon 845, double : 12 MP (f/1,8, 1/2,55″, 1,4µm, OIS 4 axes, double pixel PDAF) + caméra principale 12 MP, caméra frontale 5 MP, batterie 3400 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "xiaomi_redmi_note_5_ai_dual_camera-9120",
+      "name": "Redmi Note 5 AI Dual Camera",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-5-ai-dual-camera.jpg",
+      "description": "Xiaomi Redmi Note 5 AI Dual Camera Smartphone Android. Annoncé en mars 2018. Caractéristiques Écran 5,99″, chipset Snapdragon 636, double : 12 MP (f/1.9, 1.4µm, dual pixel PDAF) + 5 MP caméra principale, caméra frontale 13 MP, batterie 4000 mAh, stockage 64 Go, RAM 6 Go, Corning Gorilla Glass (version non spécifiée)."
+    },
+    {
+      "id": "xiaomi_redmi_note_5_pro-8893",
+      "name": "Redmi Note 5 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-5-pro.jpg",
+      "description": "Xiaomi Redmi Note 5 Pro Smartphone Android. Annoncé en février 2018. Caractéristiques Écran 5,99″, chipset Snapdragon 636, double : 12 MP (f/2.2, 1.25µm, PDAF) + 5 MP caméra principale, caméra frontale 20 MP, batterie 4000 mAh, stockage 64 Go, RAM 6 Go, Corning Gorilla Glass (version non spécifiée)."
+    },
+    {
+      "id": "xiaomi_black_shark-9164",
+      "name": "Black Shark",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-black-shark.jpg",
+      "description": "Smartphone Android Xiaomi Black Shark. Annoncé en avril 2018. Caractéristiques Écran 5,99″, chipset Snapdragon 845, double : 12 MP (f/1,8, 1,25µm) + 20 MP caméra principale, caméra frontale 20 MP, batterie 4000 mAh, stockage 128 Go, RAM 8 Go."
+    },
+    {
+      "id": "xiaomi_redmi_5_plus_(redmi_note_5)-8959",
+      "name": "Redmi 5 Plus (Redmi Note 5)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-5-plus.jpg",
+      "description": "Xiaomi Redmi 5 Plus (Redmi Note 5) Smartphone Android. Annoncé en février 2018. Caractéristiques Écran 5,99″, chipset Snapdragon 625, appareil photo principal 12 MP, appareil photo frontal 5 MP, batterie 4000 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_5-8768",
+      "name": "Redmi 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-5.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 5. Annoncé en décembre 2017. Caractéristiques : écran 5,7″, chipset Snapdragon 450, appareil photo principal 12 MP, appareil photo frontal 5 MP, batterie 3300 mAh, stockage 64 Go, RAM 4 Go, verre Corning Gorilla Glass (version non spécifiée)."
+    },
+    {
+      "id": "xiaomi_redmi_5a-8898",
+      "name": "Redmi 5A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-5a.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 5A. Annoncé en novembre 2017. Caractéristiques Écran 5,0″, chipset Snapdragon 425, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3000 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_y1_(note_5a)-8753",
+      "name": "Redmi Y1 (Note 5A)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-5a.jpg",
+      "description": "Xiaomi Redmi Y1 (Note 5A) Smartphone Android. Annoncé en novembre 2017. Caractéristiques : écran 5,5″, chipset Snapdragon 435, appareil photo principal 13 MP, appareil photo frontal 16 MP, batterie 3080 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_y1_lite-8818",
+      "name": "Redmi Y1 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-5as.jpg",
+      "description": "Xiaomi Redmi Y1 Lite Smartphone Android. Annoncé en novembre 2017. Caractéristiques Écran 5,5″, chipset Snapdragon 425, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 3080 mAh, stockage 16 Go, RAM 2 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_note_3-8707",
+      "name": "Mi Note 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-note3-.jpg",
+      "description": "Xiaomi Mi Note 3 Smartphone Android. Annoncé en septembre 2017. Caractéristiques Écran 5,5″, chipset Snapdragon 660, double : 12 MP (f/1.8, 27mm, 4-axis OIS) + 12 MP caméra principale, caméra frontale 16 MP, batterie 3500 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "xiaomi_mi_mix_2-8529",
+      "name": "Mi Mix 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-mix2-new.jpg",
+      "description": "Xiaomi Mi Mix 2 Smartphone Android. Annoncé en septembre 2017. Caractéristiques Écran 5,99″, chipset Snapdragon 835, appareil photo principal 12 MP, appareil photo frontal 5 MP, batterie 3400 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "xiaomi_mi_a1_(mi_5x)-8776",
+      "name": "Mi A1 (Mi 5X)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-a1.jpg",
+      "description": "Xiaomi Mi A1 (Mi 5X) Smartphone Android. Annoncé en septembre 2017. Caractéristiques Écran 5,5″, chipset Snapdragon 625, double : 12 MP (f/2.2, 26mm, 1.25µm) + 12 MP caméra principale, caméra frontale 5 MP, batterie 3080 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_max_2-8582",
+      "name": "Mi Max 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-max2.jpg",
+      "description": "Xiaomi Mi Max 2 Smartphone Android. Annoncé en mai 2017. Caractéristiques Écran 6,44″, chipset Snapdragon 625, appareil photo principal 12 MP, appareil photo avant 5 MP, batterie 5300 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_4_(4x)-8608",
+      "name": "Redmi 4 (4X)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-4x.jpg",
+      "description": "Xiaomi Redmi 4 (4X) Smartphone Android. Annoncé en mai 2017. Caractéristiques Écran 5,0″, chipset Snapdragon 435, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass (version non spécifiée)."
+    },
+    {
+      "id": "xiaomi_mi_6-8507",
+      "name": "Mi 6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-6.jpg",
+      "description": "Xiaomi Mi 6 Smartphone Android. Annoncé en avril 2017. Caractéristiques Écran 5,15″, chipset Snapdragon 835, double : 12 MP (f/1.8, 27mm, 1/2.9″, 1.25µm, 4-axis OIS) + caméra principale 12 MP, caméra frontale 8 MP, batterie 3350 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "xiaomi_mi_pad_3-8477",
+      "name": "Mi Pad 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-pad-3-1.jpg",
+      "description": "Tablette Android Xiaomi Mi Pad 3. Annoncée en avril 2017. Caractéristiques : écran 7,9″, chipset MT8176, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 6600 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_mi_5c-8439",
+      "name": "Mi 5c",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-5c.jpg",
+      "description": "Smartphone Android Xiaomi Mi 5c. Annoncé en février 2017. Caractéristiques : écran 5,15″, chipset Xiaomi Surge S1, appareil photo principal 12 MP, appareil photo frontal 8 MP, batterie 2860 mAh, stockage 64 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_4x-8580",
+      "name": "Redmi Note 4X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-4x.jpg",
+      "description": "Xiaomi Redmi Note 4X Smartphone Android. Annoncé en février 2017. Caractéristiques Écran 5,5″, chipset Snapdragon 625, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_4-8531",
+      "name": "Redmi Note 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-4-sn.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Note 4. Annoncé en janvier 2017. Caractéristiques : écran 5,5″, chipset Snapdragon 625, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_4a-8420",
+      "name": "Redmi 4A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-4a-.jpg",
+      "description": "Xiaomi Redmi 4A Smartphone Android. Annoncé en novembre 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 425, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3120 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_4_(china)-8419",
+      "name": "Redmi 4 (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-4-prime-.jpg",
+      "description": "Xiaomi Redmi 4 (Chine) Smartphone Android. Annoncé en novembre 2016. Caractéristiques : écran 5,0″, chipset Snapdragon 430, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_mi_6_plus-8629",
+      "name": "Mi 6 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-6-plus.jpg",
+      "description": "Xiaomi Mi 6 Plus Smartphone Android. Pas encore annoncé. Caractéristiques Écran 5,7″, chipset Snapdragon 835, double : 12 MP (f/1.8, 27mm, 1/2.9″, 1.25µm, 4-axis OIS) + caméra principale 12 MP, caméra frontale 8 MP, batterie 4500 mAh, stockage 128 Go, RAM 6 Go, à confirmer."
+    },
+    {
+      "id": "xiaomi_redmi_4_prime-8263",
+      "name": "Redmi 4 Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-4-prime-new.jpg",
+      "description": "Xiaomi Redmi 4 Prime Smartphone Android. Annoncé en novembre 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 625, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_mi_mix-8400",
+      "name": "Mi Mix",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mix-.jpg",
+      "description": "Smartphone Android Xiaomi Mi Mix. Annoncé en octobre 2016. Caractéristiques : écran 6,4″, chipset Snapdragon 821, appareil photo principal 16 MP, appareil photo frontal 5 MP, batterie 4400 mAh, stockage 256 Go, RAM 6 Go."
+    },
+    {
+      "id": "xiaomi_mi_note_2-8014",
+      "name": "Mi Note 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-note2-.jpg",
+      "description": "Xiaomi Mi Note 2 Smartphone Android. Annoncé en octobre 2016. Caractéristiques Écran 5,7″, chipset Snapdragon 821, appareil photo principal 22,5 MP, appareil photo frontal 8 MP, batterie 4070 mAh, stockage 128 Go, RAM 6 Go."
+    },
+    {
+      "id": "xiaomi_mi_5s_plus-8350",
+      "name": "Mi 5s Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-5s-plus.jpg",
+      "description": "Xiaomi Mi 5s Plus Smartphone Android. Annoncé en septembre 2016. Caractéristiques Écran 5,7″, chipset Snapdragon 821, double : 13 MP (f/2.0, 1/3″, 1,12µm) + 13 MP caméra principale, caméra frontale 4 MP, batterie 3800 mAh, stockage 128 Go, RAM 6 Go."
+    },
+    {
+      "id": "xiaomi_mi_5s-7260",
+      "name": "Mi 5s",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-5s1.jpg",
+      "description": "Xiaomi Mi 5s Smartphone Android. Annoncé en septembre 2016. Caractéristiques Écran 5,15″, chipset Snapdragon 821, appareil photo principal 12 MP, appareil photo frontal 4 MP, batterie 3200 mAh, stockage 128 Go, RAM 4 Go, à confirmer."
+    },
+    {
+      "id": "xiaomi_redmi_note_4_(mediatek)-8291",
+      "name": "Redmi Note 4 (MediaTek)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-4.jpg",
+      "description": "Xiaomi Redmi Note 4 (MediaTek) Smartphone Android. Annoncé en août 2016. Caractéristiques Écran 5,5″, chipset MT6797 Helio X20, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_pro-8233",
+      "name": "Redmi Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-pro.jpg",
+      "description": "Smartphone Android Xiaomi Redmi Pro. Annoncé en juillet 2016. Caractéristiques Écran 5,5″, chipset MT6797T Helio X25, double : 13 MP (f/2.0, PDAF) + 5 MP caméra principale, caméra frontale 5 MP, batterie 4050 mAh, stockage 128 Go, RAM 4 Go."
+    },
+    {
+      "id": "xiaomi_redmi_3x-8212",
+      "name": "Redmi 3x",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-3x.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 3x. Annoncé en juin 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 430, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 32 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_redmi_3s_prime-8250",
+      "name": "Redmi 3s Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-3-pro-.jpg",
+      "description": "Xiaomi Redmi 3s Prime Smartphone Android. Annoncé en août 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 430, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_3s-8150",
+      "name": "Redmi 3s",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-3s.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 3s. Annoncé en juin 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 430, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_3_pro-8007",
+      "name": "Redmi 3 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-3-pro-.jpg",
+      "description": "Xiaomi Redmi 3 Pro Smartphone Android. Annoncé en mars 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 616, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_mi_max-8057",
+      "name": "Mi Max",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-max-.jpg",
+      "description": "Xiaomi Mi Max Smartphone Android. Annoncé en mai 2016. Caractéristiques Écran 6,44″, chipset Snapdragon 650, appareil photo principal 16 MP, appareil photo avant 5 MP, batterie 4850 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "xiaomi_mi_5-6948",
+      "name": "Mi 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-5.jpg",
+      "description": "Smartphone Android Xiaomi Mi 5. Annoncé en février 2016. Caractéristiques : écran 5,15″, chipset Snapdragon 820, appareil photo principal 16 MP, appareil photo frontal 4 MP, batterie 3000 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "xiaomi_mi_4s-7962",
+      "name": "Mi 4s",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-4s.jpg",
+      "description": "Xiaomi Mi 4s Smartphone Android. Annoncé en février 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 808, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3260 mAh, stockage 64 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_3-7863",
+      "name": "Redmi Note 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-3.jpg",
+      "description": "Xiaomi Redmi Note 3 Smartphone Android. Annoncé en janvier 2016. Caractéristiques Écran 5,5″, chipset Snapdragon 650, appareil photo principal 16 MP, appareil photo frontal 5 MP, batterie 4050 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_3-7862",
+      "name": "Redmi 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-3-.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 3. Annoncé en janvier 2016. Caractéristiques : écran 5,0″, chipset Snapdragon 616, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4100 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_prime-7822",
+      "name": "Redmi Note Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-prime-.jpg",
+      "description": "Xiaomi Redmi Note Prime Smartphone Android. Annoncé en décembre 2015. Caractéristiques Écran 5,5″, chipset Snapdragon 410, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3100 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_mi_pad_2-7770",
+      "name": "Mi Pad 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-pad-2.jpg",
+      "description": "Tablette Android Xiaomi Mi Pad 2. Annoncée en novembre 2015. Caractéristiques : écran 7,9″, chipset Intel Atom X5-Z8500, appareil photo principal 8 MP, appareil photo frontal 5 MP, batterie 6190 mAh, stockage 64 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_3_(mediatek)-7769",
+      "name": "Redmi Note 3 (MediaTek)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-3.jpg",
+      "description": "Xiaomi Redmi Note 3 (MediaTek) Smartphone Android. Annoncé en novembre 2015. Caractéristiques : écran 5,5″, chipset MT6795 Helio X10, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4000 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_mi_4c-7512",
+      "name": "Mi 4c",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-4c.jpg",
+      "description": "Xiaomi Mi 4c Smartphone Android. Annoncé en septembre 2015. Caractéristiques : écran 5,0″, chipset Snapdragon 808, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3080 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_2-6992",
+      "name": "Redmi Note 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-2--.jpg",
+      "description": "Xiaomi Redmi Note 2 Smartphone Android. Annoncé en août 2015. Caractéristiques Écran 5,5″, chipset MT6795 Helio X10, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3060 mAh, stockage 32 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_redmi_2_pro-7710",
+      "name": "Redmi 2 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-2-prime-.jpg",
+      "description": "Xiaomi Redmi 2 Pro Smartphone Android. Annoncé en octobre 2015. Caractéristiques Écran 4,7″, chipset Snapdragon 410, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2200 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_redmi_2_prime-7480",
+      "name": "Redmi 2 Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-2-prime-.jpg",
+      "description": "Xiaomi Redmi 2 Prime Smartphone Android. Annoncé en août 2015. Caractéristiques Écran 4,7″, chipset Snapdragon 410, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2200 mAh, stockage 16 Go, RAM 2 Go, à confirmer."
+    },
+    {
+      "id": "xiaomi_mi_4i-7211",
+      "name": "Mi 4i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi4i.jpg",
+      "description": "Xiaomi Mi 4i Smartphone Android. Annoncé en avril 2015. Caractéristiques Écran 5,0″, chipset Snapdragon 615, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3120 mAh, stockage 32 Go, RAM 2 Go, verre résistant aux rayures Corning."
+    },
+    {
+      "id": "xiaomi_mi_note_pro-6952",
+      "name": "Mi Note Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-note-pro2.jpg",
+      "description": "Xiaomi Mi Note Pro Smartphone Android. Annoncé en janvier 2015. Caractéristiques Écran 5,7″, chipset Snapdragon 810, appareil photo principal 13 MP, appareil photo avant 4 MP, batterie 3090 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_note-6944",
+      "name": "Mi Note",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-note-2015.jpg",
+      "description": "Xiaomi Mi Note Smartphone Android. Annoncé en janvier 2015. Caractéristiques : écran 5,7″, chipset Snapdragon 801, appareil photo principal 13 MP, appareil photo avant 4 MP, batterie 3000 mAh, stockage 64 Go, RAM 3 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_2a-7159",
+      "name": "Redmi 2A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-2.jpg",
+      "description": "Xiaomi Redmi 2A Smartphone Android. Annoncé en mars 2015. Caractéristiques Écran 4,7″, chipset Leadcore L1860C, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2200 mAh, stockage 8 Go, RAM 1000 Mo, à confirmer."
+    },
+    {
+      "id": "xiaomi_redmi_2-6884",
+      "name": "Redmi 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-2.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 2. Annoncé en janvier 2015. Caractéristiques : écran 4,7″, chipset Snapdragon 410, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2200 mAh, stockage 16 Go, RAM 2 Go, Corning Gorilla Glass 2."
+    },
+    {
+      "id": "xiaomi_mi_4_lte-6866",
+      "name": "Mi 4 LTE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-4-lte.jpg",
+      "description": "Smartphone Android Xiaomi Mi 4 LTE. Annoncé en décembre 2014. Caractéristiques : écran 5,0″, chipset Snapdragon 801, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 3080 mAh, stockage 16 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_redmi_note_4g-6561",
+      "name": "Redmi Note 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-4g.jpg",
+      "description": "Xiaomi Redmi Note 4G Smartphone Android. Annoncé en août 2014. Caractéristiques Écran 5,5″, chipset Snapdragon 400, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3100 mAh, stockage 8 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_mi_4-6518",
+      "name": "Mi 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-4.jpg",
+      "description": "Smartphone Android Xiaomi Mi 4. Annoncé en juillet 2014. Caractéristiques : écran 5,0″, chipset Snapdragon 801, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 3080 mAh, stockage 64 Go, RAM 3 Go."
+    },
+    {
+      "id": "xiaomi_mi_pad_7_9-6365",
+      "name": "Mi Pad 7.9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-pad-79.jpg",
+      "description": "Tablette Android Xiaomi Mi Pad 7.9. Annoncée en mars 2014. Caractéristiques : écran 7,9″, chipset Nvidia Tegra K1, appareil photo principal 8 MP, appareil photo avant 5 MP, batterie 6700 mAh, stockage 64 Go, RAM 2 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_note-6217",
+      "name": "Redmi Note",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-new.jpg",
+      "description": "Xiaomi Redmi Note Smartphone Android. Annoncé en mars 2014. Caractéristiques Écran 5,5″, chipset MT6592, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 3200 mAh, stockage 8 Go, RAM 2 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_mi_3-5678",
+      "name": "Mi 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi3.jpg",
+      "description": "Smartphone Android Xiaomi Mi 3. Annoncé en septembre 2013. Caractéristiques : écran 5,0″, chipset Snapdragon 800, appareil photo principal 13 MP, appareil photo frontal 2 MP, batterie 3050 mAh, stockage 64 Go, RAM 2 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_1s-6373",
+      "name": "Redmi 1S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/Xiaomi-Hongmi-Redmi-1s.jpg",
+      "description": "Xiaomi Redmi 1S Smartphone Android. Annoncé en mai 2014. Caractéristiques Écran 4,7″, chipset Snapdragon 400, appareil photo principal 8 MP, appareil photo frontal 1,6 MP, batterie 2000 mAh, stockage 8 Go, RAM 1000 Mo, verre Asahi Dragontrail."
+    },
+    {
+      "id": "xiaomi_redmi-5609",
+      "name": "Redmi",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-hongmi.jpg",
+      "description": "Smartphone Android Xiaomi Redmi. Annoncé en juillet 2013. Caractéristiques Écran 4,7″, chipset MT6589T, appareil photo principal 8 MP, appareil photo avant 1,3 MP, batterie 2000 mAh, stockage 4 Go, RAM 1000 Mo, Corning Gorilla Glass 2."
+    },
+    {
+      "id": "xiaomi_mi_2a-5646",
+      "name": "Mi 2A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi2a.jpg",
+      "description": "Smartphone Android Xiaomi Mi 2A. Annoncé en 2013. Caractéristiques : écran 4,5″, chipset Snapdragon S4 Pro, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2030 mAh, stockage 16 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "xiaomi_mi_2s-5397",
+      "name": "Mi 2S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi2s.jpg",
+      "description": "Xiaomi Mi 2S Smartphone Android. Annoncé en avril 2013. Caractéristiques : écran 4,3″, chipset Snapdragon S4 Pro, appareil photo principal 8 MP, f/2.2 (version 16 Go) ou 13 MP, appareil photo avant 2 MP, batterie 2000 mAh, stockage 32 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_mi_2-4928",
+      "name": "Mi 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi2.jpg",
+      "description": "Smartphone Android Xiaomi Mi 2. Annoncé en août 2012. Caractéristiques : écran 4,3″, chipset Snapdragon S4 Pro, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2000 mAh, stockage 32 Go, RAM 2 Go."
+    },
+    {
+      "id": "xiaomi_mi_1s-4929",
+      "name": "Mi 1S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi1.jpg",
+      "description": "Xiaomi Mi 1S Smartphone Android. Annoncé en août 2012. Caractéristiques Écran 4,0″, chipset Snapdragon S3, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 1930 mAh, stockage 4 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "xiaomi_12_lite_ne-11947",
+      "name": "12 Lite NE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-civi2.jpg",
+      "description": "Smartphone Android Xiaomi 12 Lite NE. Pas encore annoncé. Caractéristiques Écran 6,55″, chipset Snapdragon 7 Gen 1, batterie 4500 mAh, stockage 256 Go, RAM 12 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_redmi_11-11574",
+      "name": "Redmi 11",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11e.jpg",
+      "description": "Smartphone Android Xiaomi Redmi 11. Pas encore annoncé. Caractéristiques Écran 6,58″, chipset Dimensity 700, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, non spécifié."
+    },
+    {
+      "id": "xiaomi_redmi_10_prime+_5g-11426",
+      "name": "Redmi 10 Prime+ 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Xiaomi Redmi 10 Prime+ 5G Smartphone Android. Pas encore annoncé. Caractéristiques Écran 6,58″, chipset Dimensity 700, batterie 5000 mAh, stockage 128 Go, RAM 6 Go."
+    },
+    {
+      "id": "xiaomi_poco_x4_nfc-11242",
+      "name": "Poco X4 NFC",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Smartphone Android Xiaomi Poco X4 NFC. Pas encore annoncé. Caractéristiques Écran 6,67″, chipset Dimensity 920, batterie 5160 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_poco_m3_pro-10916",
+      "name": "Poco M3 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m3-pro-4g.jpg",
+      "description": "Smartphone Android Xiaomi Poco M3 Pro. Annoncé en mai 2021. Comprend un écran de 6,5 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "xiaomi_redmi_20x-10832",
+      "name": "Redmi 20X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Xiaomi Redmi 20X Smartphone Android. Pas encore annoncé. Caractéristiques Écran 6,5″, chipset Dimensity 700, batterie 5000 mAh, stockage 128 Go, RAM 6 Go, non spécifié."
+    },
+    {
+      "id": "xiaomi_redmi_11a-11982",
+      "name": "Redmi 11A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-11a-r.jpg",
+      "description": "Xiaomi Redmi 11A Smartphone Android. Pas encore annoncé. Comprend un écran de 6,7 pouces, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "xiaomi_mi_10_lite_zoom-10210",
+      "name": "Mi 10 Lite Zoom",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Xiaomi Mi 10 Lite Zoom Smartphone Android. Pas encore annoncé. Caractéristiques Écran 6,57″, chipset Snapdragon 765G 5G, batterie 4160 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_9x-9650",
+      "name": "Mi 9X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Smartphone Android Xiaomi Mi 9X. Pas encore annoncé. Comprend un écran 6,39″, un chipset Snapdragon 675, une batterie 3300 mAh, 64 Go de stockage, 6 Go de RAM."
+    },
+    {
+      "id": "xiaomi_mi_max_4_pro-9552",
+      "name": "Mi Max 4 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Xiaomi Mi Max 4 Pro Smartphone Android. Pas encore annoncé. Caractéristiques Écran 7,2″, chipset Snapdragon 675, batterie 5800 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_max_4-9551",
+      "name": "Mi Max 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Smartphone Android Xiaomi Mi Max 4. Pas encore annoncé. Caractéristiques Écran 7,2″, chipset Snapdragon 660, batterie 5800 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "xiaomi_mi_6c-8798",
+      "name": "Mi 6c",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Smartphone Android Xiaomi Mi 6c. Pas encore annoncé. Caractéristiques Écran 5,15″, chipset Xiaomi Surge S2, double : 12 MP (1/2,9″, 1,25µm, PDAF, OIS) + 5 MP caméra principale, caméra frontale 8 MP, 128 Go de stockage, 6 Go de RAM."
+    },
+    {
+      "id": "xiaomi_redmi_pro_2-8558",
+      "name": "Redmi Pro 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Xiaomi Redmi Pro 2 Smartphone Android. Pas encore annoncé. Caractéristiques Écran 6,39″, chipset Snapdragon 855, double : 12 MP (1/2,55″, 1,4µm, PDAF) + 5 MP caméra principale, caméra frontale 16 MP, batterie 3600 mAh, stockage 128 Go, RAM 6 Go."
+    },
+    {
+      "id": "xiaomi_mi_note_plus-6960",
+      "name": "Mi Note Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Xiaomi Mi Note Plus Smartphone Android. Pas encore annoncé. Caractéristiques Écran 5,7″, chipset Snapdragon 810, appareil photo principal 13 MP, appareil photo frontal 4 MP, stockage 64 Go, RAM 3 Go."
+    }
+  ]
+}

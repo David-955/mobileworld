@@ -1,0 +1,202 @@
+{
+  "models": [
+    {
+      "id": "google_pixel_9_pro_xl-13217",
+      "name": "Pixel 9 Pro XL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-9-pro-xl-.jpg",
+      "description": "Smartphone Android Google Pixel 9 Pro XL. Annoncé en août 2024. Comprend un écran de 6,8 pouces, un chipset Google Tensor G4, une batterie de 5060 mAh, un stockage de 1024 Go, une RAM de 16 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "google_pixel_9_pro-13218",
+      "name": "Pixel 9 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-9-pro-.jpg",
+      "description": "Smartphone Android Google Pixel 9 Pro. Annoncé en août 2024. Comprend un écran de 6,3 pouces, un chipset Google Tensor G4, une batterie de 4700 mAh, un stockage de 1024 Go, une RAM de 16 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "google_pixel_9-13219",
+      "name": "Pixel 9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-9-.jpg",
+      "description": "Smartphone Android Google Pixel 9. Annoncé en août 2024. Comprend un écran de 6,3 pouces, un chipset Google Tensor G4, une batterie de 4700 mAh, un stockage de 256 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "google_pixel_9_pro_fold-13220",
+      "name": "Pixel 9 Pro Fold",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-9-pro-fold-.jpg",
+      "description": "Smartphone Android pliable Google Pixel 9 Pro. Annoncé en août 2024. Comprend un écran de 8,0 pouces, un chipset Google Tensor G4, une batterie de 4650 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "google_pixel_watch_3-13253",
+      "name": "Pixel Watch 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-watch3-.jpg",
+      "description": "Montre Android Google Pixel Watch 3. Annoncée en août 2024. Comprend un écran de 1,4″, un chipset SW5100, une batterie de 420 mAh, 32 Go de stockage, 2 Go de RAM, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_8a-12937",
+      "name": "Pixel 8a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-8a.jpg",
+      "description": "Smartphone Android Google Pixel 8a. Annoncé en mai 2024. Comprend un écran de 6,1 pouces, un chipset Google Tensor G3, une batterie de 4492 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "google_pixel_8_pro-12545",
+      "name": "Pixel 8 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-8-pro.jpg",
+      "description": "Smartphone Android Google Pixel 8 Pro. Annoncé en octobre 2023. Comprend un écran de 6,7 pouces, un chipset Google Tensor G3, une batterie de 5050 mAh, un stockage de 1024 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "google_pixel_8-12546",
+      "name": "Pixel 8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-8.jpg",
+      "description": "Smartphone Android Google Pixel 8. Annoncé en octobre 2023. Comprend un écran de 6,2 pouces, un chipset Google Tensor G3, une batterie de 4575 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "google_pixel_watch_2-12547",
+      "name": "Pixel Watch 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-watch-2.jpg",
+      "description": "Montre Android Google Pixel Watch 2. Annoncée en octobre 2023. Caractéristiques : écran 1,2″, chipset 5100, batterie 306 mAh, stockage 32 Go, RAM 2 Go, verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_fold-12265",
+      "name": "Pixel Fold",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-fold.jpg",
+      "description": "Smartphone Android Google Pixel Fold. Annoncé en mai 2023. Comprend un écran de 7,6 pouces, un chipset Google Tensor G2, une batterie de 4821 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "google_pixel_tablet-11905",
+      "name": "Pixel Tablet",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-tablet-1.jpg",
+      "description": "Tablette Android Google Pixel. Annoncée en mai 2023. Comprend un écran de 10,95 pouces, un chipset Google Tensor G2, une batterie de 7020 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "google_pixel_7a-12170",
+      "name": "Pixel 7a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-7a.jpg",
+      "description": "Smartphone Android Google Pixel 7a. Annoncé en mai 2023. Comprend un écran de 6,1 pouces, un chipset Google Tensor G2, une batterie de 4385 mAh, un stockage de 128 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "google_pixel_7_pro-11908",
+      "name": "Pixel 7 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel7-pro-new.jpg",
+      "description": "Smartphone Android Google Pixel 7 Pro. Annoncé en octobre 2022. Comprend un écran de 6,7 pouces, un chipset Google Tensor G2, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "google_pixel_7-11903",
+      "name": "Pixel 7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel7-new.jpg",
+      "description": "Smartphone Android Google Pixel 7. Annoncé en octobre 2022. Comprend un écran de 6,3 pouces, un chipset Google Tensor G2, une batterie de 4355 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "google_pixel_watch-11546",
+      "name": "Pixel Watch",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-watch-.jpg",
+      "description": "Montre Android Google Pixel Watch. Annoncée en octobre 2022. Comprend un écran de 1,2″, un chipset Exynos 9110, une batterie de 294 mAh, un stockage de 32 Go, une RAM de 2 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_6a-11229",
+      "name": "Pixel 6a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-6a.jpg",
+      "description": "Smartphone Android Google Pixel 6a. Annoncé en mai 2022. Comprend un écran de 6,1 pouces, un chipset Google Tensor, une batterie de 4410 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "google_pixel_6_pro-10918",
+      "name": "Pixel 6 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-6-pro.jpg",
+      "description": "Smartphone Android Google Pixel 6 Pro. Annoncé en octobre 2021. Comprend un écran de 6,7 pouces, un chipset Google Tensor, une batterie de 5003 mAh, un stockage de 512 Go, une RAM de 12 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "google_pixel_6-11037",
+      "name": "Pixel 6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-6.jpg",
+      "description": "Smartphone Android Google Pixel 6. Annoncé en octobre 2021. Comprend un écran de 6,4 pouces, un chipset Google Tensor, une batterie de 4614 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "google_pixel_5a_5g-11059",
+      "name": "Pixel 5a 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-5a-5g.jpg",
+      "description": "Smartphone Android Google Pixel 5a 5G. Annoncé en août 2021. Comprend un écran de 6,34 pouces, un chipset Snapdragon 765G 5G, une batterie de 4680 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "google_pixel_5-10386",
+      "name": "Pixel 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-5-5g.jpg",
+      "description": "Smartphone Android Google Pixel 5. Annoncé en septembre 2020. Comprend un écran de 6,0 pouces, un chipset Snapdragon 765G 5G, une batterie de 4080 mAh, un stockage de 128 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 6."
+    },
+    {
+      "id": "google_pixel_4a_5g-10385",
+      "name": "Pixel 4a 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-4a-5g.jpg",
+      "description": "Smartphone Android Google Pixel 4a 5G. Annoncé en septembre 2020. Comprend un écran de 6,2 pouces, un chipset Snapdragon 765G 5G, une batterie de 3885 mAh, un stockage de 128 Go, une RAM de 6 Go et un verre Corning Gorilla Glass 3."
+    },
+    {
+      "id": "google_pixel_4a-10123",
+      "name": "Pixel 4a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-4a.jpg",
+      "description": "Smartphone Android Google Pixel 4a. Annoncé en août 2020. Comprend un écran de 5,81 pouces, un chipset Snapdragon 730G, une batterie de 3140 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "google_pixel_4_xl-9895",
+      "name": "Pixel 4 XL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-4-r1.jpg",
+      "description": "Smartphone Android Google Pixel 4 XL. Annoncé en octobre 2019. Caractéristiques : écran 6,3″, chipset Snapdragon 855, batterie 3700 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_4-9896",
+      "name": "Pixel 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-4-r1.jpg",
+      "description": "Smartphone Android Google Pixel 4. Annoncé en octobre 2019. Caractéristiques : écran 5,7″, chipset Snapdragon 855, batterie 2800 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_3a_xl-9690",
+      "name": "Pixel 3a XL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3a-xl-.jpg",
+      "description": "Smartphone Android Google Pixel 3a XL. Annoncé en mai 2019. Comprend un écran de 6,0 pouces, un chipset Snapdragon 670, une batterie de 3700 mAh, un stockage de 64 Go, une RAM de 4 Go et un verre Asahi Dragontrail."
+    },
+    {
+      "id": "google_pixel_3a-9408",
+      "name": "Pixel 3a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3a.jpg",
+      "description": "Smartphone Android Google Pixel 3a. Annoncé en mai 2019. Comprend un écran de 5,6 pouces, un chipset Snapdragon 670, une batterie de 3000 mAh, un stockage de 64 Go, une RAM de 4 Go et un verre Asahi Dragontrail."
+    },
+    {
+      "id": "google_pixel_3_xl-9257",
+      "name": "Pixel 3 XL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3xl-.jpg",
+      "description": "Smartphone Android Google Pixel 3 XL. Annoncé en octobre 2018. Caractéristiques : écran 6,3″, chipset Snapdragon 845, batterie 3430 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_3-9256",
+      "name": "Pixel 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3-.jpg",
+      "description": "Smartphone Android Google Pixel 3. Annoncé en octobre 2018. Caractéristiques : écran 5,5″, chipset Snapdragon 845, batterie 2915 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_2-8733",
+      "name": "Pixel 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-2.jpg",
+      "description": "Smartphone Android Google Pixel 2. Annoncé en octobre 2017. Caractéristiques : écran 5,0″, chipset Snapdragon 835, appareil photo principal 12,2 MP, appareil photo frontal 8 MP, batterie 2700 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_2_xl-8720",
+      "name": "Pixel 2 XL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-xl2-.jpg",
+      "description": "Smartphone Android Google Pixel 2 XL. Annoncé en octobre 2017. Caractéristiques : écran 6,0″, chipset Snapdragon 835, appareil photo principal 12,2 MP, appareil photo frontal 8 MP, batterie 3520 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "google_pixel_xl-8345",
+      "name": "Pixel XL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-xl.jpg",
+      "description": "Smartphone Android Google Pixel XL. Annoncé en octobre 2016. Caractéristiques : écran 5,5″, chipset Snapdragon 821, appareil photo principal 12,3 MP, appareil photo frontal 8 MP, batterie 3450 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "google_pixel-8346",
+      "name": "Pixel",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel.jpg",
+      "description": "Smartphone Android Google Pixel. Annoncé en octobre 2016. Caractéristiques : écran 5,0″, chipset Snapdragon 821, appareil photo principal 12,3 MP, appareil photo frontal 8 MP, batterie 2770 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "google_pixel_c-7826",
+      "name": "Pixel C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-c--.jpg",
+      "description": "Tablette Android Google Pixel C. Annoncée en septembre 2015. Comprend un écran de 10,2 pouces, un chipset Nvidia Tegra X1, un appareil photo principal de 8 MP, un appareil photo frontal de 2 MP, une batterie de 9240 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    }
+  ]
+}

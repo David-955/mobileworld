@@ -1,0 +1,964 @@
+{
+  "models": [
+    {
+      "id": "sony_xperia_1_vi-13003",
+      "name": "Xperia 1 VI",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-vi-red.jpg",
+      "description": "Smartphone Android Sony Xperia 1 VI. Annoncé en mai 2024. Caractéristiques : écran 6,5″, chipset Snapdragon 8 Gen 3, batterie 5000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "sony_xperia_10_vi-13002",
+      "name": "Xperia 10 VI",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-vi.jpg",
+      "description": "Smartphone Android Sony Xperia 10 VI. Annoncé en mai 2024. Comprend un écran de 6,1 pouces, un chipset Snapdragon 6 Gen 1, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "sony_xperia_5_v-12534",
+      "name": "Xperia 5 V",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-5-v-new.jpg",
+      "description": "Smartphone Android Sony Xperia 5 V. Annoncé en septembre 2023. Comprend un écran de 6,1 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, 256 Go de stockage, 8 Go de RAM, Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "sony_xperia_1_v-12263",
+      "name": "Xperia 1 V",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-v.jpg",
+      "description": "Sony Xperia 1 V Smartphone Android. Annoncé en mai 2023. Caractéristiques Écran 6,5″, chipset Snapdragon 8 Gen 2, batterie 5000 mAh, stockage 512 Go, RAM 12 Go, Corning Gorilla Glass Victus 2."
+    },
+    {
+      "id": "sony_xperia_10_v-12264",
+      "name": "Xperia 10 V",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-v-10.jpg",
+      "description": "Smartphone Android Sony Xperia 10 V. Annoncé en mai 2023. Comprend un écran de 6,1 pouces, un chipset Snapdragon 695 5G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "sony_xperia_5_iv-11838",
+      "name": "Xperia 5 IV",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-5-iv-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia 5 IV. Annoncé en septembre 2022. Comprend un écran de 6,1 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "sony_xperia_1_iv-11521",
+      "name": "Xperia 1 IV",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-iv-.jpg",
+      "description": "Smartphone Android Sony Xperia 1 IV. Annoncé en mai 2022. Comprend un écran de 6,5 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "sony_xperia_10_iv-11522",
+      "name": "Xperia 10 IV",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-iv.jpg",
+      "description": "Smartphone Android Sony Xperia 10 IV. Annoncé en mai 2022. Comprend un écran de 6,0 pouces, un chipset Snapdragon 695 5G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go, un verre Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "sony_xperia_pro_i-11174",
+      "name": "Xperia Pro-I",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-pro-i.jpg",
+      "description": "Smartphone Android Sony Xperia Pro-I. Annoncé en octobre 2021. Comprend un écran de 6,5 pouces, un chipset Snapdragon 888 5G, une batterie de 4 500 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "sony_xperia_10_iii_lite-11064",
+      "name": "Xperia 10 III Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-iii-lite.jpg",
+      "description": "Sony Xperia 10 III Lite Smartphone Android. Annoncé en août 2021. Comprend un écran de 6,0 pouces, un chipset Snapdragon 690 5G, une batterie de 4 500 mAh, un stockage de 64 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_1_iii-10712",
+      "name": "Xperia 1 III",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-iii.jpg",
+      "description": "Smartphone Android Sony Xperia 1 III. Annoncé en avril 2021. Comprend un écran de 6,5 pouces, un chipset Snapdragon 888 5G, une batterie de 4 500 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass Victus."
+    },
+    {
+      "id": "sony_xperia_5_iii-10851",
+      "name": "Xperia 5 III",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-5-iii.jpg",
+      "description": "Smartphone Android Sony Xperia 5 III. Annoncé en avril 2021. Caractéristiques : écran 6,1″, chipset Snapdragon 888 5G, batterie 4500 mAh, stockage 256 Go, RAM 8 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_10_iii-10698",
+      "name": "Xperia 10 III",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-iii.jpg",
+      "description": "Smartphone Android Sony Xperia 10 III. Annoncé en avril 2021. Caractéristiques : écran 6,0″, chipset Snapdragon 690 5G, batterie 4500 mAh, stockage 256 Go, RAM 6 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_pro-10707",
+      "name": "Xperia Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-pro-5g.jpg",
+      "description": "Smartphone Android Sony Xperia Pro. Annoncé en février 2020. Comprend un écran de 6,5 pouces, un chipset Snapdragon 865 5G, une batterie de 4000 mAh, 512 Go de stockage, 12 Go de RAM, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_5_ii-10396",
+      "name": "Xperia 5 II",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-5-ii-5g-r.jpg",
+      "description": "Smartphone Android Sony Xperia 5 II. Annoncé en septembre 2020. Comprend un écran de 6,1 pouces, un chipset Snapdragon 865 5G, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_1_ii-10096",
+      "name": "Xperia 1 II",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-II-o.jpg",
+      "description": "Smartphone Android Sony Xperia 1 II. Annoncé en février 2020. Comprend un écran de 6,5 pouces, un chipset Snapdragon 865 5G, une batterie de 4000 mAh, 256 Go de stockage, 12 Go de RAM, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_10_ii-10095",
+      "name": "Xperia 10 II",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-II-o.jpg",
+      "description": "Sony Xperia 10 II Smartphone Android. Annoncé en février 2020. Comprend un écran de 6,0 pouces, un chipset Snapdragon 665, une batterie de 3600 mAh, 128 Go de stockage, 4 Go de RAM, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_l4-10091",
+      "name": "Xperia L4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-l4.jpg",
+      "description": "Smartphone Android Sony Xperia L4. Annoncé en février 2020. Comprend un écran de 6,2 pouces, un chipset MT6762 Helio P22, une batterie de 3580 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "sony_xperia_5-9840",
+      "name": "Xperia 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-5-.jpg",
+      "description": "Smartphone Android Sony Xperia 5. Annoncé en septembre 2019. Caractéristiques : écran 6,1″, chipset Snapdragon 855, batterie 3140 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_1-9543",
+      "name": "Xperia 1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1.jpg",
+      "description": "Smartphone Android Sony Xperia 1. Annoncé en février 2019. Caractéristiques : écran 6,5 pouces, chipset Snapdragon 855, batterie 3330 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_10_plus-9591",
+      "name": "Xperia 10 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-plus-.jpg",
+      "description": "Sony Xperia 10 Plus Smartphone Android. Annoncé en février 2019. Comprend un écran de 6,5 pouces, un chipset Snapdragon 636, une batterie de 3000 mAh, un stockage de 64 Go, une RAM de 6 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_10-9353",
+      "name": "Xperia 10",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-10-.jpg",
+      "description": "Smartphone Android Sony Xperia 10. Annoncé en février 2019. Comprend un écran de 6,0 pouces, un chipset Snapdragon 630, une batterie de 2870 mAh, un stockage de 64 Go, une RAM de 4 Go, un verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_l3-9592",
+      "name": "Xperia L3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-l3.jpg",
+      "description": "Smartphone Android Sony Xperia L3. Annoncé en février 2019. Caractéristiques : écran 5,7″, chipset MT6762 Helio P22, batterie 3300 mAh, stockage 32 Go, RAM 3 Go, verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xa2_plus-9268",
+      "name": "Xperia XA2 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa2-plus-.jpg",
+      "description": "Sony Xperia XA2 Plus Smartphone Android. Annoncé en juillet 2018. Caractéristiques Écran 6,0″, chipset Snapdragon 630, appareil photo principal 23 MP, appareil photo frontal 8 MP, batterie 3580 mAh, stockage 64 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xz3-9232",
+      "name": "Xperia XZ3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz3-.jpg",
+      "description": "Smartphone Android Sony Xperia XZ3. Annoncé en août 2018. Caractéristiques : écran 6,0 pouces, chipset Snapdragon 845, appareil photo principal 19 MP, appareil photo frontal 13 MP, batterie 3300 mAh, stockage 64 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xz2_premium-9166",
+      "name": "Xperia XZ2 Premium",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz2-premium.jpg",
+      "description": "Sony Xperia XZ2 Smartphone Android Premium. Annoncé en avril 2018. Caractéristiques : écran 5,8 pouces, chipset Snapdragon 845, batterie 3540 mAh, stockage 64 Go, RAM 6 Go, verre Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xz2-9081",
+      "name": "Xperia XZ2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz2-.jpg",
+      "description": "Smartphone Android Sony Xperia XZ2. Annoncé en février 2018. Caractéristiques : écran 5,7″, chipset Snapdragon 845, appareil photo principal 19 MP, appareil photo avant 5 MP, batterie 3180 mAh, stockage 64 Go, RAM 6 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xz2_compact-9082",
+      "name": "Xperia XZ2 Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz2-compact-.jpg",
+      "description": "Sony Xperia XZ2 Smartphone compact Android. Annoncé en février 2018. Caractéristiques Écran 5,0″, chipset Snapdragon 845, appareil photo principal 19 MP, appareil photo avant 5 MP, batterie 2870 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xa2_ultra-8985",
+      "name": "Xperia XA2 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa2-ultra-.jpg",
+      "description": "Sony Xperia XA2 Ultra Smartphone Android. Annoncé en janvier 2018. Caractéristiques Écran 6,0″, chipset Snapdragon 630, appareil photo principal 23 MP, double : 16 MP (f/2.0, 23mm, 1/2.6″, OIS, AF) + appareil photo avant 8 MP, batterie 3580 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_xa2-8986",
+      "name": "Xperia XA2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa2-.jpg",
+      "description": "Smartphone Android Sony Xperia XA2. Annoncé en janvier 2018. Caractéristiques : écran 5,2″, chipset Snapdragon 630, appareil photo principal 23 MP, appareil photo frontal 8 MP, batterie 3300 mAh, stockage 32 Go, RAM 3 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_l2-8987",
+      "name": "Xperia L2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-l2-.jpg",
+      "description": "Smartphone Android Sony Xperia L2. Annoncé en janvier 2018. Caractéristiques : écran 5,5 pouces, chipset MT6737T, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 3300 mAh, stockage 32 Go, RAM 3 Go, verre Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_r1_(plus)-8922",
+      "name": "Xperia R1 (Plus)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-r1.jpg",
+      "description": "Sony Xperia R1 (Plus) Smartphone Android. Annoncé en octobre 2017. Caractéristiques : écran 5,2″, chipset Snapdragon 430, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 2620 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "sony_xperia_xz1-8804",
+      "name": "Xperia XZ1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz1-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia XZ1. Annoncé en août 2017. Caractéristiques : écran 5,2″, chipset Snapdragon 835, appareil photo principal 19 MP, appareil photo avant 13 MP, batterie 2700 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xa1_plus-8840",
+      "name": "Xperia XA1 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa1-plus.jpg",
+      "description": "Sony Xperia XA1 Plus Smartphone Android. Annoncé en août 2017. Caractéristiques Écran 5,5″, chipset MT6757 Helio P20, appareil photo principal 23 MP, appareil photo frontal 8 MP, batterie 3430 mAh, stockage 32 Go, RAM 4 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_xz1_compact-8610",
+      "name": "Xperia XZ1 Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz1-compact.jpg",
+      "description": "Sony Xperia XZ1 Smartphone compact Android. Annoncé en août 2017. Caractéristiques Écran 4,6″, chipset Snapdragon 835, appareil photo principal 19 MP, appareil photo avant 8 MP, batterie 2700 mAh, stockage 32 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_l1-8619",
+      "name": "Xperia L1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-l1-.jpg",
+      "description": "Smartphone Android Sony Xperia L1. Annoncé en mars 2017. Caractéristiques Écran 5,5″, chipset MT6737T, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 2620 mAh, stockage 16 Go, RAM 2 Go, verre résistant aux rayures (6H)."
+    },
+    {
+      "id": "sony_xperia_xzs-8599",
+      "name": "Xperia XZs",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xzs-2017.jpg",
+      "description": "Smartphone Android Sony Xperia XZs. Annoncé en février 2017. Caractéristiques : écran 5,2″, chipset Snapdragon 820, appareil photo principal 19 MP, appareil photo frontal 13 MP, batterie 2900 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xz_premium-8593",
+      "name": "Xperia XZ Premium",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz-premium-2017.jpg",
+      "description": "Sony Xperia XZ Smartphone Android Premium. Annoncé en février 2017. Caractéristiques Écran 5,46″, chipset Snapdragon 835, appareil photo principal 19 MP, appareil photo frontal 13 MP, batterie 3230 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 5."
+    },
+    {
+      "id": "sony_xperia_xa1_ultra-8595",
+      "name": "Xperia XA1 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa1-ultra-2017.jpg",
+      "description": "Sony Xperia XA1 Ultra Smartphone Android. Annoncé en février 2017. Caractéristiques Écran 6,0″, chipset MT6757 Helio P20, appareil photo principal 23 MP, appareil photo frontal 16 MP, batterie 2700 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_xa1-8596",
+      "name": "Xperia XA1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa1-2017.jpg",
+      "description": "Smartphone Android Sony Xperia XA1. Annoncé en février 2017. Caractéristiques : écran 5,0 pouces, chipset MT6757 Helio P20, appareil photo principal 23 MP, appareil photo frontal 8 MP, batterie 2300 mAh, stockage 32 Go, RAM 3 Go, verre Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_x_compact-8292",
+      "name": "Xperia X Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-x-compact.jpg",
+      "description": "Sony Xperia X Compact Smartphone Android. Annoncé en septembre 2016. Caractéristiques Écran 4,6″, chipset Snapdragon 650, appareil photo principal 23 MP, appareil photo avant 5 MP, batterie 2700 mAh, stockage 32 Go, RAM 3 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_xz-8313",
+      "name": "Xperia XZ",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xz.jpg",
+      "description": "Smartphone Android Sony Xperia XZ. Annoncé en septembre 2016. Caractéristiques : écran 5,2″, chipset Snapdragon 820, appareil photo principal 23 MP, appareil photo avant 13 MP, batterie 2900 mAh, stockage 64 Go, RAM 3 Go, Corning Gorilla Glass 4."
+    },
+    {
+      "id": "sony_xperia_e5-8113",
+      "name": "Xperia E5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e5r.jpg",
+      "description": "Smartphone Android Sony Xperia E5. Annoncé en mai 2016. Caractéristiques Écran 5,0″, chipset MT6735, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 2300 mAh, stockage 16 Go, RAM 1,5 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_xa_ultra-8102",
+      "name": "Xperia XA Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa-ultra.jpg",
+      "description": "Smartphone Android Sony Xperia XA Ultra. Annoncé en mai 2016. Caractéristiques Écran 6,0″, chipset MT6755 Helio P10, appareil photo principal 21,5 MP, appareil photo frontal 16 MP, batterie 2700 mAh, stockage 16 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_x_performance-7949",
+      "name": "Xperia X Performance",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-x-performance.jpg",
+      "description": "Sony Xperia X Smartphone Android performant. Annoncé en février 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 820, appareil photo principal 23 MP, appareil photo frontal 13 MP, batterie 2700 mAh, stockage 64 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_x-7948",
+      "name": "Xperia X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa.jpg",
+      "description": "Smartphone Android Sony Xperia X. Annoncé en février 2016. Caractéristiques Écran 5,0″, chipset Snapdragon 650, appareil photo principal 23 MP, appareil photo frontal 13 MP, batterie 2620 mAh, stockage 64 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_xa_dual-7957",
+      "name": "Xperia XA Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa--.jpg",
+      "description": "Smartphone Sony Xperia XA Dual Android. Annoncé en février 2016. Caractéristiques Écran 5,0″, chipset MT6755 Helio P10, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 2300 mAh, stockage 16 Go, RAM 2 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_xa-7950",
+      "name": "Xperia XA",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-xa--.jpg",
+      "description": "Smartphone Android Sony Xperia XA. Annoncé en février 2016. Caractéristiques Écran 5,0″, chipset MT6755 Helio P10, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 2300 mAh, stockage 16 Go, RAM 2 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z5_premium_dual-7538",
+      "name": "Xperia Z5 Premium Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-z5-premium-.jpg",
+      "description": "Sony Xperia Z5 Premium Smartphone Android double. Annoncé en septembre 2015. Caractéristiques Écran 5,5″, chipset Snapdragon 810, appareil photo principal 23 MP, appareil photo avant 5,1 MP, batterie 3430 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z5_premium-7536",
+      "name": "Xperia Z5 Premium",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-z5-premium-.jpg",
+      "description": "Sony Xperia Z5 Smartphone Android Premium. Annoncé en septembre 2015. Caractéristiques Écran 5,5″, chipset Snapdragon 810, appareil photo principal 23 MP, appareil photo avant 5,1 MP, batterie 3430 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z5_dual-7537",
+      "name": "Xperia Z5 Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-z5-.jpg",
+      "description": "Sony Xperia Z5 Smartphone Android Dual. Annoncé en septembre 2015. Caractéristiques Écran 5,2″, chipset Snapdragon 810, appareil photo principal 23 MP, appareil photo avant 5,1 MP, batterie 2900 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z5-7534",
+      "name": "Xperia Z5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-z5-.jpg",
+      "description": "Sony Xperia Z5 Smartphone Android. Annoncé en septembre 2015. Caractéristiques Écran 5,2″, chipset Snapdragon 810, appareil photo principal 23 MP, appareil photo frontal 5,1 MP, batterie 2900 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z5_compact-7535",
+      "name": "Xperia Z5 Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-z5-compact-.jpg",
+      "description": "Sony Xperia Z5 Compact Smartphone Android. Annoncé en septembre 2015. Caractéristiques Écran 4,6″, chipset Snapdragon 810, appareil photo principal 23 MP, appareil photo avant 5,1 MP, batterie 2700 mAh, stockage 32 Go, RAM 2 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_m5_dual-7465",
+      "name": "Xperia M5 Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m5.jpg",
+      "description": "Smartphone Android Sony Xperia M5 Dual. Annoncé en août 2015. Caractéristiques Écran 5,0″, chipset MT6795 Helio X10, appareil photo principal 21,2 MP, appareil photo avant 13 MP, batterie 2600 mAh, stockage 16 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_m5-7464",
+      "name": "Xperia M5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m5.jpg",
+      "description": "Smartphone Android Sony Xperia M5. Annoncé en août 2015. Caractéristiques Écran 5,0″, chipset MT6795 Helio X10, appareil photo principal 21,2 MP, appareil photo avant 13 MP, batterie 2600 mAh, stockage 16 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_c5_ultra_dual-7466",
+      "name": "Xperia C5 Ultra Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-c5-ultra.jpg",
+      "description": "Sony Xperia C5 Ultra Smartphone Android double. Annoncé en août 2015. Caractéristiques Écran 6,0″, chipset MT6752, appareil photo principal 13 MP, appareil photo frontal 13 MP, batterie 2930 mAh, stockage 16 Go, RAM 2 Go, résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_c5_ultra-7463",
+      "name": "Xperia C5 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-c5-ultra.jpg",
+      "description": "Sony Xperia C5 Ultra Smartphone Android. Annoncé en août 2015. Caractéristiques Écran 6,0″, chipset MT6752, appareil photo principal 13 MP, appareil photo avant 13 MP, batterie 2930 mAh, stockage 16 Go, RAM 2 Go, résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z4v-7296",
+      "name": "Xperia Z4v",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z4v-.jpg",
+      "description": "Smartphone Android Sony Xperia Z4v. Annoncé en juin 2015. Caractéristiques : écran 5,2″, chipset Snapdragon 810, appareil photo principal 20,7 MP, appareil photo avant 5,1 MP, batterie 3000 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z3+_dual-7257",
+      "name": "Xperia Z3+ dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z4.jpg",
+      "description": "Smartphone double Android Sony Xperia Z3+. Annoncé en mai 2015. Caractéristiques : écran 5,2″, chipset Snapdragon 810, appareil photo principal 20,7 MP, appareil photo avant 5,1 MP, batterie 2930 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z3+-6878",
+      "name": "Xperia Z3+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z4.jpg",
+      "description": "Sony Xperia Z3+ Smartphone Android. Annoncé en mai 2015. Caractéristiques : écran 5,2″, chipset Snapdragon 810, appareil photo principal 20,7 MP, appareil photo avant 5,1 MP, batterie 2930 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_c4_dual-7228",
+      "name": "Xperia C4 Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-c4-new.jpg",
+      "description": "Smartphone Android Sony Xperia C4 Dual. Annoncé en mai 2015. Caractéristiques : écran 5,5″, chipset MT6752, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 2600 mAh, stockage 16 Go, RAM 2 Go, résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_c4-7227",
+      "name": "Xperia C4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-c4-new.jpg",
+      "description": "Smartphone Android Sony Xperia C4. Annoncé en mai 2015. Caractéristiques : écran 5,5″, chipset MT6752, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 2600 mAh, stockage 16 Go, RAM 2 Go, résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_m4_aqua_dual-7100",
+      "name": "Xperia M4 Aqua Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m4-aqua.jpg",
+      "description": "Sony Xperia M4 Aqua Smartphone Android Dual. Annoncé en mars 2015. Caractéristiques Écran 5,0″, chipset Snapdragon 615, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 2400 mAh, stockage 16 Go, RAM 2 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_m4_aqua-7068",
+      "name": "Xperia M4 Aqua",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m4-aqua.jpg",
+      "description": "Sony Xperia M4 Aqua Smartphone Android. Annoncé en mars 2015. Caractéristiques Écran 5,0″, chipset Snapdragon 615, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 2400 mAh, stockage 16 Go, RAM 2 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z4_tablet_wifi-7238",
+      "name": "Xperia Z4 Tablet WiFi",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/-sony-xperia-z4-tablet.jpg",
+      "description": "Tablette Android Sony Xperia Z4 WiFi. Annoncée en mars 2015. Caractéristiques Écran 10,1″, chipset Snapdragon 810, appareil photo principal 8,1 MP, appareil photo avant 5,1 MP, batterie 6000 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z4_tablet_lte-7069",
+      "name": "Xperia Z4 Tablet LTE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/-sony-xperia-z4-tablet.jpg",
+      "description": "Tablette Android Sony Xperia Z4 LTE. Annoncée en mars 2015. Caractéristiques Écran 10,1″, chipset Snapdragon 810, appareil photo principal 8,1 MP, appareil photo avant 5,1 MP, batterie 6000 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e4g-7059",
+      "name": "Xperia E4g",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e4g.jpg",
+      "description": "Smartphone Android Sony Xperia E4g. Annoncé en février 2015. Caractéristiques : écran 4,7″, chipset MediaTek MT6732, appareil photo principal 5 MP, appareil photo frontal 2 MP, batterie 2300 mAh, stockage 8 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e4g_dual-7060",
+      "name": "Xperia E4g Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e4g.jpg",
+      "description": "Smartphone Sony Xperia E4g Dual Android. Annoncé en février 2015. Caractéristiques : écran 4,7″, chipset MediaTek MT6732, appareil photo principal 5 MP, appareil photo frontal 2 MP, batterie 2300 mAh, stockage 8 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e4_dual-7031",
+      "name": "Xperia E4 Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e4.jpg",
+      "description": "Sony Xperia E4 Smartphone Android double. Annoncé en février 2015. Caractéristiques Écran 5,0″, chipset MT6582, appareil photo principal 5 MP, appareil photo frontal 2 MP, batterie 2300 mAh, stockage 8 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e4-6882",
+      "name": "Xperia E4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e4.jpg",
+      "description": "Smartphone Android Sony Xperia E4. Annoncé en février 2015. Caractéristiques : écran 5,0″, chipset MT6582, appareil photo principal 5 MP, appareil photo frontal 2 MP, batterie 2300 mAh, stockage 8 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e3_dual-6663",
+      "name": "Xperia E3 Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e3-dual.jpg",
+      "description": "Smartphone Android Sony Xperia E3 Dual. Annoncé en septembre 2014. Comprend un écran de 4,5 pouces, un chipset Snapdragon 400, un appareil photo principal de 5 MP, une batterie de 2330 mAh, un stockage de 4 Go, une RAM de 1000 Mo et un verre incassable."
+    },
+    {
+      "id": "sony_xperia_e3-6634",
+      "name": "Xperia E3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e3-dual.jpg",
+      "description": "Smartphone Android Sony Xperia E3. Annoncé en septembre 2014. Comprend un écran de 4,5 pouces, un chipset Snapdragon 400, un appareil photo principal de 5 MP, une batterie de 2330 mAh, 4 Go de stockage, 1000 Mo de RAM, un verre incassable."
+    },
+    {
+      "id": "sony_xperia_z3_tablet_compact-6633",
+      "name": "Xperia Z3 Tablet Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z3-tablet-compact.jpg",
+      "description": "Tablette Sony Xperia Z3 Tablette Android compacte. Annoncée en septembre 2014. Caractéristiques Écran 8,0″, chipset Snapdragon 801, appareil photo principal 8,1 MP, appareil photo frontal 2,2 MP, batterie 4500 mAh, stockage 16 Go, RAM 3 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z3_dual-6632",
+      "name": "Xperia Z3 Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z3.jpg",
+      "description": "Smartphone Sony Xperia Z3 Dual Android. Annoncé en septembre 2014. Caractéristiques : écran 5,2″, chipset Snapdragon 801, appareil photo principal 20,7 MP, appareil photo frontal 2,2 MP, batterie 3100 mAh, stockage 32 Go, RAM 3 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z3v-6796",
+      "name": "Xperia Z3v",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z3v.jpg",
+      "description": "Smartphone Android Sony Xperia Z3v. Annoncé en octobre 2014. Caractéristiques : écran 5,2″, chipset Snapdragon 801, appareil photo principal 20,7 MP, appareil photo avant 2,2 MP, batterie 3200 mAh, stockage 32 Go, RAM 3 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z3-6539",
+      "name": "Xperia Z3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z3.jpg",
+      "description": "Sony Xperia Z3 Smartphone Android. Annoncé en septembre 2014. Caractéristiques Écran 5,2″, chipset Snapdragon 801, appareil photo principal 20,7 MP, appareil photo avant 2,2 MP, batterie 3100 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_m2_aqua-6582",
+      "name": "Xperia M2 Aqua",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m2.jpg",
+      "description": "Sony Xperia M2 Aqua Smartphone Android. Annoncé en août 2014. Caractéristiques : écran 4,8″, chipset Snapdragon 400, appareil photo principal 8 MP, batterie 2300 mAh, stockage 8 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z3_compact-6538",
+      "name": "Xperia Z3 Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z3-compact.jpg",
+      "description": "Sony Xperia Z3 Smartphone compact Android. Annoncé en septembre 2014. Caractéristiques : écran 4,6″, chipset Snapdragon 801, appareil photo principal 20,7 MP, appareil photo avant 2,2 MP, batterie 2600 mAh, stockage 16 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_c3_dual-6489",
+      "name": "Xperia C3 Dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-c3.jpg",
+      "description": "Sony Xperia C3 Smartphone Android Dual. Annoncé en juillet 2014. Caractéristiques : écran 5,5″, chipset Snapdragon 400, appareil photo principal 8 MP, appareil photo frontal 5 MP, batterie 2500 mAh, stockage 8 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "sony_xperia_c3-6488",
+      "name": "Xperia C3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-c3.jpg",
+      "description": "Sony Xperia C3 Smartphone Android. Annoncé en juillet 2014. Caractéristiques : écran 5,5″, chipset Snapdragon 400, appareil photo principal 8 MP, appareil photo frontal 5 MP, batterie 2500 mAh, stockage 8 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "sony_xperia_z2a-6456",
+      "name": "Xperia Z2a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z2a.jpg",
+      "description": "Smartphone Android Sony Xperia Z2a. Annoncé en juin 2014. Caractéristiques : écran 5,0″, chipset Snapdragon 801, appareil photo principal 20,7 MP, batterie 3000 mAh, stockage 16 Go, RAM 3 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_t3-6408",
+      "name": "Xperia T3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-t3.jpg",
+      "description": "Smartphone Android Sony Xperia T3. Annoncé en juin 2014. Caractéristiques : écran 5,3″, chipset Snapdragon 400, appareil photo principal 8 MP, appareil photo frontal 1,1 MP, batterie 2500 mAh, stockage 8 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "sony_smartwatch_3_swr50-7691",
+      "name": "SmartWatch 3 SWR50",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-smartwatch-3-swr50.jpg",
+      "description": "Montre Android Sony SmartWatch 3 SWR50. Annoncée en février 2014. Comprend un écran de 1,6″, une batterie de 420 mAh, une mémoire de 4 Go et une RAM de 512 Mo."
+    },
+    {
+      "id": "sony_smartwatch_2_sw2-7719",
+      "name": "SmartWatch 2 SW2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-smartwatch-2.jpg",
+      "description": "Montre Android Sony SmartWatch 2 SW2. Annoncée en juin 2013. Comprend un écran de 1,6″ et une batterie de 225 mAh."
+    },
+    {
+      "id": "sony_xperia_m2-6146",
+      "name": "Xperia M2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m2.jpg",
+      "description": "Smartphone Android Sony Xperia M2. Annoncé en février 2014. Caractéristiques : écran 4,8″, chipset Snapdragon 400, appareil photo principal 8 MP, batterie 2300 mAh, stockage 8 Go, RAM 1000 Mo, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "sony_xperia_m2_dual-6162",
+      "name": "Xperia M2 dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m2.jpg",
+      "description": "Smartphone double Android Sony Xperia M2. Annoncé en février 2014. Caractéristiques : écran 4,8 pouces, chipset Snapdragon 400, appareil photo principal 8 MP, batterie 2300 mAh, stockage 8 Go, RAM 1000 Mo, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "sony_xperia_z2_tablet_lte-6145",
+      "name": "Xperia Z2 Tablet LTE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z2-tablet.jpg",
+      "description": "Tablette Android Sony Xperia Z2 LTE. Annoncée en février 2014. Caractéristiques Écran 10,1″, chipset Snapdragon 801, appareil photo principal 8,1 MP, appareil photo avant 2,2 MP, batterie 6000 mAh, stockage 16 Go, RAM 3 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z2_tablet_wi_fi-6161",
+      "name": "Xperia Z2 Tablet Wi-Fi",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z2-tablet.jpg",
+      "description": "Tablette Android Wi-Fi Sony Xperia Z2. Annoncée en février 2014. Caractéristiques Écran 10,1″, chipset Snapdragon 801, appareil photo principal 8,1 MP, appareil photo frontal 2,2 MP, batterie 6000 mAh, stockage 32 Go, RAM 3 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z2-6144",
+      "name": "Xperia Z2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z2-new.jpg",
+      "description": "Smartphone Android Sony Xperia Z2. Annoncé en février 2014. Caractéristiques : écran 5,2″, chipset Snapdragon 801, appareil photo principal 20,7 MP, appareil photo avant 2,2 MP, batterie 3200 mAh, stockage 16 Go, RAM 3 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_e1_dual-5967",
+      "name": "Xperia E1 dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e1.jpg",
+      "description": "Smartphone double Android Sony Xperia E1. Annoncé en janvier 2014. Caractéristiques : écran 4,0 pouces, chipset Snapdragon 200, appareil photo principal 3,15 MP, batterie 1750 mAh, stockage 4 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e1-5966",
+      "name": "Xperia E1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e1.jpg",
+      "description": "Smartphone Android Sony Xperia E1. Annoncé en janvier 2014. Caractéristiques : écran 4,0″, chipset Snapdragon 200, appareil photo principal 3,15 MP, batterie 1750 mAh, stockage 4 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_t2_ultra_dual-5968",
+      "name": "Xperia T2 Ultra dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-t2-ultra-ss.jpg",
+      "description": "Smartphone double Android Sony Xperia T2 Ultra. Annoncé en janvier 2014. Caractéristiques : écran 6,0 pouces, chipset Snapdragon 400, appareil photo principal 13 MP, appareil photo avant 1,1 MP, batterie 3000 mAh, stockage 8 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "sony_xperia_t2_ultra-5965",
+      "name": "Xperia T2 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-t2-ultra-ss.jpg",
+      "description": "Sony Xperia T2 Ultra Smartphone Android. Annoncé en janvier 2014. Caractéristiques : écran 6,0″, chipset Snapdragon 400, appareil photo principal 13 MP, appareil photo avant 1,1 MP, batterie 3000 mAh, stockage 8 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "sony_xperia_z1s-5950",
+      "name": "Xperia Z1s",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z1s-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia Z1s. Annoncé en janvier 2014. Caractéristiques : écran 5,0 pouces, chipset Snapdragon 800, appareil photo principal 20,7 MP, appareil photo avant 2 MP, batterie 3000 mAh, stockage 32 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z1_compact-5753",
+      "name": "Xperia Z1 Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z1-compact-new.jpg",
+      "description": "Sony Xperia Z1 Smartphone compact Android. Annoncé en janvier 2014. Caractéristiques Écran 4,3″, chipset Snapdragon 800, appareil photo principal 20,7 MP, appareil photo avant 2 MP, batterie 2300 mAh, stockage 16 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z1-5596",
+      "name": "Xperia Z1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z1-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia Z1. Annoncé en septembre 2013. Caractéristiques : écran 5,0 pouces, chipset Snapdragon 800, appareil photo principal 20,7 MP, appareil photo avant 2 MP, batterie 3000 mAh, stockage 16 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z_ultra-5540",
+      "name": "Xperia Z Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z-ultra.jpg",
+      "description": "Sony Xperia Z Ultra Smartphone Android. Annoncé en juin 2013. Caractéristiques : écran 6,4″, chipset Snapdragon 800, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 3050 mAh, stockage 16 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_c-5541",
+      "name": "Xperia C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-c.jpg",
+      "description": "Smartphone Android Sony Xperia C. Annoncé en juin 2013. Caractéristiques Écran 5,0″, chipset MT6589, appareil photo principal 8 MP, batterie 2390 mAh, stockage 4 Go, RAM 1000 Mo, Oui."
+    },
+    {
+      "id": "sony_xperia_m-5497",
+      "name": "Xperia M",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-m.jpg",
+      "description": "Smartphone Android Sony Xperia M. Annoncé en juin 2013. Caractéristiques Écran 4,0″, chipset Snapdragon S4 Plus MSM8227, appareil photo principal 5 MP, batterie 1750 mAh, stockage 4 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_zr-5421",
+      "name": "Xperia ZR",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-zr.jpg",
+      "description": "Smartphone Android Sony Xperia ZR. Annoncé en mai 2013. Caractéristiques : écran 4,55″, chipset Snapdragon S4 Pro, appareil photo principal 13,1 MP, batterie 2300 mAh, stockage 8 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_l-5363",
+      "name": "Xperia L",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-l-new.jpg",
+      "description": "Smartphone Android Sony Xperia L. Annoncé en mars 2013. Caractéristiques Écran 4,3″, chipset Snapdragon 400, appareil photo principal 8 MP, batterie 1750 mAh, stockage 8 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_sp-5364",
+      "name": "Xperia SP",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia_sp.jpg",
+      "description": "Smartphone Android Sony Xperia SP. Annoncé en mars 2013. Caractéristiques : écran 4,6 pouces, chipset Snapdragon S4 Pro, appareil photo principal 8 MP, batterie 2370 mAh, stockage 8 Go, RAM 1000 Mo, verre Corning Gorilla."
+    },
+    {
+      "id": "sony_xperia_tablet_z_wi_fi-5326",
+      "name": "Xperia Tablet Z Wi-Fi",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tablet-z-new.jpg",
+      "description": "Tablette Android Wi-Fi Sony Xperia Tablet Z. Annoncée en février 2013. Caractéristiques Écran 10,1″, chipset Snapdragon 600, appareil photo principal 8,1 MP, appareil photo frontal 2,2 MP, batterie 6000 mAh, stockage 32 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_tablet_z_lte-5255",
+      "name": "Xperia Tablet Z LTE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tablet-z-new.jpg",
+      "description": "Tablette Android Sony Xperia Tablet Z LTE. Annoncée en février 2013. Caractéristiques Écran 10,1″, chipset Snapdragon S4 Pro, appareil photo principal 8,1 MP, appareil photo avant 2,2 MP, batterie 6000 mAh, stockage 16 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_z-5204",
+      "name": "Xperia Z",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-z.jpg",
+      "description": "Smartphone Android Sony Xperia Z. Annoncé en janvier 2013. Caractéristiques : écran 5,0 pouces, chipset Snapdragon S4 Pro, appareil photo principal 13,1 MP, appareil photo avant 2,2 MP, batterie 2330 mAh, stockage 16 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_zl-5203",
+      "name": "Xperia ZL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-zl.jpg",
+      "description": "Smartphone Android Sony Xperia ZL. Annoncé en janvier 2013. Caractéristiques : écran 5,0 pouces, chipset Snapdragon S4 Pro, appareil photo principal 13 MP, appareil photo avant 2 MP, batterie 2370 mAh, stockage 16 Go, RAM 2 Go, verre incassable."
+    },
+    {
+      "id": "sony_xperia_e_dual-5148",
+      "name": "Xperia E dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e-dual.jpg",
+      "description": "Smartphone double Android Sony Xperia E. Annoncé en décembre 2012. Caractéristiques : écran 3,5 pouces, chipset Snapdragon S1, appareil photo principal 3,15 MP, batterie 1530 mAh, stockage 4 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e-5149",
+      "name": "Xperia E",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-e.jpg",
+      "description": "Smartphone Android Sony Xperia E. Annoncé en décembre 2012. Caractéristiques : écran 3,5″, chipset Snapdragon S1, appareil photo principal 3,15 MP, batterie 1530 mAh, stockage 4 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_t_lte-5015",
+      "name": "Xperia T LTE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tl.jpg",
+      "description": "Smartphone Android Sony Xperia T LTE. Annoncé en octobre 2012. Caractéristiques : écran 4,55″, chipset Snapdragon S4 Plus, appareil photo principal 13 MP, appareil photo frontal 1,3 MP, batterie 1850 mAh, stockage 16 Go, RAM 1000 Mo, verre incassable."
+    },
+    {
+      "id": "sony_xperia_tablet_s_3g-4993",
+      "name": "Xperia Tablet S 3G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tablet-s-ofic.jpg",
+      "description": "Tablette Android Sony Xperia Tablet S 3G. Annoncée en août 2012. Caractéristiques : écran 9,4″, chipset Nvidia Tegra 3, appareil photo principal 8 MP, appareil photo frontal 1 MP, batterie 6000 mAh, stockage 64 Go, RAM 1000 Mo, revêtement oléophobe."
+    },
+    {
+      "id": "sony_xperia_tablet_s-4913",
+      "name": "Xperia Tablet S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tablet-s-ofic.jpg",
+      "description": "Tablette Android Sony Xperia Tablet S. Annoncée en août 2012. Caractéristiques : écran 9,4″, chipset Nvidia Tegra 3, appareil photo principal 8 MP, appareil photo frontal 1 MP, batterie 6000 mAh, stockage 64 Go, RAM 1000 Mo, revêtement oléophobe."
+    },
+    {
+      "id": "sony_xperia_v-4958",
+      "name": "Xperia V",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-v.jpg",
+      "description": "Smartphone Android Sony Xperia V. Annoncé en août 2012. Caractéristiques : écran 4,3″, chipset Snapdragon S4 Plus, appareil photo principal 13 MP, batterie 1750 mAh, stockage 8 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_j-4930",
+      "name": "Xperia J",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-j.jpg",
+      "description": "Smartphone Android Sony Xperia J. Annoncé en août 2012. Caractéristiques : écran 4,0″, chipset Snapdragon S1, appareil photo principal 5 MP, batterie 1750 mAh, stockage 4 Go, RAM 512 Mo, verre Corning Gorilla."
+    },
+    {
+      "id": "sony_xperia_tx-4959",
+      "name": "Xperia TX",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tx.jpg",
+      "description": "Smartphone Android Sony Xperia TX. Annoncé en août 2012. Caractéristiques : écran 4,55″, chipset Snapdragon S4 Plus, appareil photo principal 13 MP, appareil photo avant 1,3 MP, batterie 1750 mAh, stockage 16 Go, RAM 1000 Mo, verre incassable."
+    },
+    {
+      "id": "sony_xperia_t-4899",
+      "name": "Xperia T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-t.jpg",
+      "description": "Smartphone Android Sony Xperia T. Annoncé en août 2012. Caractéristiques : écran 4,55″, chipset Snapdragon S4 Plus, appareil photo principal 13 MP, appareil photo frontal 1,3 MP, batterie 1850 mAh, stockage 16 Go, RAM 1000 Mo, verre incassable."
+    },
+    {
+      "id": "sony_xperia_sl-4894",
+      "name": "Xperia SL",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-s-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia SL. Annoncé en août 2012. Caractéristiques Écran 4,3″, chipset Snapdragon S3, appareil photo principal 12 MP, appareil photo avant 1,3 MP, batterie 1750 mAh, stockage 32 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_tipo_dual-4832",
+      "name": "Xperia tipo dual",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tipo-dual.jpg",
+      "description": "Sony Xperia type smartphone double Android. Annoncé en juin 2012. Caractéristiques : écran 3,2″, chipset Snapdragon S1, appareil photo principal 3,15 MP, batterie 1500 mAh, stockage 2,9 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_tipo-4718",
+      "name": "Xperia tipo",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-tipo.jpg",
+      "description": "Sony Xperia type smartphone Android. Annoncé en juin 2012. Caractéristiques Écran 3,2″, chipset Snapdragon S1, appareil photo principal 3,15 MP, batterie 1500 mAh, stockage 2,9 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_miro-4831",
+      "name": "Xperia miro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-miro.jpg",
+      "description": "Smartphone Android Sony Xperia miro. Annoncé en juin 2012. Caractéristiques : écran 3,5 pouces, chipset Snapdragon S1, appareil photo principal 5 MP, batterie 1500 mAh, stockage 4 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_go-4782",
+      "name": "Xperia go",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-go.jpg",
+      "description": "Smartphone Android Sony Xperia go. Annoncé en mai 2012. Caractéristiques : écran 3,5″, chipset NovaThor U8500, appareil photo principal 5 MP, batterie 1305 mAh, stockage 8 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_acro_s-4781",
+      "name": "Xperia acro S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-acro-s.jpg",
+      "description": "Smartphone Android Sony Xperia acro S. Annoncé en mai 2012. Caractéristiques Écran 4,3″, chipset Snapdragon S3, appareil photo principal 12 MP, appareil photo avant 1,3 MP, batterie 1910 mAh, stockage 16 Go, RAM 1000 Mo, verre incassable."
+    },
+    {
+      "id": "sony_xperia_sx_so_05d-4775",
+      "name": "Xperia SX SO-05D",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/Sony-Xperia-SX-SO-05D.jpg",
+      "description": "Sony Xperia SX SO-05D Smartphone Android. Annoncé en mai 2012. Caractéristiques : écran 3,7″, chipset Snapdragon S4 Plus, appareil photo principal 8 MP, batterie 1500 mAh, stockage 4 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_gx_so_04d-4774",
+      "name": "Xperia GX SO-04D",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/Sony-Xperia-GX-SO-04D.jpg",
+      "description": "Sony Xperia GX SO-04D Smartphone Android. Annoncé en mai 2012. Caractéristiques : écran 4,6″, chipset Snapdragon S4 Plus, appareil photo principal 13 MP, appareil photo avant 1,3 MP, batterie 1700 mAh, stockage 16 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_acro_hd_so_03d-4773",
+      "name": "Xperia acro HD SO-03D",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/Sony-Xperia-acro-HD-SO-03D.jpg",
+      "description": "Sony Xperia acro HD SO-03D Smartphone Android. Annoncé en mai 2012. Caractéristiques Écran 4,3″, chipset Snapdragon S3, appareil photo principal 12 MP, appareil photo avant 1,3 MP, batterie 1910 mAh, stockage 11 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_acro_hd_soi12-4772",
+      "name": "Xperia acro HD SOI12",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/Sony-Xperia-acro-HD-SOI12.jpg",
+      "description": "Smartphone Android Sony Xperia acro HD SOI12. Annoncé en mai 2012. Caractéristiques Écran 4,3″, chipset Snapdragon S3, appareil photo principal 12 MP, appareil photo avant 1,3 MP, batterie 1900 mAh, stockage 11 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_neo_l-4647",
+      "name": "Xperia neo L",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-neo-l.jpg",
+      "description": "Smartphone Android Sony Xperia neo L. Annoncé en mars 2012. Caractéristiques : écran 4,0″, chipset Snapdragon S2, appareil photo principal 5 MP, batterie 1500 mAh, stockage 1000 Mo, RAM 512 Mo."
+    },
+    {
+      "id": "sony_xperia_sola-4408",
+      "name": "Xperia sola",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-sola.jpg",
+      "description": "Sony Xperia Sola Smartphone Android. Annoncé en mars 2012. Caractéristiques Écran 3,7″, chipset NovaThor U8500, appareil photo principal 5 MP, batterie 1320 mAh, stockage 8 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_u-4437",
+      "name": "Xperia U",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-u-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia U. Annoncé en février 2012. Caractéristiques : écran 3,5 pouces, chipset NovaThor U8500, appareil photo principal 5 MP, batterie 1320 mAh, stockage 8 Go, RAM 512 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_p-4436",
+      "name": "Xperia P",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-p-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia P. Annoncé en février 2012. Caractéristiques : écran 4,0″, chipset NovaThor U8500, appareil photo principal 8 MP, batterie 1305 mAh, stockage 16 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_s-4369",
+      "name": "Xperia S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-s-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia S. Annoncé en janvier 2012. Caractéristiques Écran 4,3″, chipset Snapdragon S3, appareil photo principal 12 MP, appareil photo frontal 1,3 MP, batterie 1750 mAh, stockage 32 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_ion_hspa-4798",
+      "name": "Xperia ion HSPA",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-ion-hspa.jpg",
+      "description": "Smartphone Android HSPA Sony Xperia ion. Annoncé en avril 2012. Caractéristiques Écran 4,55″, chipset Snapdragon S3, appareil photo principal 12 MP, appareil photo avant 1,3 MP, batterie 1900 mAh, stockage 13,2 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_ion_lte-4412",
+      "name": "Xperia ion LTE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-ion-ofic.jpg",
+      "description": "Smartphone Android Sony Xperia ion LTE. Annoncé en janvier 2012. Caractéristiques : écran 4,55″, chipset Snapdragon S3, appareil photo principal 12 MP, appareil photo frontal 1,3 MP, batterie 1900 mAh, stockage 16 Go, RAM 1000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_tablet_p-4648",
+      "name": "Tablet P",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-tablet-p.jpg",
+      "description": "Tablette Android Sony Tablet P. Annoncée au premier trimestre 2012. Comprend un écran de 5,5 pouces, un chipset Nvidia Tegra 2 T20, un appareil photo principal de 5 MP, une batterie de 3080 mAh, un stockage de 4 Go, une RAM de 1000 Mo."
+    },
+    {
+      "id": "sony_tablet_p_3g-4139",
+      "name": "Tablet P 3G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-tablet-p.jpg",
+      "description": "Tablette Android Sony Tablet P 3G. Annoncée en août 2011. Comprend un écran de 5,5 pouces, un chipset Nvidia Tegra 2 T20, un appareil photo principal de 5 MP, une batterie de 3080 mAh, un stockage de 4 Go, une RAM de 1000 Mo."
+    },
+    {
+      "id": "sony_tablet_s_3g-4138",
+      "name": "Tablet S 3G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-tablet-s.jpg",
+      "description": "Tablette Android Sony Tablet S 3G. Annoncée en août 2011. Comprend un écran de 9,4 pouces, un chipset Nvidia Tegra 2 T20, un appareil photo principal de 5 MP, 32 Go de stockage, 1000 Mo de RAM."
+    },
+    {
+      "id": "sony_tablet_s-4137",
+      "name": "Tablet S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-tablet-s.jpg",
+      "description": "Tablette Android Sony Tablet S. Annoncée en août 2011. Comprend un écran de 9,4 pouces, un chipset Nvidia Tegra 2 T20, un appareil photo principal de 5 MP, 32 Go de stockage, 1000 Mo de RAM."
+    },
+    {
+      "id": "sony_cmd_z7-281",
+      "name": "CMD Z7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soz7.gif",
+      "description": "Téléphone Sony CMD Z7. Annoncé au quatrième trimestre 2001. Caractéristiques Graphique en niveaux de gris, affichage à 4 nuances."
+    },
+    {
+      "id": "sony_xperia_lt29i_hayabusa-4734",
+      "name": "Xperia LT29i Hayabusa",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-lt29i-hayabusa.jpg",
+      "description": "Sony Xperia LT29i Hayabusa Smartphone Android. Annoncé en août 2012. Comprend un écran de 4,6 pouces, un chipset Snapdragon S4 Plus, un appareil photo principal de 13 MP, une batterie de 1700 mAh, une RAM de 1000 Mo et un verre résistant aux rayures."
+    },
+    {
+      "id": "sony_cmd_j70-280",
+      "name": "CMD J70",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soj70.gif",
+      "description": "Téléphone Sony CMD J70. Annoncé au quatrième trimestre 2001. Caractéristiques Graphique en niveaux de gris, affichage 4 nuances, batterie 650 mAh."
+    },
+    {
+      "id": "sony_cmd_j7-279",
+      "name": "CMD J7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soj7.gif",
+      "description": "Téléphone Sony CMD J7. Annoncé au quatrième trimestre 2001. Caractéristiques Graphique en niveaux de gris, affichage 4 nuances, batterie 650 mAh."
+    },
+    {
+      "id": "sony_cmd_mz5-232",
+      "name": "CMD MZ5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-cmd-mz5.jpg",
+      "description": "Téléphone Sony CMD MZ5. Annoncé en mai 2001. Caractéristiques Graphique en niveaux de gris, affichage 4 nuances, batterie 620 mAh."
+    },
+    {
+      "id": "sony_cmd_j6-270",
+      "name": "CMD J6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soj6.gif",
+      "description": "Téléphone Sony CMD J6. Annoncé en 2001. Caractéristiques Graphique en niveaux de gris, affichage 4 nuances, batterie 650 mAh."
+    },
+    {
+      "id": "sony_cmd_j5-201",
+      "name": "CMD J5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soj5.gif",
+      "description": "Téléphone Sony CMD J5. Annoncé en 2000. Caractéristiques Graphique en niveaux de gris, affichage 4 nuances, batterie 540 mAh."
+    },
+    {
+      "id": "sony_cmd_z5-133",
+      "name": "CMD Z5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soz5b.gif",
+      "description": "Téléphone Sony CMD Z5. Annoncé en 2000. Caractéristiques Graphique en niveaux de gris, affichage 4 nuances, batterie 500 mAh."
+    },
+    {
+      "id": "sony_cmd_cd5-132",
+      "name": "CMD CD5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/socd5b.gif",
+      "description": "Téléphone Sony CMD CD5. Annoncé en 2000. Caractéristiques Écran graphique monochrome, batterie 500 mAh."
+    },
+    {
+      "id": "sony_cmd_c1-131",
+      "name": "CMD C1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soc1b.gif",
+      "description": "Téléphone Sony CMD C1. Annoncé en 1999. Caractéristiques Écran graphique monochrome, batterie 500 mAh."
+    },
+    {
+      "id": "sony_cmd_z1_plus-130",
+      "name": "CMD Z1 plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soz1pb.gif",
+      "description": "Téléphone Sony CMD Z1 plus. Annoncé en 1997. Caractéristiques Écran graphique monochrome, batterie 600 mAh."
+    },
+    {
+      "id": "sony_cmd_z1-129",
+      "name": "CMD Z1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/soz1b.gif",
+      "description": "Téléphone Sony CMD Z1. Annoncé en 1997. Caractéristiques Écran graphique monochrome, batterie 730 mAh."
+    },
+    {
+      "id": "sony_cm_dx_2000-128",
+      "name": "CM-DX 2000",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sox2000b.gif",
+      "description": "Téléphone Sony CM-DX 2000. Annoncé en 1997. Caractéristiques Écran graphique monochrome, batterie 1800 mAh."
+    },
+    {
+      "id": "sony_cm_dx_1000-127",
+      "name": "CM-DX 1000",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sox1000b.gif",
+      "description": "Téléphone Sony CM-DX 1000. Annoncé en 1997. Caractéristiques Écran graphique monochrome, batterie 1350 mAh."
+    },
+    {
+      "id": "sony_xperia_5_plus-10013",
+      "name": "Xperia 5 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-5-plus-r.jpg",
+      "description": "Sony Xperia 5 Plus Smartphone Android. Pas encore annoncé. Caractéristiques Écran 6,6″, chipset Snapdragon 855, batterie 4000 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 6."
+    },
+    {
+      "id": "sony_xperia_x_ultra-8668",
+      "name": "Xperia X Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-x-ultra-r.jpg",
+      "description": "Sony Xperia X Ultra Smartphone Android. Pas encore annoncé. Caractéristiques Écran 6,45″, chipset Snapdragon 660, appareil photo principal 19 MP, appareil photo frontal 13 MP, batterie 3050 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "sony_xperia_h8541-8956",
+      "name": "Xperia H8541",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Smartphone Android Sony Xperia H8541. Pas encore annoncé. Caractéristiques Écran 5,7″, chipset Snapdragon 835, appareil photo principal 19 MP, appareil photo avant 13 MP, batterie 3420 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "sony_xperia_m_ultra-8058",
+      "name": "Xperia M Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Sony Xperia M Ultra Smartphone Android. Pas encore annoncé. Caractéristiques Écran 6,0″, chipset Snapdragon 652, double : appareil photo principal 23 MP, appareil photo frontal 16 MP, batterie 4280 mAh, stockage 32 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_x_premium-8049",
+      "name": "Xperia X Premium",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Sony Xperia X Smartphone Android Premium. Pas encore annoncé. Caractéristiques Écran 5,5″, chipset Snapdragon 820, appareil photo principal 23 MP, appareil photo frontal 13 MP, stockage 64 Go, RAM 3 Go, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_e1_ii-7022",
+      "name": "Xperia E1 II",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Smartphone Android Sony Xperia E1 II. Annoncé au troisième trimestre 2015. Caractéristiques : écran de 4,0 pouces, appareil photo principal de 5 MP, appareil photo frontal de 2 MP, stockage de 8 Go, RAM de 1 000 Mo, verre résistant aux rayures."
+    },
+    {
+      "id": "sony_xperia_z4_ultra-6958",
+      "name": "Xperia Z4 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony.jpg",
+      "description": "Smartphone Android Sony Xperia Z4 Ultra. Annoncé au troisième trimestre 2015. Comprend un écran de 6,44 pouces, un chipset Snapdragon 810, un appareil photo principal de 16 MP, une batterie de 4000 mAh, un stockage de 32 Go, une RAM de 3 Go et un verre incassable."
+    },
+    {
+      "id": "sony_xperia_z4_compact-6957",
+      "name": "Xperia Z4 Compact",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/smartphone.jpg",
+      "description": "Sony Xperia Z4 Compact Smartphone Android. Annoncé au troisième trimestre 2015. Comprend un écran de 4,7 pouces, un chipset Snapdragon 810, un appareil photo principal de 20,7 MP, un appareil photo frontal de 5 MP, un stockage de 32 Go, une RAM de 3 Go et un verre incassable."
+    },
+    {
+      "id": "sony_d_2403-6384",
+      "name": "D 2403",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony.jpg",
+      "description": "Smartphone Android Sony D 2403. Annoncé au troisième trimestre 2014. Comprend un écran de 4,4 pouces, un chipset Snapdragon 400, un appareil photo principal de 8 MP, 16 Go de stockage, 1000 Mo de RAM."
+    },
+    {
+      "id": "sony_xperia_c670x-5336",
+      "name": "Xperia C670X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/sony.jpg",
+      "description": "Smartphone Android Sony Xperia C670X. Annoncé en 2013. Caractéristiques : écran 4,8″, chipset Snapdragon 600, appareil photo principal 13,1 MP, appareil photo frontal 2,2 MP, stockage 32 Go, RAM 2 Go."
+    }
+  ]
+}

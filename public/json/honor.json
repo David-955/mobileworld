@@ -1,0 +1,1486 @@
+{
+  "models": [
+    {
+      "id": "honor_x8c-13621",
+      "name": "X8c",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x8c.jpg",
+      "description": "Smartphone Android Honor X8c. Annoncé en janvier 2025. Comprend un écran de 6,7 pouces, un chipset Snapdragon 685, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic7_lite-13581",
+      "name": "Magic7 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x9c.jpg",
+      "description": "Smartphone Android Honor Magic7 Lite. Annoncé en janvier 2025. Comprend un écran de 6,78 pouces, un chipset Snapdragon 6 Gen 1, une batterie de 6600 mAh, un stockage de 512 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic7_rsr_porsche_design-13588",
+      "name": "Magic7 RSR Porsche Design",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic7-rsr-porsche-design-.jpg",
+      "description": "Smartphone Android Honor Magic7 RSR Porsche Design. Annoncé en décembre 2024. Comprend un écran de 6,8 pouces, un chipset Snapdragon 8 Elite, une batterie de 5850 mAh, un stockage de 1024 Go, une RAM de 24 Go et un NanoCrystal Shield."
+    },
+    {
+      "id": "honor_gt-13569",
+      "name": "GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-gt-new.jpg",
+      "description": "Smartphone Android Honor GT. Annoncé en décembre 2024. Comprend un écran de 6,7 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5 300 mAh, un stockage de 1 024 Go et une RAM de 16 Go."
+    },
+    {
+      "id": "honor_pad_v9-13568",
+      "name": "Pad V9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-v9.jpg",
+      "description": "Tablette Android Honor Pad V9. Annoncée en décembre 2024. Comprend un écran de 11,5 pouces, un chipset Dimensity 8350, une batterie de 10 100 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_300_ultra-13537",
+      "name": "300 Ultra",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-300-ultra.jpg",
+      "description": "Smartphone Android Honor 300 Ultra. Annoncé en décembre 2024. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5 300 mAh, un stockage de 1 024 Go, une RAM de 16 Go et un verre Rhino géant."
+    },
+    {
+      "id": "honor_300_pro-13538",
+      "name": "300 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-300-pro.jpg",
+      "description": "Smartphone Android Honor 300 Pro. Annoncé en décembre 2024. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5 300 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_300-13539",
+      "name": "300",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-300.jpg",
+      "description": "Smartphone Android Honor 300. Annoncé en décembre 2024. Comprend un écran de 6,7 pouces, un chipset Snapdragon 7 Gen 3, une batterie de 5 300 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_x9c_smart-13536",
+      "name": "X9c Smart",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x9c-smart.jpg",
+      "description": "Honor X9c Smartphone intelligent Android. Annoncé en décembre 2024. Comprend un écran de 6,8 pouces, un chipset Dimensity 7025 Ultra, une batterie de 5800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play9c-13493",
+      "name": "Play9C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play9c.jpg",
+      "description": "Smartphone Android Honor Play9C. Annoncé en septembre 2024. Comprend un écran de 6,56 pouces, un chipset Dimensity 6100+, une batterie de 5200 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play9t-13494",
+      "name": "Play9T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play9t.jpg",
+      "description": "Smartphone Android Honor Play9T. Annoncé en septembre 2024. Comprend un écran de 6,77 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x9c-13490",
+      "name": "X9c",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x9c.jpg",
+      "description": "Smartphone Android Honor X9c. Annoncé en novembre 2024. Comprend un écran de 6,78 pouces, un chipset Snapdragon 6 Gen 1, une batterie de 6600 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magic7_pro-13480",
+      "name": "Magic7 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic7-pro.jpg",
+      "description": "Smartphone Android Honor Magic7 Pro. Annoncé en octobre 2024. Comprend un écran de 6,8 pouces, un chipset Snapdragon 8 Elite, une batterie de 5850 mAh, un stockage de 1024 Go, une RAM de 16 Go et un NanoCrystal Shield."
+    },
+    {
+      "id": "honor_magic7-13481",
+      "name": "Magic7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic7.jpg",
+      "description": "Smartphone Android Honor Magic7. Annoncé en octobre 2024. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8 Elite, une batterie de 5650 mAh, un stockage de 1024 Go, une RAM de 16 Go et un verre Rhino géant."
+    },
+    {
+      "id": "honor_x5b_plus-13464",
+      "name": "X5b Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x5b-plus.jpg",
+      "description": "Smartphone Android Honor X5b Plus. Annoncé en octobre 2024. Comprend un écran de 6,56 pouces, un chipset Helio G36, une batterie de 5 200 mAh, un stockage de 256 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_x5b-13463",
+      "name": "X5b",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x5b.jpg",
+      "description": "Smartphone Android Honor X5b. Annoncé en octobre 2024. Comprend un écran de 6,56 pouces, un chipset Helio G36, une batterie de 5 200 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_x7c-13416",
+      "name": "X7c",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-60-plus.jpg",
+      "description": "Smartphone Android Honor X7c. Annoncé en octobre 2024. Caractéristiques : écran 6,77″, chipset Snapdragon 685, batterie 6000 mAh, stockage 256 Go, RAM 8 Go, verre trempé."
+    },
+    {
+      "id": "honor_x60_pro-13443",
+      "name": "X60 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x60-pro.jpg",
+      "description": "Smartphone Android Honor X60 Pro. Annoncé en octobre 2024. Caractéristiques Écran 6,78″, chipset Snapdragon 6 Gen 1, batterie 6600 mAh, stockage 512 Go, RAM 12 Go, verre trempé."
+    },
+    {
+      "id": "honor_x60-13415",
+      "name": "X60",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x60.jpg",
+      "description": "Smartphone Android Honor X60. Annoncé en octobre 2024. Comprend un écran de 6,8 pouces, un chipset Dimensity 7025 Ultra, une batterie de 5800 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_pad_gt_pro-13417",
+      "name": "Pad GT Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-gt-pro.jpg",
+      "description": "Tablette Android Honor Pad GT Pro. Annoncée en octobre 2024. Comprend un écran de 12,3 pouces, un chipset Snapdragon 8s Gen 3, une batterie de 10 050 mAh, 512 Go de stockage, 16 Go de RAM."
+    },
+    {
+      "id": "honor_200_smart-13281",
+      "name": "200 Smart",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-60-plus.jpg",
+      "description": "Honor 200 Smart Smartphone Android. Annoncé en septembre 2024. Comprend un écran de 6,8 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 5 200 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre aluminosilicate."
+    },
+    {
+      "id": "honor_watch_5-13307",
+      "name": "Watch 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-watch-5.jpg",
+      "description": "Montre Honor Watch 5. Annoncée en septembre 2024. Comprend un écran de 1,85″, une batterie de 480 mAh, un stockage de 4 Go."
+    },
+    {
+      "id": "honor_pad_x8a-13259",
+      "name": "Pad X8a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-x8a.jpg",
+      "description": "Tablette Android Honor Pad X8a. Annoncé en août 2024. Comprend un écran de 11,0 pouces, un chipset Snapdragon 680 4G, une batterie de 8 300 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_x60i-13208",
+      "name": "X60i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x60i.jpg",
+      "description": "Smartphone Android Honor X60i. Annoncé en juillet 2024. Comprend un écran de 6,7 pouces, un chipset Dimensity 6080, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magicpad_2_12_3-13205",
+      "name": "MagicPad 2 12.3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magicpad-2.jpg",
+      "description": "Tablette Android Honor MagicPad 2 12.3. Annoncée en juillet 2024. Caractéristiques Écran 12,3″, chipset Snapdragon 8s Gen 3, batterie 10050 mAh, stockage 1024 Go, RAM 16 Go."
+    },
+    {
+      "id": "honor_pad_9_pro-13204",
+      "name": "Pad 9 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad9-pro.jpg",
+      "description": "Tablette Android Honor Pad 9 Pro. Annoncée en juillet 2024. Comprend un écran de 12,1 pouces, un chipset Dimensity 8100, une batterie de 10 050 mAh, un stockage de 256 Go et une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magic_vs3-13203",
+      "name": "Magic Vs3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-vs3.jpg",
+      "description": "Smartphone Android Honor Magic Vs3. Annoncé en juillet 2024. Comprend un écran de 7,92 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go et King Kong Rhinoceros."
+    },
+    {
+      "id": "honor_magic_v3-13202",
+      "name": "Magic V3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-v3.jpg",
+      "description": "Smartphone Android Honor Magic V3. Annoncé en juillet 2024. Caractéristiques : écran 7,92″, chipset Snapdragon 8 Gen 3, batterie 5150 mAh, stockage 1024 Go, RAM 16 Go, King Kong Rhinoceros."
+    },
+    {
+      "id": "honor_play_60_plus-13161",
+      "name": "Play 60 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-60-plus.jpg",
+      "description": "Honor Play 60 Plus Smartphone Android. Annoncé en juin 2024. Comprend un écran de 6,77 pouces, un chipset Snapdragon 4 Gen 2, une batterie de 6000 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x7b_5g_(50_mp)-13154",
+      "name": "X7b 5G (50 MP)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x7b-5g-50mp.jpg",
+      "description": "Smartphone Android Honor X7b 5G (50 MP). Annoncé en juin 2024. Comprend un écran de 6,8 pouces, un chipset Dimensity 6020, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic_v_flip-13142",
+      "name": "Magic V Flip",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-v-flip.jpg",
+      "description": "Honor Magic V Flip Smartphone Android. Annoncé en juin 2024. Comprend un écran de 6,8 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4800 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_x6b-13143",
+      "name": "X6b",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x6b.jpg",
+      "description": "Smartphone Android Honor X6b. Annoncé en juin 2024. Comprend un écran de 6,56 pouces, un chipset Helio G85, une batterie de 5200 mAh, un stockage de 256 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_200_pro-13049",
+      "name": "200 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-200-pro-.jpg",
+      "description": "Smartphone Android Honor 200 Pro. Annoncé en mai 2024. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8s Gen 3, une batterie de 5200 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_200-13050",
+      "name": "200",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-200-.jpg",
+      "description": "Smartphone Android Honor 200. Annoncé en mai 2024. Comprend un écran de 6,7 pouces, un chipset Snapdragon 7 Gen 3, une batterie de 5200 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_200_lite-12948",
+      "name": "200 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-200-lite.jpg",
+      "description": "Smartphone Android Honor 200 Lite. Annoncé en avril 2024. Comprend un écran de 6,7 pouces, un chipset Dimensity 6080, une batterie de 4 500 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_90_smart-12931",
+      "name": "90 Smart",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-90-smart.jpg",
+      "description": "Honor 90 Smart Smartphone Android. Annoncé en avril 2024. Comprend un écran de 6,8 pouces, un chipset Dimensity 6020, une batterie de 5330 mAh, un stockage de 256 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_x7b_5g-12913",
+      "name": "X7b 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x7b-5g.jpg",
+      "description": "Smartphone Android Honor X7b 5G. Annoncé en avril 2024. Comprend un écran de 6,8 pouces, un chipset Dimensity 6020, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic6_rsr_porsche_design-12873",
+      "name": "Magic6 RSR Porsche Design",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic6-rsr-porsche-design.jpg",
+      "description": "Smartphone Android Honor Magic6 RSR Porsche Design. Annoncé en mars 2024. Comprend un écran de 6,8 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5600 mAh, un stockage de 1024 Go, une RAM de 24 Go et un NanoCrystal Shield."
+    },
+    {
+      "id": "honor_magic6_ultimate-12864",
+      "name": "Magic6 Ultimate",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic6-ultimate.jpg",
+      "description": "Honor Magic6 Ultimate Smartphone Android. Annoncé en mars 2024. Comprend un écran de 6,8 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5600 mAh, un stockage de 1024 Go, une RAM de 16 Go et King Kong Rhinoceros."
+    },
+    {
+      "id": "honor_watch_gs_4-12879",
+      "name": "Watch GS 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-watch-gs4.jpg",
+      "description": "Montre Honor Watch GS 4. Annoncée en mars 2024. Comprend un écran de 1,43″, une batterie de 451 mAh, 4 Go de stockage, 32 Mo de RAM."
+    },
+    {
+      "id": "honor_choice_watch-12832",
+      "name": "Choice Watch",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-choice-haylou-watch.jpg",
+      "description": "Montre Honor Choice Watch. Annoncée en février 2024. Comprend un écran de 1,95″, une batterie de 300 mAh."
+    },
+    {
+      "id": "honor_magic_v2_rsr_porsche_design-12789",
+      "name": "Magic V2 RSR Porsche Design",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-v2-rsr-porsche-design.jpg",
+      "description": "Smartphone Android Honor Magic V2 RSR Porsche Design. Annoncé en janvier 2024. Comprend un écran de 7,92 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_magic6_pro-12786",
+      "name": "Magic6 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic6-pro.jpg",
+      "description": "Smartphone Android Honor Magic6 Pro. Annoncé en janvier 2024. Comprend un écran de 6,8 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5600 mAh, un stockage de 1024 Go, une RAM de 16 Go et un NanoCrystal Shield."
+    },
+    {
+      "id": "honor_magic6-12788",
+      "name": "Magic6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic6.jpg",
+      "description": "Smartphone Android Honor Magic6. Annoncé en janvier 2024. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8 Gen 3, une batterie de 5450 mAh, un stockage de 512 Go, une RAM de 16 Go et un verre Jurhino."
+    },
+    {
+      "id": "honor_x50_gt-12777",
+      "name": "X50 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x50-gt.jpg",
+      "description": "Smartphone Android Honor X50 GT. Annoncé en janvier 2024. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5800 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_x50_pro-12763",
+      "name": "X50 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x50-pro.jpg",
+      "description": "Smartphone Android Honor X50 Pro. Annoncé en décembre 2023. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_90_gt-12755",
+      "name": "90 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-90-gt.jpg",
+      "description": "Smartphone Android Honor 90 GT. Annoncé en décembre 2023. Comprend un écran de 6,7 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 24 Go."
+    },
+    {
+      "id": "honor_pad_9-12756",
+      "name": "Pad 9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad9.jpg",
+      "description": "Tablette Android Honor Pad 9. Annoncée en décembre 2023. Caractéristiques Écran 12,1″, chipset Snapdragon 6 Gen 1, batterie 8300 mAh, stockage 512 Go, RAM 12 Go, verre antireflet."
+    },
+    {
+      "id": "honor_x8b-12748",
+      "name": "X8b",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x8b.jpg",
+      "description": "Smartphone Android Honor X8b. Annoncé en décembre 2023. Comprend un écran de 6,7 pouces, un chipset Snapdragon 680 4G, une batterie de 4500 mAh, un stockage de 512 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic6_lite-12730",
+      "name": "Magic6 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic6-lite.jpg",
+      "description": "Smartphone Android Honor Magic6 Lite. Annoncé en décembre 2023. Comprend un écran de 6,78 pouces, un chipset Snapdragon 6 Gen 1, une batterie de 5800 mAh, un stockage de 512 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x7b-12721",
+      "name": "X7b",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x7b-new.jpg",
+      "description": "Smartphone Android Honor X7b. Annoncé en décembre 2023. Comprend un écran de 6,8 pouces, un chipset Snapdragon 680 4G, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_100_pro-12699",
+      "name": "100 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x100-pro.jpg",
+      "description": "Smartphone Android Honor 100 Pro. Annoncé en novembre 2023. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_100-12700",
+      "name": "100",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x100.jpg",
+      "description": "Smartphone Android Honor 100. Annoncé en novembre 2023. Comprend un écran de 6,7 pouces, un chipset Snapdragon 7 Gen 3, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_x50i+-12693",
+      "name": "X50i+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x50i-plus.jpg",
+      "description": "Smartphone Android Honor X50i+. Annoncé en novembre 2023. Comprend un écran de 6,7 pouces, un chipset Dimensity 6080, une batterie de 4 500 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x5_plus-12645",
+      "name": "X5 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x5-plus.jpg",
+      "description": "Smartphone Android Honor X5 Plus. Annoncé en août 2023. Comprend un écran de 6,56 pouces, un chipset Helio G36, une batterie de 5 200 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_x9b-12629",
+      "name": "X9b",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x9b.jpg",
+      "description": "Smartphone Android Honor X9b. Annoncé en octobre 2023. Comprend un écran de 6,78 pouces, un chipset Snapdragon 6 Gen 1, une batterie de 5800 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play_8t-12628",
+      "name": "Play 8T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-8t.jpg",
+      "description": "Smartphone Android Honor Play 8T. Annoncé en octobre 2023. Comprend un écran de 6,8 pouces, un chipset Dimensity 6080, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magic_vs2-12622",
+      "name": "Magic Vs2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-vs2.jpg",
+      "description": "Honor Magic Vs2 Smartphone Android. Annoncé en octobre 2023. Comprend un écran de 7,92 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_watch_4_pro-12623",
+      "name": "Watch 4 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-watch-4-pro.jpg",
+      "description": "Montre Honor Watch 4 Pro. Annoncée en octobre 2023. Comprend un écran de 1,5″, une batterie de 480 mAh."
+    },
+    {
+      "id": "honor_play_50_plus-12618",
+      "name": "Play 50 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-50-plus.jpg",
+      "description": "Honor Play 50 Plus Smartphone Android. Annoncé en octobre 2023. Comprend un écran de 6,8 pouces, un chipset Dimensity 6020, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_v_purse-12570",
+      "name": "V Purse",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v-purse-5g.jpg",
+      "description": "Smartphone Android Honor V Purse. Annoncé en septembre 2023. Comprend un écran de 7,71 pouces, un chipset Snapdragon 778G 5G, une batterie de 4 500 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_x40_gt_racing-12569",
+      "name": "X40 GT Racing",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x40-gt-racing.jpg",
+      "description": "Smartphone Android Honor X40 GT Racing. Annoncé en septembre 2023. Comprend un écran de 6,81 pouces, une batterie de 4800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x6a-12442",
+      "name": "X6a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x6a.jpg",
+      "description": "Smartphone Android Honor X6a. Annoncé en juillet 2023. Comprend un écran de 6,56 pouces, un chipset Helio G36, une batterie de 5 200 mAh, un stockage de 256 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_magic_v2-12383",
+      "name": "Magic V2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-2.jpg",
+      "description": "Smartphone Android Honor Magic V2. Annoncé en juillet 2023. Comprend un écran de 7,92 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5000 mAh, un stockage de 1024 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_watch_4-12416",
+      "name": "Watch 4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-watch4.jpg",
+      "description": "Montre Honor Watch 4. Annoncée en juillet 2023. Comprend un écran de 1,75″, une batterie de 451 mAh, 4 Go de stockage, 32 Mo de RAM."
+    },
+    {
+      "id": "honor_magicpad_13-12417",
+      "name": "MagicPad 13",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magicpad13.jpg",
+      "description": "Tablette Android Honor MagicPad 13. Annoncée en juillet 2023. Caractéristiques Écran 13,0″, chipset Snapdragon 888 5G, batterie 10050 mAh, stockage 512 Go, RAM 16 Go."
+    },
+    {
+      "id": "honor_pad_x9-12404",
+      "name": "Pad X9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-x9.jpg",
+      "description": "Tablette Android Honor Pad X9. Annoncée en juillet 2023. Comprend un écran de 11,5 pouces, un chipset Snapdragon 685, une batterie de 7 250 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_pad_x8_pro-12403",
+      "name": "Pad X8 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-x8-pro.jpg",
+      "description": "Tablette Android Honor Pad X8 Pro. Annoncée en juillet 2023. Comprend un écran de 11,5 pouces, un chipset Snapdragon 685, une batterie de 7 250 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x50-12384",
+      "name": "X50",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x50-.jpg",
+      "description": "Smartphone Android Honor X50. Annoncé en juillet 2023. Comprend un écran de 6,78 pouces, un chipset Snapdragon 6 Gen 1, une batterie de 5800 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_play_40-12401",
+      "name": "Play 40",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play40-.jpg",
+      "description": "Smartphone Android Honor Play 40. Annoncé en juillet 2023. Comprend un écran de 6,56 pouces, un chipset Snapdragon 480+ 5G, une batterie de 5 200 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x50i-12400",
+      "name": "X50i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x50i.jpg",
+      "description": "Smartphone Android Honor X50i. Annoncé en juillet 2023. Comprend un écran de 6,7 pouces, un chipset Dimensity 6020, une batterie de 4 500 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_90_lite-12377",
+      "name": "90 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-90-lite.jpg",
+      "description": "Smartphone Android Honor 90 Lite. Annoncé en juin 2023. Comprend un écran de 6,7 pouces, un chipset Dimensity 6020, une batterie de 4 500 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_90_pro-12296",
+      "name": "90 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-90-pro.jpg",
+      "description": "Smartphone Android Honor 90 Pro. Annoncé en mai 2023. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_90-12297",
+      "name": "90",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-90.jpg",
+      "description": "Smartphone Android Honor 90. Annoncé en mai 2023. Comprend un écran de 6,7 pouces, un chipset Snapdragon 7 Gen 1 Accelerated Edition, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_pad_v8-12248",
+      "name": "Pad V8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-v8.jpg",
+      "description": "Tablette Android Honor Pad V8. Annoncée en avril 2023. Comprend un écran de 11,0 pouces, un chipset Dimensity 8020, une batterie de 7250 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play7t_pro-12200",
+      "name": "Play7T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play7t-pro.jpg",
+      "description": "Smartphone Android Honor Play7T Pro. Annoncé en mars 2023. Comprend un écran de 6,7 pouces, un chipset Dimensity 6020, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play7t-12201",
+      "name": "Play7T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play7t.jpg",
+      "description": "Smartphone Android Honor Play7T. Annoncé en mars 2023. Comprend un écran de 6,74 pouces, un chipset Dimensity 6020, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_70_lite-12180",
+      "name": "70 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-70-lite.jpg",
+      "description": "Smartphone Android Honor 70 Lite. Annoncé en mars 2023. Comprend un écran de 6,5 pouces, un chipset Snapdragon 480+ 5G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_magic5_ultimate-12155",
+      "name": "Magic5 Ultimate",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic5-ultimate.jpg",
+      "description": "Honor Magic5 Ultimate Smartphone Android. Annoncé en mars 2023. Caractéristiques Écran 6,81″, chipset Snapdragon 8 Gen 2, batterie 5450 mAh, stockage 512 Go, RAM 16 Go, revêtement verre/céramique."
+    },
+    {
+      "id": "honor_magic5_pro-12148",
+      "name": "Magic5 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic5-pro.jpg",
+      "description": "Smartphone Android Honor Magic5 Pro. Annoncé en février 2023. Comprend un écran de 6,81 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5100 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_magic5-12149",
+      "name": "Magic5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic5-.jpg",
+      "description": "Smartphone Android Honor Magic5. Annoncé en février 2023. Comprend un écran de 6,73 pouces, un chipset Snapdragon 8 Gen 2, une batterie de 5100 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magic5_lite-12107",
+      "name": "Magic5 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic5-lite.jpg",
+      "description": "Smartphone Android Honor Magic5 Lite. Annoncé en février 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5100 mAh, un stockage de 256 Go, une RAM de 8 Go, un verre résistant aux rayures et aux chutes."
+    },
+    {
+      "id": "honor_x8a-12113",
+      "name": "X8a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x8a.jpg",
+      "description": "Smartphone Android Honor X8a. Annoncé en février 2023. Comprend un écran de 6,7 pouces, un chipset MT6769H Helio G88, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x5-12093",
+      "name": "X5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x5.jpg",
+      "description": "Smartphone Android Honor X5. Annoncé en janvier 2023. Comprend un écran de 6,5 pouces, un chipset MT6762 Helio G25, une batterie de 5000 mAh, un stockage de 32 Go, une RAM de 2 Go."
+    },
+    {
+      "id": "honor_x9a-12075",
+      "name": "X9a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x9a.jpg",
+      "description": "Smartphone Android Honor X9a. Annoncé en janvier 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5100 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x7a-12076",
+      "name": "X7a",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x7a.jpg",
+      "description": "Smartphone Android Honor X7a. Annoncé en janvier 2023. Comprend un écran de 6,75 pouces, un chipset MT6765H Helio G37, une batterie de 6000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_80_pro_flat-12065",
+      "name": "80 Pro Flat",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-80-pro-flat.jpg",
+      "description": "Smartphone Android Honor 80 Pro Flat. Annoncé en janvier 2023. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_80_gt-12043",
+      "name": "80 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-80-gt.jpg",
+      "description": "Smartphone Android Honor 80 GT. Annoncé en décembre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4800 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_pad_v8_pro-12044",
+      "name": "Pad V8 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-v8-pro.jpg",
+      "description": "Tablette Android Honor Pad V8 Pro. Annoncée en décembre 2022. Comprend un écran de 12,1 pouces, un chipset Dimensity 8100, une batterie de 10 050 mAh, un stockage de 256 Go et une RAM de 12 Go."
+    },
+    {
+      "id": "honor_80_pro-11992",
+      "name": "80 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-80-pro.jpg",
+      "description": "Smartphone Android Honor 80 Pro. Annoncé en novembre 2022. Comprend un écran de 6,78 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 4800 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_80-11993",
+      "name": "80",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-80.jpg",
+      "description": "Smartphone Android Honor 80. Annoncé en novembre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 782G, une batterie de 4800 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_80_se-11995",
+      "name": "80 SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-80-se.jpg",
+      "description": "Smartphone Android Honor 80 SE. Annoncé en novembre 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 900, une batterie de 4600 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magic_vs_ultimate-11994",
+      "name": "Magic Vs Ultimate",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-vs-ultimate.jpg",
+      "description": "Honor Magic Vs Smartphone Android ultime. Annoncé en novembre 2022. Comprend un écran de 7,9 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 16 Go."
+    },
+    {
+      "id": "honor_magic_vs-11991",
+      "name": "Magic Vs",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-vs-.jpg",
+      "description": "Honor Magic Vs smartphone Android. Annoncé en novembre 2022. Comprend un écran de 7,9 pouces, un chipset Snapdragon 8+ Gen 1, une batterie de 5000 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play_40_plus-11943",
+      "name": "Play 40 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/Honor-play-40-plus.jpg",
+      "description": "Honor Play 40 Plus Smartphone Android. Annoncé en octobre 2022. Comprend un écran de 6,74 pouces, un chipset Dimensity 700, une batterie de 6000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x40_gt-11933",
+      "name": "X40 GT",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x40-gt.jpg",
+      "description": "Smartphone Android Honor X40 GT. Annoncé en octobre 2022. Comprend un écran de 6,81 pouces, un chipset Snapdragon 888 5G, une batterie de 4800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play6c-11932",
+      "name": "Play6C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-6c.jpg",
+      "description": "Smartphone Android Honor Play6C. Annoncé en octobre 2022. Comprend un écran de 6,5 pouces, un chipset Snapdragon 480+ 5G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x6-11894",
+      "name": "X6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x6.jpg",
+      "description": "Smartphone Android Honor X6. Annoncé en septembre 2022. Comprend un écran de 6,5 pouces, un chipset MT6762G Helio G25, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_pad_x8-11889",
+      "name": "Pad X8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-x8.jpg",
+      "description": "Tablette Android Honor Pad X8. Annoncée en septembre 2022. Comprend un écran de 10,1 pouces, un chipset MediaTek MT8786, une batterie de 5100 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_pad_x8_lite-11890",
+      "name": "Pad X8 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-tab7.jpg",
+      "description": "Tablette Android Honor Pad X8 Lite. Annoncée en septembre 2022. Comprend un écran de 9,7 pouces, un chipset MT8786, une batterie de 5100 mAh, un stockage de 32 Go."
+    },
+    {
+      "id": "honor_x40-11875",
+      "name": "X40",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x40.jpg",
+      "description": "Smartphone Android Honor X40. Annoncé en septembre 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 695 5G, une batterie de 5100 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x8_5g-11718",
+      "name": "X8 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x8-5g.jpg",
+      "description": "Smartphone Android Honor X8 5G. Annoncé en juillet 2022. Comprend un écran de 6,5 pouces, un chipset Snapdragon 480+ 5G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_pad_8-11712",
+      "name": "Pad 8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-tab8.jpg",
+      "description": "Tablette Android Honor Pad 8. Annoncée en juillet 2022. Comprend un écran de 12,0 pouces, un chipset Snapdragon 680 4G, une batterie de 7 250 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x40i-11671",
+      "name": "X40i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-40i.jpg",
+      "description": "Smartphone Android Honor X40i. Annoncé en juillet 2022. Comprend un écran de 6,7 pouces, un chipset Dimensity 700, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_70_pro+-11577",
+      "name": "70 Pro+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-70-pro-plus.jpg",
+      "description": "Smartphone Android Honor 70 Pro+. Annoncé en mai 2022. Comprend un écran de 6,78 pouces, un chipset Dimensity 9000, une batterie de 4500 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_70_pro-11576",
+      "name": "70 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-70-pro.jpg",
+      "description": "Smartphone Android Honor 70 Pro. Annoncé en mai 2022. Comprend un écran de 6,78 pouces, un chipset Dimensity 8000, une batterie de 4500 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_70-11575",
+      "name": "70",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-70.jpg",
+      "description": "Smartphone Android Honor 70. Annoncé en mai 2022. Comprend un écran de 6,67 pouces, un chipset Snapdragon 778G+ 5G, une batterie de 4800 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play_30-11520",
+      "name": "Play 30",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-30.jpg",
+      "description": "Smartphone Android Honor Play 30. Annoncé en mai 2022. Comprend un écran de 6,5 pouces, un chipset Snapdragon 480+ 5G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go et un verre aluminosilicate."
+    },
+    {
+      "id": "honor_play6t_pro-11463",
+      "name": "Play6T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-6t-pro.jpg",
+      "description": "Smartphone Android Honor Play6T Pro. Annoncé en avril 2022. Comprend un écran de 6,7 pouces, un chipset Dimensity 810, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play6t-11464",
+      "name": "Play6T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-6t-new.jpg",
+      "description": "Smartphone Android Honor Play6T. Annoncé en avril 2022. Comprend un écran de 6,74 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic4_lite-11423",
+      "name": "Magic4 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic4-lite.jpg",
+      "description": "Smartphone Android Honor Magic4 Lite. Annoncé en mars 2022. Comprend un écran de 6,81 pouces, un chipset Snapdragon 695 5G, une batterie de 4800 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x7-11452",
+      "name": "X7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x7.jpg",
+      "description": "Smartphone Android Honor X7. Annoncé en mars 2022. Comprend un écran de 6,74 pouces, un chipset Snapdragon 680 4G, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_x9-11456",
+      "name": "X9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x9-4g.jpg",
+      "description": "Smartphone Android Honor X9. Annoncé en mars 2022. Comprend un écran de 6,81 pouces, un chipset Snapdragon 680 4G, une batterie de 4800 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x9_5g-11447",
+      "name": "X9 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x9.jpg",
+      "description": "Smartphone Android Honor X9 5G. Annoncé en mars 2022. Comprend un écran de 6,81 pouces, un chipset Snapdragon 695 5G, une batterie de 4800 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic4_ultimate-11432",
+      "name": "Magic4 Ultimate",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic4-ultimate.jpg",
+      "description": "Honor Magic4 Ultimate Smartphone Android. Annoncé en mars 2022. Comprend un écran de 6,81 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4600 mAh, un stockage de 512 Go, une RAM de 12 Go et un verre résistant aux rayures."
+    },
+    {
+      "id": "honor_x8-11417",
+      "name": "X8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x8.jpg",
+      "description": "Smartphone Android Honor X8. Annoncé en mars 2022. Comprend un écran de 6,7 pouces, un chipset Snapdragon 680 4G, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_magic4_pro-11390",
+      "name": "Magic4 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic4-pro.jpg",
+      "description": "Smartphone Android Honor Magic4 Pro. Annoncé en février 2022. Comprend un écran de 6,81 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4600 mAh, un stockage de 512 Go, une RAM de 12 Go et un verre aluminosilicate."
+    },
+    {
+      "id": "honor_magic4-11389",
+      "name": "Magic4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic4.jpg",
+      "description": "Smartphone Android Honor Magic4. Annoncé en février 2022. Comprend un écran de 6,81 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4800 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_60_se-11354",
+      "name": "60 SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-60-se.jpg",
+      "description": "Smartphone Android Honor 60 SE. Annoncé en février 2022. Comprend un écran de 6,67 pouces, un chipset Dimensity 900, une batterie de 4 300 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_watch_gs_3-11312",
+      "name": "Watch GS 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-watch-gs3.jpg",
+      "description": "Montre Honor Watch GS 3. Annoncée en janvier 2022. Comprend un écran de 1,43″, une batterie de 451 mAh, 4 Go de stockage, 32 Mo de RAM."
+    },
+    {
+      "id": "honor_magic_v-11311",
+      "name": "Magic V",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-v.jpg",
+      "description": "Smartphone Android Honor Magic V. Annoncé en janvier 2022. Comprend un écran de 7,9 pouces, un chipset Snapdragon 8 Gen 1, une batterie de 4750 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x30-11270",
+      "name": "X30",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x30.jpg",
+      "description": "Smartphone Android Honor X30. Annoncé en décembre 2021. Comprend un écran de 6,81 pouces, un chipset Snapdragon 695 5G, une batterie de 4800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play_30_plus-11271",
+      "name": "Play 30 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play30-plus.jpg",
+      "description": "Honor Play 30 Plus Smartphone Android. Annoncé en décembre 2021. Comprend un écran de 6,74 pouces, un chipset Dimensity 700, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_60_pro-11248",
+      "name": "60 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-60-pro-r.jpg",
+      "description": "Smartphone Android Honor 60 Pro. Annoncé en décembre 2021. Comprend un écran de 6,78 pouces, un chipset Snapdragon 778G+ 5G, une batterie de 4800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_60-11255",
+      "name": "60",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-60-r.jpg",
+      "description": "Smartphone Android Honor 60. Annoncé en décembre 2021. Comprend un écran de 6,67 pouces, un chipset Snapdragon 778G 5G, une batterie de 4800 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_x30_max-11178",
+      "name": "X30 Max",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x30-max.jpg",
+      "description": "Smartphone Android Honor X30 Max. Annoncé en octobre 2021. Comprend un écran de 7,09 pouces, un chipset Dimensity 900, une batterie de 5000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x30i-11179",
+      "name": "X30i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x30i.jpg",
+      "description": "Smartphone Android Honor X30i. Annoncé en octobre 2021. Comprend un écran de 6,7 pouces, un chipset Dimensity 810, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_50_lite-11175",
+      "name": "50 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-50-lite.jpg",
+      "description": "Smartphone Android Honor 50 Lite. Annoncé en octobre 2021. Comprend un écran de 6,67 pouces, une batterie de 4 300 mAh, 128 Go de stockage, 8 Go de RAM."
+    },
+    {
+      "id": "honor_play5_youth-11173",
+      "name": "Play5 Youth",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play5-youth.jpg",
+      "description": "Smartphone Android Honor Play5 Youth. Annoncé en octobre 2021. Comprend un écran de 6,67 pouces, un chipset Dimensity 900, une batterie de 4 300 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_tablet_v7-11125",
+      "name": "Tablet V7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-tablet-v7.jpg",
+      "description": "Tablette Android Honor Tablet V7. Annoncé en septembre 2021. Comprend un écran de 10,4 pouces, un chipset MT8791 Kompanio 900T 5G, une batterie de 7 250 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_tablet_v7_pro-11055",
+      "name": "Tablet V7 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-tablet-v7-pro-1.jpg",
+      "description": "Tablette Android Honor Tablet V7 Pro. Annoncé en août 2021. Caractéristiques Écran 11,0′′, chipset MT8797 Kompanio 1300T, batterie 7250 mAh, stockage 256 Go, RAM 8 Go, verre aluminosilicate."
+    },
+    {
+      "id": "honor_x20-11052",
+      "name": "X20",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x20.jpg",
+      "description": "Smartphone Android Honor X20. Annoncé en août 2021. Comprend un écran de 6,67 pouces, un chipset Dimensity 900, une batterie de 4 300 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic3_pro+-11051",
+      "name": "Magic3 Pro+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic3-pro-plus.jpg",
+      "description": "Smartphone Android Honor Magic3 Pro+. Annoncé en août 2021. Comprend un écran de 6,76 pouces, un chipset Snapdragon 888+ 5G, une batterie de 4600 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magic3_pro-11050",
+      "name": "Magic3 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic3-pro.jpg",
+      "description": "Smartphone Android Honor Magic3 Pro. Annoncé en août 2021. Comprend un écran de 6,76 pouces, un chipset Snapdragon 888+ 5G, une batterie de 4600 mAh, un stockage de 512 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_magic3-11049",
+      "name": "Magic3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic3.jpg",
+      "description": "Smartphone Android Honor Magic3. Annoncé en août 2021. Comprend un écran de 6,76 pouces, un chipset Snapdragon 888 5G, une batterie de 4600 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play_5t_pro-11038",
+      "name": "Play 5T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-5t-pro.jpg",
+      "description": "Honor Play 5T Pro Smartphone Android. Annoncé en août 2021. Comprend un écran de 6,6 pouces, un chipset MT6769V, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x20_se-10995",
+      "name": "X20 SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x20-se.jpg",
+      "description": "Smartphone Android Honor X20 SE. Annoncé en juin 2021. Comprend un écran de 6,6 pouces, un chipset Dimensity 700, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_50_pro-10958",
+      "name": "50 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-50-pro-.jpg",
+      "description": "Smartphone Android Honor 50 Pro. Annoncé en juin 2021. Comprend un écran de 6,72 pouces, un chipset Snapdragon 778G 5G, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_50-10962",
+      "name": "50",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-50-.jpg",
+      "description": "Smartphone Android Honor 50. Annoncé en juin 2021. Comprend un écran de 6,57 pouces, un chipset Snapdragon 778G 5G, une batterie de 4 300 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_50_se-10963",
+      "name": "50 SE",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-50-se.jpg",
+      "description": "Smartphone Android Honor 50 SE. Annoncé en juin 2021. Comprend un écran de 6,78 pouces, un chipset Dimensity 900, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_play5_5g-10899",
+      "name": "Play5 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-5.jpg",
+      "description": "Smartphone Android Honor Play5 5G. Annoncé en mai 2021. Comprend un écran de 6,53 pouces, un chipset Dimensity 800U, une batterie de 3800 mAh, un stockage de 256 Go, une RAM de 8 Go, Schott Xensation Up."
+    },
+    {
+      "id": "honor_tablet_x7-10912",
+      "name": "Tablet X7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-x7.jpg",
+      "description": "Tablette Android Honor Tablet X7. Annoncée en mai 2021. Comprend un écran de 8,0 pouces, un chipset MT8768T Helio P22T, une batterie de 5100 mAh, un stockage de 32 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_play_20-10876",
+      "name": "Play 20",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-20.jpg",
+      "description": "Smartphone Android Honor Play 20. Annoncé en avril 2021. Comprend un écran de 6,52 pouces, un chipset Unisoc T610, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play_5t_youth-10863",
+      "name": "Play 5T Youth",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-5t-lite.jpg",
+      "description": "Smartphone Android Honor Play 5T Youth. Annoncé en avril 2021. Comprend un écran de 6,6 pouces, un chipset MT6765 Helio P35, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_tab_7-10813",
+      "name": "Tab 7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-tab7.jpg",
+      "description": "Tablette Android Honor Tab 7. Annoncée en mars 2021. Comprend un écran de 10,1 pouces, un chipset MT8786, une batterie de 5100 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_v40_lite-10804",
+      "name": "V40 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v40-lite.jpg",
+      "description": "Smartphone Android Honor V40 Lite. Annoncé en mars 2021. Comprend un écran de 6,57 pouces, un chipset Dimensity 800U, une batterie de 3800 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_view40-10701",
+      "name": "View40",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v40-5g.jpg",
+      "description": "Smartphone Android Honor View40. Annoncé en janvier 2021. Comprend un écran de 6,72 pouces, un chipset Dimensity 1000+, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_v40_5g-10687",
+      "name": "V40 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v40-5g.jpg",
+      "description": "Smartphone Android Honor V40 5G. Annoncé en janvier 2021. Comprend un écran de 6,72 pouces, un chipset Dimensity 1000+, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_10x_lite-10565",
+      "name": "10X Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-10x-lite.jpg",
+      "description": "Honor 10X Lite Smartphone Android. Annoncé en octobre 2020. Comprend un écran de 6,67 pouces, un chipset Kirin 710A, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_30i-10438",
+      "name": "30i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-30i.jpg",
+      "description": "Smartphone Android Honor 30i. Annoncé en septembre 2020. Comprend un écran de 6,3 pouces, un chipset Kirin 710F, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_watch_gs_pro-10422",
+      "name": "Watch GS Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-watch-gs-pro.jpg",
+      "description": "Montre Honor Watch GS Pro. Annoncée en septembre 2020. Comprend un écran de 1,39 pouce, une batterie de 790 mAh, un stockage de 4 Go, conforme à la norme MIL-STD-810G."
+    },
+    {
+      "id": "honor_watch_es-10423",
+      "name": "Watch ES",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-watch-es.jpg",
+      "description": "Montre Honor Watch ES. Annoncée en septembre 2020. Comprend un écran de 1,64 \", une batterie de 180 mAh et un stockage de 4 Go."
+    },
+    {
+      "id": "honor_pad_6-10424",
+      "name": "Pad 6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-6.jpg",
+      "description": "Tablette Android Honor Pad 6. Annoncée en juillet 2020. Comprend un écran de 10,1 pouces, un chipset Kirin 710A, une batterie de 5100 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_pad_x6-10425",
+      "name": "Pad X6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-pad-x6.jpg",
+      "description": "Tablette Android Honor Pad X6. Annoncée en juillet 2020. Comprend un écran de 9,7 pouces, un chipset Kirin 710A, une batterie de 5100 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_x10_max_5g-10306",
+      "name": "X10 Max 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x10-max.jpg",
+      "description": "Honor X10 Max 5G Smartphone Android. Annoncé en juillet 2020. Comprend un écran de 7,09 pouces, un chipset Dimensity 800, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_30_youth-10304",
+      "name": "30 Youth",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-30-lite.jpg",
+      "description": "Smartphone Android Honor 30 Youth. Annoncé en juillet 2020. Comprend un écran de 6,5 pouces, un chipset Dimensity 800, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_8s_2020-10218",
+      "name": "8S 2020",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-8s-2020.jpg",
+      "description": "Smartphone Android Honor 8S 2020. Annoncé en mai 2020. Caractéristiques Écran 5,71″, chipset MT6761 Helio A22, batterie 3020 mAh, stockage 64 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_play4-10283",
+      "name": "Play4",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play4.jpg",
+      "description": "Smartphone Android Honor Play4. Annoncé en juin 2020. Comprend un écran de 6,81 pouces, un chipset Dimensity 800, une batterie de 4 300 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play4_pro-10258",
+      "name": "Play4 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-4-pro.jpg",
+      "description": "Smartphone Android Honor Play4 Pro. Annoncé en juin 2020. Comprend un écran de 6,57 pouces, un chipset Kirin 990, une batterie de 4200 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_x10_5g-10228",
+      "name": "X10 5G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-x10-5g.jpg",
+      "description": "Smartphone Android Honor X10 5G. Annoncé en mai 2020. Caractéristiques : écran 6,63″, chipset Kirin 820 5G, batterie 4300 mAh, stockage 128 Go, RAM 8 Go, verre aluminosilicate."
+    },
+    {
+      "id": "honor_v6-10253",
+      "name": "V6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v6.jpg",
+      "description": "Tablette Android Honor V6. Annoncée en mai 2020. Comprend un écran de 10,4 pouces, un chipset Kirin 985 5G, une batterie de 7250 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_9a-10215",
+      "name": "9A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-9a.jpg",
+      "description": "Smartphone Android Honor 9A. Annoncé en avril 2020. Comprend un écran de 6,3 pouces, un chipset MT6762R Helio P22, une batterie de 5000 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_9c-10214",
+      "name": "9C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-9c.jpg",
+      "description": "Smartphone Android Honor 9C. Annoncé en avril 2020. Comprend un écran de 6,39 pouces, un chipset Kirin 710A, une batterie de 4000 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_9s-10213",
+      "name": "9S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-9s.jpg",
+      "description": "Smartphone Android Honor 9S. Annoncé en avril 2020. Comprend un écran de 5,45 pouces, un chipset MT6762R Helio P22, une batterie de 3020 mAh, un stockage de 32 Go, une RAM de 2 Go."
+    },
+    {
+      "id": "honor_9x_lite-10085",
+      "name": "9X Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-9x-lite.jpg",
+      "description": "Smartphone Android Honor 9X Lite. Annoncé en avril 2020. Comprend un écran de 6,5 pouces, un chipset Kirin 710F, une batterie de 3750 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_30_pro+-10187",
+      "name": "30 Pro+",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-30-pro-plus.jpg",
+      "description": "Smartphone Android Honor 30 Pro+. Annoncé en avril 2020. Comprend un écran de 6,57 pouces, un chipset Kirin 990 5G, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 12 Go."
+    },
+    {
+      "id": "honor_30_pro-10181",
+      "name": "30 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-30-pro.jpg",
+      "description": "Smartphone Android Honor 30 Pro. Annoncé en avril 2020. Comprend un écran de 6,57 pouces, un chipset Kirin 990 5G, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_30-10188",
+      "name": "30",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-30.jpg",
+      "description": "Smartphone Android Honor 30. Annoncé en avril 2020. Comprend un écran de 6,53 pouces, un chipset Kirin 985 5G, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_20e-10191",
+      "name": "20e",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-20e.jpg",
+      "description": "Smartphone Android Honor 20e. Annoncé en avril 2020. Comprend un écran de 6,21 pouces, un chipset Kirin 710F, une batterie de 3400 mAh, un stockage de 64 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_play_4t_pro-10168",
+      "name": "Play 4T Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-4t-pro.jpg",
+      "description": "Honor Play 4T Pro Smartphone Android. Annoncé en avril 2020. Comprend un écran de 6,3 pouces, un chipset Kirin 810, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play_4t-10167",
+      "name": "Play 4T",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-4t.jpg",
+      "description": "Smartphone Android Honor Play 4T. Annoncé en avril 2020. Comprend un écran de 6,39 pouces, un chipset Kirin 710A, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_8a_2020-10182",
+      "name": "8A 2020",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-8a-2020-uk.jpg",
+      "description": "Smartphone Android Honor 8A 2020. Annoncé en avril 2020. Comprend un écran de 6,09 pouces, un chipset MT6765 Helio P35, une batterie de 3020 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_8a_prime-10163",
+      "name": "8A Prime",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-8a-prime.jpg",
+      "description": "Smartphone Android Honor 8A Prime. Annoncé en mars 2020. Comprend un écran de 6,09 pouces, un chipset MT6765 Helio P35, une batterie de 3020 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_30s-10162",
+      "name": "30S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-30s.jpg",
+      "description": "Smartphone Android Honor 30S. Annoncé en mars 2020. Comprend un écran de 6,5 pouces, un chipset Kirin 820 5G, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go et un verre aluminosilicate."
+    },
+    {
+      "id": "honor_play_9a-10155",
+      "name": "Play 9A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-9a-r.jpg",
+      "description": "Smartphone Android Honor Play 9A. Annoncé en mars 2020. Comprend un écran de 6,3 pouces, un chipset MT6765 Helio P35, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_view30_pro-10099",
+      "name": "View30 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-view30-pro.jpg",
+      "description": "Smartphone Android Honor View30 Pro. Annoncé en février 2020. Caractéristiques Écran 6,57″, chipset Kirin 990 5G, batterie 4100 mAh, stockage 256 Go, RAM 8 Go, Oui."
+    },
+    {
+      "id": "honor_view30-10101",
+      "name": "View30",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-view30.jpg",
+      "description": "Smartphone Android Honor View30. Annoncé en février 2020. Caractéristiques Écran 6,57″, chipset Kirin 990, batterie 4200 mAh, stockage 128 Go, RAM 8 Go, Oui."
+    },
+    {
+      "id": "honor_v30_pro-9976",
+      "name": "V30 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v30-pro.jpg",
+      "description": "Smartphone Android Honor V30 Pro. Annoncé en novembre 2019. Caractéristiques Écran 6,57″, chipset Kirin 990 5G, batterie 4100 mAh, stockage 256 Go, RAM 8 Go, Oui."
+    },
+    {
+      "id": "honor_v30-9977",
+      "name": "V30",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v30.jpg",
+      "description": "Smartphone Android Honor V30. Annoncé en novembre 2019. Caractéristiques Écran 6,57″, chipset Kirin 990, batterie 4200 mAh, stockage 128 Go, RAM 8 Go, Oui."
+    },
+    {
+      "id": "honor_magicwatch_2-9974",
+      "name": "MagicWatch 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-watch2-.jpg",
+      "description": "Montre Honor MagicWatch 2. Annoncée en novembre 2019. Comprend un écran de 1,39 \", une batterie de 455 mAh et un stockage de 4 Go."
+    },
+    {
+      "id": "honor_9x-9931",
+      "name": "9X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-9x-global-new.jpg",
+      "description": "Smartphone Android Honor 9X. Annoncé en octobre 2019. Comprend un écran de 6,59 pouces, un chipset Kirin 710F, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_20_lite_(china)-9914",
+      "name": "20 lite (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-20-lite-youth.jpg",
+      "description": "Honor 20 lite (Chine) Smartphone Android. Annoncé en octobre 2019. Comprend un écran de 6,3 pouces, un chipset Kirin 710F, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play_3e-9878",
+      "name": "Play 3e",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-3e.jpg",
+      "description": "Smartphone Android Honor Play 3e. Annoncé en septembre 2019. Comprend un écran de 5,71 pouces, un chipset MT6762R Helio P22, une batterie de 3020 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_play_3-9829",
+      "name": "Play 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-play-3.jpg",
+      "description": "Smartphone Android Honor Play 3. Annoncé en septembre 2019. Comprend un écran de 6,39 pouces, un chipset Kirin 710F, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_20s-9832",
+      "name": "20S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-20s.jpg",
+      "description": "Smartphone Android Honor 20S. Annoncé en septembre 2019. Comprend un écran de 6,26 pouces, un chipset Kirin 810, une batterie de 3750 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_9x_pro-9772",
+      "name": "9X Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-9x-pro.jpg",
+      "description": "Smartphone Android Honor 9X Pro. Annoncé en juillet 2019. Comprend un écran de 6,59 pouces, un chipset Kirin 810, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_9x_(china)-9771",
+      "name": "9X (China)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-9x-global.jpg",
+      "description": "Smartphone Android Honor 9X (Chine). Annoncé en juillet 2019. Comprend un écran de 6,59 pouces, un chipset Kirin 810, une batterie de 4000 mAh, un stockage de 128 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_8s-9664",
+      "name": "8S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-8s-.jpg",
+      "description": "Smartphone Android Honor 8S. Annoncé en avril 2019. Comprend un écran de 5,71 pouces, un chipset MT6761 Helio A22, une batterie de 3020 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_pad_5_10_1-9740",
+      "name": "Pad 5 10.1",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor5-10-ags2-al00hn.jpg",
+      "description": "Tablette Android Honor Pad 5 10.1. Annoncée en juin 2019. Comprend un écran de 10,1 pouces, un chipset Kirin 659, une batterie de 5100 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_pad_5_8-9741",
+      "name": "Pad 5 8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor5-8-jdn2-al00hn.jpg",
+      "description": "Tablette Android Honor Pad 5 8. Annoncée en juin 2019. Comprend un écran de 8,0 pouces, un chipset Kirin 710, une batterie de 5100 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_20_pro-9710",
+      "name": "20 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-20-pro-r.jpg",
+      "description": "Smartphone Android Honor 20 Pro. Annoncé en mai 2019. Comprend un écran de 6,26 pouces, un chipset Kirin 980, une batterie de 4000 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_20-9615",
+      "name": "20",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-20.jpg",
+      "description": "Smartphone Android Honor 20. Annoncé en mai 2019. Caractéristiques : écran 6,26″, chipset Kirin 980, batterie 3750 mAh, stockage 128 Go, RAM 8 Go."
+    },
+    {
+      "id": "honor_20_lite-9641",
+      "name": "20 lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-20-lite.jpg",
+      "description": "Smartphone Android Honor 20 lite. Annoncé en avril 2019. Caractéristiques : écran 6,21″, chipset Kirin 710, batterie 3400 mAh, stockage 128 Go, RAM 8 Go."
+    },
+    {
+      "id": "honor_20i-9663",
+      "name": "20i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-20i.jpg",
+      "description": "Smartphone Android Honor 20i. Annoncé en avril 2019. Comprend un écran de 6,21 pouces, un chipset Kirin 710, une batterie de 3400 mAh, un stockage de 256 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_8a_pro-9662",
+      "name": "8A Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-8a-pro.jpg",
+      "description": "Smartphone Android Honor 8A Pro. Annoncé en avril 2019. Comprend un écran de 6,09 pouces, un chipset MT6765 Helio P35, une batterie de 3020 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_tab_5-9619",
+      "name": "Tab 5",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-tab-5.jpg",
+      "description": "Tablette Android Honor Tab 5. Annoncée en mars 2019. Comprend un écran de 8,0 pouces, un chipset Kirin 710, une batterie de 5100 mAh, un stockage de 128 Go, une RAM de 4 Go et un verre résistant aux rayures."
+    },
+    {
+      "id": "honor_view_20-9468",
+      "name": "View 20",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-view-20-ofic.jpg",
+      "description": "Smartphone Android Honor View 20. Annoncé en décembre 2018. Caractéristiques Écran 6,4″, chipset Kirin 980, batterie 4000 mAh, stockage 256 Go, RAM 8 Go, Oui."
+    },
+    {
+      "id": "honor_magic_2_3d-9628",
+      "name": "Magic 2 3D",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-2-3d.jpg",
+      "description": "Honor Magic 2 Smartphone Android 3D. Annoncé en mars 2019. Comprend un écran de 6,39 pouces, un chipset Kirin 980, une batterie de 3500 mAh, un stockage de 512 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_magic_2-9381",
+      "name": "Magic 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-magic-2-.jpg",
+      "description": "Honor Magic 2 Smartphone Android. Annoncé en octobre 2018. Comprend un écran de 6,39 pouces, un chipset Kirin 980, une batterie de 3500 mAh, un stockage de 256 Go, une RAM de 8 Go."
+    },
+    {
+      "id": "honor_play_8a-9509",
+      "name": "Play 8A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-play-8a.jpg",
+      "description": "Smartphone Android Honor Play 8A. Annoncé en janvier 2019. Comprend un écran de 6,09 pouces, un chipset MT6765 Helio P35, une batterie de 3020 mAh, un stockage de 64 Go, une RAM de 3 Go."
+    },
+    {
+      "id": "honor_10_lite-9403",
+      "name": "10 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-10-lite.jpg",
+      "description": "Smartphone Android Honor 10 Lite. Annoncé en novembre 2018. Comprend un écran de 6,21 pouces, un chipset Kirin 710, une batterie de 3400 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_8c-9366",
+      "name": "8C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-8c.jpg",
+      "description": "Smartphone Android Honor 8C. Annoncé en octobre 2018. Comprend un écran de 6,26 pouces, un chipset Snapdragon 632, une batterie de 4000 mAh, un stockage de 64 Go, une RAM de 4 Go."
+    },
+    {
+      "id": "honor_8x-9313",
+      "name": "8X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-8x.jpg",
+      "description": "Smartphone Android Honor 8X. Annoncé en septembre 2018. Comprend un écran de 6,5 pouces, un chipset Kirin 710, une batterie de 3750 mAh, 128 Go de stockage, 6 Go de RAM, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_8x_max-9306",
+      "name": "8X Max",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-8x-max.jpg",
+      "description": "Honor 8X Max Smartphone Android. Annoncé en septembre 2018. Comprend un écran de 7,12 pouces, un chipset Snapdragon 660, une batterie de 5000 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_note_10-8799",
+      "name": "Note 10",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-note10-cn.jpg",
+      "description": "Smartphone Android Honor Note 10. Annoncé en juillet 2018. Caractéristiques : écran 6,95″, chipset Kirin 970, double caméra principale 16 MP (f/1,8) + 24 MP, caméra frontale 13 MP, batterie 5000 mAh, stockage 128 Go, RAM 8 Go."
+    },
+    {
+      "id": "honor_9n_(9i)-9229",
+      "name": "9N (9i)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-9n.jpg",
+      "description": "Honor 9N (9i) Smartphone Android. Annoncé en juillet 2018. Caractéristiques Écran 5,84″, chipset Kirin 659, double : 13 MP (PDAF) + 2 MP caméra principale, caméra frontale 16 MP, batterie 3000 mAh, stockage 128 Go, RAM 4 Go."
+    },
+    {
+      "id": "honor_play-9230",
+      "name": "Play",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-play-ofic.jpg",
+      "description": "Smartphone Android Honor Play. Annoncé en juillet 2018. Comprend un écran de 6,3 pouces, un chipset Kirin 970, une batterie de 3750 mAh, un stockage de 128 Go, une RAM de 6 Go."
+    },
+    {
+      "id": "honor_7s-9211",
+      "name": "7S",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-play-7.jpg",
+      "description": "Smartphone Android Honor 7S. Annoncé en mai 2018. Caractéristiques : écran 5,45″, chipset MT6739, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3020 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_10-9157",
+      "name": "10",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-10-.jpg",
+      "description": "Smartphone Android Honor 10. Annoncé en mai 2018. Caractéristiques Écran 5,84″, chipset Kirin 970, double : 16 MP (f/1,8) + 24 MP caméra principale, caméra frontale 24 MP, batterie 3400 mAh, stockage 128 Go, RAM 8 Go, Corning Gorilla Glass (version non spécifiée)."
+    },
+    {
+      "id": "honor_7a-9075",
+      "name": "7A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-7a-.jpg",
+      "description": "Smartphone Android Honor 7A. Annoncé en avril 2018. Caractéristiques : écran 5,7″, chipset Snapdragon 430, double : 13 MP (f/2.2, PDAF) + 2 MP caméra principale, caméra frontale 8 MP, batterie 3000 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_7c-9111",
+      "name": "7C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-7c.jpg",
+      "description": "Smartphone Android Honor 7C. Annoncé en mai 2018. Caractéristiques : écran 5,99″, chipset Snapdragon 450, double : 13 MP (f/2.2, PDAF) + 2 MP caméra principale, caméra frontale 8 MP, batterie 3000 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "honor_9_lite-8962",
+      "name": "9 Lite",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-9-lite.jpg",
+      "description": "Smartphone Android Honor 9 Lite. Annoncé en décembre 2017. Caractéristiques Écran 5,65″, chipset Kirin 659, double : 13 MP (PDAF) + 2 MP caméra principale, double : 13 MP + 2 MP caméra frontale, batterie 3000 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "honor_view_10-8938",
+      "name": "View 10",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-view-10.jpg",
+      "description": "Smartphone Android Honor View 10. Annoncé en décembre 2017. Caractéristiques : écran 5,99 pouces, chipset Kirin 970, double caméra principale 16 MP (f/1,8) + 20 MP, caméra frontale 13 MP, batterie 3750 mAh, stockage 128 Go, RAM 6 Go."
+    },
+    {
+      "id": "honor_7x-8880",
+      "name": "7X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-7x.jpg",
+      "description": "Smartphone Android Honor 7X. Annoncé en décembre 2017. Caractéristiques : écran 5,93″, chipset Kirin 659, double : 16 MP (f/2,2, 26 mm, 1/2,9″, 1,25 µm, PDAF) + 2 MP caméra principale, 8 MP caméra frontale, batterie 3340 mAh, stockage 128 Go, 4 Go RAM."
+    },
+    {
+      "id": "honor_6c_pro-8856",
+      "name": "6C Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-v9-play.jpg",
+      "description": "Smartphone Android Honor 6C Pro. Annoncé en octobre 2017. Caractéristiques : écran 5,2″, chipset MT6750, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 3000 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_9-8704",
+      "name": "9",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-9-1.jpg",
+      "description": "Smartphone Android Honor 9. Annoncé en juin 2017. Caractéristiques : écran 5,15″, chipset Kirin 960, double caméra principale 12 MP (f/2.2, 27mm) + 20 MP, caméra frontale 8 MP, batterie 3200 mAh, stockage 128 Go, RAM 6 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_6a_(pro)-8700",
+      "name": "6A (Pro)",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-nonor-6a.jpg",
+      "description": "Honor 6A (Pro) Smartphone Android. Annoncé en mai 2017. Caractéristiques Écran 5,0″, chipset Snapdragon 430, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 3020 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_8_pro-8568",
+      "name": "8 Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-8-pro.jpg",
+      "description": "Honor 8 Pro Smartphone Android. Annoncé en avril 2017. Caractéristiques : écran 5,7″, chipset Kirin 960, double caméra principale 12 MP, caméra frontale 8 MP, batterie 4000 mAh, stockage 64 Go, RAM 6 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_magic-8482",
+      "name": "Magic",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-magic.jpg",
+      "description": "Smartphone Android Honor Magic. Annoncé en décembre 2016. Caractéristiques : écran 5,09 pouces, chipset Kirin 950, double caméra principale 12 MP, caméra frontale 8 MP, batterie 2900 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "honor_v8-8061",
+      "name": "V8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-v8.jpg",
+      "description": "Smartphone Android Honor V8. Annoncé en mai 2016. Caractéristiques : écran 5,7″, chipset Kirin 950, double caméra principale 12 MP, caméra frontale 8 MP, batterie 3500 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_pad_2-8390",
+      "name": "Pad 2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-pad-2-.jpg",
+      "description": "Tablette Android Honor Pad 2. Annoncée en octobre 2016. Caractéristiques : écran 8,0″, chipset Snapdragon 615, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 4800 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_6x-8388",
+      "name": "6X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-6x-2016.jpg",
+      "description": "Smartphone Android Honor 6X. Annoncé en octobre 2016. Caractéristiques : écran 5,5″, chipset Kirin 655, double : 12 MP (1/2,9″, 1,25µm, PDAF) + 2 MP caméra principale, caméra frontale 8 MP, batterie 3340 mAh, stockage 64 Go, RAM 4 Go."
+    },
+    {
+      "id": "honor_holly_3-8383",
+      "name": "Holly 3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-5a.jpg",
+      "description": "Smartphone Android Honor Holly 3. Annoncé en octobre 2016. Caractéristiques : écran 5,5″, chipset Kirin 620, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 3100 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_note_8-8231",
+      "name": "Note 8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-note8.jpg",
+      "description": "Honor Note 8 Smartphone Android. Annoncé en août 2016. Caractéristiques : écran 6,6″, chipset Kirin 955, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 4500 mAh, stockage 128 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_8-8195",
+      "name": "8",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-8r1.jpg",
+      "description": "Smartphone Android Honor 8. Annoncé en juillet 2016. Caractéristiques : écran 5,2″, chipset Kirin 950, double caméra principale 12 MP, caméra frontale 8 MP, batterie 3000 mAh, stockage 64 Go, RAM 4 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_5a-8149",
+      "name": "5A",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-5a-new.jpg",
+      "description": "Smartphone Android Honor 5A. Annoncé en juin 2016. Caractéristiques : écran 5,0″, chipset MT6735P, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 2200 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_5c-8074",
+      "name": "5c",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-5c-1.jpg",
+      "description": "Smartphone Android Honor 5c. Annoncé en avril 2016. Caractéristiques : écran 5,2″, chipset Kirin 650, appareil photo principal 13 MP, appareil photo frontal 8 MP, batterie 3000 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_holly_2_plus-7882",
+      "name": "Holly 2 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-holly2-plus.jpg",
+      "description": "Smartphone Android Honor Holly 2 Plus. Annoncé en janvier 2016. Caractéristiques : écran 5,0″, chipset MT6735P, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 4000 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_5x-7590",
+      "name": "5X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-5x.jpg",
+      "description": "Honor 5X Smartphone Android. Annoncé en octobre 2015. Caractéristiques : écran 5,5″, chipset Snapdragon 616, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 3000 mAh, stockage 16 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_7i-7510",
+      "name": "7i",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-7i.jpg",
+      "description": "Smartphone Android Honor 7i. Annoncé en août 2015. Caractéristiques : écran 5,2″, chipset Snapdragon 616, appareil photo principal 13 MP, appareil photo frontal 13 MP, batterie 3100 mAh, stockage 32 Go, RAM 3 Go."
+    },
+    {
+      "id": "honor_7-7269",
+      "name": "7",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-7r.jpg",
+      "description": "Smartphone Android Honor 7. Annoncé en juin 2015. Caractéristiques : écran 5,2″, chipset Kirin 935, appareil photo principal 20 MP, appareil photo frontal 8 MP, batterie 3100 mAh, stockage 64 Go, RAM 3 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_bee-7235",
+      "name": "Bee",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-bee.jpg",
+      "description": "Smartphone Android Honor Bee. Annoncé en mai 2015. Caractéristiques : écran 4,5″, chipset Spreadtrum SC7731, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 1730 mAh, stockage 8 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "honor_4c-7203",
+      "name": "4C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-4c.jpg",
+      "description": "Smartphone Android Honor 4C. Annoncé en avril 2015. Caractéristiques : écran 5,0″, chipset Kirin 620, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 2550 mAh, stockage 8 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_6_plus-6777",
+      "name": "6 Plus",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-6-plus.jpg",
+      "description": "Smartphone Android Honor 6 Plus. Annoncé en décembre 2014. Caractéristiques : écran 5,5″, chipset Kirin 925, double caméra principale 8 MP, caméra frontale 8 MP, batterie 3600 mAh, stockage 32 Go, RAM 3 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_4x-6754",
+      "name": "4X",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-4x.jpg",
+      "description": "Honor 4X Smartphone Android. Annoncé en octobre 2014. Caractéristiques : écran 5,5″, chipset Kirin 620, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 3000 mAh, stockage 8 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_holly-6738",
+      "name": "Holly",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-holly.jpg",
+      "description": "Smartphone Android Honor Holly. Annoncé en octobre 2014. Caractéristiques : écran 5,0″, chipset MT6582, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2000 mAh, stockage 16 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "honor_4_play-6692",
+      "name": "4 Play",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-4-play.jpg",
+      "description": "Smartphone Android Honor 4 Play. Annoncé en septembre 2014. Caractéristiques : écran 5,0″, chipset Snapdragon 410, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2000 mAh, stockage 8 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "honor_3c_play-6603",
+      "name": "3C Play",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-3c-play.jpg",
+      "description": "Honor 3C Play Smartphone Android. Annoncé en août 2014. Caractéristiques : écran 5,0″, chipset MT6582, appareil photo principal 8 MP, appareil photo frontal 2 MP, batterie 2000 mAh, stockage 16 Go, RAM 1000 Mo."
+    },
+    {
+      "id": "honor_6-6461",
+      "name": "6",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-6.jpg",
+      "description": "Smartphone Android Honor 6. Annoncé en juin 2014. Caractéristiques : écran 5,0″, chipset Kirin 920, appareil photo principal 13 MP, appareil photo avant 5 MP, batterie 3100 mAh, stockage 32 Go, RAM 3 Go, Corning Gorilla Glass 3."
+    },
+    {
+      "id": "honor_3x_pro-6398",
+      "name": "3X Pro",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-3x-pro.jpg",
+      "description": "Honor 3X Pro Smartphone Android. Annoncé en mai 2014. Caractéristiques : écran 5,5″, chipset MT6592, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3000 mAh, stockage 32 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_3c_4g-6395",
+      "name": "3C 4G",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-3c-4g.jpg",
+      "description": "Honor 3C 4G Smartphone Android. Annoncé en mai 2014. Caractéristiques Écran 5,0″, chipset Kirin 910, appareil photo principal 8 MP, appareil photo avant 5 MP, batterie 2300 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_3x_g750-5902",
+      "name": "3X G750",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-3x.jpg",
+      "description": "Honor 3X G750 Smartphone Android. Annoncé en décembre 2013. Caractéristiques : écran 5,5″, chipset MT6592, appareil photo principal 13 MP, appareil photo frontal 5 MP, batterie 3000 mAh, stockage 16 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_3c-5903",
+      "name": "3C",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/Huawei-Honor-3C.jpg",
+      "description": "Smartphone Android Honor 3C. Annoncé en décembre 2013. Caractéristiques : écran 5,0″, chipset MT6582, appareil photo principal 8 MP, appareil photo frontal 5 MP, batterie 2300 mAh, stockage 8 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_3-5664",
+      "name": "3",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-3.jpg",
+      "description": "Smartphone Android Honor 3. Annoncé en août 2013. Caractéristiques : écran 4,7″, chipset Huawei K3V2E, appareil photo principal 13 MP, appareil photo avant 1,3 MP, batterie 2150 mAh, stockage 8 Go, RAM 2 Go, verre Corning Gorilla."
+    },
+    {
+      "id": "honor_2-5092",
+      "name": "2",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor-2.jpg",
+      "description": "Smartphone Android Honor 2. Annoncé en octobre 2012. Caractéristiques : écran 4,5″, chipset Huawei K3V2, appareil photo principal 8 MP, appareil photo frontal 1,3 MP, batterie 2230 mAh, stockage 8 Go, RAM 2 Go."
+    },
+    {
+      "id": "honor_u8860-4197",
+      "name": "U8860",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/huawei-honor.jpg",
+      "description": "Smartphone Android Honor U8860. Annoncé en septembre 2011. Comprend un écran de 4,0 pouces, un chipset Snapdragon S2, un appareil photo principal de 8 MP, une batterie de 1930 mAh, un stockage de 1000 Mo, une RAM de 512 Mo."
+    },
+    {
+      "id": "honor_view-9970",
+      "name": "View",
+      "img": "https://fdn2.gsmarena.com/vv/bigpic/honor-v30-pro-r.jpg",
+      "description": "Smartphone Android Honor View. Pas encore annoncé. Caractéristiques Écran 6,4″, chipset Kirin 990 5G, batterie 4000 mAh, stockage 256 Go, RAM 8 Go, Oui."
+    }
+  ]
+}
