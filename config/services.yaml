@@ -6,6 +6,7 @@
 parameters:
 # chemin du dossier où seront stockées les images de profil
     avatars_directory: '%kernel.project_dir%/public/images/profils'
+
 services:
     # default configuration for services in *this* file
     _defaults:

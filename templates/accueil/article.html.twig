@@ -24,7 +24,7 @@
     <div class="commentaires">
         <h2>Commentaires</h2>
         <ul>
-            {% for commentaire in commentaires %}
+            {% for commentaire in pagination %}
                 <li>
                     <strong>Posté par <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">{{ commentaire.utilisateur.personnalisation.pseudo }}</a></strong>, le : {{ commentaire.date|date('d/m/Y H:i:s') }} 
                     <p>{{ commentaire.contenu }}</p>
@@ -43,5 +43,8 @@
         {% else %}
             <p>Vous devez être <a href="{{ path('app_login') }}">connecté</a> pour poster un commentaire.</p>
         {% endif %}
+
+        {# Affichage de la barre de pagination #}
+        {{ knp_pagination_render(pagination) }}
     </div>
 {% endblock %}
