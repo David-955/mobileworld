@@ -29,6 +29,9 @@ class Produit
     #[ORM\ManyToOne(inversedBy: 'produits')]
     private ?Categorie $categorie = null;
 
+    #[ORM\Column]
+    private ?int $stock = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Produit
     public function setCategorie(?Categorie $categorie): static
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(int $stock): static
+    {
+        $this->stock = $stock;
 
         return $this;
     }

@@ -16,6 +16,7 @@
 			<img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}">
 			<p>{{ product.description }}</p>
 			<p>{{ product.prix }}€</p>
+			<p>Encore {{ product.stock }} en stock !</p>
 			<button onclick="addToCart('{{ product.id }}')">Ajouter au panier</button>
 	{% endfor %}
 	<br><br>

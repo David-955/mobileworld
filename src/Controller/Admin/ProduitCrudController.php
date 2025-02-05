@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Produit;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -31,6 +32,7 @@ class ProduitCrudController extends AbstractCrudController
                 // Ajout champs pour la clé étrangère categorie_id
             AssociationField::new('categorie', 'Catégorie du produit')
                 ->setCrudController(CategorieCrudController::class),
+            IntegerField::new('stock', 'Stock du produit'),
         ];
     }
 }
