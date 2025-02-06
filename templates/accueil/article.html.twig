@@ -26,6 +26,7 @@
         <ul>
             {% for commentaire in pagination %}
                 <li>
+                    <img src="{{ commentaire.utilisateur.personnalisation.avatar }}" alt="Avatar de {{ commentaire.utilisateur.personnalisation.pseudo }}" width="50px">
                     <strong>Posté par <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">{{ commentaire.utilisateur.personnalisation.pseudo }}</a></strong>, le : {{ commentaire.date|date('d/m/Y H:i:s') }} 
                     <p>{{ commentaire.contenu }}</p>
                 </li>
