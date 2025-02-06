@@ -1,6 +1,6 @@
-html, body {
+html,
+body {
   background-color: rgb(255, 255, 255);
-  /* même quand le contenu est insuffisant on remplit tout la page pour pas que le footer se retrouve au milieu */
   height: 100%;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -18,14 +18,211 @@ header {
   text-align: center;
 }
 
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Met le logo à gauche et les liens à droite */
+  align-items: center; /* Centre verticalement les éléments */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 50px; /* Ajustez la hauteur du logo selon vos besoins */
+  width: auto; /* Garde les proportions du logo */
+}
+
+.header-links {
+  display: flex;
+  gap: 20px; /* Espace entre les liens */
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Effet de survol */
+}
+
+.profile-image {
+  width: 40px; /* Ajustez la taille de l'image */
+  height: 40px; /* Ajustez la taille de l'image */
+  border-radius: 50%; /* Rend l'image ronde */
+  object-fit: cover; /* Assure que l'image conserve ses proportions */
+  border: 2px solid white; /* Ajoute une bordure blanche */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.1); /* Effet de zoom au survol */
+  border-color: #45a049; /* Change la couleur de la bordure au survol */
+}
+
 main {
-    flex: 1; /* Le contenu principal prend tout l'espace disponible */
+  flex: 1; /* Le contenu principal prend tout l'espace disponible */
+  padding: 20px;
+}
+
+.main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#news-container {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.news-image-container {
+  flex: 0 0 350px;
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.news-content {
+  flex: 1;
+  text-align: right; /* Aligne tout le contenu à droite */
+  padding-left: 20px; /* Espace entre l'image et le texte */
+}
+
+.news-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #4caf50;
+  text-align: right; /* Aligne le titre à droite */
+}
+
+.news-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: right; /* Aligne la description à droite */
+}
+
+.news-read-more {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: right; /* Aligne le bouton à droite */
+}
+
+.news-read-more:hover {
+  background-color: #45a049;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0 4px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #45a049;
+}
+
+.pagination .current {
+  background-color: #45a049;
+  padding: 8px 16px;
+  border-radius: 5px;
 }
 
 footer {
-    background-color: #4caf50;
-    color: white;
-    text-align: center;
-    padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 480px) {
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column; /* Empile le logo et les liens */
+      gap: 10px; /* Espace entre le logo et les liens */
+    }
+
+    .header-links {
+      flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
+      justify-content: center; /* Centre les liens */
+    }
+  }
+  .profile-image {
+    width: 30px; /* Taille réduite sur les petits écrans */
+    height: 30px; /* Taille réduite sur les petits écrans */
+  }
+
+  .news-item {
+    flex-direction: column; /* Empile l'image et le contenu */
+  }
+
+  .news-image-container {
+    flex: 0 0 auto; /* Réinitialise la largeur fixe */
+    width: 100%; /* L'image prend toute la largeur */
+  }
+
+  .news-image {
     width: 100%;
+    height: auto;
+  }
 }

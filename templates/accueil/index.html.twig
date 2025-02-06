@@ -1,31 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Accueil
-{% endblock %}
+{% block title %}Mobile World : Accueil{% endblock %}
 
 {% block content %}
-	{# Inclure le contenu du bloc body de base.html.twig (le header) #}
-	{{ parent() }}
-	<div class="main">
-	<ul id="news-container">
-		{% for article in pagination.items %}
-			{# modification pour pagination #}
-			<li>
-				<h2>{{ article.title }}</h2>
-				<a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
-					<img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="150px">
-				</a>
-				<p>{{ article.description }}</p>
-				<a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">Lire plus</a>
-			</li>
-		{% endfor %}
-	</ul>
+    <div class="main">
+        <h1>À la une</h1>
+        <ul id="news-container">
+            {% for article in pagination.items %}
+                <li class="news-item">
+                    <div class="news-image-container">
+                        <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
+                            <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="news-image">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <h2 class="news-title">{{ article.title }}</h2>
+                        <p class="news-description">{{ article.description }}</p>
+                        <a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank" class="news-read-more">Lire la suite...</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
 
-	<div
-		class="pagination">
-		{# modification pour pagination #}
-		{{ knp_pagination_render(pagination) }}
-	</div>
-
-	</div>
+        <div class="pagination">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
 {% endblock %}

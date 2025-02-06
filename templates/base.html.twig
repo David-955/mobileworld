@@ -1,76 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            {% block title %}Welcome!
-            {% endblock %}
-        </title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}{% endblock %}
-        {% block javascripts %}
-            {% block importmap %}
-                {{ importmap('app') }}
-            {% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        <header>
-            <a href="{{ path('app_accueil') }}">
-                <img src="{{ asset('/images/logos/logo-mobileworld.webp') }}" alt="logo du site Mobile World">
-            </a>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> {% block stylesheets %}{% endblock %}
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			<div class="header-container">
+				<div class="logo">
+					<a href="{{ path('app_accueil') }}">
+						<img src="{{ asset('/images/logos/logo-mobileworld.webp') }}" alt="logo du site Mobile World">
+					</a>
+				</div>
+				<nav class="header-links">
+					<a href="{{ path('app_boutique') }}" class="nav-link">Boutique</a>
+					<a href="{{ path('app_comparateur') }}" class="nav-link">Comparateur de smartphones</a>
+					{% if is_granted('ROLE_ADMIN') %}
+						<a href="{{ path('admin') }}" class="nav-link">Admin</a>
+					{% endif %}
+					{% if not app.user %}
+						<a href="{{ path('app_register') }}" class="nav-link">S'inscrire</a>
+						<a href="{{ path('app_login') }}" class="nav-link">Se connecter</a>
+					{% else %}
+						<a href="{{ path('app_profil') }}" class="nav-link">
+							<img src="{{ asset(app.user.personnalisation.avatar) }}" alt="Image de profil" class="profile-image">
+						</a>
+						<a href="{{ path('app_panier') }}" class="nav-link">Panier</a>
+						<a href="{{ path('app_logout') }}" class="nav-link">Déconnexion</a>
+					{% endif %}
+				</nav>
+			</div>
+		</header>
 
-            <a href="{{ path('app_boutique') }}">
-                <button>Boutique</button>
-            </a>
+		<main>
+			{# Bloc pour le contenu principal #}
+			{% block content %}{% endblock %}
+		</main>
 
-            <a href="{{ path('app_comparateur') }}">
-                <button>Comparateur de smartphones</button>
-            </a>
-
-            {# bouton que pour les roles admin #}
-            {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('admin') }}">
-                    <button>Admin</button>
-                </a>
-            {% endif %}
-
-            {# La variable app est une variable globale de Symfony qui contient des informations sur l'application. #}
-            {# Si app.user est pas défini, c'est qu'un utilisateur est pas connecté #}
-            {% if not app.user %}
-                {# page inscription affiché si pas connecté #}
-                <a href="{{ path('app_register') }}">
-                    <button>S'inscrire</button>
-                </a>
-
-                {# page de connexion affiché si pas connecté #}
-                <a href="{{ path('app_login') }}">
-                    <button>Se connecter</button>
-                </a>
-            {% else %}
-                {# Sinon si app.user est défini, c'est qu'un utilisateur est connecté #}
-                <a href="{{ path('app_profil') }}">
-                    <button>Profil</button>
-                </a>
-
-                <a href="{{ path('app_panier') }}">
-                    <button>Panier</button>
-                </a>
-
-                <a href="{{ path('app_logout') }}">
-                    <button>Déconnexion</button>
-                </a>
-            {% endif %}
-        </header>
-
-        <main>
-        {# Bloc pour le contenu principal #}
-        {% block content %}
-        {% endblock %}
-        </main>
-
-        <footer>
-            <p>© Copyright 2024, Tous droits réservés</p>
-        </footer>
-    </body>
+		<footer>
+			<p>© Copyright 2024, Tous droits réservés</p>
+		</footer>
+	</body>
 </html>
