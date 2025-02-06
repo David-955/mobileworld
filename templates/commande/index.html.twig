@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Passer commande{% endblock %}
+
+{% block body %}
+    <h1>Récapitulatif de la commande</h1>
+
+    {% if cart|length > 0 %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                    <tr>
+                        <td>{{ item.product.nom }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.prix }}€</td>
+                        <td>{{ item.total }}€</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Total : {{ total }}€</h3>
+    {% else %}
+        <p>Votre panier est vide.</p>
+    {% endif %}
+
+    <h2>Informations de livraison</h2>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">Valider la commande</button>
+    {{ form_end(form) }}
+{% endblock %}

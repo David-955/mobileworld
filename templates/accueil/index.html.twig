@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Accueil{% endblock %}
+{% block title %}Mobile World : Accueil
+{% endblock %}
 
 {% block body %}
 
@@ -24,28 +25,32 @@
 			</a>
 		{% endif %}
 
-        {# La variable app est une variable globale de Symfony qui contient des informations sur l'application. #}
-        {# Si app.user est pas défini, c'est qu'un utilisateur est pas connecté #}
-        {% if not app.user %}
-            {# page inscription affiché si pas connecté #}
-            <a href="{{ path('app_register') }}">
-                <button>S'inscrire</button>
-            </a>
+		{# La variable app est une variable globale de Symfony qui contient des informations sur l'application. #}
+		{# Si app.user est pas défini, c'est qu'un utilisateur est pas connecté #}
+		{% if not app.user %}
+			{# page inscription affiché si pas connecté #}
+			<a href="{{ path('app_register') }}">
+				<button>S'inscrire</button>
+			</a>
 
-            {# page de connexion affiché si pas connecté #}
-            <a href="{{ path('app_login') }}">
-                <button>Se connecter</button>
-            </a>
-        {% else %}
-            {# Sinon si app.user est défini, c'est qu'un utilisateur est connecté #}
-            <a href="{{ path('app_profil') }}">
-                <button>Profil</button>
-            </a>
+			{# page de connexion affiché si pas connecté #}
+			<a href="{{ path('app_login') }}">
+				<button>Se connecter</button>
+			</a>
+		{% else %}
+			{# Sinon si app.user est défini, c'est qu'un utilisateur est connecté #}
+			<a href="{{ path('app_profil') }}">
+				<button>Profil</button>
+			</a>
 
-            <a href="{{ path('app_logout') }}">
-                <button>Déconnexion</button>
-            </a>
-        {% endif %}
+			<a href="{{ path('app_panier') }}">
+				<button>Panier</button>
+			</a>
+
+			<a href="{{ path('app_logout') }}">
+				<button>Déconnexion</button>
+			</a>
+		{% endif %}
 
 		<ul id="news-container">
 			{% for article in pagination.items %}
