@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon Panier{% endblock %}
+{% block title %}Mobile World : Panier{% endblock %}
 
 {% block body %}
-    <h1>Panier</h1>
+    <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
+    <h2>Panier</h2>
 
     {% if cart|length > 0 %}
         <table class="table">
@@ -20,11 +21,16 @@
                 {% for item in cart %}
                     <tr>
                         <td>{{ item.product.nom }}</td>
-                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <form action="{{ path('app_panier_modifier', {'id': item.product.id}) }}" method="post" style="display: inline;">
+                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" style="width: 50px;">
+                                <button type="submit" class="btn btn-sm btn-primary">Mettre à jour</button>
+                            </form>
+                        </td>
                         <td>{{ item.product.prix }}€</td>
                         <td>{{ item.total }}€</td>
                         <td>
-                            <a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}" class="btn btn-danger">Supprimer</a>
+                            <a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}" class="btn btn-sm btn-danger">Supprimer</a>
                         </td>
                     </tr>
                 {% endfor %}

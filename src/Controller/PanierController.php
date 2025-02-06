@@ -88,4 +88,40 @@ class PanierController extends AbstractController
 
         return $this->redirectToRoute('app_panier');
     }
+
+    #[Route('//panier/modifier/{id}', name: 'app_panier_modifier')]
+    public function update(int $id, Request $request, SessionInterface $session): Response
+    {
+        // Récupérer la quantité depuis les données POST
+        $quantity = (int) $request->request->get('quantity', 0);
+
+        // Vérifier si le produit existe
+        $product = $this->produitRepository->find($id);
+        if (!$product) {
+            throw $this->createNotFoundException('Le produit n\'existe pas.');
+        }
+
+        // Vérifier si la quantité demandée est valide
+        if ($quantity <= 0) {
+            return $this->redirectToRoute('app_panier_supprimer', ['id' => $id]);
+        }
+
+        // Vérifier si la quantité demandée dépasse le stock disponible
+        if ($quantity > $product->getStock()) {
+            $this->addFlash('error', 'La quantité demandée dépasse le stock disponible.');
+            return $this->redirectToRoute('app_panier');
+        }
+
+        // Récupérer le panier actuel
+        $cart = $session->get('cart', []);
+
+        // Mettre à jour la quantité
+        $cart[$id] = $quantity;
+
+        // Sauvegarder le panier mis à jour
+        $session->set('cart', $cart);
+
+        $this->addFlash('success', 'La quantité a été mise à jour.');
+        return $this->redirectToRoute('app_panier');
+    }
 }
