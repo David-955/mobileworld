@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Produit;
 use App\Entity\Commande;
-use App\Entity\Utilisateur;
 use App\Repository\ProduitRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
