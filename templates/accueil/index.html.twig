@@ -8,13 +8,13 @@
 		<h1>À la une</h1>
 		<ul id="news-container">
 			{% for article in pagination.items %}
-				<li class="news-item">
+				<li class="news-article">
 					<div class="news-image-container">
 						<a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank">
 							<img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="news-image">
 						</a>
 					</div>
-					<div class="news-content">
+					<div class="news-contenu">
 						<a href="{{ path('app_article', {'title': article.title|url_encode}) }}" target="_blank" style="text-decoration: none;">
 							<h2 class="news-title">{{ article.title }}</h2>
 							<p class="news-description">{{ article.description }}</p>
