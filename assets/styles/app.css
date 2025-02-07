@@ -14,22 +14,22 @@ body {
 header {
   background-color: #4caf50;
   color: white;
-  padding: 20px;
   text-align: center;
 }
 
 header {
   background-color: #4caf50;
   color: white;
-  padding: 10px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between; /* Met le logo à gauche et les liens à droite */
   align-items: center; /* Centre verticalement les éléments */
-  max-width: 1200px;
   margin: 0 auto;
+  width: 80%;
 }
 
 .logo img {
@@ -49,7 +49,6 @@ header {
   font-size: 1rem;
   padding: 5px 10px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
 .nav-link:hover {
@@ -60,9 +59,7 @@ header {
   width: 40px; /* Ajustez la taille de l'image */
   height: 40px; /* Ajustez la taille de l'image */
   border-radius: 50%; /* Rend l'image ronde */
-  object-fit: cover; /* Assure que l'image conserve ses proportions */
   border: 2px solid white; /* Ajoute une bordure blanche */
-  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .profile-image:hover {
@@ -76,10 +73,8 @@ main {
 }
 
 .main {
-  padding: 20px;
-  max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
 }
 
 h1 {
@@ -90,12 +85,15 @@ h1 {
 }
 
 /* Partie page d'accueil */
+/* cadre vert englobant tous les articles */
 #news-container {
   list-style: none;
-  padding: 0;
+  padding: 15px 0px 15px 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: #4caf50;
+  border-radius: 8px;
 }
 
 .news-item {
@@ -103,16 +101,12 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
+  /* épaisseur cadre vert qui couvre tous les articles */
+  margin: 15px 30px 15px 30px;
   display: flex;
   align-items: flex-start;
   gap: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.news-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .news-image-container {
@@ -121,7 +115,6 @@ h1 {
 
 .news-image {
   width: 100%;
-  height: auto;
   border-radius: 8px;
 }
 
@@ -131,27 +124,28 @@ h1 {
 }
 
 .news-title {
-  font-size: 1.5rem;
+  font-size: 30px;
   margin-bottom: 10px;
   color: #4caf50;
 }
 
 .news-description {
-  font-size: 1rem;
+  font-size: 15px;
   color: #666;
   line-height: 1.5;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  /* décalage texte par rapport au titre */
+  margin-left: 15px;
 }
 
 .news-read-more {
-  display: inline-block;
   padding: 10px 15px;
   background-color: #4caf50;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
-  text-align: right; /* Aligne le bouton à droite */
+  /* décalage bouton par rapport au titre */
+  margin-left: 15px;
 }
 
 .news-read-more:hover {
@@ -160,18 +154,16 @@ h1 {
 
 .pagination {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .pagination a {
-  display: inline-block;
   padding: 8px 16px;
   margin: 0 4px;
   background-color: #4caf50;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
 .pagination a:hover {
@@ -188,9 +180,9 @@ footer {
   background-color: #4caf50;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 100%;
-  margin-top: auto;
 }
 
 @media (max-width: 768px) {
@@ -212,7 +204,9 @@ footer {
   /* Partie page d'accueil */
   .news-item {
     flex-direction: column; /* Empile l'image et le contenu */
-  }
+    /* l'image de l'aticle remplit tout l'espace et on laisse 25px en bas du bouton "lire la suite" */
+    padding: 0px 0px 25px 0px;
+}
 
   .news-image-container {
     flex: 0 0 auto; /* Réinitialise la largeur fixe */
@@ -221,6 +215,8 @@ footer {
 
   .news-image {
     width: 100%;
-    height: auto;
   }
+
+  .pagination a {
+    padding: 6px;
 }
