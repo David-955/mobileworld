@@ -3,8 +3,7 @@
 {% block title %}Mobile World : Boutique{% endblock %}
 
 {% block content %}
-    <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
-    <h2 style="text-align: center;">Bienvenue sur ma boutique</h2>
+    <h1 style="text-align: center;">Bienvenue sur ma boutique</h1>
 
     {% for categorie in categories %}
         <a href= "{{ path('app_categorie', { 'id': categorie.id }) }}"> <img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}" width="150px"></a>

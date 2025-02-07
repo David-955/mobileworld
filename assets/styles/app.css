@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   background-color: rgb(255, 255, 255);
   height: 100%;
   font-family: Arial, sans-serif;
@@ -195,18 +194,17 @@ footer {
   margin-top: auto;
 }
 
-@media (max-width: 480px) {
-  @media (max-width: 768px) {
-    .header-container {
-      flex-direction: column; /* Empile le logo et les liens */
-      gap: 10px; /* Espace entre le logo et les liens */
-    }
-
-    .header-links {
-      flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
-      justify-content: center; /* Centre les liens */
-    }
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Empile le logo et les liens */
+    gap: 10px; /* Espace entre le logo et les liens */
   }
+
+  .header-links {
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
+    justify-content: center; /* Centre les liens */
+  }
+
   .profile-image {
     width: 30px; /* Taille réduite sur les petits écrans */
     height: 30px; /* Taille réduite sur les petits écrans */

@@ -3,10 +3,7 @@
 {% block title %}Passer commande{% endblock %}
 
 {% block content %}
-    <h1>
-        <a href="{{ path('app_accueil') }}">Mobile World</a>
-    </h1>
-    <h2>Récapitulatif de la commande</h2>
+    <h1>Récapitulatif de la commande</h1>
 
     {% if cart|length > 0 %}
         <table class="table">

@@ -3,10 +3,7 @@
 {% block title %}Boutique : {{ category.nom }}{% endblock %}
 
 {% block content %}
-    <h1>
-        <a href="{{ path('app_accueil') }}">Mobile World</a>
-    </h1>
-    <h2 style="text-align: center;">Boutique : {{ category.nom }}</h2>
+    <h1>Boutique : {{ category.nom }}</h1>
     {% for product in products %}
         <div>
             <p>{{ product.nom }}</p>

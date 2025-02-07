@@ -22,19 +22,20 @@
 					</a>
 				</div>
 				<nav class="header-links">
-					<a href="{{ path('app_boutique') }}" class="nav-link">Boutique</a>
-					<a href="{{ path('app_comparateur') }}" class="nav-link">Comparateur de smartphones</a>
 					{% if is_granted('ROLE_ADMIN') %}
 						<a href="{{ path('admin') }}" class="nav-link">Admin</a>
 					{% endif %}
+					<a href="{{ path('app_accueil') }}" class="nav-link">Actualités</a>
+					<a href="{{ path('app_comparateur') }}" class="nav-link">Comparateur</a>
 					{% if not app.user %}
 						<a href="{{ path('app_register') }}" class="nav-link">S'inscrire</a>
 						<a href="{{ path('app_login') }}" class="nav-link">Se connecter</a>
 					{% else %}
+						<a href="{{ path('app_boutique') }}" class="nav-link">Le shop</a>
+						<a href="{{ path('app_panier') }}" class="nav-link">Panier</a>
 						<a href="{{ path('app_profil') }}" class="nav-link">
 							<img src="{{ asset(app.user.personnalisation.avatar) }}" alt="Image de profil" class="profile-image">
 						</a>
-						<a href="{{ path('app_panier') }}" class="nav-link">Panier</a>
 						<a href="{{ path('app_logout') }}" class="nav-link">Déconnexion</a>
 					{% endif %}
 				</nav>

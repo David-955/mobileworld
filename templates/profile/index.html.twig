@@ -3,9 +3,8 @@
 {% block title %}Mobile World : Profil{% endblock %}
 
 {% block content %}
-    <h1><a href="{{ path('app_accueil') }}">Mobile World</a></h1>
     
-    <h2>Mon profil</h2>
+    <h1>Mon profil</h1>
     <p>Mon pseudo : {{ personnalisation.pseudo }}</p>
     <a href="{{ path('app_profil_pseudo', {pseudo: personnalisation.pseudo}) }}"> Voir l'aperçu de mon profil</a>
     <br><br>
