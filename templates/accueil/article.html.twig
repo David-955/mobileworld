@@ -3,7 +3,7 @@
 {% block title %}mobile World : {{ article.title }}{% endblock %}
 
 {% block content %}
-    <div class="article">
+    <section class="article">
         <h1>{{ article.title }}</h1>
         <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="300px">
 
@@ -15,9 +15,9 @@
 
         <a href="{{ article.url }}" target="_blank">Source pour lire l'article original : {{ article.source.name }} - {{ article.publishedAt|date('d/m/Y H:i') }}</a>
             
-    </div>
+    </section>
 
-    <div class="commentaires">
+    <section class="commentaires">
         <h2>Commentaires</h2>
         <ul>
             {% for commentaire in pagination %}
@@ -43,5 +43,5 @@
 
         {# Affichage de la barre de pagination #}
         {{ knp_pagination_render(pagination) }}
-    </div>
+    </section>
 {% endblock %}
