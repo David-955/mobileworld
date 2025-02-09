@@ -1,47 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}mobile World : {{ article.title }}{% endblock %}
+{% block title %}mobile World :
+	{{ article.title }}
+{% endblock %}
 
 {% block content %}
-    <section class="article">
-        <h1>{{ article.title }}</h1>
-        <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="300px">
+	<div class="article-container">
+		<section class="article-titre">
+			<h1>{{ article.title }}</h1>
+		</section>
 
-        {# Afficher le contenu complet récupéré via Diffbot #}
-        <div class="full-content">
-            {# Convertit les sauts de ligne (\n) en deux balises <br> #}
-            <p>{{ article.fullContent | replace({'\n': '<br><br>'}) | raw }}</p>
-        </div>
+		<section class="article-contenu">
 
-        <a href="{{ article.url }}" target="_blank">Source pour lire l'article original : {{ article.source.name }} - {{ article.publishedAt|date('d/m/Y H:i') }}</a>
-            
-    </section>
+			<img
+			src="{{ article.urlToImage }}" alt="{{ article.title }}" class="article-image">
 
-    <section class="commentaires">
-        <h2>Commentaires</h2>
-        <ul>
-            {% for commentaire in pagination %}
-                <li>
-                    <img src="{{ commentaire.utilisateur.personnalisation.avatar }}" alt="Avatar de {{ commentaire.utilisateur.personnalisation.pseudo }}" width="50px">
-                    <strong>Posté par <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">{{ commentaire.utilisateur.personnalisation.pseudo }}</a></strong>, le : {{ commentaire.date|date('d/m/Y H:i:s') }} 
-                    <p>{{ commentaire.contenu }}</p>
-                </li>
-            {% else %}
-                <li>Aucun commentaire pour le moment.</li>
-            {% endfor %}
-        </ul>
+			{# Afficher le contenu complet récupéré via Diffbot #}
+			<div
+				class="full-content">
+				{# Convertit les sauts de ligne (\n) en deux balises <br> #}
+				<p>{{ article.fullContent | replace({'\n': '<br><br>'}) | raw }}</p>
+			</div>
 
-        {% if app.user %}
-            <h2>Ajouter un commentaire</h2>
-            {{ form_start(form) }}
-                {{ form_row(form.contenu) }}
-                <button type="submit">Envoyer</button>
-            {{ form_end(form) }}
-        {% else %}
-            <p>Vous devez être <a href="{{ path('app_login') }}">connecté</a> pour poster un commentaire.</p>
-        {% endif %}
+			<a href="{{ article.url }}" target="_blank">Source pour lire l'article original :
+				{{ article.source.name }}
+				-
+				{{ article.publishedAt|date('d/m/Y H:i') }}</a>
 
-        {# Affichage de la barre de pagination #}
-        {{ knp_pagination_render(pagination) }}
-    </section>
+		</section>
+
+		<section class="commentaires">
+			<h2>Commentaires</h2>
+			<ul>
+				{% for commentaire in pagination %}
+					<li>
+						<img src="{{ commentaire.utilisateur.personnalisation.avatar }}" alt="Avatar de {{ commentaire.utilisateur.personnalisation.pseudo }}" width="50px">
+						<strong>Posté par
+							<a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">{{ commentaire.utilisateur.personnalisation.pseudo }}</a>
+						</strong>, le :
+						{{ commentaire.date|date('d/m/Y H:i:s') }}
+						<p>{{ commentaire.contenu }}</p>
+					</li>
+				{% else %}
+					<li>Aucun commentaire pour le moment.</li>
+				{% endfor %}
+			</ul>
+
+			{% if app.user %}
+				<h2>Ajouter un commentaire</h2>
+				{{ form_start(form) }}
+				{{ form_row(form.contenu) }}
+				<button type="submit">Envoyer</button>
+				{{ form_end(form) }}
+			{% else %}
+				<p>Vous devez être
+					<a href="{{ path('app_login') }}">connecté</a>
+					pour poster un commentaire.</p>
+			{% endif %}
+
+			{# Affichage de la barre de pagination #}
+			{{ knp_pagination_render(pagination) }}
+		</section>
+	</div>
 {% endblock %}

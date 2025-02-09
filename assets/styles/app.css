@@ -89,7 +89,7 @@ h1 {
 /* cadre vert englobant tous les articles */
 #news-container {
   list-style: none;
-  padding: 15px 0px 15px 0px;
+  padding: 15px 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -103,15 +103,14 @@ h1 {
   border-radius: 8px;
   padding: 20px;
   /* épaisseur cadre vert qui couvre tous les articles */
-  margin: 15px 30px 15px 30px;
+  margin: 15px 30px;
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .news-image-container {
-  flex: 0 0 300px; /* Largeur fixe de l'image */
+  width: 40%; /* Largeur de l'image */
 }
 
 .news-image {
@@ -160,11 +159,10 @@ h1 {
 
 .pagination a {
   padding: 8px 16px;
-  margin: 0 4px;
   background-color: #4caf50;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .pagination a:hover {
@@ -174,7 +172,7 @@ h1 {
 .pagination .current {
   background-color: #45a049;
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 footer {
@@ -186,10 +184,35 @@ footer {
   width: 100%;
 }
 
+/* Partie page d'article */
+
+.article-titre, .article-contenu, .commentaires {
+    text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 30px;
+    padding: 10px;
+}
+
+.article-image {
+  width: 60%;
+  border-radius: 8px;
+}
+
+.article-container {
+  background-color: #4caf50;
+  border-radius: 8px;
+  padding: 5px 0px 5px 0px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column; /* Empile le logo et les liens */
     gap: 10px; /* Espace entre le logo et les liens */
+    width: 95%;
   }
 
   .header-links {
@@ -201,13 +224,17 @@ footer {
     width: 30px; /* Taille réduite sur les petits écrans */
     height: 30px; /* Taille réduite sur les petits écrans */
   }
-  
+
+  .main {
+    width: 95%;
+  }
+
   /* Partie page d'accueil */
   .news-article {
     flex-direction: column; /* Empile l'image et le contenu */
     /* l'image de l'aticle remplit tout l'espace et on laisse 25px en bas du bouton "lire la suite" */
     padding: 0px 0px 25px 0px;
-}
+  }
 
   .news-image-container {
     flex: 0 0 auto; /* Réinitialise la largeur fixe */
@@ -218,7 +245,7 @@ footer {
     width: 100%;
   }
 
-  .pagination a {
-    padding: 6px;
-}
+  .pagination a, .pagination .current {
+    padding: 8px 12px;
+  }
 }

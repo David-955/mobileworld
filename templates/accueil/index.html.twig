@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="main">
+	<section class="main">
 		<h1>À la une</h1>
 		<ul id="news-container">
 			{% for article in pagination.items %}
@@ -28,5 +28,5 @@
 		<div class="pagination">
 			{{ knp_pagination_render(pagination) }}
 		</div>
-	</div>
+	</section>
 {% endblock %}
