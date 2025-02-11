@@ -13,7 +13,7 @@
 			<div class="colonne1">
 				<h3>Sélection 1</h3>
 				<form method="GET" action="{{ path('app_comparateur') }}">
-					<label for="marque1">Choisissez une marque :</label>
+					<label for="marque1">Choisissez une marque:</label>
 					<select name="marque1" id="marque1" onchange="this.form.submit()">
 						<option value="">-- Sélectionnez une marque --</option>
 						{% for marque in marques %}
@@ -27,7 +27,7 @@
 				{% if models1 is not empty %}
 					<form method="GET" action="{{ path('app_comparateur') }}">
 						<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
-						<label for="model1">Choisissez un modèle :</label>
+						<label for="model1">Choisissez un modèle:</label>
 						<select name="modelId1" id="model1" onchange="this.form.submit()">
 							<option value="">-- Sélectionnez un modèle --</option>
 							{% for model in models1 %}
@@ -53,7 +53,7 @@
 			<!-- Deuxième colonne -->
 				<div class="colonne2"> <h3>Sélection 2</h3>
 				<form method="GET" action="{{ path('app_comparateur') }}">
-					<label for="marque2">Choisissez une marque :</label>
+					<label for="marque2">Choisissez une marque:</label>
 					<select name="marque2" id="marque2" onchange="this.form.submit()">
 						<option value="">-- Sélectionnez une marque --</option>
 						{% for marque in marques %}
@@ -67,7 +67,7 @@
 				{% if models2 is not empty %}
 					<form method="GET" action="{{ path('app_comparateur') }}">
 						<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
-						<label for="model2">Choisissez un modèle :</label>
+						<label for="model2">Choisissez un modèle:</label>
 						<select name="modelId2" id="model2" onchange="this.form.submit()">
 							<option value="">-- Sélectionnez un modèle --</option>
 							{% for model in models2 %}

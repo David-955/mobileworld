@@ -1,21 +1,30 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Boutique : {{ category.nom }}{% endblock %}
 
 {% block content %}
     <h1>Boutique : {{ category.nom }}</h1>
-    {% for product in products %}
-        <div>
-            <p>{{ product.nom }}</p>
-            {# chemin d'accès de l'image /public/images/produits #}
-            <img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}">
-            <p>{{ product.description }}</p>
-            <p>{{ product.prix }}€</p>
-            <p>Encore {{ product.stock }} en stock !</p>
-            <a href="{{ path('app_panier_ajouter', {'id': product.id}) }}" class="btn btn-primary">Ajouter au panier</a>
-        </div>
-        <br>
-    {% endfor %}
-    <br><br>
+    <section class="product-container-vert">
+        <section class="product-container-blanc">
+            {% for product in products %}
+                <div class="product-item">
+                    {# colonne 1: image #}
+                    <div class="product-colonne1">
+                        <img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}">
+                    </div>
+                    {# colonne 2: nom et description #}
+                    <div class="product-colonne2">
+                        <p><strong>{{ product.nom }}</strong></p>
+                        <p>{{ product.description }}</p>
+                    </div>
+                    {# colonne 3: prix, stock et ajout panier #}
+                    <div class="product-colonne3">
+                        <p><strong>Prix : {{ product.prix }}€</strong></p>
+                        <p>Stock : {{ product.stock }}</p>
+                        <a href="{{ path('app_panier_ajouter', {'id': product.id}) }}" class="btn btn-primary add-to-cart-btn">Ajouter au panier</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    </section>
     <a href="{{ path('app_boutique') }}">Revenir à la boutique</a>
 {% endblock %}

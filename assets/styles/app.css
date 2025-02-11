@@ -93,14 +93,14 @@ h1 {
   padding: 15px 0px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  /* espacement entre chaque news */
+  gap: 8px;
   background-color: #4caf50;
   border-radius: 8px;
 }
 
 .news-article {
   background-color: #fff;
-  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   /* épaisseur cadre vert qui couvre tous les articles */
@@ -108,6 +108,11 @@ h1 {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+}
+
+.news-article:hover {
+  /* effet petit zoom sur chaque item */
+  transform: scale(1.01);
 }
 
 .news-image-container {
@@ -217,13 +222,17 @@ footer {
   width: 80%;
   margin: 0 auto;
 }
+
 .category-container-blanc{
   display: flex;
   justify-content: center;
+  /* on passe à la ligne à chaque rétrécissement de la fenêtre */
   flex-wrap: wrap;
   background-color: #fff;
   border-radius: 8px;
   padding: 5%;
+  /* pour espacer chaque élément */
+  gap: 30px;
 }
 
 .category-item {
@@ -241,6 +250,60 @@ footer {
   width: 150px;
 }
 
+/* Page produits */
+
+.product-container-vert {
+  border-radius: 8px;
+  background-color: #4caf50;
+  padding: 2%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.product-container-blanc {
+  display: flex;
+  flex-wrap: wrap; /* Permet le passage à la ligne si nécessaire */
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: row; /* Maintient la mise en page en 3 colonnes */
+  flex: 0 0 96%; /* Prend presque toute la largeur pour un produit par ligne */
+  box-shadow: 3px 2px 2px #4caf50;
+  border-radius: 30px;
+  margin: 20px;
+}
+
+.product-colonne1 {
+  text-align: center;
+}
+
+.product-colonne1 img {
+  max-width: 150px;
+}
+
+.product-colonne2 {
+  /* espacement entre colonne 1 et 3 */
+  padding: 0 15px;
+  width: 50%;
+  text-align: center;
+}
+
+.product-colonne3 {
+  flex: 1;
+  text-align: center;
+}
+
+.product-colonne3 p {
+  margin: 5px 0;
+}
+
+.add-to-cart-btn {
+  margin-top: 10px;
+}
+
 /* Page comparateur */
 
 .comparateur-container-vert {
@@ -255,7 +318,7 @@ footer {
 .comparateur-container-blanc {
   background-color: #fff;
   border-radius: 8px;
-  /* épaisseur cadre vert identique boutique */
+  /* épaisseur cadre blanc identique boutique */
   padding: 2%;
   display: flex;
   margin: 0 auto;
@@ -313,8 +376,18 @@ footer {
 
   /* Partie boutique */
 
-  .category-container {
+  .category-container-vert {
     padding: 4%;
+  }
+
+  .category-container-blanc{
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 5%;
+    /* pour espacer chaque élément */
+    gap: 30px;
   }
 
   .category-item {
@@ -323,5 +396,15 @@ footer {
 
   .category-item img {
     width: 250px;
+  }
+
+  /* Partie comparateur */
+
+  .comparateur-container-vert {
+    padding: 4%;
+  }
+
+  .comparateur-container-blanc {
+    flex-wrap: wrap;
   }
 }
