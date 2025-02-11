@@ -89,6 +89,7 @@ h1 {
 /* cadre vert englobant tous les articles */
 #news-container {
   list-style: none;
+  /* épaisseur cadre vert */
   padding: 15px 0px;
   display: flex;
   flex-direction: column;
@@ -202,11 +203,72 @@ footer {
 .article-container {
   background-color: #4caf50;
   border-radius: 8px;
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0px;
   width: 80%;
   margin: 0 auto;
 }
 
+/* Page boutique */
+
+.category-container-vert {
+  border-radius: 8px;
+  background-color: #4caf50;
+  padding: 2%;
+  width: 80%;
+  margin: 0 auto;
+}
+.category-container-blanc{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 5%;
+}
+
+.category-item {
+  /* 3 produits à la ligne max */
+  width: 30%;
+  text-align: center;
+}
+
+.category-item:hover {
+  /* effet petit zoom sur chaque item */
+  transform: scale(1.05);
+}
+
+.category-item img {
+  width: 150px;
+}
+
+/* Page comparateur */
+
+.comparateur-container-vert {
+  background-color: #4caf50;
+  border-radius: 8px;
+  /* épaisseur cadre vert identique boutique */
+  padding: 2%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.comparateur-container-blanc {
+  background-color: #fff;
+  border-radius: 8px;
+  /* épaisseur cadre vert identique boutique */
+  padding: 2%;
+  display: flex;
+  margin: 0 auto;
+}
+
+/* les 2 en même temps car côte à côte et identique */
+.colonne1, .colonne2 {
+  background-color: #fff;
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
 
 @media (max-width: 768px) {
   .header-container {
@@ -247,5 +309,19 @@ footer {
 
   .pagination a, .pagination .current {
     padding: 8px 12px;
+  }
+
+  /* Partie boutique */
+
+  .category-container {
+    padding: 4%;
+  }
+
+  .category-item {
+    width: 100%;
+  }
+
+  .category-item img {
+    width: 250px;
   }
 }

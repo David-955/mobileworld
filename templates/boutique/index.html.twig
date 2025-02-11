@@ -4,10 +4,19 @@
 
 {% block content %}
     <h1 style="text-align: center;">Bienvenue sur ma boutique</h1>
-
-    {% for categorie in categories %}
-        <a href= "{{ path('app_categorie', { 'id': categorie.id }) }}"> <img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}" width="150px"></a>
-        <p>{{categorie.nom}}</p>
-    {% endfor %}
+    {# 1er border-radius #}
+    <section class="category-container-vert">
+    {# 2eme border-radius #}
+        <div class="category-container-blanc">
+            {% for categorie in categories %}
+                <div class="category-item">
+                    <a href="{{ path('app_categorie', { 'id': categorie.id }) }}">
+                        <img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}">
+                    </a>
+                    <p>{{ categorie.nom }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
 

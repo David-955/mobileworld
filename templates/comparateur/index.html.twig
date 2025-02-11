@@ -1,101 +1,92 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Comparateur de smartphones{% endblock %}
-
-{% block content %}
-    <h1>Comparateur de smartphones</h1>
-    
-    <div class="container">
-        <!-- Première colonne -->
-        <div class="column">
-            <h3>Sélection 1</h3>
-            <form method="GET" action="{{ path('app_comparateur') }}">
-                <label for="marque1">Choisissez une marque :</label>
-                <select name="marque1" id="marque1" onchange="this.form.submit()">
-                    <option value="">-- Sélectionnez une marque --</option>
-                    {% for marque in marques %}
-                        <option value="{{ marque }}" {% if marque == selectedMarque1 %}selected{% endif %}>{{ marque | capitalize }}</option>
-                    {% endfor %}
-                </select>
-                <input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
-                <input type="hidden" name="modelId2" value="{{ selectedModelId2 }}">
-            </form>
-
-            {% if models1 is not empty %}
-                <form method="GET" action="{{ path('app_comparateur') }}">
-                    <input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
-                    <label for="model1">Choisissez un modèle :</label>
-                    <select name="modelId1" id="model1" onchange="this.form.submit()">
-                        <option value="">-- Sélectionnez un modèle --</option>
-                        {% for model in models1 %}
-                            <option value="{{ model.id }}" {% if model.id == selectedModelId1 %}selected{% endif %}>{{ model.name }}</option>
-                        {% endfor %}
-                    </select>
-                    <input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
-                    <input type="hidden" name="modelId2" value="{{ selectedModelId2 }}">
-                </form>
-            {% endif %}
-
-            {% if modelData1 %}
-                <div class="smartphone">
-                    <h2>{{ modelData1.name }}</h2>
-                    <img src="{{ modelData1.img }}" alt="{{ modelData1.name }}">
-                    {# replace({'. ': '.<br>'}) : Remplace chaque point suivi d'un espace par .<br> #}
-                    {# |raw : Indique à Twig de ne pas échapper le HTML, afin que la balise <br> soit interprétée correctement. #}
-                    <p>{{ modelData1.description|replace({'. ': '.<br>'})|raw }}</p>
-                </div>
-            {% endif %}
-        </div>
-
-        <!-- Deuxième colonne -->
-        <div class="column">
-            <h3>Sélection 2</h3>
-            <form method="GET" action="{{ path('app_comparateur') }}">
-                <label for="marque2">Choisissez une marque :</label>
-                <select name="marque2" id="marque2" onchange="this.form.submit()">
-                    <option value="">-- Sélectionnez une marque --</option>
-                    {% for marque in marques %}
-                        <option value="{{ marque }}" {% if marque == selectedMarque2 %}selected{% endif %}>{{ marque | capitalize }}</option>
-                    {% endfor %}
-                </select>
-                <input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
-                <input type="hidden" name="modelId1" value="{{ selectedModelId1 }}">
-            </form>
-
-            {% if models2 is not empty %}
-                <form method="GET" action="{{ path('app_comparateur') }}">
-                    <input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
-                    <label for="model2">Choisissez un modèle :</label>
-                    <select name="modelId2" id="model2" onchange="this.form.submit()">
-                        <option value="">-- Sélectionnez un modèle --</option>
-                        {% for model in models2 %}
-                            <option value="{{ model.id }}" {% if model.id == selectedModelId2 %}selected{% endif %}>{{ model.name }}</option>
-                        {% endfor %}
-                    </select>
-                    <input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
-                    <input type="hidden" name="modelId1" value="{{ selectedModelId1 }}">
-                </form>
-            {% endif %}
-
-            {% if modelData2 %}
-                <div class="smartphone">
-                    <h2>{{ modelData2.name }}</h2>
-                    <img src="{{ modelData2.img }}" alt="{{ modelData2.name }}">
-                    <p>{{ modelData2.description|replace({'. ': '.<br>'})|raw }}</p>
-                </div>
-            {% endif %}
-        </div>
-    </div>
+{% block title %}Mobile World : Comparateur de smartphones
 {% endblock %}
 
-{% block stylesheets %}
-<style>
-    .container {
-        display: flex;
-        justify-content: space-between;
-    }
-    .column {
-        width: 48%;
-    }
-</style>
+{% block content %}
+	<h1>Comparateur de smartphones</h1>
+
+	<section class="comparateur-container-vert">
+		<section
+			class="comparateur-container-blanc">
+			<!-- Première colonne -->
+			<div class="colonne1">
+				<h3>Sélection 1</h3>
+				<form method="GET" action="{{ path('app_comparateur') }}">
+					<label for="marque1">Choisissez une marque :</label>
+					<select name="marque1" id="marque1" onchange="this.form.submit()">
+						<option value="">-- Sélectionnez une marque --</option>
+						{% for marque in marques %}
+							<option value="{{ marque }}" {% if marque == selectedMarque1 %} selected {% endif %}>{{ marque | capitalize }}</option>
+						{% endfor %}
+					</select>
+					<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
+					<input type="hidden" name="modelId2" value="{{ selectedModelId2 }}">
+				</form>
+
+				{% if models1 is not empty %}
+					<form method="GET" action="{{ path('app_comparateur') }}">
+						<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
+						<label for="model1">Choisissez un modèle :</label>
+						<select name="modelId1" id="model1" onchange="this.form.submit()">
+							<option value="">-- Sélectionnez un modèle --</option>
+							{% for model in models1 %}
+								<option value="{{ model.id }}" {% if model.id == selectedModelId1 %} selected {% endif %}>{{ model.name }}</option>
+							{% endfor %}
+						</select>
+						<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
+						<input type="hidden" name="modelId2" value="{{ selectedModelId2 }}">
+					</form>
+				{% endif %}
+
+				{% if modelData1 %}
+					<div class="smartphone">
+						<h2>{{ modelData1.name }}</h2>
+						<img src="{{ modelData1.img }}" alt="{{ modelData1.name }}">
+						{# replace({'. ': '.<br>'}) : Remplace chaque point suivi d'un espace par .<br> #}
+						{# |raw : Indique à Twig de ne pas échapper le HTML, afin que la balise <br> soit interprétée correctement. #}<p>{{ modelData1.description|replace({'. ': '.<br>'})|raw }}
+					</p>
+				</div>
+			{% endif %}
+			</div>
+
+			<!-- Deuxième colonne -->
+				<div class="colonne2"> <h3>Sélection 2</h3>
+				<form method="GET" action="{{ path('app_comparateur') }}">
+					<label for="marque2">Choisissez une marque :</label>
+					<select name="marque2" id="marque2" onchange="this.form.submit()">
+						<option value="">-- Sélectionnez une marque --</option>
+						{% for marque in marques %}
+							<option value="{{ marque }}" {% if marque == selectedMarque2 %} selected {% endif %}>{{ marque | capitalize }}</option>
+						{% endfor %}
+					</select>
+					<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
+					<input type="hidden" name="modelId1" value="{{ selectedModelId1 }}">
+				</form>
+
+				{% if models2 is not empty %}
+					<form method="GET" action="{{ path('app_comparateur') }}">
+						<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
+						<label for="model2">Choisissez un modèle :</label>
+						<select name="modelId2" id="model2" onchange="this.form.submit()">
+							<option value="">-- Sélectionnez un modèle --</option>
+							{% for model in models2 %}
+								<option value="{{ model.id }}" {% if model.id == selectedModelId2 %} selected {% endif %}>{{ model.name }}</option>
+							{% endfor %}
+						</select>
+						<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
+						<input type="hidden" name="modelId1" value="{{ selectedModelId1 }}">
+					</form>
+				{% endif %}
+
+				{% if modelData2 %}
+					<div class="smartphone">
+						<h2>{{ modelData2.name }}</h2>
+						<img src="{{ modelData2.img }}" alt="{{ modelData2.name }}">
+						<p>{{ modelData2.description|replace({'. ': '.<br>'})|raw }}</p>
+					</div>
+				{% endif %}
+			</div>
+		</section>
+	</section>
 {% endblock %}

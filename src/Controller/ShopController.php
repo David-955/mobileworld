@@ -2,15 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Produit;
-use App\Entity\Commande;
 use App\Repository\ProduitRepository;
 use App\Repository\CategorieRepository;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class ShopController extends AbstractController
