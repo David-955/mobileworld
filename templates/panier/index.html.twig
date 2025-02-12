@@ -1,47 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Panier{% endblock %}
+{% block title %}Mobile World : Panier
+{% endblock %}
 
 {% block content %}
-    <h1>Panier</h1>
+	<h1>Panier</h1>
 
-    {% if cart|length > 0 %}
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Quantité</th>
-                    <th>Prix unitaire</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in cart %}
-                    <tr>
-                        <td>{{ item.product.nom }}</td>
-                        <td>
-                            <form action="{{ path('app_panier_modifier', {'id': item.product.id}) }}" method="post" style="display: inline;">
-                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" style="width: 50px;">
-                                <button type="submit" class="btn btn-sm btn-primary">Mettre à jour</button>
-                            </form>
-                        </td>
-                        <td>{{ item.product.prix }}€</td>
-                        <td>{{ item.total }}€</td>
-                        <td>
-                            <a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}" class="btn btn-sm btn-danger">Supprimer</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+	{% if cart|length > 0 %}
+		<section class="panier-container-vert">
+			<section class="panier-container-blanc">
+				<table class="table">
+					<thead>
+						<tr>
+                            <th>Image du produit</th>
+							<th>Nom du produit</th>
+							<th>Quantité</th>
+							<th>Prix unitaire</th>
+							<th>Total</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in cart %}
+								<tr>
+									<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" class="panier-img" alt="Image de {{ item.product.nom }}"></td>
+									<td>{{ item.product.nom }}</td>
+									<td>
+										<form action="{{ path('app_panier_modifier', {'id': item.product.id}) }}" method="post" ">
+											<input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" ">
+											<button type="submit" class="btn btn-sm btn-primary">Mettre à jour</button>
+										</form>
+									</td>
+									<td>{{ item.product.prix }}€</td>
+									<td>{{ item.total }}€</td>
+									<td>
+										<a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}" class="btn btn-sm btn-danger">Supprimer</a>
+									</td>
+								</tr>
+						{% endfor %}
 
-        <h3>Total : {{ total }}€</h3>
-    {% else %}
-        <p>Votre panier est vide.</p>
-    {% endif %}
+					</tbody>
+				</table>
 
-    <p><a href="{{ path('app_boutique') }}" class="btn btn-primary">Continuer les achats</a></p>
+				<p><strong>Total : {{ total }}€ </strong></p>
+			{% else %}
+				<p>Votre panier est vide.</p>
+			{% endif %}
+	<p>
+		<a href="{{ path('app_boutique') }}" class="btn btn-primary">Continuer les achats</a>
+	</p>
 
-    <a href="{{ path('app_commande') }}" class="btn btn-primary">Commander</a>
+	<a href="{{ path('app_commande') }}" class="btn btn-primary">Commander</a>
+		</section>
+	</section>
+
+
 {% endblock %}

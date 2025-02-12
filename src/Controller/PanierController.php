@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Produit;
 use App\Repository\ProduitRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -89,7 +88,7 @@ class PanierController extends AbstractController
         return $this->redirectToRoute('app_panier');
     }
 
-    #[Route('//panier/modifier/{id}', name: 'app_panier_modifier')]
+    #[Route('/panier/modifier/{id}', name: 'app_panier_modifier')]
     public function update(int $id, Request $request, SessionInterface $session): Response
     {
         // Récupérer la quantité depuis les données POST

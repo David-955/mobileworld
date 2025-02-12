@@ -215,7 +215,8 @@ footer {
 
 /* Page boutique */
 
-.category-container-vert {
+/* Cadre vert en commun avec différentes pages car même thème */
+.category-container-vert, .panier-container-vert, .product-container-vert {
   border-radius: 8px;
   background-color: #4caf50;
   padding: 2%;
@@ -223,7 +224,7 @@ footer {
   margin: 0 auto;
 }
 
-.category-container-blanc{
+.category-container-blanc {
   display: flex;
   justify-content: center;
   /* on passe à la ligne à chaque rétrécissement de la fenêtre */
@@ -251,14 +252,6 @@ footer {
 }
 
 /* Page produits */
-
-.product-container-vert {
-  border-radius: 8px;
-  background-color: #4caf50;
-  padding: 2%;
-  width: 80%;
-  margin: 0 auto;
-}
 
 .product-container-blanc {
   display: flex;
@@ -333,6 +326,25 @@ footer {
   text-align: center;
 }
 
+/* Page panier */
+
+.panier-container-blanc
+{
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.panier-img {
+  width: 100px;
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px;
+}
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column; /* Empile le logo et les liens */
@@ -380,7 +392,7 @@ footer {
     padding: 4%;
   }
 
-  .category-container-blanc{
+  .category-container-blanc {
     flex-wrap: wrap;
     justify-content: center;
     background-color: #fff;
