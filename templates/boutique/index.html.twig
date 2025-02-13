@@ -7,7 +7,7 @@
     {# 1er border-radius #}
     <section class="category-container-vert">
     {# 2eme border-radius #}
-        <div class="category-container-blanc">
+        <section class="category-container-blanc">
             {% for categorie in categories %}
                 <div class="category-item">
                     <a href="{{ path('app_categorie', { 'id': categorie.id }) }}">
@@ -16,7 +16,7 @@
                     <p>{{ categorie.nom }}</p>
                 </div>
             {% endfor %}
-        </div>
+        </section>
     </section>
 {% endblock %}
 

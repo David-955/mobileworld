@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="article-container">
+	<section class="article-container">
 		<section class="article-titre">
 			<h1>{{ article.title }}</h1>
 		</section>
@@ -61,5 +61,5 @@
 			{# Affichage de la barre de pagination #}
 			{{ knp_pagination_render(pagination) }}
 		</section>
-	</div>
+	</section>
 {% endblock %}

@@ -192,12 +192,14 @@ footer {
 
 /* Partie page d'article */
 
-.article-titre, .article-contenu, .commentaires {
-    text-align: center;
+.article-titre,
+.article-contenu,
+.commentaires {
+  text-align: center;
   background-color: #fff;
   border-radius: 8px;
   margin: 30px;
-    padding: 10px;
+  padding: 10px;
 }
 
 .article-image {
@@ -216,7 +218,11 @@ footer {
 /* Page boutique */
 
 /* Cadre vert en commun avec différentes pages car même thème */
-.category-container-vert, .panier-container-vert, .product-container-vert {
+.category-container-vert,
+.panier-container-vert,
+.product-container-vert,
+.register-container-vert,
+.login-container-vert {
   border-radius: 8px;
   background-color: #4caf50;
   padding: 2%;
@@ -318,7 +324,8 @@ footer {
 }
 
 /* les 2 en même temps car côte à côte et identique */
-.colonne1, .colonne2 {
+.colonne1,
+.colonne2 {
   background-color: #fff;
   width: 50%;
   padding: 10px;
@@ -328,8 +335,7 @@ footer {
 
 /* Page panier */
 
-.panier-container-blanc
-{
+.panier-container-blanc {
   background-color: #fff;
   border-radius: 8px;
 }
@@ -339,10 +345,52 @@ footer {
 }
 
 .table {
-  width: 100%;
+  width: 100%; /* il faut étirer au max sinon tout est serré et à gauche */
   text-align: center;
   border-radius: 8px;
   padding: 10px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  /* ligne de démarcation entre chaque produits */
+  border-bottom: 1px solid #ddd;
+}
+
+.boutons-action {
+  display: flex;
+  gap: 10px; /* Espace entre les boutons */
+  justify-content: center; /* Centrer les boutons horizontalement */
+  margin-top: 20px; /* Espace au-dessus des boutons */
+}
+
+.btn-continuer,
+.btn-commander {
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.btn-continuer:hover,
+.btn-commander:hover {
+  background-color: #45a049;
+}
+
+.panier-total {
+  text-align: center
+}
+
+/* page inscription et de connexion (register et login) */
+
+.register-container-blanc, .login-container-blanc {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -380,9 +428,11 @@ footer {
 
   .news-image {
     width: 100%;
+    border-radius: 8px;
   }
 
-  .pagination a, .pagination .current {
+  .pagination a,
+  .pagination .current {
     padding: 8px 12px;
   }
 
@@ -412,11 +462,48 @@ footer {
 
   /* Partie comparateur */
 
-  .comparateur-container-vert {
+  .comparateur-container-vert,
+  .panier-container-vert {
     padding: 4%;
   }
 
   .comparateur-container-blanc {
     flex-wrap: wrap;
   }
+
+  /* Page panier */
+  .table th,
+  .table td {
+    /* disposition en 1 colonne */
+    display: block;
+    text-align: center;
+  }
+
+  .table thead {
+    /* on cache en-tête tableau qui était pour la version bureau */
+    display: none;
+  }
+  
+  .table td::before {
+    /* on place à l'avant de chaque phrase correspondante ce qui est écrit dans diva-shadel */
+    content: attr(data-label);
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .panier-img {
+    max-width: 80px;
+  }
+
+  .boutons-action {
+    /* bouton "continuer les achats" en haut et bouton "commander" en bas */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-continuer,
+  .btn-commander {
+    text-align: center;
+  }
+
 }
