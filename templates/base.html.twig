@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}
-			{% endblock %}
+			{% block title %}{% endblock %}
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> {% block stylesheets %}{% endblock %}
 		{% block javascripts %}
@@ -21,17 +20,22 @@
 						<img src="{{ asset('/images/logos/logo-mobileworld.webp') }}" alt="logo du site Mobile World">
 					</a>
 				</div>
-				<nav class="header-links">
+				<nav
+					class="header-links">
+					{# accessible aux administrateurs #}
 					{% if is_granted('ROLE_ADMIN') %}
 						<a href="{{ path('admin') }}" class="nav-link">Admin</a>
 					{% endif %}
+					{# accessible aux visiteurs #}
 					<a href="{{ path('app_accueil') }}" class="nav-link">Actualités</a>
 					<a href="{{ path('app_comparateur') }}" class="nav-link">Comparateur</a>
+					<a href="{{ path('app_boutique') }}" class="nav-link">Boutique</a>
 					{% if not app.user %}
+						{# si pas connecté donc pour les visiteurs #}
 						<a href="{{ path('app_register') }}" class="nav-link">S'inscrire</a>
 						<a href="{{ path('app_login') }}" class="nav-link">Se connecter</a>
 					{% else %}
-						<a href="{{ path('app_boutique') }}" class="nav-link">Boutique</a>
+						{# si connecté donc pour les membres #}
 						<a href="{{ path('app_panier') }}" class="nav-link">
 							<img src="{{ asset('/images/logos/panier.png') }}" alt="logo du site Mobile World">
 						</a>
@@ -50,6 +54,10 @@
 		</main>
 
 		<footer>
+			<p>Mentions légales</p>
+			<p>Conditions générales de vente</p>
+			<p>Politique de confidentialité</p>
+			<p>Nous contacter</p>
 			<p>© Copyright 2024, Tous droits réservés</p>
 		</footer>
 	</body>
