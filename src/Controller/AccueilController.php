@@ -33,7 +33,7 @@ final class AccueilController extends AbstractController
             $keywords = ['smartphone', 'mobile', 'Android', 'iOS', 'Samsung', 'iPhone', 'Xiaomi', 'Huawei', 'honor', 'OnePlus', 'Oppo', 'Realme', 'vivo', 'Sony', 'Asus', 'Google', 'Pixel', 'Nokia', 'Motorola', 'LG', 'BlackBerry', 'Fairphone', 'ZTE', 'Lenovo'];
             $excludedKeywords = ['jeu', 'game', 'jeu vidéo', 'sport', 'politique', 'électrique', 'voiture', 'automobile', 'soldes', 'promotion', 'réduction', 'sponso', 'sponsorisé', 'pub', 'publicité', 'offres', 'offre', 'bon plan', 'code promo', 'coupon', 'remise', 'cadeau', 'gratuit', 'gratuite', 'gratuitement'];
 
-            // Vérifier les mots-clés pertinents
+            // Vérifier les mots-clés pertinents dans le titre et la description de l'article 
             $isRelevant = false;
             foreach ($keywords as $keyword) {
                 if (stripos($article['title'], $keyword) !== false || stripos($article['description'], $keyword) !== false) {

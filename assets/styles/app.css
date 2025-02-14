@@ -17,13 +17,6 @@ header {
   text-align: center;
 }
 
-header {
-  background-color: #4caf50;
-  color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 .header-container {
   display: flex;
   justify-content: space-between; /* Met le logo à gauche et les liens à droite */
@@ -33,8 +26,12 @@ header {
 }
 
 .logo img {
-  height: 50px; /* Ajustez la hauteur du logo selon vos besoins */
+  height: 100px; /* Ajustez la hauteur du logo selon vos besoins */
   width: auto; /* Garde les proportions du logo */
+}
+
+.logo img:hover {
+  transform: scale(1.2); /* Effet de zoom au survol */
 }
 
 .header-links {
@@ -63,7 +60,7 @@ header {
 }
 
 .profile-image:hover {
-  transform: scale(1.1); /* Effet de zoom au survol */
+  transform: scale(1.3); /* Effet de zoom au survol */
   border-color: #45a049; /* Change la couleur de la bordure au survol */
 }
 
@@ -79,8 +76,8 @@ main {
 
 h1 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 30px;
+  margin-bottom: 30px;
   color: #333;
 }
 
@@ -117,10 +114,13 @@ h1 {
 
 .news-image-container {
   width: 40%; /* Largeur de l'image */
+  height: 250px; /* Hauteur de l'image */
+  overflow: hidden; /* Cache les parties de l'image qui dépassent */
+  border-radius: 8px;
 }
 
 .news-image {
-  width: 100%;
+  width: 100%; /* L'image remplit tout l'espace disponible */
   border-radius: 8px;
 }
 
@@ -222,7 +222,8 @@ footer {
 .panier-container-vert,
 .product-container-vert,
 .register-container-vert,
-.login-container-vert {
+.login-container-vert,
+.profile-container-vert {
   border-radius: 8px;
   background-color: #4caf50;
   padding: 2%;
@@ -386,7 +387,7 @@ footer {
 
 /* page inscription et de connexion (register et login) */
 
-.register-container-blanc, .login-container-blanc {
+.register-container-blanc, .login-container-blanc, .profile-container-blanc {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;

@@ -1,10 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil de {{ personnalisation.pseudo }}{% endblock %}
+{% block title %}Profil de
+	{{ personnalisation.pseudo }}
+{% endblock %}
 
 {% block content %}
 
-    <h1>Profil de {{ personnalisation.pseudo }}</h1>
-    <img src="{{ asset(personnalisation.avatar) }}" alt="Avatar de {{ personnalisation.pseudo }}">
-    <p>Message de présentation : {{ personnalisation.presentation }}</p>
+	<h1>Profil de
+		{{ personnalisation.pseudo }}</h1>
+	{# 1er border-radius #}
+	<section
+		class="profile-container-vert">
+		{# 2eme border-radius #}
+		<section class="profile-container-blanc">
+			<img src="{{ asset(personnalisation.avatar) }}" alt="Avatar de {{ personnalisation.pseudo }}">
+			<p>Message de présentation :
+				{{ personnalisation.presentation }}</p>
+		</section>
+	</section>
 {% endblock %}

@@ -26,7 +26,9 @@ class ComparateurController extends AbstractController
         if ($marque1 && in_array($marque1, $marquesValides)) {
             $jsonFilePath1 = $this->getParameter('kernel.project_dir') . "/public/json/{$marque1}.json";
             $jsonContent1 = file_get_contents($jsonFilePath1);
+            
             $data1 = json_decode($jsonContent1, true);
+            // var_dump(json_decode($jsonContent1, true));
 
             if ($modelId1) {
                 foreach ($data1['models'] as $model1) {
@@ -42,6 +44,7 @@ class ComparateurController extends AbstractController
             $jsonFilePath2 = $this->getParameter('kernel.project_dir') . "/public/json/{$marque2}.json";
             $jsonContent2 = file_get_contents($jsonFilePath2);
             $data2 = json_decode($jsonContent2, true);
+             // var_dump(json_decode($jsonContent2, true));
 
             if ($modelId2) {
                 foreach ($data2['models'] as $model2) {

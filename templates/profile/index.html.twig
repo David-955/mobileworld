@@ -1,34 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Profil{% endblock %}
-
-{% block content %}
-    
-    <h1>Mon profil</h1>
-    <p>Mon pseudo : {{ personnalisation.pseudo }}</p>
-    <a href="{{ path('app_profil_pseudo', {pseudo: personnalisation.pseudo}) }}"> Voir l'aperçu de mon profil</a>
-    <br><br>
-    
-    <img src="{{ personnalisation.avatar }}" alt="Avatar"></img>
-    <p>{{ personnalisation.presentation }}</p>
-
-    <form action="{{ path('app_profil_update_pseudo') }}" method="post">
-        <label for="pseudo">Changer le pseudo :</label>
-        <input type="text" id="pseudo" name="pseudo" value="{{ personnalisation.pseudo }}">
-        <button type="submit">Mettre à jour le pseudo</button>
-    </form>
-
-    <form action="{{ path('app_profil_update_avatar') }}" method="post" enctype="multipart/form-data">
-        <label for="avatar">Changer l'avatar :</label>
-        <input type="file" id="avatar" name="avatar">
-        <button type="submit">Mettre à jour l'avatar</button>
-        <button type="submit" formaction="{{ path('app_profil_reset_avatar') }}">Remettre l'avatar par défaut</button>
-    </form>
-
-    <form action="{{ path('app_profil_update_presentation') }}" method="post">
-        <label for="presentation">Personnaliser la présentation :</label>
-        <textarea id="presentation" name="presentation"></textarea>
-        <button type="submit">Mettre à jour mon message de présentation</button>
-    </form>
+{% block title %}Mobile World : Profil
 {% endblock %}
 
+{% block content %}
+	<h1>Mon profil</h1>
+	{# 1er border-radius #}
+	<section
+		class="profile-container-vert">
+		{# 2eme border-radius #}
+		<section class="profile-container-blanc">
+			<p>Mon pseudo :
+				{{ personnalisation.pseudo }}</p>
+			<a href="{{ path('app_profil_pseudo', {pseudo: personnalisation.pseudo}) }}">
+				Voir l'aperçu de mon profil</a>
+			<br><br>
+
+			<img src="{{ personnalisation.avatar }}" alt="Avatar"></img>
+		<p>{{ personnalisation.presentation }}</p>
+
+		<form action="{{ path('app_profil_update_pseudo') }}" method="post">
+			<label for="pseudo">Changer le pseudo :</label>
+			<input type="text" id="pseudo" name="pseudo" value="{{ personnalisation.pseudo }}">
+			<button type="submit">Mettre à jour le pseudo</button>
+		</form>
+
+		<form action="{{ path('app_profil_update_avatar') }}" method="post" enctype="multipart/form-data">
+			<label for="avatar">Changer l'avatar :</label>
+			<input type="file" id="avatar" name="avatar">
+			<button type="submit">Mettre à jour l'avatar</button>
+			<button type="submit" formaction="{{ path('app_profil_reset_avatar') }}">Remettre l'avatar par défaut</button>
+		</form>
+
+		<form action="{{ path('app_profil_update_presentation') }}" method="post">
+			<label for="presentation">Personnaliser la présentation :</label>
+			<textarea id="presentation" name="presentation"></textarea>
+			<button type="submit">Mettre à jour mon message de présentation</button>
+		</form>
+	</section>
+</section>
+{% endblock %}
