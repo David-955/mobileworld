@@ -6,10 +6,8 @@
 {% block content %}
 	<h1>Inscription</h1>
 
-	{# 1er border-radius #}
 	<section
-		class="register-container-vert">
-		{# 2eme border-radius #}
+		class="container-vert">
 		<section class="register-container-blanc">
 			<p>
 				<strong>Bienvenue !</strong>
@@ -29,6 +27,7 @@
 		{{ form_errors(registrationForm) }}
 		{{ form_start(registrationForm, {'attr': {'class': 'form-container'}}) }}
 
+		{# réutilisation de .form-group pour avoir de l'espacement #}
 		<div class="form-group">
 			{{ form_label(registrationForm.email, '* Votre adresse Email : ', {'label_attr': {'class': 'form-label'}}) }}
 			{# je reprends .form-control pour reprendre le style des champs à remplir #}

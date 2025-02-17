@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mobile World : Contactez-nous
+{% endblock %}
+
+{% block content %}
+	<h1>Contactez-nous</h1>
+
+	<section
+		class="container-vert">
+		<section class="contact-container-blanc">
+
+			<h2>Formulaire de contact :</h2>
+
+			{% for message in app.flashes('success') %}
+				<div class="alert alert-success">{{ message }}</div>
+			{% endfor %}
+
+			{% for message in app.flashes('error') %}
+				<div class="alert alert-danger">{{ message }}</div>
+			{% endfor %}
+
+			<form method="post" action="{{ path('app_contact') }}">
+				<div class="form-group">
+					<label for="nom">Votre nom :</label>
+                    <br>
+					<input type="text" id="nom" name="nom" value="{{ formData.nom }}" class="form-control" placeholder="Entrez votre nom" required>
+				</div>
+
+				<div class="form-group">
+					<label for="prenom">Votre prénom :</label>
+                    <br>
+					<input type="text" id="prenom" name="prenom" value="{{ formData.prenom }}" class="form-control" placeholder="Entrez votre prénom" required>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Votre adresse Email :</label>
+                    <br>
+					<input type="email" id="email" name="email" value="{{ formData.email }}" class="form-control" placeholder="Entrez votre adresse Email" required>
+				</div>
+
+				<div class="form-group">
+					<label for="sujet">Sujet du message :</label>
+                    <br>
+					<input type="text" id="sujet" name="sujet" value="{{ formData.sujet }}" class="form-control" placeholder="Entrez le sujet du message" required>
+				</div>
+
+				<div class="form-group">
+					<label for="message">Votre message :</label>
+                    <br>
+					<textarea id="message" name="message" class="form-control" placeholder="Entrez votre message" required>{{ formData.message }}</textarea>
+				</div>
+
+				<button class="btn-submit" type="submit">Envoyer</button>
+			</form>
+
+		</section>
+	</section>
+
+{% endblock %}

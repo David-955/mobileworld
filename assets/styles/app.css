@@ -85,6 +85,22 @@ h1 {
   color: #333;
 }
 
+/* Cadre vert en commun avec différentes pages car même thème */
+.container-vert {
+  border-radius: 8px;
+  background-color: #4caf50;
+  padding: 2%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* trouvable dans /contact et dans /profil */
+textarea {
+  resize: none; /* Désactive le redimensionnement */
+  width: 50%; /* Largeur fixe */
+  height: 100px; /* Hauteur fixe */
+}
+
 /* Partie page d'accueil */
 
 /* cadre vert englobant tous les articles */
@@ -221,20 +237,6 @@ footer {
 
 /* Page boutique */
 
-/* Cadre vert en commun avec différentes pages car même thème */
-.category-container-vert,
-.panier-container-vert,
-.product-container-vert,
-.register-container-vert,
-.login-container-vert,
-.profile-container-vert {
-  border-radius: 8px;
-  background-color: #4caf50;
-  padding: 2%;
-  width: 80%;
-  margin: 0 auto;
-}
-
 .category-container-blanc {
   display: flex;
   justify-content: center;
@@ -269,6 +271,7 @@ footer {
   flex-wrap: wrap; /* Permet le passage à la ligne si nécessaire */
   background-color: #fff;
   border-radius: 8px;
+  padding-bottom: 15px;
 }
 
 .product-item {
@@ -348,7 +351,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(17, 17, 17);
+  color: #fff;
   z-index: 1;
   transition-duration: 0.5s;
   font-size: 1.04em;
@@ -370,6 +373,20 @@ footer {
 .CartBtn:active {
   transform: scale(0.95);
   transition-duration: 0.5s;
+}
+
+/* bouton "revenir à la boutique */
+.btn-retour {
+  padding: 10px 20px;
+  margin: 0 auto;
+  text-decoration: none;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.btn-retour:hover {
+  background-color: #45a049;
 }
 
 /* Page comparateur */
@@ -423,8 +440,8 @@ footer {
 .table th,
 .table td {
   padding: 12px;
-  /* ligne de démarcation entre chaque produits */
-  border-bottom: 1px solid #ddd;
+  /* ligne de démarcation entre chaque produits comme <hr> */
+  border-bottom: 3px solid #ddd;
 }
 
 .boutons-action {
@@ -497,14 +514,15 @@ footer {
 
 .register-container-blanc,
 .login-container-blanc,
-.profile-container-blanc {
+.profile-container-blanc,
+.contact-container-blanc {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
 }
 
-/* From Uiverse.io by Yaseen549 */ 
+/* From Uiverse.io by Yaseen549 */
 .form-control {
   border: 2px solid #e8e8e8;
   padding: 10px;
@@ -513,17 +531,17 @@ footer {
   font-size: small;
   font-weight: bold;
   text-align: center;
- }
- 
- .form-control:focus {
+}
+
+.form-control:focus {
   outline-color: #e8e8e8;
   background-color: #fff;
-  color: #001036;
+  color: #333;
   box-shadow: 5px 5px #4caf50;
- }
+}
 
- /* bouton submit */
- .btn-submit {
+/* bouton submit */
+.btn-submit {
   display: inline-block;
   padding: 10px 20px;
   background-color: #4caf50;
@@ -542,7 +560,7 @@ footer {
 
 /* Groupe de formulaire (chaque label + champ) */
 .form-group {
-  margin-bottom: 20px; /* Espacement entre chaque groupe */
+  margin-bottom: 15px; /* Espacement entre chaque groupe */
 }
 
 /* Styles pour les labels */
@@ -573,6 +591,11 @@ footer {
     width: 95%;
   }
 
+  /* réutilisable pour plusieurs pages, ajustement épaisseur du cadre */
+  .container-vert {
+    padding: 4%;
+  }
+
   /* Partie page d'accueil */
   .news-article {
     flex-direction: column; /* Empile l'image et le contenu */
@@ -597,10 +620,6 @@ footer {
 
   /* Partie boutique */
 
-  .category-container-vert {
-    padding: 4%;
-  }
-
   .category-container-blanc {
     flex-wrap: wrap;
     justify-content: center;
@@ -621,16 +640,12 @@ footer {
 
   /* Partie comparateur */
 
-  .comparateur-container-vert,
-  .panier-container-vert {
-    padding: 4%;
-  }
-
   .comparateur-container-blanc {
     flex-wrap: wrap;
   }
 
   /* Page panier */
+
   .table th,
   .table td {
     /* disposition en 1 colonne */

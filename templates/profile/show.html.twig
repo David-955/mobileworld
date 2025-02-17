@@ -6,16 +6,17 @@
 
 {% block content %}
 
-	<h1>Profil de
-		{{ personnalisation.pseudo }}</h1>
-	{# 1er border-radius #}
-	<section
-		class="profile-container-vert">
-		{# 2eme border-radius #}
+	<h1>Profil de <em>{{ personnalisation.pseudo }}</em></h1>
+
+	<section class="container-vert">
 		<section class="profile-container-blanc">
 			<img src="{{ asset(personnalisation.avatar) }}" alt="Avatar de {{ personnalisation.pseudo }}">
-			<p>Message de présentation :
-				{{ personnalisation.presentation }}</p>
+			<p>Message de présentation : <em>{{ personnalisation.presentation }}</em></p>
+			<br>
+			{# Bouton retour visible seulement si on est connecté #}
+			{% if app.user %}
+				<p><a href="{{ path('app_profil') }}" class="btn-retour">Personnalisation de mon profil ici</a></p>
+			{% endif %}
 		</section>
 	</section>
 {% endblock %}
