@@ -44,12 +44,16 @@ header {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Effet de survol */
+}
+
+.cart-header:hover {
+  transform: scale(1.3); /* Effet de zoom au survol */
 }
 
 .profile-image {
@@ -297,11 +301,75 @@ footer {
 }
 
 .product-colonne3 p {
-  margin: 5px 0;
+  /* espacement en haut et en bas des éléments : prix, stock, btn ajout panier */
+  margin: 13px 0;
+}
+/* 
+
+/* From Uiverse.io by vinodjangid07 */
+/* source : https://uiverse.io/vinodjangid07/brave-goose-29 */
+.CartBtn {
+  width: 160px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4caf50;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
 }
 
-.add-to-cart-btn {
-  margin-top: 10px;
+.IconContainer {
+  position: absolute;
+  left: -55px;
+  width: 30px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.5s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 17, 17);
+  z-index: 1;
+  transition-duration: 0.5s;
+  font-size: 1.04em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: 0.5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(12px, 0px);
+  transition-duration: 0.5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.5s;
 }
 
 /* Page comparateur */
@@ -382,12 +450,54 @@ footer {
 }
 
 .panier-total {
-  text-align: center
+  text-align: center;
+}
+
+/* From Uiverse.io by philipo30 */
+/* source : https://uiverse.io/philipo30/afraid-ape-40 */
+.delete-button {
+  position: relative;
+  padding: 0.5em;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.2s ease;
+}
+
+.trash-svg {
+  width: 3em;
+  height: 3em;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  overflow: visible;
+}
+
+#lid-group {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.delete-button:hover #lid-group {
+  transform: rotate(-28deg) translateY(2px);
+}
+
+.delete-button:active #lid-group {
+  transform: rotate(-12deg) scale(0.98);
+}
+
+.delete-button:hover .trash-svg {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.delete-button:active .trash-svg {
+  transform: scale(0.96) rotate(-1deg);
 }
 
 /* page inscription et de connexion (register et login) */
 
-.register-container-blanc, .login-container-blanc, .profile-container-blanc {
+.register-container-blanc,
+.login-container-blanc,
+.profile-container-blanc {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -484,7 +594,7 @@ footer {
     /* on cache en-tête tableau qui était pour la version bureau */
     display: none;
   }
-  
+
   .table td::before {
     /* on place à l'avant de chaque phrase correspondante ce qui est écrit dans diva-shadel */
     content: attr(data-label);
@@ -506,5 +616,4 @@ footer {
   .btn-commander {
     text-align: center;
   }
-
 }
