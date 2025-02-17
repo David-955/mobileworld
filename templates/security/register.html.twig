@@ -11,7 +11,9 @@
 		class="register-container-vert">
 		{# 2eme border-radius #}
 		<section class="register-container-blanc">
-			<p><strong>Bienvenue !</strong></p>
+			<p>
+				<strong>Bienvenue !</strong>
+			</p>
 			<p>
 				<strong>L’inscription vous permettra de commenter ainsi que de pouvoir faire des achats.</p>
 			</p>
@@ -21,27 +23,36 @@
 				<strong>Vous possédez déjà un compte ? Connectez-vous en cliquant ici.</strong>
 			</a>
 		</p>
+		<br>
 
 
 		{{ form_errors(registrationForm) }}
+		{{ form_start(registrationForm, {'attr': {'class': 'form-container'}}) }}
 
-		{{ form_start(registrationForm) }}
-		{{ form_row(registrationForm.email, {
-            label: '* Votre adresse Email : '
-        }) }}
-		{{ form_row(registrationForm.plainPassword.first, {
-            label: '* Choisir un mot de passe : '
-        }) }}
-		{{ form_row(registrationForm.plainPassword.second, {
-            label: '* Confirmez le mot de passe : '
-        }) }}
-		{{ form_row(registrationForm.agreeTerms, {
+		<div class="form-group">
+			{{ form_label(registrationForm.email, '* Votre adresse Email : ', {'label_attr': {'class': 'form-label'}}) }}
+			{# je reprends .form-control pour reprendre le style des champs à remplir #}
+			{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre adresse Email'}}) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(registrationForm.plainPassword.first, '* Choisir un mot de passe : ', {'label_attr': {'class': 'form-label'}}) }}
+			{{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'form-control', 'placeholder': 'Entrez un mot de passe'}}) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(registrationForm.plainPassword.second, '* Confirmez le mot de passe : ', {'label_attr': {'class': 'form-label'}}) }}
+			{{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'form-control', 'placeholder': 'Confirmez le mot de passe'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(registrationForm.agreeTerms, {
             label: '* J’accepte les conditions générales d’utilisation et la politique de confidentialité'
         }) }}
+		</div>
 
-		<button type="submit" class="btn">M'inscrire !</button>
-		<br>
-		{{ "(*) Tous les champs sont obligatoire" }}
+		<button type="submit" class="btn-submit">M'inscrire !</button>
+		<br><br>
+		<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
 
 		{{ form_end(registrationForm) }}
 	</section>

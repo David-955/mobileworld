@@ -504,6 +504,54 @@ footer {
   text-align: center;
 }
 
+/* From Uiverse.io by Yaseen549 */ 
+.form-control {
+  border: 2px solid #e8e8e8;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
+ }
+ 
+ .form-control:focus {
+  outline-color: #e8e8e8;
+  background-color: #fff;
+  color: #001036;
+  box-shadow: 5px 5px #4caf50;
+ }
+
+ /* bouton submit */
+ .btn-submit {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}
+
+/* Page /register */
+
+/* Groupe de formulaire (chaque label + champ) */
+.form-group {
+  margin-bottom: 20px; /* Espacement entre chaque groupe */
+}
+
+/* Styles pour les labels */
+.form-label {
+  display: block; /* Force le label à être sur sa propre ligne */
+  margin-bottom: 5px; /* Espace entre le label et le champ */
+  color: #333;
+}
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column; /* Empile le logo et les liens */
