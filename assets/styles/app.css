@@ -94,6 +94,14 @@ h1 {
   margin: 0 auto;
 }
 
+/* Cadre blanc en commun avec différentes pages car même thème */
+.container-blanc {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
 /* trouvable dans /contact et dans /profil */
 textarea {
   resize: none; /* Désactive le redimensionnement */
@@ -514,16 +522,6 @@ footer {
 
 /* page inscription et de connexion (register et login) */
 
-.register-container-blanc,
-.login-container-blanc,
-.profile-container-blanc,
-.contact-container-blanc {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-}
-
 /* From Uiverse.io by Yaseen549 */
 .form-control {
   border: 2px solid #e8e8e8;
@@ -542,20 +540,33 @@ footer {
   box-shadow: 5px 5px #4caf50;
 }
 
-/* bouton submit */
+/* bouton de validation se trouvant sur beaucoup de pages */
+/* source : https://uiverse.io/zjssun/tidy-sloth-40 */
+
 .btn-submit {
-  display: inline-block;
   padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
+  text-transform: uppercase;
   border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: none;
+  background-color: #4caf50;
   cursor: pointer;
-  font-size: 16px;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
 }
 
-.btn-submit:hover {
-  background-color: #45a049;
+.btn-submit:hover,
+:focus {
+  color: #ffffff;
+  background: #45a049;
+  border: 1px solid #45a049;
+  text-shadow: 0 0 1px #ffffff, 0 0 5px #ffffff, 0 0 10px #ffffff;
+  box-shadow: 0 0 5px #45a049, 0 0 10px #45a049, 0 0 20px #45a049,
+    0 0 30px #45a049;
 }
 
 /* Page /register */
@@ -570,6 +581,14 @@ footer {
   display: block; /* Force le label à être sur sa propre ligne */
   margin-bottom: 5px; /* Espace entre le label et le champ */
   color: #333;
+}
+
+/* Page /commande */
+
+.container-commande {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
 @media (max-width: 768px) {

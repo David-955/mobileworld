@@ -6,9 +6,9 @@
 {% block content %}
 	<h1>Panier</h1>
 
-	{% if cart|length > 0 %}
-		<section class="container-vert">
-			<section class="panier-container-blanc">
+	<section class="container-vert">
+		<section class="container-blanc">
+			{% if cart|length > 0 %}
 				<table class="table">
 					<thead>
 						<tr>

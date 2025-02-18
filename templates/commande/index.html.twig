@@ -1,40 +1,100 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Passer commande{% endblock %}
+{% block title %}Passer commande
+{% endblock %}
 
 {% block content %}
-    <h1>Récapitulatif de la commande</h1>
+	<h1>Récapitulatif de la commande</h1>
 
-    {% if cart|length > 0 %}
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Quantité</th>
-                    <th>Prix unitaire</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in cart %}
-                    <tr>
-                        <td>{{ item.product.nom }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>{{ item.product.prix }}€</td>
-                        <td>{{ item.total }}€</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+	<section class="container-vert">
+		<section class="container-blanc">
+			{% if cart|length > 0 %}
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Image du produit</th>
+							<th>Nom du produit</th>
+							<th>Quantité</th>
+							<th>Prix unitaire</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in cart %}
+							<tr>
+								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" class="panier-img" alt="Image de {{ item.product.nom }}"></td>
+								<td>{{ item.product.nom }}</td>
+								<td>{{ item.quantity }}</td>
+								<td>{{ item.product.prix }}€</td>
+								<td>{{ item.total }}€</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
 
-        <h3>Total : {{ total }}€</h3>
-    {% else %}
-        <p>Votre panier est vide.</p>
-    {% endif %}
+				<h3>Total :
+					{{ total }}€</h3>
+			{% else %}
+				<p>Votre panier est vide.</p>
+			{% endif %}
 
-    <h2>Informations de livraison</h2>
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type="submit" class="btn btn-primary">Valider la commande</button>
-    {{ form_end(form) }}
+			<h2>Informations de livraison</h2>
+			{{ form_start(form) }}
+			<section class="container-commande">
+				<section class="commande-gauche">
+					<div class="form-group">
+						{{ form_label(form.nom, '* Votre nom : ', {'label_attr': {'class': 'form-label'}}) }}
+						{# je reprends .form-control pour reprendre le style des champs à remplir #}
+						{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre nom'}}) }}
+					</div>
+
+					<div class="form-group">
+						{{ form_label(form.prenom, '* Votre prénom : ', {'label_attr': {'class': 'form-label'}}) }}
+						{# je reprends .form-control pour reprendre le style des champs à remplir #}
+						{{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre prénom'}}) }}
+					</div>
+
+					<div class="form-group">
+						{{ form_label(form.adresse, '* Votre adresse : ', {'label_attr': {'class': 'form-label'}}) }}
+						{# je reprends .form-control pour reprendre le style des champs à remplir #}
+						{{ form_widget(form.adresse, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre adresse'}}) }}
+					</div>
+				</section>
+
+				<section class="commande-droite">
+					<div class="form-group">
+						{{ form_label(form.ville, '* Votre ville : ', {'label_attr': {'class': 'form-label'}}) }}
+						{# je reprends .form-control pour reprendre le style des champs à remplir #}
+						{{ form_widget(form.ville, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre ville'}}) }}
+					</div>
+
+					<div class="form-group">
+						{{ form_label(form.codePostal, '* Votre code postal : ', {'label_attr': {'class': 'form-label'}}) }}
+						{# je reprends .form-control pour reprendre le style des champs à remplir #}
+						{{ form_widget(form.codePostal, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre code postal'}}) }}
+					</div>
+
+					<div class="form-group">
+						{{ form_label(form.tel, '* Votre numéro de téléphone : ', {'label_attr': {'class': 'form-label'}}) }}
+						{# je reprends .form-control pour reprendre le style des champs à remplir #}
+						{{ form_widget(form.tel, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre numéro de téléphone'}}) }}
+					</div>
+				</section>
+
+
+			</section>
+
+			
+
+
+			<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
+
+
+			{{ form_widget(form) }}
+			<button type="submit" class="btn-submit">Valider la commande</button>
+			{{ form_end(form) }}
+		</section>
+
+
+	</section>
 {% endblock %}
