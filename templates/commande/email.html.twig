@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Confirmation de commande</title>
+    <title>Mobile World : Confirmation de commande n° {{ numero }}</title>
 </head>
 <body>
     <h1>Bonjour {{ user.prenom }} {{ user.nom }},</h1>
     <p>Votre commande a bien été passée ! Voici les détails :</p>
 
     <h2>Détails de la commande :</h2>
+    <p>Numéro de commande : {{ numero }}</p>
+    <p><strong>Date de la commande :</strong> {{ date|date('d/m/Y H:i') }}</p>
+
     <ul>
         {% for item in cart %}
             <li>
@@ -16,9 +19,9 @@
         {% endfor %}
     </ul>
 
-    <p><strong>Total : {{ total }} €</strong></p>
-    <p>Numéro de commande : {{ numero }}</p>
+    <p><strong>Montant total TTC : {{ total }} €</strong></p>
 
     <p>Merci pour votre achat !</p>
+    <p>Toute l'équipe de Mobile World.</p>
 </body>
 </html>

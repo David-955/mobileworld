@@ -11,7 +11,8 @@
             {# Afficher le numéro de commande une seule fois #}
             {# Comme toutes les commandes partagent le même numéro, il suffit d'afficher celui du premier élément #}
             <h2>Détails de la commande numéro <u>{{ commandes[0].numero }}</u> :</h2>
-            
+            <p><strong>Date de la commande :</strong> {{ date|date('d/m/Y H:i') }}</p>
+
             {% for commande in commandes %}
                 <p class="liste-confirmation">
                     {{ commande.produit.nom }} - Quantité : {{ commande.quantite }} - Prix unitaire : {{ commande.produit.prix }} €

@@ -70,12 +70,14 @@ class CommandeController extends AbstractController
             // Génération du numéro de commande aléatoire
             $aleatoire = random_int(10000, 99999);
 
+            $dateCommande = new \DateTime(); // Date actuelle
+
             // Créer les commandes pour chaque produit dans le panier
             foreach ($cartWithData as $item) {
                 $commande = new Commande();
                 $commande->setUtilisateur($user);
                 $commande->setProduit($item['product']);
-                $commande->setDate(new \DateTime());
+                $commande->setDate($dateCommande);
                 $commande->setStatut('en_attente'); // Statut initial
                 $commande->setQuantite($item['quantity']);
                 $commande->setNumero($aleatoire);
@@ -91,12 +93,13 @@ class CommandeController extends AbstractController
             $email = (new Email())
                 ->from('dngo3819@example.com')
                 ->to($user->getEmail()) // Adresse e-mail de l'utilisateur
-                ->subject('Confirmation de votre commande')
+                ->subject('Mobile World : Confirmation de votre commande')
                 ->html($this->renderView('commande/email.html.twig', [
                     'user' => $user,
                     'numero' => $aleatoire,
                     'cart' => $cartWithData,
                     'total' => $total,
+                    'date' => $dateCommande,
                 ]));
 
             $mailer->send($email);
@@ -127,11 +130,15 @@ class CommandeController extends AbstractController
         foreach ($commandes as $commande) {
             $total += $commande->getProduit()->getPrix() * $commande->getQuantite();
         }
+        
+        // Récupérer la date de la première commande (elles partagent toutes la même date)
+        $dateCommande = $commandes[0]->getDate(); // Supposons que getDate() renvoie un objet DateTime
 
         // Afficher la page de confirmation
         return $this->render('commande/confirmation.html.twig', [
             'commandes' => $commandes,
             'total' => $total,
+            'date' => $dateCommande,
         ]);
     }
 }
