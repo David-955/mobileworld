@@ -271,16 +271,18 @@ footer {
   flex-wrap: wrap; /* Permet le passage à la ligne si nécessaire */
   background-color: #fff;
   border-radius: 8px;
-  padding-bottom: 15px;
+  padding: 20px;
 }
 
 .product-item {
   display: flex;
   flex-direction: row; /* Maintient la mise en page en 3 colonnes */
-  flex: 0 0 96%; /* Prend presque toute la largeur pour un produit par ligne */
-  box-shadow: 3px 2px 2px #4caf50;
+  width: 100%; /* Prend toute la largeur pour un produit par ligne */
   border-radius: 30px;
-  margin: 20px;
+  border-radius: 0%;
+    /* ligne de démarcation entre chaque produits comme <hr> */
+    border-bottom: 3px solid #ddd;
+    margin: 3px;
 }
 
 .product-colonne1 {
@@ -288,13 +290,13 @@ footer {
 }
 
 .product-colonne1 img {
-  max-width: 150px;
+  width: 150px;
 }
 
 .product-colonne2 {
   /* espacement entre colonne 1 et 3 */
   padding: 0 15px;
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 
@@ -678,5 +680,28 @@ footer {
   .btn-continuer,
   .btn-commander {
     text-align: center;
+  }
+
+  /* Page produits */
+
+  .product-container-blanc {
+    gap: 20px;
+  }
+
+  .product-item {
+    display: flex;
+    flex-direction: column; /* Pour une seule colonne */
+  }
+
+  .product-colonne2 {
+    /* plus besoin d'espacement entre colonne 1 et 3 */
+    padding: 0px;
+    /* on reprend toute la largeur */
+    width: 100%;
+  }
+
+  .product-colonne3 {
+    /* espace entre chaque article */
+    padding: 20px;
   }
 }
