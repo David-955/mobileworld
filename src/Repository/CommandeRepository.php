@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Commande;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\Utilisateur;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Commande>
@@ -14,6 +15,19 @@ class CommandeRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Commande::class);
+    }
+    
+    /**
+     * Récupère toutes les commandes d'un utilisateur donné.
+     */
+    public function findUserCommands(Utilisateur $user): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.utilisateur = :user')
+            ->setParameter('user', $user)
+            ->orderBy('c.date', 'DESC') // Trier par date décroissante
+            ->getQuery()
+            ->getResult();
     }
 
     //    /**

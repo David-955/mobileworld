@@ -2,11 +2,12 @@
 namespace App\Controller;
 
 use App\Entity\Commande;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use App\Repository\ProduitRepository;
+use App\Repository\CommandeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\AdresseType; // Formulaire pour l'adresse
@@ -139,6 +140,26 @@ class CommandeController extends AbstractController
             'commandes' => $commandes,
             'total' => $total,
             'date' => $dateCommande,
+        ]);
+    }
+
+    #[Route('/mes-commandes', name: 'app_mes_commandes')]
+    public function mesCommandes(CommandeRepository $commandeRepository): Response
+    {
+        // Récupérer l'utilisateur connecté
+        $user = $this->getUser();
+
+        if (!$user) {
+            $this->addFlash('error', 'Vous devez être connecté pour accéder à vos commandes.');
+            return $this->redirectToRoute('app_login');
+        }
+
+        // Récupérer les commandes de l'utilisateur
+        $commandes = $commandeRepository->findUserCommands($user);
+
+        // Passer les commandes au template
+        return $this->render('commande/mes_commandes.html.twig', [
+            'commandes' => $commandes,
         ]);
     }
 }
