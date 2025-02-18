@@ -385,7 +385,7 @@ footer {
   transition-duration: 0.5s;
 }
 
-/* bouton "revenir à la boutique */
+/* bouton "revenir à la boutique" réutilisable */
 .btn-retour {
   padding: 10px 20px;
   margin: 0 auto;
@@ -541,7 +541,7 @@ footer {
 }
 
 /* bouton de validation se trouvant sur beaucoup de pages */
-/* source : https://uiverse.io/zjssun/tidy-sloth-40 */
+/* source : https://uiverse.io/levxyca/tidy-mayfly-7 */
 
 .btn-submit {
   font-size: 1.2rem;
@@ -678,6 +678,17 @@ button:active {
   width: 100%;
 }
 
+/* Page de confirmation de commande */
+
+.liste-confirmation {
+  list-style: none;
+  background-color: #dfdfdf;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 
 @media (max-width: 768px) {
   .header-container {

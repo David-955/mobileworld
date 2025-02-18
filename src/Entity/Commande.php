@@ -29,6 +29,9 @@ class Commande
     #[ORM\ManyToOne(inversedBy: 'commandes')]
     private ?Produit $produit = null;
 
+    #[ORM\Column]
+    private ?int $numero = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Commande
     public function setProduit(?Produit $produit): static
     {
         $this->produit = $produit;
+
+        return $this;
+    }
+
+    public function getNumero(): ?int
+    {
+        return $this->numero;
+    }
+
+    public function setNumero(int $numero): static
+    {
+        $this->numero = $numero;
 
         return $this;
     }
