@@ -544,29 +544,23 @@ footer {
 /* source : https://uiverse.io/zjssun/tidy-sloth-40 */
 
 .btn-submit {
+  font-size: 1.2rem;
+  color: #fafafa;
   padding: 10px 20px;
-  text-transform: uppercase;
-  border-radius: 8px;
-  font-size: 17px;
-  font-weight: 500;
-  color: #fff;
-  text-shadow: none;
-  background-color: #4caf50;
+  border-radius: 10px;
+  border: 2px solid #fafafa;
+  background: #4caf50;
+  box-shadow: 3px 3px #666;
   cursor: pointer;
-  box-shadow: transparent;
-  border: 1px solid #ffffff80;
-  transition: 0.5s ease;
-  user-select: none;
 }
 
-.btn-submit:hover,
-:focus {
-  color: #ffffff;
+.btn-submit:hover {
   background: #45a049;
-  border: 1px solid #45a049;
-  text-shadow: 0 0 1px #ffffff, 0 0 5px #ffffff, 0 0 10px #ffffff;
-  box-shadow: 0 0 5px #45a049, 0 0 10px #45a049, 0 0 20px #45a049,
-    0 0 30px #45a049;
+}
+
+button:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }
 
 /* Page /register */
@@ -590,6 +584,100 @@ footer {
   justify-content: center;
   gap: 40px;
 }
+
+/* mastercard, source: https://uiverse.io/vinodjangid07/fat-puma-69  */
+/* From Uiverse.io by vinodjangid07 */ 
+.visa-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 300px;
+  height: 180px;
+  background-image: radial-gradient(
+    circle 897px at 9% 80.3%,
+    rgba(55, 60, 245, 1) 0%,
+    rgba(234, 161, 15, 0.9) 100.2%
+  );
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 18px;
+}
+.svgLogo {
+  height: 40px;
+  width: auto;
+}
+.inputstyle::placeholder {
+  color: #ffffff;
+}
+.inputstyle {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  caret-color: red;
+  font-size: 13px;
+  height: 25px;
+  letter-spacing: 1.5px;
+}
+.number-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+#cardNumber {
+  width: 100%;
+  height: 25px;
+}
+.name-date-cvv-container {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  gap: 10px;
+}
+.name-wrapper {
+  width: 60%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.expiry-wrapper,
+.cvv-wrapper {
+  width: 30%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.cvv-wrapper {
+  width: 10%;
+}
+#expiry,
+#cvv {
+  width: 100%;
+}
+.input-label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #e2e2e2;
+  width: 100%;
+}
+
 
 @media (max-width: 768px) {
   .header-container {
