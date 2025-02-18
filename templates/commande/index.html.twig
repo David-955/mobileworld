@@ -22,21 +22,23 @@
 					<tbody>
 						{% for item in cart %}
 							<tr>
+							{# même principe que /panier pour l'affichage mobile #}
 								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" class="panier-img" alt="Image de {{ item.product.nom }}"></td>
-								<td>{{ item.product.nom }}</td>
-								<td>{{ item.quantity }}</td>
-								<td>{{ item.product.prix }}€</td>
-								<td>{{ item.total }}€</td>
+								<td data-label="Nom du produit: ">{{ item.product.nom }}</td>
+								<td data-label="Quantité: ">{{ item.quantity }}</td>
+								<td data-label="Prix unitaire: ">{{ item.product.prix }}€</td>
+								<td data-label="Total: ">{{ item.total }}€</td>
 							</tr>
 						{% endfor %}
 					</tbody>
 				</table>
 
-				<h3>Montant total TTC :
+				<h3>=> Montant total TTC :
 					{{ total }}€</h3>
 			{% else %}
 				<p>Votre panier est vide.</p>
 			{% endif %}
+			<hr>
 
 			<h2>Informations de livraison</h2>
 			{{ form_start(form) }}

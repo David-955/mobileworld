@@ -288,9 +288,9 @@ footer {
   width: 100%; /* Prend toute la largeur pour un produit par ligne */
   border-radius: 30px;
   border-radius: 0%;
-    /* ligne de démarcation entre chaque produits comme <hr> */
-    border-bottom: 3px solid #ddd;
-    margin: 3px;
+  /* ligne de démarcation entre chaque produits comme <hr> */
+  border-bottom: 3px solid #ddd;
+  margin: 3px;
 }
 
 .product-colonne1 {
@@ -586,7 +586,7 @@ button:active {
 }
 
 /* mastercard, source: https://uiverse.io/vinodjangid07/fat-puma-69  */
-/* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by vinodjangid07 */
 .visa-card {
   display: flex;
   flex-direction: column;
@@ -765,6 +765,7 @@ button:active {
   }
 
   /* Page panier */
+  /* cela va impacter /commande */
 
   .table th,
   .table td {
@@ -821,5 +822,12 @@ button:active {
   .product-colonne3 {
     /* espace entre chaque article */
     padding: 20px;
+  }
+
+  /* Page /commande */
+
+  .container-commande {
+    flex-wrap: wrap;
+    gap: 0px;
   }
 }

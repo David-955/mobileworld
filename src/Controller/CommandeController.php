@@ -132,7 +132,7 @@ class CommandeController extends AbstractController
         }
         
         // Récupérer la date de la première commande (elles partagent toutes la même date)
-        $dateCommande = $commandes[0]->getDate(); // Supposons que getDate() renvoie un objet DateTime
+        $dateCommande = $commandes[0]->getDate(); // getDate() renvoie un objet DateTime (sera formatté ensuite dans le twig)
 
         // Afficher la page de confirmation
         return $this->render('commande/confirmation.html.twig', [
