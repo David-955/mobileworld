@@ -34,10 +34,10 @@ final class AccueilController extends AbstractController
             $excludedKeywords = ['jeu', 'game', 'jeu vidéo', 'sport', 'politique', 'électrique', 'voiture', 'automobile', 'soldes', 'promotion', 'réduction', 'sponso', 'sponsorisé', 'pub', 'publicité', 'offres', 'offre', 'bon plan', 'code promo', 'coupon', 'remise', 'cadeau', 'gratuit', 'gratuite', 'gratuitement'];
 
             // Vérifier les mots-clés pertinents dans le titre et la description de l'article 
-            $isRelevant = false;
+            $pertinant = false;
             foreach ($keywords as $keyword) {
                 if (stripos($article['title'], $keyword) !== false || stripos($article['description'], $keyword) !== false) {
-                    $isRelevant = true;
+                    $pertinant = true;
                     break;
                 }
             }
@@ -49,7 +49,7 @@ final class AccueilController extends AbstractController
                 }
             }
 
-            return $isRelevant;
+            return $pertinant;
         });
 
         // Paginer les articles filtrés

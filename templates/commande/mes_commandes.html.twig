@@ -4,16 +4,18 @@
 
 {% block content %}
     <h1>Mes commandes</h1>
-    
+
     <section class="container-vert">
         <section class="container-blanc">
 
-            {% if commandes|length == 0 %}
+            {% if pagination|length == 0 %}
                 <p>Vous n'avez passé aucune commande pour le moment.</p>
+                <p><a href="{{ path('app_boutique') }}" class="btn-submit">Accéder à la boutique</a></p>
             {% else %}
                 <ul>
-                    {% for commande in commandes %}
-                        <li>
+                    {% for commande in pagination %}
+                        <li class="liste-confirmation">
+                            <img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="{{ commande.produit.nom }}" style="max-width: 100px;"><br>
                             <strong>Numéro de commande :</strong> {{ commande.numero }}<br>
                             <strong>Date :</strong> {{ commande.date|date('d/m/Y H:i') }}<br>
                             <strong>Produit :</strong> {{ commande.produit.nom }}<br>
@@ -25,6 +27,9 @@
                     {% endfor %}
                 </ul>
             {% endif %}
+            <div class="pagination">
+			{{ knp_pagination_render(pagination) }}
+		    </div>
         </section>
     </section>
 {% endblock %}

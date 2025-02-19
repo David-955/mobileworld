@@ -105,8 +105,9 @@ h1 {
 /* trouvable dans /contact et dans /profil */
 textarea {
   resize: none; /* Désactive le redimensionnement */
-  width: 50%; /* Largeur fixe */
-  height: 100px; /* Hauteur fixe */
+  width: 50%;
+  height: 50px; /* Hauteur fixe */
+  font-size: 30pt;
 }
 
 /* Partie page d'accueil */
@@ -385,20 +386,6 @@ footer {
   transition-duration: 0.5s;
 }
 
-/* bouton "revenir à la boutique" réutilisable */
-.btn-retour {
-  padding: 10px 20px;
-  margin: 0 auto;
-  text-decoration: none;
-  background-color: #4caf50;
-  color: #fff;
-  border-radius: 8px;
-}
-
-.btn-retour:hover {
-  background-color: #45a049;
-}
-
 /* Page comparateur */
 
 .comparateur-container-vert {
@@ -456,24 +443,9 @@ footer {
 
 .boutons-action {
   display: flex;
-  gap: 10px; /* Espace entre les boutons */
   justify-content: center; /* Centrer les boutons horizontalement */
   margin-top: 20px; /* Espace au-dessus des boutons */
-}
-
-.btn-continuer,
-.btn-commander {
-  padding: 10px 20px;
-  margin: 10px;
-  text-decoration: none;
-  background-color: #4caf50;
-  color: #fff;
-  border-radius: 8px;
-}
-
-.btn-continuer:hover,
-.btn-commander:hover {
-  background-color: #45a049;
+  gap: 10px; /* Espace entre les boutons */
 }
 
 .panier-total {
@@ -544,21 +516,22 @@ footer {
 /* source : https://uiverse.io/levxyca/tidy-mayfly-7 */
 
 .btn-submit {
-  font-size: 1.2rem;
   color: #fafafa;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 2px solid #fafafa;
   background: #4caf50;
   box-shadow: 3px 3px #666;
   cursor: pointer;
+  text-decoration: none;
+  margin: 0 auto;
 }
 
 .btn-submit:hover {
   background: #45a049;
 }
 
-button:active {
+.btn-submit:active {
   box-shadow: none;
   transform: translate(3px, 3px);
 }

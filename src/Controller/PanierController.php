@@ -119,8 +119,7 @@ class PanierController extends AbstractController
 
         // Sauvegarder le panier mis à jour
         $session->set('cart', $cart);
-
-        $this->addFlash('success', 'La quantité a été mise à jour.');
+        
         return $this->redirectToRoute('app_panier');
     }
 }

@@ -6,6 +6,7 @@ use Symfony\Component\Mime\Email;
 use App\Repository\ProduitRepository;
 use App\Repository\CommandeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,7 +32,6 @@ class CommandeController extends AbstractController
         // Récupérer le contenu du panier depuis la session
         $cart = $session->get('cart', []);
         if (empty($cart)) {
-            $this->addFlash('error', 'Votre panier est vide. Ajoutez des produits avant de passer commande.');
             return $this->redirectToRoute('app_boutique');
         }
 
@@ -144,22 +144,29 @@ class CommandeController extends AbstractController
     }
 
     #[Route('/mes-commandes', name: 'app_mes_commandes')]
-    public function mesCommandes(CommandeRepository $commandeRepository): Response
+    public function mesCommandes(CommandeRepository $commandeRepository, Request $request, PaginatorInterface $paginator): Response
     {
         // Récupérer l'utilisateur connecté
         $user = $this->getUser();
 
         if (!$user) {
-            $this->addFlash('error', 'Vous devez être connecté pour accéder à vos commandes.');
-            return $this->redirectToRoute('app_login');
+           return $this->redirectToRoute('app_login');
         }
 
         // Récupérer les commandes de l'utilisateur
         $commandes = $commandeRepository->findUserCommands($user);
 
+        // Paginer les commentaires avec KnpPaginator
+        $pagination = $paginator->paginate(
+            $commandes, // Requête Doctrine, les données filtrées
+            $request->query->getInt('page', 1), // Numéro de page actuelle (par défaut 1)
+            5 // Nombre d'éléments par page
+        );
+
         // Passer les commandes au template
         return $this->render('commande/mes_commandes.html.twig', [
-            'commandes' => $commandes,
+            // 'commandes' => $commandes,
+            'pagination' => $pagination,
         ]);
     }
 }
