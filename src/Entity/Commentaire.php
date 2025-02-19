@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CommentaireRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert; // Import des contraintes de validation
 
 #[ORM\Entity(repositoryClass: CommentaireRepository::class)]
 class Commentaire
@@ -18,6 +19,12 @@ class Commentaire
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: "Le contenu ne peut pas être vide.")]
+    // à placer avant la propriété $contenu pour que ce soit spécifique qu'à cette propriété
+    #[Assert\Length(
+        max: 1500, // Longueur maximale
+        maxMessage: 'Le contenu ne doit pas dépasser {{ limit }} caractères.' // Message d'erreur
+    )]
     private ?string $contenu = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -39,7 +46,6 @@ class Commentaire
     public function setDate(\DateTimeInterface $date): static
     {
         $this->date = $date;
-
         return $this;
     }
 
@@ -51,7 +57,6 @@ class Commentaire
     public function setContenu(string $contenu): static
     {
         $this->contenu = $contenu;
-
         return $this;
     }
 
@@ -63,7 +68,6 @@ class Commentaire
     public function setArticle(string $article): static
     {
         $this->article = $article;
-
         return $this;
     }
 
@@ -75,7 +79,6 @@ class Commentaire
     public function setUtilisateur(?Utilisateur $utilisateur): static
     {
         $this->utilisateur = $utilisateur;
-
         return $this;
     }
 }

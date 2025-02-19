@@ -14,7 +14,8 @@ class CommentaireType extends AbstractType
     {
         $builder
             ->add('contenu', TextareaType::class, [
-                'label' => 'Votre commentaire : ',
+                'label' => false, // sans ça le label s'affiche, "Contenu" par défaut
+                'attr' => ['placeholder' => 'Exprimez-vous : ']
             ]);
     }
 

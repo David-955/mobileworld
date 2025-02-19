@@ -110,6 +110,15 @@ textarea {
   font-size: 30pt;
 }
 
+footer {
+  background: linear-gradient(#4caf50, #2dc5a9);
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
 /* Partie page d'accueil */
 
 /* cadre vert englobant tous les articles */
@@ -250,21 +259,11 @@ textarea {
   }
 }
 
-
-footer {
-  background: linear-gradient(#4caf50, #2dc5a9);
-  color: white;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 100%;
-}
-
 /* Partie page d'article */
 
 .article-titre,
 .article-contenu,
-.commentaires {
+.container-commentaires {
   text-align: center;
   background-color: #fff;
   border-radius: 8px;
@@ -283,6 +282,43 @@ footer {
   padding: 5px 0px;
   width: 80%;
   margin: 0 auto;
+}
+
+/* Partie commentaires */
+
+.liste-commentaires {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #9a9a9a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.commentaires-colonne1 img {
+  width: 80px;
+  padding: 10px;
+  text-align: center;
+}
+
+.commentaires-colonne2 {
+  padding: 10px;
+  width: 100%;
+}
+
+.ajout-commentaires {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #9a9a9a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.commentaire-form {
+  padding: 10px;
 }
 
 /* Page boutique catégories */
