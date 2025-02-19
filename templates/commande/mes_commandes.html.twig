@@ -7,7 +7,6 @@
 
     <section class="container-vert">
         <section class="container-blanc">
-
             {% if pagination|length == 0 %}
                 <p>Vous n'avez passé aucune commande pour le moment.</p>
                 <p><a href="{{ path('app_boutique') }}" class="btn-submit">Accéder à la boutique</a></p>
@@ -23,13 +22,16 @@
                             <strong>Prix unitaire :</strong> {{ commande.produit.prix }} €<br>
                             <strong>Montant total TTC :</strong> {{ commande.produit.prix * commande.quantite }} €
                         </li>
-                        <hr>
                     {% endfor %}
                 </ul>
             {% endif %}
             <div class="pagination">
 			{{ knp_pagination_render(pagination) }}
 		    </div>
+            <br>
+            <p><a href="{{ path('app_profil') }}" class="btn-submit">Retour vers mon profil</a></p>
+            <br>
+            <p><a href="{{ path('app_accueil') }}" class="btn-submit">Retour à l'accueil</a></p>
         </section>
     </section>
 {% endblock %}

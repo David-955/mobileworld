@@ -34,82 +34,106 @@ class CommandeController extends AbstractController
         if (empty($cart)) {
             return $this->redirectToRoute('app_boutique');
         }
-
+    
         // Récupérer les produits correspondants
-        $cartWithData = [];
+        $paniervalide = [];
         $total = 0;
         foreach ($cart as $id => $quantity) {
             $product = $this->produitRepository->find($id);
             if (!$product) {
                 continue; // Produit introuvable
             }
-            $cartWithData[] = [
+            $paniervalide[] = [
                 'product' => $product,
                 'quantity' => $quantity,
                 'total' => $product->getPrix() * $quantity
             ];
             $total += $product->getPrix() * $quantity;
         }
-
+    
         // Vérifier si l'utilisateur est connecté
         $user = $this->getUser();
         if (!$user) {
             $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
             return $this->redirectToRoute('app_login'); // Rediriger vers la page de connexion
         }
-
+    
         // Créer le formulaire pour l'adresse
         $form = $this->createForm(AdresseType::class, $user);
-
+    
         // Gérer la soumission du formulaire
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            // Vérifier le stock avant de créer les commandes
+            foreach ($paniervalide as $item) {
+                $product = $item['product'];
+                $quantitepanier = $item['quantity'];
+    
+                if ($product->getStock() < $quantitepanier) {
+                    $this->addFlash('error', sprintf(
+                        'Le stock du produit "%s" est insuffisant. Stock disponible : %d',
+                        $product->getNom(),
+                        $product->getStock()
+                    ));
+                    return $this->redirectToRoute('app_panier'); // Rediriger vers le panier
+                }
+            }
+    
             // Enregistrer les informations mises à jour dans l'utilisateur
             $this->entityManager->persist($user);
             $this->entityManager->flush();
-
+    
             // Génération du numéro de commande aléatoire
             $aleatoire = random_int(10000, 99999);
-
             $dateCommande = new \DateTime(); // Date actuelle
-
+    
             // Créer les commandes pour chaque produit dans le panier
-            foreach ($cartWithData as $item) {
+            foreach ($paniervalide as $item) {
+                $product = $item['product'];
+                $quantitepanier = $item['quantity'];
+    
+                // Créer la commande
                 $commande = new Commande();
                 $commande->setUtilisateur($user);
-                $commande->setProduit($item['product']);
+                $commande->setProduit($product);
                 $commande->setDate($dateCommande);
                 $commande->setStatut('en_attente'); // Statut initial
-                $commande->setQuantite($item['quantity']);
+                $commande->setQuantite($quantitepanier);
                 $commande->setNumero($aleatoire);
                 $this->entityManager->persist($commande);
+    
+                // Mettre à jour le stock du produit
+                $newStock = $product->getStock() - $quantitepanier;
+                $product->setStock($newStock);
+                $this->entityManager->persist($product);
             }
-
+    
+            // Enregistrer toutes les modifications dans la base de données
             $this->entityManager->flush();
-
+    
             // Effacer le panier après la commande
             $session->remove('cart');
-            
+    
             // Envoyer un e-mail de confirmation
-            $email = (new Email())  
+            $email = (new Email())
                 ->from('dngo3819@example.com')
                 ->to($user->getEmail()) // Adresse e-mail de l'utilisateur
                 ->subject('Mobile World : Confirmation de votre commande')
                 ->html($this->renderView('commande/email.html.twig', [
                     'user' => $user,
                     'numero' => $aleatoire,
-                    'cart' => $cartWithData,
+                    'cart' => $paniervalide,
                     'total' => $total,
                     'date' => $dateCommande,
                 ]));
-
             $mailer->send($email);
+    
             // Rediriger vers la page de confirmation en passant le numéro de commande
             return $this->redirectToRoute('app_confirmation', ['numero' => $aleatoire]);
         }
-
+    
         return $this->render('commande/index.html.twig', [
-            'cart' => $cartWithData,
+            'cart' => $paniervalide,
             'total' => $total,
             'form' => $form->createView(),
         ]);

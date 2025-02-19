@@ -6,12 +6,12 @@
     <section class="container-vert">
         <section class="container-blanc">
             <h1>Confirmation de votre commande</h1>
-            <p>Votre commande a été passée avec succès !</p>
+            <p>Votre superbe commande a été passée avec succès !</p>
 
             {# Afficher le numéro de commande une seule fois #}
             {# Comme toutes les commandes partagent le même numéro, il suffit d'afficher celui du premier élément #}
             <h2>Détails de la commande numéro <u>{{ commandes[0].numero }}</u> :</h2>
-            <p><strong>Date de la commande :</strong> {{ date|date('d/m/Y H:i') }}</p>
+            <p><strong>Date de la commande :</strong> {{ date|date('d/m/Y') }} à {{ date|date('H:i:s') }}</p>
 
             {% for commande in commandes %}
                 <p class="liste-confirmation">
@@ -20,7 +20,12 @@
             {% endfor %}
 
             <p><strong>Montant total TTC : {{ total }} €</strong></p>
+            <p>Merci pour votre achat !</p>
+            <br>
+            <p><a href="{{ path('app_mes_commandes') }}" class="btn-submit">Voir mes commandes</a></p>
+            <br>
             <p><a href="{{ path('app_accueil') }}" class="btn-submit">Retour à l'accueil</a></p>
+            <br>
         </section>
     </section>
 {% endblock %}

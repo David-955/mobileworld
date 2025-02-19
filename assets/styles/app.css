@@ -268,7 +268,7 @@ footer {
   background-color: #fff;
   border-radius: 8px;
   margin: 30px;
-  padding: 10px;
+  padding: 30px;
 }
 
 .article-image {
@@ -742,7 +742,8 @@ footer {
 
 .liste-confirmation {
   list-style: none;
-  background-color: #dfdfdf;
+  border: 1px solid #9a9a9a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
   width: 80%;
   margin: 0 auto;
   padding-right: 10px;
