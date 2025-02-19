@@ -285,7 +285,7 @@ footer {
   margin: 0 auto;
 }
 
-/* Page boutique */
+/* Page boutique catégories */
 
 .category-container-blanc {
   display: flex;
@@ -328,11 +328,18 @@ footer {
   display: flex;
   flex-direction: row; /* Maintient la mise en page en 3 colonnes */
   width: 100%; /* Prend toute la largeur pour un produit par ligne */
-  border-radius: 30px;
-  border-radius: 0%;
+  border-radius: 8px;
   /* ligne de démarcation entre chaque produits comme <hr> */
   border-bottom: 3px solid #ddd;
-  margin: 3px;
+  margin: 10px;
+  border: 1px solid #9a9a9a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  height: 150px;
+}
+
+.product-item:hover {
+  /* effet petit zoom sur chaque item */
+  transform: scale(1.02);
 }
 
 .product-colonne1 {
@@ -341,6 +348,8 @@ footer {
 
 .product-colonne1 img {
   width: 150px;
+  height: 150px;
+  border-radius: 8px;
 }
 
 .product-colonne2 {
@@ -353,6 +362,7 @@ footer {
 .product-colonne3 {
   flex: 1;
   text-align: center;
+  padding: 10px;
 }
 
 .product-colonne3 p {
@@ -764,17 +774,7 @@ footer {
     flex-direction: column;
   }
 
-  /* Partie boutique */
-
-  .category-container-blanc {
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 5%;
-    /* pour espacer chaque élément */
-    gap: 30px;
-  }
+  /* Partie boutique catégories */
 
   .category-item {
     width: 100%;
@@ -836,6 +836,15 @@ footer {
   .product-item {
     display: flex;
     flex-direction: column; /* Pour une seule colonne */
+    /* On ne veut plus de hauteur fixe de 150px sinon tout va entrer en collision */
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .product-colonne1 img {
+    width: 100%;
+    height: auto;
   }
 
   .product-colonne2 {
