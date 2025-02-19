@@ -27,14 +27,16 @@
 						<a href="{{ path('admin') }}" class="nav-link">Admin</a>
 					{% endif %}
 
-						{# Pour tout le monde #}
-						<a href="{{ path('app_accueil') }}" class="nav-link">Actualités</a>
-						<a href="{{ path('app_comparateur') }}" class="nav-link">Comparateur</a>
-						<a href="{{ path('app_boutique') }}" class="nav-link">Boutique</a>
-						<a href="{{ path('app_panier') }}" class="nav-link">
-							<svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512" fill="rgb(255, 255, 255)" class="cart-header"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
-						</a>
-						
+					{# Pour tout le monde #}
+					<a href="{{ path('app_accueil') }}" class="nav-link">Actualités</a>
+					<a href="{{ path('app_comparateur') }}" class="nav-link">Comparateur</a>
+					<a href="{{ path('app_boutique') }}" class="nav-link">Boutique</a>
+					<a href="{{ path('app_panier') }}" class="nav-link">
+						<svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewbox="0 0 576 512" fill="rgb(255, 255, 255)" class="cart-header">
+							<path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+						</svg>
+					</a>
+
 					{# Si on est connecté alors on fait disparaitre "s'inscrire" et "se connecter" #}
 					{% if not app.user %}
 						<a href="{{ path('app_register') }}" class="nav-link">S'inscrire</a>
@@ -53,14 +55,26 @@
 		<main>
 			{# Bloc pour le contenu principal #}
 			{% block content %}{% endblock %}
+			<!-- From Uiverse.io by vinodjangid07 -->
+			<button class="Btn-retourhaut" aria-label="Retour vers le haut">
+				<svg height="1.2em" class="arrow" viewbox="0 0 512 512">
+					<path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path>
+				</svg>
+			</button>
 		</main>
 
 		<footer>
 			{# <p>Mentions légales</p>
 			<p>Conditions générales de vente</p>
 			<p>Politique de confidentialité</p> #}
+			<a href="{{ path('app_contact') }}" class="nav-link">Conditions générales</a>
 			<a href="{{ path('app_contact') }}" class="nav-link">Nous contacter</a>
-			<p>© Copyright 2024, Tous droits réservés</p>
+			<a href="{{ path('app_contact') }}" class="nav-link">Politique de confidentialité</a>
+			<a href="{{ path('app_contact') }}" class="nav-link">Politique relative aux cookies</a>
+
+			<p>Mobile World © 2025 - tous droits réservés
+
+</p>
 		</footer>
 	</body>
 </html>

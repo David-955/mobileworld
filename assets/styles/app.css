@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #4caf50;
+  background: linear-gradient(#2dc5a9,#4caf50);
   color: white;
   text-align: center;
 }
@@ -210,12 +210,53 @@ textarea {
   border-radius: 8px;
 }
 
+/* From Uiverse.io by vinodjangid07 */ 
+/* source : https://uiverse.io/vinodjangid07/curly-panda-17 */
+.Btn-retourhaut {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(#4caf50, #2dc5a9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.arrow path {
+  fill: white;
+}
+
+.Btn-retourhaut:hover .arrow {
+  animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 footer {
-  background-color: #4caf50;
+  background: linear-gradient(#4caf50, #2dc5a9);
   color: white;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
 }
 
@@ -658,9 +699,10 @@ footer {
   background-color: #dfdfdf;
   width: 80%;
   margin: 0 auto;
-  padding: 10px;
+  padding-right: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
+  padding: 10px;
 }
 
 @media (max-width: 768px) {
@@ -709,6 +751,17 @@ footer {
   .pagination a,
   .pagination .current {
     padding: 8px 12px;
+  }
+
+  footer {
+    background: linear-gradient(#4caf50, #2dc5a9);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Partie boutique */
