@@ -91,7 +91,7 @@ class CommandeController extends AbstractController
             $session->remove('cart');
             
             // Envoyer un e-mail de confirmation
-            $email = (new Email())
+            $email = (new Email())  
                 ->from('dngo3819@example.com')
                 ->to($user->getEmail()) // Adresse e-mail de l'utilisateur
                 ->subject('Mobile World : Confirmation de votre commande')
