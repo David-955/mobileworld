@@ -67,6 +67,7 @@
 					{{ form_label(form.contenu, 'Exprimez-vous : ', {'label_attr': {'class': 'form-label'}}) }}
 					{{ form_errors(form.contenu) }} {# Affiche les erreurs spécifiques au champ #}
 					{{ form_row(form.contenu, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre commentaire ici (1500 caractères maximum)', 'maxlength': 1500}}) }}
+					<br>
 					<button class="btn-submit" type="submit">Ajouter un commentaire</button>
 					{{ form_end(form) }}
 				</section>

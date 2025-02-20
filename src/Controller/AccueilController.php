@@ -116,9 +116,13 @@ final class AccueilController extends AbstractController
 
         // Récupérer tous les commentaires associés à cet article
         $repository = $doctrine->getRepository(Commentaire::class);
+        // moyen trouvé pour récupérer les commentaires car il n'a pas d'entité article où l'on pourrait faire un findBy (après jointure)
         $query = $repository->createQueryBuilder('c')
+            // c.article c'est dans l'entité Commentaire
+            // articleUrl c'est le lien de l'article actuel donc s'il y a correspondance alors on affiche les commentaires de l'article en question
             ->where('c.article = :articleUrl')
             ->setParameter('articleUrl', $this->generateUrl('app_article', ['title' => urlencode($title)], true))
+            ->orderBy('c.date', 'DESC') // Tri par date décroissante
             ->getQuery();
 
         // Paginer les commentaires avec KnpPaginator

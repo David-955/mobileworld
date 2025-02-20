@@ -62,6 +62,12 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     #[ORM\OneToMany(targetEntity: Commande::class, mappedBy: 'utilisateur')]
     private Collection $commandes;
 
+    #[ORM\Column(length: 255)]
+    private ?string $token = null;
+
+    #[ORM\Column]
+    private ?bool $verification = null;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
@@ -280,6 +286,30 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
                 $commande->setUtilisateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(string $token): static
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    public function isVerification(): ?bool
+    {
+        return $this->verification;
+    }
+
+    public function setVerification(bool $verification): static
+    {
+        $this->verification = $verification;
 
         return $this;
     }
