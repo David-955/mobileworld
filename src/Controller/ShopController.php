@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Repository\ProduitRepository;
 use App\Repository\CategorieRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,7 +24,7 @@ final class ShopController extends AbstractController
     }
 
     #[Route('/boutique/{id}', name: 'app_categorie')]
-    public function product(int $id): Response
+    public function product(int $id, PaginatorInterface $paginator, Request $request): Response
     {
         $category = $this->categorieRepository->find($id);
 
@@ -32,10 +34,18 @@ final class ShopController extends AbstractController
 
         $products = $this->produitRepository->findBy(['categorie' => $category]);
 
+        // Paginer les articles filtrés
+        $pagination = $paginator->paginate(
+            $products, // les données filtrées
+            $request->query->getInt('page', 1), // numéro de la page actuelle
+            10 // nombre d'articles par page
+        );
+
         return $this->render('boutique/produit.html.twig', [
             // Je me sert de category pour retrouver la catégorie dans produit.html.twig
             'category' => $category,
-            'products' => $products,
+            // 'products' => $products,
+            'pagination' => $pagination,
         ]);
     }
 

@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+	<p class="arborescence"><a href="{{ path('app_accueil') }}">Accueil</a> > {{ title }}</p>
 	<section class="article-container">
 		<section class="article-titre">
 			<h1>{{ article.title }}</h1>
@@ -77,5 +78,8 @@
 					<a href="{{ path('app_login') }}">connecté</a>
 					pour pouvoir poster un commentaire.</em></p>
 			{% endif %}
+			<hr><br
+			{# Bouton pour continuer les achats #}
+			<p><a href="{{ path('app_boutique') }}" class="btn-submit">Retour aux news</a></p>
 		</section>
 	{% endblock %}

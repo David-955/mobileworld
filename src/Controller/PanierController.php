@@ -88,38 +88,43 @@ class PanierController extends AbstractController
         return $this->redirectToRoute('app_panier');
     }
 
-    #[Route('/panier/modifier/{id}', name: 'app_panier_modifier')]
-    public function update(int $id, Request $request, SessionInterface $session): Response
+    #[Route('/panier/modifier/{id}/{action}', name: 'app_panier_modifier', requirements: ['action' => 'plus|moins'])]
+    public function update(int $id, string $action, SessionInterface $session): Response
     {
-        // Récupérer la quantité depuis les données POST
-        $quantity = (int) $request->request->get('quantity', 0);
-
         // Vérifier si le produit existe
         $product = $this->produitRepository->find($id);
         if (!$product) {
             throw $this->createNotFoundException('Le produit n\'existe pas.');
         }
-
-        // Vérifier si la quantité demandée est valide
-        if ($quantity <= 0) {
-            return $this->redirectToRoute('app_panier_supprimer', ['id' => $id]);
-        }
-
-        // Vérifier si la quantité demandée dépasse le stock disponible
-        if ($quantity > $product->getStock()) {
-            $this->addFlash('error', 'La quantité demandée dépasse le stock disponible.');
-            return $this->redirectToRoute('app_panier');
-        }
-
+    
         // Récupérer le panier actuel
         $cart = $session->get('cart', []);
-
-        // Mettre à jour la quantité
-        $cart[$id] = $quantity;
-
+    
+        // Mettre à jour la quantité en fonction de l'action
+        if ($action === 'plus') {
+            // Augmenter la quantité (sans dépasser le stock)
+            if (!empty($cart[$id])) {
+                $cart[$id]++;
+            } else {
+                $cart[$id] = 1;
+            }
+            if ($cart[$id] > $product->getStock()) {
+                $cart[$id] = $product->getStock();
+                $this->addFlash('warning', 'Vous avez atteint le stock maximum pour ce produit.');
+            }
+        } elseif ($action === 'moins') {
+            // Diminuer la quantité (ne pas descendre en dessous de 1)
+            if (!empty($cart[$id])) {
+                $cart[$id]--;
+                if ($cart[$id] <= 0) {
+                    unset($cart[$id]); // Supprimer le produit si la quantité atteint 0
+                }
+            }
+        }
+    
         // Sauvegarder le panier mis à jour
         $session->set('cart', $cart);
-        
+    
         return $this->redirectToRoute('app_panier');
     }
 }
