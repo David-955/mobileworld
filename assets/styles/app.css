@@ -31,6 +31,7 @@ header {
 }
 
 .logo img:hover {
+  transition: all 0.7s;
   transform: scale(1.2); /* Effet de zoom au survol */
 }
 
@@ -146,6 +147,7 @@ footer {
 }
 
 .news-article:hover {
+  transition: all 0.3s;
   /* effet petit zoom sur chaque item */
   transform: scale(1.01);
 }
@@ -342,6 +344,7 @@ footer {
 }
 
 .category-item:hover {
+  transition: all 0.3s;
   /* effet petit zoom sur chaque item */
   transform: scale(1.05);
 }
@@ -374,6 +377,7 @@ footer {
 }
 
 .product-item:hover {
+  transition: all 0.3s;
   /* effet petit zoom sur chaque item */
   transform: scale(1.02);
 }

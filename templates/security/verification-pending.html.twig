@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mobile World : Compte non vérifié
+{% endblock %}
+
+{% block content %}
+	<section class="container-vert">
+		<section class="container-blanc">
+			<h1>Compte non vérifié</h1>
+			<p>Votre compte n'est pas encore vérifié.</p>
+			<p>Veuillez vérifier votre adresse e-mail en cliquant sur le lien que nous vous avons envoyé.</p>
+			<br>
+			<!-- Formulaire pour saisir l'e-mail -->
+			<form method="get" action="{{ path('app_resend_confirmation') }}">
+				<div class="form-group">
+					<label for="email">Entrez votre adresse e-mail :</label>
+					<input type="email" id="email" name="email" class="form-control" required>
+				</div>
+				<button type="submit" class="btn-submit">Renvoyer le lien de vérification</button>
+			</form>
+			<br>
+			<a href="{{ path('app_login') }}" class="btn-submit">Retour à la page de connexion</a>
+			<br><br>
+		</section>
+	</section>
+{% endblock %}

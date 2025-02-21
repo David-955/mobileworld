@@ -32,3 +32,4 @@ document.addEventListener('turbo:load', () => {
         });
     }
 });
+
