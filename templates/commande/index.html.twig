@@ -12,18 +12,18 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>Image du produit</th>
+							<th></th>
 							<th>Nom du produit</th>
 							<th>Quantité</th>
-							<th>Prix unitaire</th>
-							<th>Total</th>
+							<th>Prix</th>
+							<th>Sous-total</th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for item in cart %}
 							<tr>
-							{# même principe que /panier pour l'affichage mobile #}
-								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" class="panier-img" alt="Image de {{ item.product.nom }}"></td>
+								{# même principe que /panier pour l'affichage mobile #}
+								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width : 100px; border-radius: 8px;"></td>
 								<td data-label="Nom du produit: ">{{ item.product.nom }}</td>
 								<td data-label="Quantité: ">{{ item.quantity }}</td>
 								<td data-label="Prix unitaire: ">{{ item.product.prix }}€</td>
@@ -32,7 +32,10 @@
 						{% endfor %}
 					</tbody>
 				</table>
-
+				<p>La livraison est
+					<strong>offerte</strong>
+					pour toute commande pour fêter l'ouverture de notre site !</p>
+				<hr>
 				<h3>=> Montant total TTC :
 					{{ total }}€</h3>
 			{% else %}
@@ -47,46 +50,41 @@
 					<div class="form-group">
 						{{ form_label(form.nom, '* Votre nom : ', {'label_attr': {'class': 'form-label'}}) }}
 						{# je reprends .form-control pour reprendre le style des champs à remplir #}
-						{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre nom'}}) }}
+						{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre nom', 'maxlength': 50}}) }}
 					</div>
 
 					<div class="form-group">
 						{{ form_label(form.prenom, '* Votre prénom : ', {'label_attr': {'class': 'form-label'}}) }}
-						{# je reprends .form-control pour reprendre le style des champs à remplir #}
-						{{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre prénom'}}) }}
+						{{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre prénom', 'maxlength': 50}}) }}
 					</div>
 
 					<div class="form-group">
 						{{ form_label(form.adresse, '* Votre adresse : ', {'label_attr': {'class': 'form-label'}}) }}
-						{# je reprends .form-control pour reprendre le style des champs à remplir #}
-						{{ form_widget(form.adresse, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre adresse'}}) }}
+						{{ form_widget(form.adresse, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre adresse', 'maxlength': 100}}) }}
 					</div>
 				</section>
 
 				<section class="commande-droite">
 					<div class="form-group">
 						{{ form_label(form.ville, '* Votre ville : ', {'label_attr': {'class': 'form-label'}}) }}
-						{# je reprends .form-control pour reprendre le style des champs à remplir #}
-						{{ form_widget(form.ville, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre ville'}}) }}
+						{{ form_widget(form.ville, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre ville', 'maxlength': 100}}) }}
 					</div>
 
 					<div class="form-group">
 						{{ form_label(form.codePostal, '* Votre code postal : ', {'label_attr': {'class': 'form-label'}}) }}
-						{# je reprends .form-control pour reprendre le style des champs à remplir #}
-						{{ form_widget(form.codePostal, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre code postal'}}) }}
+						{{ form_widget(form.codePostal, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre code postal', 'maxlength': 5, 'pattern': '[0-9]*'}}) }}
 					</div>
 
 					<div class="form-group">
 						{{ form_label(form.tel, '* Votre numéro de téléphone : ', {'label_attr': {'class': 'form-label'}}) }}
-						{# je reprends .form-control pour reprendre le style des champs à remplir #}
-						{{ form_widget(form.tel, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre numéro de téléphone'}}) }}
+						{{ form_widget(form.tel, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre numéro de téléphone', 'maxlength': 10, 'pattern': '[0-9]*'}}) }}
 					</div>
 				</section>
 			</section>
 
-            <hr>
-            <h2>Paiement</h2>
-            {# mastercard, source: https://uiverse.io/vinodjangid07/fat-puma-69 #}
+			<hr>
+			<h2>Paiement</h2>
+			{# mastercard, source: https://uiverse.io/vinodjangid07/fat-puma-69 #}
 			<!-- From Uiverse.io by vinodjangid07 -->
 			<div class="visa-card">
 				<div class="logoContainer">
@@ -118,15 +116,20 @@
 				</div>
 			</div>
 
-            <hr>
-			<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
-
+			<br><hr><br>
 
 			{{ form_widget(form) }}
 			<button type="submit" class="btn-submit">Valider la commande</button>
 			{{ form_end(form) }}
+			<br>
+			<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
+			<br>
+			<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
 		</section>
-
-
 	</section>
+	<div id="image-modal" class="modal">
+		<span class="close">&times;</span>
+		{# class pour css, id pour js #}
+		<img class="modal-content" id="modal-image">
+	</div>
 {% endblock %}

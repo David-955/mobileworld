@@ -47,7 +47,5 @@ final class ShopController extends AbstractController
             // 'products' => $products,
             'pagination' => $pagination,
         ]);
-    }
-
-   
+    }  
 }

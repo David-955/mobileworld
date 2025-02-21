@@ -17,8 +17,7 @@
 						class="product-item">
 						{# colonne 1: image #}
 						<div class="product-colonne1">
-							<img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}">
-						</div>
+							<img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}" class="zoomable-image" data-modal="image-modal"></div>
 						{# colonne 2: nom et description #}
 						<div class="product-colonne2">
 							<p>
@@ -48,12 +47,21 @@
 			{% else %}
 				<p>Aucun produit disponible dans cette catégorie.</p>
 			{% endfor %}
-			<div class="container-pagination">
-			{# Affichage de la barre de pagination #}
-			{{ knp_pagination_render(pagination) }}
-			
-			<p><a href="{{ path('app_boutique') }}" class="btn-submit">Revenir à la boutique</a></p>
+			<div
+				class="container-pagination">
+				{# Affichage de la barre de pagination #}
+				{{ knp_pagination_render(pagination) }}
+
+				<p>
+					<a href="{{ path('app_boutique') }}" class="btn-submit">Revenir à la boutique</a>
+				</p>
 			</div>
 		</section>
 	</section>
+
+	<div id="image-modal" class="modal">
+		<span class="close">&times;</span>
+		{# class pour css, id pour js #}
+		<img class="modal-content" id="modal-image">
+	</div>
 {% endblock %}

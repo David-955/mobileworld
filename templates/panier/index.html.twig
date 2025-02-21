@@ -9,18 +9,18 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>Image du produit</th>
+							<th></th>
 							<th>Nom du produit</th>
 							<th>Quantité</th>
-							<th>Prix unitaire</th>
-							<th>Total</th>
+							<th>Prix</th>
+							<th>Sous-total</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for item in cart %}
 							<tr>
-								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" class="panier-img" alt="Image de {{ item.product.nom }}"></td>
+								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width : 100px; border-radius: 8px;"></td>
 								<td data-label="Nom du produit: ">
 									{{ item.product.nom }}</td>
 								<td data-label="Quantité: ">
@@ -57,6 +57,10 @@
 						{% endfor %}
 					</tbody>
 				</table>
+				<p>La livraison est
+					<strong>offerte</strong>
+					pour toute commande pour fêter l'ouverture de notre site !</p>
+
 				<p class="panier-total">
 					<strong>Montant total TTC :
 						{{ total }}€
@@ -73,6 +77,14 @@
 					<a href="{{ path('app_commande') }}" class="btn-submit">Commander</a>
 				</p>
 			</div>
+			{% if cart|length > 0 %}
+				<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
+			{% endif %}
 		</section>
 	</section>
+	<div id="image-modal" class="modal">
+		<span class="close">&times;</span>
+		{# class pour css, id pour js #}
+		<img class="modal-content" id="modal-image">
+	</div>
 {% endblock %}
