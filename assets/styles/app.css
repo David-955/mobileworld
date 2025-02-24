@@ -951,8 +951,10 @@ footer {
     display: none;
   }
 
+  /* insérer du contenu sans modification du html */
   .table td::before {
-    /* on place à l'avant de chaque phrase correspondante ce qui est écrit dans diva-shadel */
+    /* on place à l'avant de chaque phrase correspondante ce qui est écrit dans data-label */
+    /* EXEMPLE : <td data-label="Nom du produit: "> */
     content: attr(data-label);
     font-weight: bold;
     margin-bottom: 5px;

@@ -21,18 +21,18 @@ class PanierController extends AbstractController
     #[Route('/panier', name: 'app_panier')]
     public function index(SessionInterface $session): Response
     {
-        // Récupérer le contenu du panier depuis la session
-        $cart = $session->get('cart', []);
+        // Récupérer le contenu du panier depuis la session sinon un tableau vide
+        $panier = $session->get('panier', []);
 
         // Récupérer les produits correspondants
-        $cartWithData = [];
+        $panierData = [];
         $total = 0;
-        foreach ($cart as $id => $quantity) {
+        foreach ($panier as $id => $quantity) {
             $product = $this->produitRepository->find($id);
             if (!$product) {
                 continue; // Produit introuvable
             }
-            $cartWithData[] = [
+            $panierData[] = [
                 'product' => $product,
                 'quantity' => $quantity,
                 'total' => $product->getPrix() * $quantity
@@ -41,7 +41,7 @@ class PanierController extends AbstractController
         }
 
         return $this->render('panier/index.html.twig', [
-            'cart' => $cartWithData,
+            'panier' => $panierData,
             'total' => $total
         ]);
     }
@@ -49,24 +49,24 @@ class PanierController extends AbstractController
     #[Route('/panier/ajouter/{id}', name: 'app_panier_ajouter')]
     public function add(int $id, SessionInterface $session): Response
     {
-        // Vérifier si le produit existe
         $product = $this->produitRepository->find($id);
+        // Vérifier si le produit existe
         if (!$product) {
             throw $this->createNotFoundException('Le produit n\'existe pas.');
         }
 
         // Récupérer le panier actuel
-        $cart = $session->get('cart', []);
+        $panier = $session->get('panier', []);
 
         // Ajouter ou mettre à jour la quantité
-        if (!empty($cart[$id])) {
-            $cart[$id]++;
+        if (!empty($panier[$id])) {
+            $panier[$id]++;
         } else {
-            $cart[$id] = 1;
+            $panier[$id] = 1;
         }
 
         // Sauvegarder le panier mis à jour
-        $session->set('cart', $cart);
+        $session->set('panier', $panier);
 
         return $this->redirectToRoute('app_panier');
     }
@@ -75,15 +75,15 @@ class PanierController extends AbstractController
     public function remove(int $id, SessionInterface $session): Response
     {
         // Récupérer le panier actuel
-        $cart = $session->get('cart', []);
+        $panier = $session->get('panier', []);
 
         // Supprimer le produit du panier
-        if (!empty($cart[$id])) {
-            unset($cart[$id]);
+        if (!empty($panier[$id])) {
+            unset($panier[$id]);
         }
 
         // Sauvegarder le panier mis à jour
-        $session->set('cart', $cart);
+        $session->set('panier', $panier);
 
         return $this->redirectToRoute('app_panier');
     }
@@ -98,32 +98,32 @@ class PanierController extends AbstractController
         }
     
         // Récupérer le panier actuel
-        $cart = $session->get('cart', []);
+        $panier = $session->get('panier', []);
     
         // Mettre à jour la quantité en fonction de l'action
         if ($action === 'plus') {
             // Augmenter la quantité (sans dépasser le stock)
-            if (!empty($cart[$id])) {
-                $cart[$id]++;
+            if (!empty($panier[$id])) {
+                $panier[$id]++;
             } else {
-                $cart[$id] = 1;
+                $panier[$id] = 1;
             }
-            if ($cart[$id] > $product->getStock()) {
-                $cart[$id] = $product->getStock();
+            if ($panier[$id] > $product->getStock()) {
+                $panier[$id] = $product->getStock();
                 $this->addFlash('warning', 'Vous avez atteint le stock maximum pour ce produit.');
             }
         } elseif ($action === 'moins') {
             // Diminuer la quantité (ne pas descendre en dessous de 1)
-            if (!empty($cart[$id])) {
-                $cart[$id]--;
-                if ($cart[$id] <= 0) {
-                    unset($cart[$id]); // Supprimer le produit si la quantité atteint 0
+            if (!empty($panier[$id])) {
+                $panier[$id]--;
+                if ($panier[$id] <= 0) {
+                    unset($panier[$id]); // Supprimer le produit si la quantité atteint 0
                 }
             }
         }
     
         // Sauvegarder le panier mis à jour
-        $session->set('cart', $cart);
+        $session->set('panier', $panier);
     
         return $this->redirectToRoute('app_panier');
     }

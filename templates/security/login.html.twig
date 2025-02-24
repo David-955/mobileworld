@@ -5,24 +5,29 @@
 
 {% block content %}
 	<h1>Connexion</h1>
-	
-	<section
-		class="container-vert">
+
+	<section class="container-vert">
 		<section class="container-blanc">
 			<p>
 				<strong>Content de vous revoir !</strong>
 			</p>
 			<p>
-				<a href="{{ path('app_register') }}"><strong>Vous n’avez pas de compte ? Cliquez ici pour vous inscrire.</strong></a>
+				<a href="{{ path('app_register') }}">
+					<strong>Vous n’avez pas de compte ? Cliquez ici pour vous inscrire.</strong>
+				</a>
 			</p>
 			<br>
+			<p>
+				<a href="{{ path('app_forgot_password') }}">
+					<strong>Mot de passe oublié ?</strong>
+				</a>
+			</p>
 
 			<form method="post">
-			
+
 				{# affichage des erreurs #}
 				{# exemple si on se trompe : "Invalid credentials" #}
-				{% if error %}
-					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% if error %}<div class="alert alert-danger"> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
 				{% endif %}
 
 				{% if app.user %}

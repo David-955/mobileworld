@@ -10,7 +10,8 @@
 		<section class="container-blanc">
 			<p style="margin-left: 15px; text-align: left;"><a href="{{ path('app_boutique') }}">Boutique</a> > <a href="{{ path('app_panier') }}">Panier</a> > Passer commande</p>
 
-			{% if cart|length > 0 %}
+			{% if panier|length > 0 %}
+				<h2>Récapitulatif</h2>
 				<table class="table">
 					<thead>
 						<tr>
@@ -22,7 +23,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{% for item in cart %}
+						{% for item in panier %}
 							<tr>
 								{# même principe que /panier pour l'affichage mobile #}
 								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width : 100px; border-radius: 8px;"></td>
@@ -37,7 +38,7 @@
 				<p>La livraison est
 					<strong>offerte</strong>
 					pour toute commande pour fêter l'ouverture de notre site !</p>
-				<hr>
+				
 				<h3>=> Montant total TTC :
 					{{ total }}€</h3>
 			{% else %}

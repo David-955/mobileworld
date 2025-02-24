@@ -28,7 +28,6 @@ class ComparateurController extends AbstractController
             $jsonContent1 = file_get_contents($jsonFilePath1);
             
             $data1 = json_decode($jsonContent1, true);
-            // var_dump(json_decode($jsonContent1, true));
 
             if ($modelId1) {
                 foreach ($data1['models'] as $model1) {

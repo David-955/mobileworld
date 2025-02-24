@@ -30,15 +30,15 @@ class CommandeController extends AbstractController
     public function index(SessionInterface $session, Request $request, MailerInterface $mailer): Response
     {
         // Récupérer le contenu du panier depuis la session
-        $cart = $session->get('cart', []);
-        if (empty($cart)) {
+        $panier = $session->get('panier', []);
+        if (empty($panier)) {
             return $this->redirectToRoute('app_boutique');
         }
     
         // Récupérer les produits correspondants
         $paniervalide = [];
         $total = 0;
-        foreach ($cart as $id => $quantity) {
+        foreach ($panier as $id => $quantity) {
             $product = $this->produitRepository->find($id);
             if (!$product) {
                 continue; // Produit introuvable
@@ -112,7 +112,7 @@ class CommandeController extends AbstractController
             $this->entityManager->flush();
     
             // Effacer le panier après la commande
-            $session->remove('cart');
+            $session->remove('panier');
     
             // Envoyer un e-mail de confirmation
             $email = (new Email())
@@ -122,7 +122,7 @@ class CommandeController extends AbstractController
                 ->html($this->renderView('commande/email.html.twig', [
                     'user' => $user,
                     'numero' => $aleatoire,
-                    'cart' => $paniervalide,
+                    'panier' => $paniervalide,
                     'total' => $total,
                     'date' => $dateCommande,
                 ]));
@@ -133,7 +133,7 @@ class CommandeController extends AbstractController
         }
     
         return $this->render('commande/index.html.twig', [
-            'cart' => $paniervalide,
+            'panier' => $paniervalide,
             'total' => $total,
             'form' => $form->createView(),
         ]);

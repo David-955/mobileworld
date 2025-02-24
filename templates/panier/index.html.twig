@@ -6,7 +6,7 @@
 	<section class="container-vert">
 		<section class="container-blanc">
 
-			{% if cart|length > 0 %}
+			{% if panier|length > 0 %}
 				<p style="margin-left: 15px; text-align: left;"><a href="{{ path('app_boutique') }}">Boutique</a> > Panier</p>
 
 				<table class="table">
@@ -20,7 +20,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{% for item in cart %}
+						{% for item in panier %}
 							<tr>
 								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width : 100px; border-radius: 8px;"></td>
 								<td data-label="Nom du produit: ">
@@ -34,6 +34,7 @@
 										{% else %}
 											<a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}">
 												<button aria-label="supprimer" class="delete-button">
+													{# source : https://uiverse.io/philipo30/afraid-ape-40  #}
 													<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
 														<g id="trash-can">
 															<rect x="16" y="24" width="32" height="30" rx="3" ry="3" fill="#e74c3c"></rect>
@@ -80,7 +81,7 @@
 					<a href="{{ path('app_commande') }}" class="btn-submit">Commander</a>
 				</p>
 			</div>
-			{% if cart|length > 0 %}
+			{% if panier|length > 0 %}
 				<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
 			{% endif %}
 		</section>

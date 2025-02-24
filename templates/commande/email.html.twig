@@ -12,7 +12,7 @@
     <p><strong>Date de la commande :</strong> {{ date|date('d/m/Y H:i') }}</p>
 
     <ul>
-        {% for item in cart %}
+        {% for item in panier %}
             <li>
                 {{ item.product.nom }} - Quantité : {{ item.quantity }} - Prix unitaire : {{ item.product.prix }} €
             </li>
