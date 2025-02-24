@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block content %}
-	<p class="arborescence"><a href="{{ path('app_accueil') }}">Accueil</a> > {{ title }}</p>
+	{# 10% ici / 80% contenu principal / 10% * #}
+	<p style="margin-left: 10%;"><a href="{{ path('app_accueil') }}">Accueil</a> > {{ title }}</p>
 	<section class="article-container">
 		<section class="article-titre">
 			<h1>{{ article.title }}</h1>

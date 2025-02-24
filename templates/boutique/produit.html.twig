@@ -10,6 +10,8 @@
 		{{ category.nom }}</h1>
 	<section class="container-vert">
 		<section class="product-container-blanc">
+			<p style="margin-left: 15px;"><a href="{{ path('app_boutique') }}">Boutique</a> > {{ category.nom }}</p>
+
 			{% for product in pagination %}
 				{# affichage que des produits avec du stock #}
 				{% if product.stock > 0 %}

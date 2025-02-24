@@ -5,16 +5,18 @@
 	<h1>Panier</h1>
 	<section class="container-vert">
 		<section class="container-blanc">
+
 			{% if cart|length > 0 %}
+				<p style="margin-left: 15px; text-align: left;"><a href="{{ path('app_boutique') }}">Boutique</a> > Panier</p>
+
 				<table class="table">
 					<thead>
 						<tr>
 							<th></th>
-							<th>Nom du produit</th>
+							<th>Désignation</th>
 							<th>Quantité</th>
 							<th>Prix</th>
 							<th>Sous-total</th>
-							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,9 +27,25 @@
 									{{ item.product.nom }}</td>
 								<td data-label="Quantité: ">
 									<div class="quantite-container">
-										<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'moins'}) }}">
-											<button class="btn-moins">-</button>
-										</a>
+										{% if item.quantity > 1 %}
+											<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'moins'}) }}">
+												<button class="btn-moins">-</button>
+											</a>
+										{% else %}
+											<a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}">
+												<button aria-label="supprimer" class="delete-button">
+													<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
+														<g id="trash-can">
+															<rect x="16" y="24" width="32" height="30" rx="3" ry="3" fill="#e74c3c"></rect>
+															<g transform-origin="12 18" id="lid-group">
+																<rect x="12" y="12" width="40" height="6" rx="2" ry="2" fill="#c0392b"></rect>
+																<rect x="26" y="8" width="12" height="4" rx="2" ry="2" fill="#c0392b"></rect>
+															</g>
+														</g>
+													</svg>
+												</button>
+											</a>
+										{% endif %}
 										<input type="number" class="quantite-input" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" readonly/>
 										<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'plus'}) }}">
 											<button class="btn-plus">+</button>
@@ -38,21 +56,6 @@
 									{{ item.product.prix }}€</td>
 								<td data-label="Total:">
 									{{ item.total }}€</td>
-								<td data-label="Action:">
-									<a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}">
-										<button aria-label="Delete item" class="delete-button">
-											<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
-												<g id="trash-can">
-													<rect x="16" y="24" width="32" height="30" rx="3" ry="3" fill="#e74c3c"></rect>
-													<g transform-origin="12 18" id="lid-group">
-														<rect x="12" y="12" width="40" height="6" rx="2" ry="2" fill="#c0392b"></rect>
-														<rect x="26" y="8" width="12" height="4" rx="2" ry="2" fill="#c0392b"></rect>
-													</g>
-												</g>
-											</svg>
-										</button>
-									</a>
-								</td>
 							</tr>
 						{% endfor %}
 					</tbody>

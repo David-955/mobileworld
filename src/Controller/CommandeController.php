@@ -145,8 +145,8 @@ class CommandeController extends AbstractController
         // Récupérer les commandes associées au numéro de commande
         $commandes = $this->entityManager->getRepository(Commande::class)->findBy(['numero' => $numero]);
 
+        // si quelqu'un tente d'accéder à une commande qui n'existe pas
         if (empty($commandes)) {
-            $this->addFlash('error', 'Aucune commande trouvée avec ce numéro.');
             return $this->redirectToRoute('app_accueil');
         }
 
@@ -173,6 +173,7 @@ class CommandeController extends AbstractController
         // Récupérer l'utilisateur connecté
         $user = $this->getUser();
 
+        // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
         if (!$user) {
            return $this->redirectToRoute('app_login');
         }

@@ -28,6 +28,7 @@ final class ShopController extends AbstractController
     {
         $category = $this->categorieRepository->find($id);
 
+        // si quelqu'un tape une URL avec un id qui n'existe pas
         if (!$category) {
             throw $this->createNotFoundException('Catégorie non trouvée');
         }

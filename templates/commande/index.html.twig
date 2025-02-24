@@ -4,16 +4,18 @@
 {% endblock %}
 
 {% block content %}
-	<h1>Récapitulatif de la commande</h1>
+	<h1>Passer commande</h1>
 
 	<section class="container-vert">
 		<section class="container-blanc">
+			<p style="margin-left: 15px; text-align: left;"><a href="{{ path('app_boutique') }}">Boutique</a> > <a href="{{ path('app_panier') }}">Panier</a> > Passer commande</p>
+
 			{% if cart|length > 0 %}
 				<table class="table">
 					<thead>
 						<tr>
 							<th></th>
-							<th>Nom du produit</th>
+							<th>Désignation</th>
 							<th>Quantité</th>
 							<th>Prix</th>
 							<th>Sous-total</th>
