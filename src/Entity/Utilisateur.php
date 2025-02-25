@@ -62,7 +62,8 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     #[ORM\OneToMany(targetEntity: Commande::class, mappedBy: 'utilisateur')]
     private Collection $commandes;
 
-    #[ORM\Column(length: 255)]
+    // le token doit pouvoir être supprimé par sécurité sinon quelqu'un pourrait s'en servir pour changer mdp
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $token = null;
 
     #[ORM\Column]
@@ -295,7 +296,7 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
         return $this->token;
     }
 
-    public function setToken(string $token): static
+    public function setToken(?string $token): static
     {
         $this->token = $token;
 

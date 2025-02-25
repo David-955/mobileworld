@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class SecurityController extends AbstractController
 {
@@ -21,95 +21,114 @@ class SecurityController extends AbstractController
     {
         // Récupérer l'erreur d'authentification s'il y en a une
         $error = $authenticationUtils->getLastAuthenticationError();
-
         // Dernier nom d'utilisateur saisi par l'utilisateur
         $lastUsername = $authenticationUtils->getLastUsername();
-
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error, // Passer l'erreur au template
         ]);
     }
 
-    // voir dans le security.yaml, après une connexion réussie, l'utilisateur est redirigé vers la page d'accueil
-    #[Route('/check-verified', name: 'app_check_verified')]
-    public function checkVerified(Request $request): RedirectResponse
-    {
-        // Récupérer l'utilisateur connecté
-        $user = $this->getUser();
-        if ($user && !$user->isVerification()) {
-            // Déconnecter l'utilisateur s'il n'est pas vérifié
-            $this->container->get('security.token_storage')->setToken(null);
-            $request->getSession()->invalidate();
-
-            // Rediriger vers /verification-pending
-            return $this->redirectToRoute('app_verification_pending');
-        }
-
-        // Rediriger vers la page d'accueil si l'utilisateur est vérifié
-        return $this->redirectToRoute('app_accueil');
-    }
-
-    #[Route('/verification-pending', name: 'app_verification_pending')]
-    public function verificationPending(): Response
-    {
-        return $this->render('security/verification-pending.html.twig');
-    }
-
-    #[Route('/resend-confirmation', name: 'app_resend_confirmation')]
-    public function resendConfirmation(
+    #[Route('/forgot-password', name: 'app_forgot_password')]
+    public function forgotPassword(
         Request $request,
         EntityManagerInterface $entityManager,
         MailerInterface $mailer
     ): Response {
-        // Récupérer l'e-mail depuis la requête
-        $email = $request->query->get('email');
+        // Créer un formulaire simple pour saisir l'e-mail
+        $form = $this->createFormBuilder()
+            ->add('email', \Symfony\Component\Form\Extension\Core\Type\EmailType::class, [
+                'label' => 'Entrez votre adresse e-mail: ',
+                'attr' => ['placeholder' => 'exemple@domaine.com'],
+            ])
+            ->getForm();
     
-        if (!$email) {
-            $this->addFlash('error', 'Veuillez fournir une adresse e-mail.');
-            return $this->redirectToRoute('app_verification_pending');
-        }
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Récupérer l'e-mail depuis le formulaire
+            $email = $form->get('email')->getData();
     
-        // Rechercher l'utilisateur par son email
-        $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
+            // Rechercher l'utilisateur par son email
+            $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
+            if (!$user) {
+                $this->addFlash('error', 'Aucun compte trouvé avec cette adresse e-mail.');
+                return $this->redirectToRoute('app_forgot_password');
+            }
+    
+            // Générer un token unique pour la réinitialisation
+            $resetToken = uniqid('', true);
+            $user->setToken($resetToken); // Ajoutez une méthode `setToken` dans votre entité Utilisateur
+            $entityManager->flush();
+    
+            // Générer le lien de réinitialisation
+            $resetUrl = $this->generateUrl(
+                'app_reset_password',
+                ['token' => $resetToken],
+                UrlGeneratorInterface::ABSOLUTE_URL
+            );
+    
+            // Envoyer l'e-mail de réinitialisation
+            $emailContent = (new Email())
+                ->from('dngo3819@gmail.com')
+                ->to($user->getEmail())
+                ->subject('Mobile World - Réinitialisation de votre mot de passe')
+                ->html(
+                    '<h1>Réinitialisation de votre mot de passe</h1>' .
+                    '<p>Vous avez demandé à réinitialiser votre mot de passe. Cliquez sur le lien ci-dessous pour profiter pleinement de l\'univers Mobile World :</p>' .
+                    '<a href="' . htmlspecialchars($resetUrl) . '">Réinitialiser mon mot de passe</a>'
+                );
+    
+            $mailer->send($emailContent);
+            
+            $this->addFlash('success', 'Email pour réinitialiser le mot de passe envoyé avec succès.');
+            return $this->redirectToRoute('app_login');
+            }
+    
+        // Afficher le formulaire
+        return $this->render('security/forgot-password.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/reset-password/{token}', name: 'app_reset_password')]
+    public function resetPassword(
+        string $token,
+        Request $request,
+        EntityManagerInterface $entityManager,
+        UserPasswordHasherInterface $passwordHasher
+    ): Response {
+        // Rechercher l'utilisateur par son token
+        $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['token' => $token]);
         if (!$user) {
-            $this->addFlash('error', 'Aucun compte trouvé avec cette adresse e-mail.');
-            return $this->redirectToRoute('app_verification_pending');
+            throw $this->createNotFoundException('Token invalide.');
         }
     
-        // Vérifier si l'utilisateur est déjà vérifié
-        if ($user->isVerification()) {
-            $this->addFlash('info', 'Votre compte est déjà vérifié.');
+        // Formulaire pour saisir le nouveau mot de passe
+        $form = $this->createFormBuilder()
+            ->add('plainPassword', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, [
+                'label' => 'Nouveau mot de passe: ',
+                'attr' => ['autocomplete' => 'new-password'],
+            ])
+            ->getForm();
+    
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Hasher le nouveau mot de passe
+            $newPassword = $form->get('plainPassword')->getData();
+            $hashedPassword = $passwordHasher->hashPassword($user, $newPassword);
+            $user->setMotdepasse($hashedPassword);
+    
+            // Effacer le token après utilisation
+            $user->setToken(null); 
+            $entityManager->flush();
+    
+            $this->addFlash('success', 'Votre mot de passe a été réinitialisé avec succès.');
             return $this->redirectToRoute('app_login');
         }
     
-        // Générer un nouveau token (optionnel)
-        $user->setToken(uniqid('', true));
-        $entityManager->flush();
-    
-        // Générer le lien de confirmation
-        $confirmationUrl = $this->generateUrl(
-            'app_confirm_email',
-            ['token' => $user->getToken()],
-            UrlGeneratorInterface::ABSOLUTE_URL
-        );
-    
-        // Créer et envoyer l'e-mail
-        $emailContent = (new Email())
-            ->from('dngo3819@gmail.com')
-            ->to($user->getEmail())
-            ->subject('Nouveau lien de confirmation')
-            ->html(
-                '<h1>Bienvenue chez Mobile World !</h1>' .
-                '<p>Voici votre nouveau lien de confirmation :</p>' .
-                '<a href="' . htmlspecialchars($confirmationUrl) . '">Confirmer mon compte</a>'
-            );
-    
-        $mailer->send($emailContent);
-    
-        $this->addFlash('success', 'Un nouveau lien de confirmation a été envoyé à votre adresse e-mail.');
-    
-        return $this->redirectToRoute('app_login');
+        return $this->render('security/reset-password.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     #[Route('/logout', name: 'app_logout')]
