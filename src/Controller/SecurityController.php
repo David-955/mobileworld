@@ -35,17 +35,17 @@ class SecurityController extends AbstractController
         EntityManagerInterface $entityManager,
         MailerInterface $mailer
     ): Response {
-        // Créer un formulaire simple pour saisir l'e-mail
+        // Créer un formulaire simple pour saisir l'email
         $form = $this->createFormBuilder()
             ->add('email', \Symfony\Component\Form\Extension\Core\Type\EmailType::class, [
-                'label' => 'Entrez votre adresse e-mail: ',
-                'attr' => ['placeholder' => 'exemple@domaine.com'],
+                'label' => 'Entrez votre adresse Email: ',
+                'attr' => ['placeholder' => 'exemple@domaine.fr'],
             ])
             ->getForm();
     
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer l'e-mail depuis le formulaire
+            // Récupérer l'email depuis le formulaire
             $email = $form->get('email')->getData();
     
             // Rechercher l'utilisateur par son email

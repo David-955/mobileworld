@@ -31,7 +31,7 @@ final class AccueilController extends AbstractController
         // Filtrer les articles 
         $filteredArticles = array_filter($data['articles'], function ($article) {
             $keywords = ['smartphone', 'mobile', 'Android', 'iOS', 'Samsung', 'iPhone', 'Xiaomi', 'Huawei', 'honor', 'OnePlus', 'Oppo', 'Realme', 'vivo', 'Sony', 'Asus', 'Google', 'Pixel', 'Nokia', 'Motorola', 'LG', 'BlackBerry', 'Fairphone', 'ZTE', 'Lenovo'];
-            $excludedKeywords = ['jeu', 'game', 'jeu vidéo', 'sport', 'politique', 'électrique', 'voiture', 'automobile', 'soldes', 'promotion', 'réduction', 'sponso', 'sponsorisé', 'pub', 'publicité', 'offres', 'offre', 'bon plan', 'code promo', 'coupon', 'remise', 'cadeau', 'gratuit', 'gratuite', 'gratuitement'];
+            $excludedKeywords = ['jeu', 'game', 'jeu vidéo', 'sport', 'politique', 'électrique', 'voiture', 'automobile', 'soldes', 'promotion', 'réduction', 'sponso', 'sponsorisé', 'pub', 'publicité', 'offres', 'offre', 'bon plan', 'code promo', 'coupon', 'remise', 'cadeau', 'gratuit', 'gratuite', 'gratuitement', 'geek', 'fou', 'explose'];
 
             // Vérifier les mots-clés pertinents dans le titre et la description de l'article 
             $pertinant = false;
@@ -121,9 +121,10 @@ final class AccueilController extends AbstractController
             // c.article c'est dans l'entité Commentaire
             // articleUrl c'est le lien de l'article actuel donc s'il y a correspondance alors on affiche les commentaires de l'article en question
             ->where('c.article = :articleUrl')
+            // :articleUrl aura comme paramètre l'url encodé pour matcher avec l'url de l'article dans la bdd sinon on ne pourra pas comparer correctement
             ->setParameter('articleUrl', $this->generateUrl('app_article', ['title' => urlencode($title)], true))
             ->orderBy('c.date', 'DESC') // Tri par date décroissante
-            ->getQuery();
+            ->getQuery();   // Récupérer la requête
 
         // Paginer les commentaires avec KnpPaginator
         $pagination = $paginator->paginate(
