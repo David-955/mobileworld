@@ -94,7 +94,6 @@ final class ProfileController extends AbstractController
     #[Route('/profil/update', name: 'app_profil_update_presentation', methods: ['GET', 'POST'])]
     public function updateProfile(ManagerRegistry $doctrine, RequestStack $requestStack): Response
     {
-
         $user = $this->getUser();
         $entityManager = $doctrine->getManager();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);

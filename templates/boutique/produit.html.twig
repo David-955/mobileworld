@@ -10,7 +10,32 @@
 		{{ category.nom }}</h1>
 	<section class="container-vert">
 		<section class="product-container-blanc">
-			<p style="margin-left: 15px;"><a href="{{ path('app_boutique') }}">Boutique</a> > {{ category.nom }}</p>
+{# Conteneur pour le fil d'Ariane, la recherche et le tri #}
+
+    {# fil d'Ariane #}
+    <p class="ariane">
+        <a href="{{ path('app_boutique') }}">Boutique</a>
+        >
+        {{ category.nom }}
+    </p>
+<div class="search-sort">
+    {# Formulaire de recherche #}
+    <form method="GET" action="{{ path('app_categorie', {'id': category.id}) }}" class="search-form">
+        <input type="text" name="search" placeholder="Rechercher un produit..." value="{{ search }}">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {# Menu de tri #}
+    <form method="GET" action="{{ path('app_categorie', {'id': category.id}) }}" class="sort-form">
+        <label for="sort-order">Trier par :</label>
+        <select name="sort" id="sort-order" onchange="this.form.submit()">
+            <option value="price_asc" {% if sort == 'price_asc' %} selected {% endif %}>Prix croissant</option>
+            <option value="price_desc" {% if sort == 'price_desc' %} selected {% endif %}>Prix décroissant</option>
+        </select>
+        {# Conserver la recherche lors du tri #}
+        <input type="hidden" name="search" value="{{ search }}">
+    </form>
+</div>
 
 			{% for product in pagination %}
 				{# affichage que des produits avec du stock #}

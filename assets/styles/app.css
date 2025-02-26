@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background: linear-gradient(#2dc5a9,#4caf50);
+  background: linear-gradient(#2dc5a9, #4caf50);
   color: white;
   text-align: center;
 }
@@ -122,13 +122,13 @@ footer {
 }
 
 /* Réseaux sociaux */
-/* From Uiverse.io by david-mohseni */ 
+/* From Uiverse.io by david-mohseni */
 .wrapper {
   display: flex;
   list-style: none;
   font-family: "Poppins", sans-serif;
   justify-content: center;
-  padding: 0px;  /* centrage parfait */
+  padding: 0px; /* centrage parfait */
 }
 
 .wrapper .icon {
@@ -206,7 +206,6 @@ footer {
   background: #e4405f;
   color: #fff;
 }
-
 
 /* Conteneur de l'image */
 .image-container {
@@ -365,7 +364,7 @@ footer {
   border-radius: 8px;
 }
 
-/* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by vinodjangid07 */
 /* source : https://uiverse.io/vinodjangid07/curly-panda-17 */
 .Btn-retourhaut {
   position: fixed;
@@ -390,7 +389,7 @@ footer {
 }
 
 .Btn-retourhaut:hover .arrow {
-  animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes slide-in-bottom {
@@ -547,6 +546,20 @@ footer {
 .product-colonne3 p {
   /* espacement en haut et en bas des éléments : prix, stock, btn ajout panier */
   margin: 13px 0;
+}
+
+/* Fil d'Ariane */
+.ariane {
+  margin: 0; /* Supprimer la marge par défaut pour avoir le fil d'Ariane plus haut */
+  margin-left: 15px;
+}
+
+/* Conteneur principal */
+.search-sort {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 10px 0px 10px;
 }
 
 /* From Uiverse.io by vinodjangid07 */
@@ -707,18 +720,20 @@ footer {
   background-color: #45a049;
 }  */
 
-.btn-plus, .btn-moins {
+.btn-plus,
+.btn-moins {
   background: transparent;
   width: 35px;
   height: 35px;
   background: transparent;
   border: 1px solid #ccc;
   border-radius: 8px;
-} 
+}
 
-.btn-plus:hover, .btn-moins:hover {
+.btn-plus:hover,
+.btn-moins:hover {
   background-color: #45a049;
-} 
+}
 
 .quantite-input {
   width: 50px;
@@ -1089,6 +1104,28 @@ footer {
   .product-colonne3 {
     /* espace entre chaque article */
     padding: 20px;
+  }
+
+  /* Fil d'Ariane */
+  .ariane {
+    margin: 0; /* Supprimer la marge par défaut pour avoir le fil d'Ariane plus haut */
+    margin-left: 15px;
+  }
+
+  /* Conteneur principal */
+  .search-sort {
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  .search-form {
+    margin: 0 auto;
+  }
+
+  .sort-form {
+    margin: 0 auto;
+    padding: 10px;
   }
 
   /* Page /commande */
