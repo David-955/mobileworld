@@ -1,37 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Mes commandes{% endblock %}
+{% block title %}Mobile World : Mes commandes
+{% endblock %}
 
 {% block content %}
-    <h1>Mes commandes</h1>
+	<h1>Mes commandes</h1>
 
-    <section class="container-vert">
-        <section class="container-blanc">
-            {% if pagination|length == 0 %}
-                <p>Vous n'avez passé aucune commande pour le moment.</p>
-                <p><a href="{{ path('app_boutique') }}" class="btn-submit">Accéder à la boutique</a></p>
-            {% else %}
-                <ul>
-                    {% for commande in pagination %}
-                        <li class="liste-confirmation">
-                            <img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="{{ commande.produit.nom }}" style="max-width: 100px;"><br>
-                            <strong>Numéro de commande :</strong> {{ commande.numero }}<br>
-                            <strong>Date :</strong> {{ commande.date|date('d/m/Y H:i') }}<br>
-                            <strong>Produit :</strong> {{ commande.produit.nom }}<br>
-                            <strong>Quantité :</strong> {{ commande.quantite }}<br>
-                            <strong>Prix unitaire :</strong> {{ commande.produit.prix }} €<br>
-                            <strong>Montant total TTC :</strong> {{ commande.produit.prix * commande.quantite }} €
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            <div class="pagination">
-			{{ knp_pagination_render(pagination) }}
-		    </div>
-            <br>
-            <p><a href="{{ path('app_profil') }}" class="btn-submit">Retour vers mon profil</a></p>
-            <br>
-            <p><a href="{{ path('app_accueil') }}" class="btn-submit">Accéder à l'accueil</a></p>
-        </section>
-    </section>
+	<section class="container-vert">
+		<section class="container-blanc">
+			{% if pagination|length == 0 %}
+				<p>Vous n'avez passé aucune commande pour le moment.</p>
+				<p>
+					<a href="{{ path('app_boutique') }}" class="btn-submit">Accéder à la boutique</a>
+				</p>
+			{% else %}
+				<ul>
+					{% for commande in pagination %}
+						<li class="liste-confirmation">
+							<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="{{ commande.produit.nom }}" style="max-width: 100px;" class="zoomable-image" data-modal="image-modal"><br>
+							<strong>Numéro de commande :</strong>
+							{{ commande.numero }}<br>
+							<strong>Date :</strong>
+							{{ commande.date|date('d/m/Y H:i') }}<br>
+							<strong>Produit :</strong>
+							{{ commande.produit.nom }}<br>
+							<strong>Quantité :</strong>
+							{{ commande.quantite }}<br>
+							<strong>Prix unitaire :</strong>
+							{{ commande.produit.prix }}
+							€<br>
+							<strong>Montant total TTC :</strong>
+							{{ commande.produit.prix * commande.quantite }}
+							€
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			<div class="pagination">
+				{{ knp_pagination_render(pagination) }}
+			</div>
+			<br>
+			<p>
+				<a href="{{ path('app_profil') }}" class="btn-submit">Retour vers mon profil</a>
+			</p>
+			<br>
+			<p>
+				<a href="{{ path('app_accueil') }}" class="btn-submit">Accéder à l'accueil</a>
+			</p>
+		</section>
+	</section>
+
+	<div id="image-modal" class="modal">
+		<span class="close">&times;</span>
+		{# class pour css, id pour js #}
+		<img class="modal-content" id="modal-image">
+	</div>
 {% endblock %}
