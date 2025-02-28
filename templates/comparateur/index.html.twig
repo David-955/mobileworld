@@ -9,7 +9,7 @@
 	<section class="comparateur-container-vert">
 		<section class="comparateur-container-blanc">
 			<!-- Première colonne -->
-			<div class="colonne1">
+			<div class="comparateur-colonne1">
 				<h3>Sélection 1</h3>
 				<form method="GET" action="{{ path('app_comparateur') }}">
 					<label for="marque1">Choisissez une marque:</label>
@@ -50,7 +50,7 @@
 			</div>
 
 			<!-- Deuxième colonne -->
-				<div class="colonne2"> <h3>Sélection 2</h3>
+				<div class="comparateur-colonne2"> <h3>Sélection 2</h3>
 				<form method="GET" action="{{ path('app_comparateur') }}">
 					<label for="marque2">Choisissez une marque:</label>
 					<select name="marque2" id="marque2" onchange="this.form.submit()">
