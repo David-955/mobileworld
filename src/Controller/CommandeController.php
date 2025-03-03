@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Controller;
 
 use App\Entity\Commande;
+use App\Service\PdfGenerator;
 use Symfony\Component\Mime\Email;
 use App\Repository\ProduitRepository;
 use App\Repository\CommandeRepository;
@@ -10,10 +12,13 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\AdresseType; // Formulaire pour l'adresse
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException;
 
 class CommandeController extends AbstractController
 {
@@ -34,7 +39,7 @@ class CommandeController extends AbstractController
         if (empty($panier)) {
             return $this->redirectToRoute('app_boutique');
         }
-    
+
         // Récupérer les produits correspondants
         $paniervalide = [];
         $total = 0;
@@ -50,17 +55,17 @@ class CommandeController extends AbstractController
             ];
             $total += $product->getPrix() * $quantity;
         }
-    
+
         // Vérifier si l'utilisateur est connecté
         $user = $this->getUser();
         if (!$user) {
             $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
             return $this->redirectToRoute('app_login'); // Rediriger vers la page de connexion
         }
-    
+
         // Créer le formulaire pour l'adresse
         $form = $this->createForm(AdresseType::class, $user);
-    
+
         // Gérer la soumission du formulaire
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -68,7 +73,7 @@ class CommandeController extends AbstractController
             foreach ($paniervalide as $item) {
                 $product = $item['product'];
                 $quantitepanier = $item['quantity'];
-    
+
                 if ($product->getStock() < $quantitepanier) {
                     $this->addFlash('error', sprintf(
                         'Le stock du produit "%s" est insuffisant. Stock disponible : %d',
@@ -78,20 +83,20 @@ class CommandeController extends AbstractController
                     return $this->redirectToRoute('app_panier'); // Rediriger vers le panier
                 }
             }
-    
+
             // Enregistrer les informations mises à jour dans l'utilisateur
             $this->entityManager->persist($user);
             $this->entityManager->flush();
-    
+
             // Génération du numéro de commande aléatoire
             $aleatoire = random_int(10000, 99999);
             $dateCommande = new \DateTime(); // Date actuelle
-    
+
             // Créer les commandes pour chaque produit dans le panier
             foreach ($paniervalide as $item) {
                 $product = $item['product'];
                 $quantitepanier = $item['quantity'];
-    
+
                 // Créer la commande
                 $commande = new Commande();
                 $commande->setUtilisateur($user);
@@ -101,19 +106,19 @@ class CommandeController extends AbstractController
                 $commande->setQuantite($quantitepanier);
                 $commande->setNumero($aleatoire);
                 $this->entityManager->persist($commande);
-    
+
                 // Mettre à jour le stock du produit
                 $newStock = $product->getStock() - $quantitepanier;
                 $product->setStock($newStock);
                 $this->entityManager->persist($product);
             }
-    
+
             // Enregistrer toutes les modifications dans la base de données
             $this->entityManager->flush();
-    
+
             // Effacer le panier après la commande
             $session->remove('panier');
-    
+
             // Envoyer un e-mail de confirmation
             $email = (new Email())
                 ->from('dngo3819@example.com')
@@ -127,11 +132,11 @@ class CommandeController extends AbstractController
                     'date' => $dateCommande,
                 ]));
             $mailer->send($email);
-    
+
             // Rediriger vers la page de confirmation en passant le numéro de commande
             return $this->redirectToRoute('app_confirmation', ['numero' => $aleatoire]);
         }
-    
+
         return $this->render('commande/index.html.twig', [
             'panier' => $paniervalide,
             'total' => $total,
@@ -155,7 +160,7 @@ class CommandeController extends AbstractController
         foreach ($commandes as $commande) {
             $total += $commande->getProduit()->getPrix() * $commande->getQuantite();
         }
-        
+
         // Récupérer la date de la première commande (elles partagent toutes la même date)
         $dateCommande = $commandes[0]->getDate(); // getDate() renvoie un objet DateTime (sera formatté ensuite dans le twig)
 
@@ -175,7 +180,7 @@ class CommandeController extends AbstractController
 
         // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
         if (!$user) {
-           return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login');
         }
 
         // Récupérer les commandes de l'utilisateur
@@ -193,5 +198,49 @@ class CommandeController extends AbstractController
             // 'commandes' => $commandes,
             'pagination' => $pagination,
         ]);
+    }
+
+    #[Route('/commande/pdf/{id}', name: 'app_commande_pdf')]
+    public function generatePdf(
+        int $id,
+        Request $request,
+        CsrfTokenManagerInterface $csrfTokenManager,
+        PdfGenerator $pdfGenerator // Injection du service
+    ): Response {
+        // Authentification
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+    
+        // Validation CSRF
+        $token = new CsrfToken('generate_pdf', $request->query->get('_csrf_token'));
+        if (!$csrfTokenManager->isTokenValid($token)) {
+            throw new AccessDeniedException('Jeton CSRF invalide.');
+        }
+    
+        // Récupération de la commande
+        $user = $this->getUser();
+        $commande = $this->entityManager
+            ->getRepository(Commande::class)
+            ->findOneBy(['id' => $id, 'utilisateur' => $user]);
+    
+        if (!$commande) {
+            throw $this->createNotFoundException('Commande non trouvée ou non autorisée.');
+        }
+    
+        // Générer le PDF avec FPDF
+        $pdfContent = $pdfGenerator->generateFacture($commande);
+    
+        // Nom du fichier PDF
+        $filename = sprintf('facture-%s.pdf', $commande->getNumero());
+    
+        // Retourner le PDF en tant que réponse
+        return new Response(
+            $pdfContent,
+            200,
+            [
+                'Content-Type' => 'application/pdf',
+                // rend téléchargeable
+                'Content-Disposition' => sprintf('attachment; filename="%s"', $filename),
+            ]
+        );
     }
 }

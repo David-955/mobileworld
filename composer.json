@@ -17,6 +17,7 @@
         "phpdocumentor/reflection-docblock": "^5.6",
         "phpstan/phpdoc-parser": "^2.0",
         "setasign/fpdf": "^1.8",
+        "setasign/fpdi": "^2.6",
         "symfony/asset": "6.4.*",
         "symfony/asset-mapper": "6.4.*",
         "symfony/console": "6.4.*",
