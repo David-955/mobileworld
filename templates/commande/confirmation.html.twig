@@ -1,57 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Confirmation de commande
-{% endblock %}
+{% block title %}Mobile World : Confirmation de commande{% endblock %}
 
 {% block content %}
-	<section class="container-vert">
-		<section class="container-blanc">
-			<h1>Confirmation de votre commande</h1>
-			<p>Votre superbe commande a été passée avec succès !</p>
+    <section class="container-vert">
+        <section class="container-blanc">
+            <h1>Confirmation de votre commande</h1>
+            <p>Votre superbe commande a été passée avec succès !</p>
 
-			{# Afficher le numéro de commande une seule fois #}
-			{# Comme toutes les commandes partagent le même numéro, il suffit d'afficher celui du premier élément #}
-			<h2>Détails de la commande numéro
-				<u>{{ commandes[0].numero }}</u>
-				:</h2>
-			<p>
-				<strong>Date de la commande :</strong>
-				{{ date|date('d/m/Y') }}
-				à
-				{{ date|date('H:i:s') }}</p>
+            {# Afficher le numéro de commande une seule fois #}
+            <h2>Détails de la commande numéro <u>{{ commandes[0].numero }}</u> :</h2>
+            <p>
+                <strong>Date de la commande :</strong>
+                {{ date|date('d/m/Y') }} à {{ date|date('H:i:s') }}
+            </p>
 
-			<a href="{{ path('app_commande_pdf', {'id': commandes[0].id, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
-				Télécharger la facture
-			</a>
-			<br>
-			<br>
-            
-			{% for commande in commandes %}
-				<p class="liste-confirmation">
-					{{ commande.produit.nom }}
-					- Quantité :
-					{{ commande.quantite }}
-					- Prix unitaire :
-					{{ commande.produit.prix }}
-					€
-				</p>
-			{% endfor %}
+            {# Lien pour télécharger la facture #}
+            <a href="{{ path('app_commande_pdf', {'numero': commandes[0].numero, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
+                Télécharger la facture
+            </a>
+            <br><br>
 
-			<p>
-				<strong>Montant total TTC :
-					{{ total }}
-					€</strong>
-			</p>
-			<p>Merci pour votre achat !</p>
-			<br>
-			<p>
-				<a href="{{ path('app_mes_commandes') }}" class="btn-submit">Voir mes commandes</a>
-			</p>
-			<br>
-			<p>
-				<a href="{{ path('app_accueil') }}" class="btn-submit">Retour à l'accueil</a>
-			</p>
-			<br>
-		</section>
-	</section>
+            {# Liste des produits dans la commande #}
+            {% for commande in commandes %}
+                <p class="liste-confirmation">
+                    {{ commande.produit.nom }}
+                    - Quantité : {{ commande.quantite }}
+                    - Prix unitaire : {{ commande.produit.prix }} €
+                </p>
+            {% endfor %}
+
+            <p>
+                <strong>Montant total TTC : {{ total }} €</strong>
+            </p>
+            <p>Merci pour votre achat !</p>
+            <br>
+            <p>
+                <a href="{{ path('app_mes_commandes') }}" class="btn-submit">Voir mes commandes</a>
+            </p>
+            <br>
+            <p>
+                <a href="{{ path('app_accueil') }}" class="btn-submit">Retour à l'accueil</a>
+            </p>
+            <br>
+        </section>
+    </section>
 {% endblock %}

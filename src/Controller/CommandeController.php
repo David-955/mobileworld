@@ -200,12 +200,12 @@ class CommandeController extends AbstractController
         ]);
     }
 
-    #[Route('/commande/pdf/{id}', name: 'app_commande_pdf')]
+    #[Route('/commande/pdf/{numero}', name: 'app_commande_pdf')]
     public function generatePdf(
-        int $id,
+        string $numero,
         Request $request,
         CsrfTokenManagerInterface $csrfTokenManager,
-        PdfGenerator $pdfGenerator // Injection du service
+        PdfGenerator $pdfGenerator
     ): Response {
         // Authentification
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
@@ -216,21 +216,21 @@ class CommandeController extends AbstractController
             throw new AccessDeniedException('Jeton CSRF invalide.');
         }
     
-        // Récupération de la commande
+        // Récupération des commandes associées au numéro
         $user = $this->getUser();
-        $commande = $this->entityManager
+        $commandes = $this->entityManager
             ->getRepository(Commande::class)
-            ->findOneBy(['id' => $id, 'utilisateur' => $user]);
+            ->findBy(['numero' => $numero, 'utilisateur' => $user]);
     
-        if (!$commande) {
+        if (empty($commandes)) {
             throw $this->createNotFoundException('Commande non trouvée ou non autorisée.');
         }
     
-        // Générer le PDF avec FPDF
-        $pdfContent = $pdfGenerator->generateFacture($commande);
+        // Générer le PDF avec FPDI
+        $pdfContent = $pdfGenerator->generateFacture($commandes);
     
         // Nom du fichier PDF
-        $filename = sprintf('facture-%s.pdf', $commande->getNumero());
+        $filename = sprintf('facture-%s.pdf', $numero);
     
         // Retourner le PDF en tant que réponse
         return new Response(
@@ -238,7 +238,6 @@ class CommandeController extends AbstractController
             200,
             [
                 'Content-Type' => 'application/pdf',
-                // rend téléchargeable
                 'Content-Disposition' => sprintf('attachment; filename="%s"', $filename),
             ]
         );
