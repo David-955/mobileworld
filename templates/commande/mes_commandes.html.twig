@@ -31,7 +31,22 @@
 							€<br>
 							<strong>Montant total TTC :</strong>
 							{{ commande.produit.prix * commande.quantite }}
-							€
+							€<br><br>
+							<strong>Statut :</strong>
+							{{ commande.statut }}
+							<br><br>
+							{# Lien pour télécharger le récapitulatif de commande #}
+							{% if commande.statut != 'Produit annulé par le client' %}
+								<a href="{{ path('app_commande_pdf', {'numero': commande.numero, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
+									Télécharger le récapitulatif de commande
+								</a>
+								<br><br>
+								{# Lien pour annuler la commande #}
+								<a href="{{ path('app_commande_annuler', {'numero': commande.numero, 'produitId': commande.produit.id, '_csrf_token': csrf_token('annuler_commande') }) }}" class="btn-submit" onclick="return confirm('Êtes-vous sûr de vouloir annuler ce produit ?');">
+									Annuler ce produit
+								</a>
+								<br><br>
+							{% endif %}
 						</li>
 					{% endfor %}
 				</ul>

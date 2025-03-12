@@ -8,10 +8,15 @@
 
 	<section class="container-vert">
 		<section class="container-blanc">
-			<p style="margin-left: 15px; text-align: left;"><a href="{{ path('app_boutique') }}">Boutique</a> > <a href="{{ path('app_panier') }}">Panier</a> > Passer commande</p>
+			<p style="margin-left: 15px; text-align: left;">
+				<a href="{{ path('app_panier') }}">Panier</a>
+				> 
+								                Passer commande
+			</p>
 
 			{% if panier|length > 0 %}
 				<h2>Récapitulatif</h2>
+				<!-- Tableau de récapitulatif -->
 				<table class="table">
 					<thead>
 						<tr>
@@ -25,8 +30,7 @@
 					<tbody>
 						{% for item in panier %}
 							<tr>
-								{# même principe que /panier pour l'affichage mobile #}
-								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width : 100px; border-radius: 8px;"></td>
+								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; border-radius: 8px;"></td>
 								<td data-label="Nom du produit: ">{{ item.product.nom }}</td>
 								<td data-label="Quantité: ">{{ item.quantity }}</td>
 								<td data-label="Prix unitaire: ">{{ item.product.prix }}€</td>
@@ -38,7 +42,7 @@
 				<p>La livraison est
 					<strong>offerte</strong>
 					pour toute commande pour fêter l'ouverture de notre site !</p>
-				
+
 				<h3>=> Montant total TTC :
 					{{ total }}€</h3>
 			{% else %}
@@ -46,93 +50,73 @@
 			{% endif %}
 			<hr>
 
-			<h2>Informations de livraison</h2>
-			{{ form_start(form) }}
-			<section class="container-commande">
-				<section class="commande-gauche">
-					<div class="form-group">
-						{{ form_label(form.nom, '* Votre nom : ', {'label_attr': {'class': 'form-label'}}) }}
-						{# je reprends .form-control pour reprendre le style des champs à remplir #}
-						{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre nom', 'maxlength': 50}}) }}
+			<!-- Formulaire global -->
+            <h2>Adresse de Livraison</h2>
+			<form method="post" action="{{ path('app_commande') }}">
+				
+					<label for="nom">Nom :</label>
+					<input type="text" id="nom" name="nom" required>
+
+					<label for="prenom">Prénom :</label>
+					<input type="text" id="prenom" name="prenom" required>
+
+					<label for="adresse">Adresse :</label>
+					<input type="text" id="adresse" name="adresse" required>
+
+					<label for="ville">Ville :</label>
+					<input type="text" id="ville" name="ville" required>
+
+					<label for="codePostal">Code Postal :</label>
+					<input type="text" id="codePostal" name="codePostal" required>
+
+					<label for="tel">Téléphone :</label>
+					<input type="text" id="tel" name="tel" required>
+				
+				<hr>
+
+				<h2>Paiement</h2>
+				<div class="visa-card">
+					<div class="logoContainer">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23" viewbox="0 0 48 48" class="svgLogo">
+							<path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
+							<path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
+							<path fill="#ff3d00" d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"></path>
+						</svg>
+					</div>
+					<div class="number-container">
+						<label class="input-label" for="cardNumber">CARD NUMBER</label>
+						<input class="inputstyle" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" name="cardNumber" type="text"/>
 					</div>
 
-					<div class="form-group">
-						{{ form_label(form.prenom, '* Votre prénom : ', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre prénom', 'maxlength': 50}}) }}
-					</div>
+					<div class="name-date-cvv-container">
+						<div class="name-wrapper">
+							<label class="input-label" for="holderName">CARD HOLDER</label>
+							<input class="inputstyle" id="holderName" placeholder="NAME" type="text"/>
+						</div>
 
-					<div class="form-group">
-						{{ form_label(form.adresse, '* Votre adresse : ', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(form.adresse, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre adresse', 'maxlength': 100}}) }}
-					</div>
-				</section>
-
-				<section class="commande-droite">
-					<div class="form-group">
-						{{ form_label(form.ville, '* Votre ville : ', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(form.ville, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre ville', 'maxlength': 100}}) }}
-					</div>
-
-					<div class="form-group">
-						{{ form_label(form.codePostal, '* Votre code postal : ', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(form.codePostal, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre code postal', 'maxlength': 5, 'pattern': '[0-9]*'}}) }}
-					</div>
-
-					<div class="form-group">
-						{{ form_label(form.tel, '* Votre numéro de téléphone : ', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(form.tel, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre numéro de téléphone', 'maxlength': 10, 'pattern': '[0-9]*'}}) }}
-					</div>
-				</section>
-			</section>
-
-			<hr>
-			<h2>Paiement</h2>
-			{# mastercard, source: https://uiverse.io/vinodjangid07/fat-puma-69 #}
-			<!-- From Uiverse.io by vinodjangid07 -->
-			<div class="visa-card">
-				<div class="logoContainer">
-					<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23" viewbox="0 0 48 48" class="svgLogo">
-						<path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
-						<path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
-						<path fill="#ff3d00" d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"></path>
-					</svg>
-				</div>
-				<div class="number-container">
-					<label class="input-label" for="cardNumber">CARD NUMBER</label>
-					<input class="inputstyle" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" name="cardNumber" type="text"/>
-				</div>
-
-				<div class="name-date-cvv-container">
-					<div class="name-wrapper">
-						<label class="input-label" for="holderName">CARD HOLDER</label>
-						<input class="inputstyle" id="holderName" placeholder="NAME" type="text"/>
-					</div>
-
-					<div class="expiry-wrapper">
-						<label class="input-label" for="expiry">VALID THRU</label>
-						<input class="inputstyle" id="expiry" placeholder="MM/YY" type="text"/>
-					</div>
-					<div class="cvv-wrapper">
-						<label class="input-label" for="cvv">CVV</label>
-						<input class="inputstyle" placeholder="***" maxlength="3" id="cvv" type="password"/>
+						<div class="expiry-wrapper">
+							<label class="input-label" for="expiry">VALID THRU</label>
+							<input class="inputstyle" id="expiry" placeholder="MM/YY" type="text"/>
+						</div>
+						<div class="cvv-wrapper">
+							<label class="input-label" for="cvv">CVV</label>
+							<input class="inputstyle" placeholder="***" maxlength="3" id="cvv" type="password"/>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<br><hr><br>
+				<br><hr><br>
 
-			{{ form_widget(form) }}
-			<button type="submit" class="btn-submit">Valider la commande</button>
-			{{ form_end(form) }}
-			<br>
-			<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
-			<br>
-			<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
+				<button type="submit" class="btn-submit">Valider la commande</button>
+				<br>
+				<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
+				<br>
+				<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
+			</form>
 		</section>
 	</section>
 	<div id="image-modal" class="modal">
 		<span class="close">&times;</span>
-		{# class pour css, id pour js #}
 		<img class="modal-content" id="modal-image">
 	</div>
 {% endblock %}

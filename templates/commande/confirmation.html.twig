@@ -15,9 +15,9 @@
                 {{ date|date('d/m/Y') }} à {{ date|date('H:i:s') }}
             </p>
 
-            {# Lien pour télécharger la facture #}
+            {# Lien pour télécharger le récapitulatif de commande #}
             <a href="{{ path('app_commande_pdf', {'numero': commandes[0].numero, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
-                Télécharger la facture
+                Télécharger le récapitulatif de commande
             </a>
             <br><br>
 

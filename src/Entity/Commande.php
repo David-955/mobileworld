@@ -32,6 +32,26 @@ class Commande
     #[ORM\Column]
     private ?int $numero = null;
 
+    // Partie adresse de livraison
+    #[ORM\Column(length: 100, nullable: false)]
+    private string $nom;
+
+    #[ORM\Column(length: 100, nullable: false)]
+    private string $prenom;
+
+    #[ORM\Column(length: 100, nullable: false)]
+    private string $adresse;
+
+    #[ORM\Column(length: 100, nullable: false)]
+    private string $ville;
+
+    #[ORM\Column(length: 4, nullable: false)]
+    private int $codePostal;
+
+    #[ORM\Column(length: 9, nullable: false)]
+    private int $tel;
+
+    // Getters et setters
     public function getId(): ?int
     {
         return $this->id;
@@ -45,7 +65,6 @@ class Commande
     public function setDate(\DateTimeInterface $date): static
     {
         $this->date = $date;
-
         return $this;
     }
 
@@ -57,7 +76,6 @@ class Commande
     public function setStatut(string $statut): static
     {
         $this->statut = $statut;
-
         return $this;
     }
 
@@ -69,7 +87,6 @@ class Commande
     public function setQuantite(int $quantite): static
     {
         $this->quantite = $quantite;
-
         return $this;
     }
 
@@ -81,7 +98,6 @@ class Commande
     public function setUtilisateur(?Utilisateur $utilisateur): static
     {
         $this->utilisateur = $utilisateur;
-
         return $this;
     }
 
@@ -93,7 +109,6 @@ class Commande
     public function setProduit(?Produit $produit): static
     {
         $this->produit = $produit;
-
         return $this;
     }
 
@@ -105,7 +120,73 @@ class Commande
     public function setNumero(int $numero): static
     {
         $this->numero = $numero;
+        return $this;
+    }
 
+    // Partie adresse de livraison
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): static
+    {
+        $this->nom = $nom;
+        return $this;
+    }
+
+    public function getPrenom(): string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): static
+    {
+        $this->prenom = $prenom;
+        return $this;
+    }
+
+    public function getAdresse(): string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(string $adresse): static
+    {
+        $this->adresse = $adresse;
+        return $this;
+    }
+
+    public function getVille(): string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): static
+    {
+        $this->ville = $ville;
+        return $this;
+    }
+
+    public function getCodePostal(): int
+    {
+        return $this->codePostal;
+    }
+
+    public function setCodePostal(string $codePostal): static
+    {
+        $this->codePostal = $codePostal;
+        return $this;
+    }
+
+    public function getTel(): int
+    {
+        return $this->tel;
+    }
+
+    public function setTel(string $tel): static
+    {
+        $this->tel = $tel;
         return $this;
     }
 }

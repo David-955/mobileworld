@@ -14,7 +14,6 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\AdresseType; // Formulaire pour l'adresse
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -63,12 +62,22 @@ class CommandeController extends AbstractController
             return $this->redirectToRoute('app_login'); // Rediriger vers la page de connexion
         }
 
-        // Créer le formulaire pour l'adresse
-        $form = $this->createForm(AdresseType::class, $user);
+        // Traiter la soumission du formulaire (sans AdresseType)
+        if ($request->isMethod('POST')) {
+            // Récupérer les données d'adresse depuis la requête
+            $nom = $request->request->get('nom');
+            $prenom = $request->request->get('prenom');
+            $adresse = $request->request->get('adresse');
+            $ville = $request->request->get('ville');
+            $codePostal = $request->request->get('codePostal');
+            $tel = $request->request->get('tel');
 
-        // Gérer la soumission du formulaire
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+            // Valider les données d'adresse (vous pouvez ajouter des validations supplémentaires)
+            if (empty($nom) || empty($prenom) || empty($adresse) || empty($ville) || empty($codePostal) || empty($tel)) {
+                $this->addFlash('error', 'Veuillez remplir tous les champs de l\'adresse.');
+                return $this->redirectToRoute('app_commande');
+            }
+
             // Vérifier le stock avant de créer les commandes
             foreach ($paniervalide as $item) {
                 $product = $item['product'];
@@ -84,10 +93,6 @@ class CommandeController extends AbstractController
                 }
             }
 
-            // Enregistrer les informations mises à jour dans l'utilisateur
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
-
             // Génération du numéro de commande aléatoire
             $aleatoire = random_int(10000, 99999);
             $dateCommande = new \DateTime(); // Date actuelle
@@ -102,9 +107,18 @@ class CommandeController extends AbstractController
                 $commande->setUtilisateur($user);
                 $commande->setProduit($product);
                 $commande->setDate($dateCommande);
-                $commande->setStatut('en_attente'); // Statut initial
+                $commande->setStatut("En attente d'expédition"); // Statut initial
                 $commande->setQuantite($quantitepanier);
                 $commande->setNumero($aleatoire);
+
+                // Ajouter les informations d'adresse à la commande
+                $commande->setNom($nom);
+                $commande->setPrenom($prenom);
+                $commande->setAdresse($adresse);
+                $commande->setVille($ville);
+                $commande->setCodePostal($codePostal);
+                $commande->setTel($tel);
+
                 $this->entityManager->persist($commande);
 
                 // Mettre à jour le stock du produit
@@ -137,10 +151,10 @@ class CommandeController extends AbstractController
             return $this->redirectToRoute('app_confirmation', ['numero' => $aleatoire]);
         }
 
+        // Afficher la page de commande sans formulaire AdresseType
         return $this->render('commande/index.html.twig', [
             'panier' => $paniervalide,
             'total' => $total,
-            'form' => $form->createView(),
         ]);
     }
 
@@ -209,37 +223,69 @@ class CommandeController extends AbstractController
     ): Response {
         // Authentification
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-    
+
         // Validation CSRF
         $token = new CsrfToken('generate_pdf', $request->query->get('_csrf_token'));
         if (!$csrfTokenManager->isTokenValid($token)) {
             throw new AccessDeniedException('Jeton CSRF invalide.');
         }
-    
+
         // Récupération des commandes associées au numéro
         $user = $this->getUser();
         $commandes = $this->entityManager
             ->getRepository(Commande::class)
             ->findBy(['numero' => $numero, 'utilisateur' => $user]);
-    
+
         if (empty($commandes)) {
             throw $this->createNotFoundException('Commande non trouvée ou non autorisée.');
         }
-    
+
         // Générer le PDF avec FPDI
-        $pdfContent = $pdfGenerator->generateFacture($commandes);
-    
+        $pdfContent = $pdfGenerator->generateRecap($commandes);
+
         // Nom du fichier PDF
-        $filename = sprintf('facture-%s.pdf', $numero);
-    
+        $filename = sprintf('recapitulatif-%s.pdf', $numero);
+
         // Retourner le PDF en tant que réponse
         return new Response(
             $pdfContent,
             200,
             [
                 'Content-Type' => 'application/pdf',
-                'Content-Disposition' => sprintf('attachment; filename="%s"', $filename),
+                // attachment au lieu de inline pour télécharger le PDF
+                'Content-Disposition' => sprintf('inline; filename="%s"', $filename),
             ]
         );
+    }
+    
+    #[Route('/commande/annuler/{numero}/{produitId}', name: 'app_commande_annuler')]
+    public function annulerCommande(
+        string $numero,
+        int $produitId,
+    ): Response {
+        // Récupérer la commande spécifique (par numéro et ID produit)
+        $commande = $this->entityManager->getRepository(Commande::class)->findOneBy([
+            'numero' => $numero,
+            'produit' => $produitId,
+        ]);
+
+        if (!$commande) {
+            throw $this->createNotFoundException('Produit ou commande non trouvée.');
+        }
+
+        // Mettre à jour le statut de la commande
+        $commande->setStatut("Produit annulé par le client");
+
+        // Récupérer le produit associé et mettre à jour le stock
+        $produit = $commande->getProduit();
+        $nouveauStock = $produit->getStock() + $commande->getQuantite();
+        $produit->setStock($nouveauStock);
+
+        // Enregistrer les modifications
+        $this->entityManager->persist($produit);
+        $this->entityManager->flush();
+
+        // Rediriger vers la page des commandes
+        return $this->redirectToRoute('app_mes_commandes');
     }
 }
