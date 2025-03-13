@@ -1,8 +1,17 @@
 # Utiliser une image PHP avec Apache
 FROM php:8.2-apache
 
-# Installer les extensions PHP nécessaires pour Symfony
-RUN docker-php-ext-install pdo pdo_mysql mbstring
+# Installer les outils de construction et les dépendances système nécessaires
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    libpq-dev \
+    libmysqlclient-dev \
+    --no-install-recommends \
+    && docker-php-ext-configure gd \
+    && docker-php-ext-install pdo pdo_mysql mbstring zip gd
 
 # Activer mod_rewrite pour Symfony
 RUN a2enmod rewrite
