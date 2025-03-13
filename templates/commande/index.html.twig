@@ -11,7 +11,7 @@
 			<p style="margin-left: 15px; text-align: left;">
 				<a href="{{ path('app_panier') }}">Panier</a>
 				> 
-								                Passer commande
+																                Passer commande
 			</p>
 
 			{% if panier|length > 0 %}
@@ -43,35 +43,36 @@
 					<strong>offerte</strong>
 					pour toute commande pour fêter l'ouverture de notre site !</p>
 
-				<h3>=> Montant total TTC :
-					{{ total }}€</h3>
+				<h3>
+					<strong>Montant total TTC :
+						{{ total }}€</strong>
+				</h3>
 			{% else %}
 				<p>Votre panier est vide.</p>
 			{% endif %}
 			<hr>
 
 			<!-- Formulaire global -->
-            <h2>Adresse de Livraison</h2>
+			<h2>Adresse de Livraison</h2>
 			<form method="post" action="{{ path('app_commande') }}">
-				
-					<label for="nom">Nom :</label>
-					<input type="text" id="nom" name="nom" required>
+				<label for="nom">* Nom :</label>
+				<input type="text" id="nom" name="nom" class="form-control" placeholder="Entrez votre nom" maxlength="100" required>
+				<br>
+				<label for="prenom">* Prénom :</label>
+				<input type="text" id="prenom" name="prenom" class="form-control" placeholder="Entrez votre prénom" maxlength="100" required>
+				<br>
+				<label for="adresse">* Adresse :</label>
+				<input type="text" id="adresse" name="adresse" class="form-control" placeholder="Entrez votre adresse" maxlength="100" required>
+				<br>
+				<label for="ville">* Ville :</label>
+				<input type="text" id="ville" name="ville" class="form-control" placeholder="Entrez votre ville" maxlength="100" required>
+				<br>
+				<label for="codePostal">* Code Postal :</label>
+				<input type="text" id="codePostal" name="codePostal" class="form-control" placeholder="Entrez votre code postal" maxlength="5" required>
+				<br>
+				<label for="tel">* Téléphone :</label>
+				<input type="text" id="tel" name="tel" class="form-control" placeholder="Entrez votre numéro de téléphone" maxlength="10" required>
 
-					<label for="prenom">Prénom :</label>
-					<input type="text" id="prenom" name="prenom" required>
-
-					<label for="adresse">Adresse :</label>
-					<input type="text" id="adresse" name="adresse" required>
-
-					<label for="ville">Ville :</label>
-					<input type="text" id="ville" name="ville" required>
-
-					<label for="codePostal">Code Postal :</label>
-					<input type="text" id="codePostal" name="codePostal" required>
-
-					<label for="tel">Téléphone :</label>
-					<input type="text" id="tel" name="tel" required>
-				
 				<hr>
 
 				<h2>Paiement</h2>
@@ -105,10 +106,10 @@
 					</div>
 				</div>
 
-				<br><hr><br>
+				<br><hr>
 
 				<button type="submit" class="btn-submit">Valider la commande</button>
-				<br>
+				<br><br>
 				<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
 				<br>
 				<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>

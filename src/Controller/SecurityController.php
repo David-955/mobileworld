@@ -37,10 +37,7 @@ class SecurityController extends AbstractController
     ): Response {
         // Créer un formulaire simple pour saisir l'email
         $form = $this->createFormBuilder()
-            ->add('email', \Symfony\Component\Form\Extension\Core\Type\EmailType::class, [
-                'label' => 'Entrez votre adresse Email: ',
-                'attr' => ['placeholder' => 'exemple@domaine.fr'],
-            ])
+            ->add('email', \Symfony\Component\Form\Extension\Core\Type\EmailType::class)
             ->getForm();
     
         $form->handleRequest($request);
@@ -105,21 +102,26 @@ class SecurityController extends AbstractController
     
         // Formulaire pour saisir le nouveau mot de passe
         $form = $this->createFormBuilder()
-            ->add('plainPassword', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, [
-                'label' => 'Nouveau mot de passe: ',
-                'attr' => ['autocomplete' => 'new-password'],
-            ])
+            ->add('plainPassword', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class)
+            ->add('confirmPassword', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class)
             ->getForm();
     
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+    
+            // Vérifier que les deux mots de passe correspondent
+            if ($data['plainPassword'] !== $data['confirmPassword']) {
+                $this->addFlash('error', 'Les mots de passe ne correspondent pas.');
+                return $this->redirectToRoute('app_reset_password', ['token' => $token]);
+            }
+    
             // Hasher le nouveau mot de passe
-            $newPassword = $form->get('plainPassword')->getData();
-            $hashedPassword = $passwordHasher->hashPassword($user, $newPassword);
+            $hashedPassword = $passwordHasher->hashPassword($user, $data['plainPassword']);
             $user->setMotdepasse($hashedPassword);
     
             // Effacer le token après utilisation
-            $user->setToken(null); 
+            $user->setToken(null);
             $entityManager->flush();
     
             $this->addFlash('success', 'Votre mot de passe a été réinitialisé avec succès.');

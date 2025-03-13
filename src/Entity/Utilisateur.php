@@ -32,18 +32,6 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     #[ORM\Column(length: 100)]
     private ?string $motdepasse = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
-    private ?string $adresse = null;
-
-    #[ORM\Column(length: 100, nullable: true)]
-    private ?string $ville = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $codepostal = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $tel = null;
-
     #[ORM\Column(length: 255)]
     private ?string $role = null;
 
@@ -131,54 +119,6 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     public function setMotdepasse(string $motdepasse): static
     {
         $this->motdepasse = $motdepasse;
-
-        return $this;
-    }
-
-    public function getAdresse(): ?string
-    {
-        return $this->adresse;
-    }
-
-    public function setAdresse(?string $adresse): static
-    {
-        $this->adresse = $adresse;
-
-        return $this;
-    }
-
-    public function getVille(): ?string
-    {
-        return $this->ville;
-    }
-
-    public function setVille(?string $ville): static
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    public function getCodepostal(): ?int
-    {
-        return $this->codepostal;
-    }
-
-    public function setCodepostal(?int $codepostal): static
-    {
-        $this->codepostal = $codepostal;
-
-        return $this;
-    }
-
-    public function getTel(): ?int
-    {
-        return $this->tel;
-    }
-
-    public function setTel(?int $tel): static
-    {
-        $this->tel = $tel;
 
         return $this;
     }
