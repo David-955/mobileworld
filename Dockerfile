@@ -22,24 +22,24 @@ RUN mkdir -p /var/www/html
 # Étape 5 : Copier les fichiers du projet
 COPY . /var/www/html/
 
-# Créer explicitement le répertoire var/cache
-RUN mkdir -p /var/www/html/var/cache
+# Créer explicitement le répertoire var/cache et var/log
+RUN mkdir -p /var/www/html/var/cache /var/www/html/var/log
 
 # Étape 6 : Définir les permissions
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html \
-    && chmod -R 775 /var/www/html/var
+    && chmod -R 775 /var/www/html/var \
+    && chmod -R 775 /var/www/html/var/cache /var/www/html/var/log
 
 # Étape 7 : Installer Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Étape 8 : Installer les dépendances sans exécuter les scripts
+USER www-data
 RUN composer install --no-dev --optimize-autoloader --no-scripts
+USER root
 
-# Étape 9 : Nettoyer le cache Symfony en mode production (avec vérification)
-RUN if [ -f /var/www/html/bin/console ]; then \
-        php /var/www/html/bin/console cache:clear --env=prod --no-debug; \
-    fi
+# Étape 9 : Nettoyer le cache Symfony en mode production
+RUN rm -rf /var/www/html/var/cache/* && su -s /bin/sh -c "php /var/www/html/bin/console cache:clear --env=prod --no-debug" www-data
 
 # Étape 10 : Copier une configuration personnalisée pour Apache
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
