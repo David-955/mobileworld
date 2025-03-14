@@ -1,37 +1,51 @@
-# Utiliser une image PHP avec Apache
+# Étape 1 : Image de base
 FROM php:8.2-apache
 
-# Installer les outils de construction et les dépendances système nécessaires
+# Étape 2 : Installer les dépendances système
 RUN apt-get update && apt-get install -y \
+    git \
+    curl \
     libzip-dev \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
     libpq-dev \
-    libmysqlclient-dev \
-    --no-install-recommends \
-    && docker-php-ext-configure gd \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip gd
+    default-libmysqlclient-dev \
+    && docker-php-ext-install pdo_mysql zip gd
 
-# Activer mod_rewrite pour Symfony
+# Étape 3 : Activer le module rewrite d'Apache
 RUN a2enmod rewrite
 
-# Copier les fichiers du projet dans le conteneur
+# Étape 4 : Créer explicitement le répertoire /var/www/html
+RUN mkdir -p /var/www/html
+
+# Étape 5 : Copier les fichiers du projet
 COPY . /var/www/html/
 
-# Définir les permissions correctes pour les dossiers
-RUN chown -R www-data:www-data /var/www/html/
-RUN chmod -R 775 /var/www/html/var/
+# Créer explicitement le répertoire var/cache
+RUN mkdir -p /var/www/html/var/cache
 
-# Installer Composer
+# Étape 6 : Définir les permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html \
+    && chmod -R 775 /var/www/html/var
+
+# Étape 7 : Installer Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Installer les dépendances du projet
-WORKDIR /var/www/html/
-RUN composer install --no-dev --optimize-autoloader
+# Étape 8 : Installer les dépendances sans exécuter les scripts
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# Nettoyer le cache Symfony en mode production
-RUN php bin/console cache:clear --env=prod
+# Étape 9 : Nettoyer le cache Symfony en mode production (avec vérification)
+RUN if [ -f /var/www/html/bin/console ]; then \
+        php /var/www/html/bin/console cache:clear --env=prod --no-debug; \
+    fi
 
-# Exposer le port 80 pour Apache
+# Étape 10 : Copier une configuration personnalisée pour Apache
+COPY apache.conf /etc/apache2/sites-available/000-default.conf
+
+# Étape 11 : Exposer le port
 EXPOSE 80
+
+# Étape 12 : Démarrer Apache
+CMD ["apache2-foreground"]
