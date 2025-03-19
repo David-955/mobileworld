@@ -2,7 +2,8 @@ html,
 body {
   background-color: rgb(255, 255, 255);
   height: 100%;
-  font-family: "Fira Sans", monospace;
+  /* font-family: "Fira Sans", monospace; */
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
@@ -58,7 +59,7 @@ main {
 h1 {
   text-align: center;
   font-size: 30px;
-  margin-bottom: 30px;
+  margin: 15px 0px;
   color: #333;
 }
 
@@ -299,7 +300,7 @@ footer {
   line-height: 1.5;
   margin-bottom: 25px;
   /* décalage texte par rapport au titre */
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .news-read-more {
@@ -309,7 +310,7 @@ footer {
   text-decoration: none;
   border-radius: 5px;
   /* décalage bouton par rapport au titre */
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .news-read-more:hover {
@@ -407,6 +408,11 @@ footer {
   margin: 0 auto;
 }
 
+.full-content {
+  text-align: left;
+  padding: 20px;
+}
+
 /* Partie commentaires */
 
 .liste-commentaires {
@@ -495,7 +501,7 @@ footer {
   margin: 10px;
   border: 1px solid #9a9a9a;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
-  height: 152px;
+  height: 151.5px;
 }
 
 .product-colonne1 {
@@ -644,7 +650,7 @@ footer {
 .comparateur-colonne2 {
   background-color: #f4f4f9;
   width: 100%;
-  padding: 30px;
+  padding: 10px;
   margin: 0 auto;
   text-align: center;
   border-radius: 8px;
@@ -737,7 +743,7 @@ footer {
   cursor: pointer;
   font-size: 1em;
   transition: transform 0.2s ease;
-  width: 35px; 
+  width: 35px;
   height: 35px;
 }
 
@@ -946,6 +952,14 @@ footer {
   padding: 10px;
 }
 
+@media (max-width: 860px) {
+  /* Partie comparateur */
+
+  .comparateur-container-blanc {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column; /* Empile le logo et les liens */
@@ -984,7 +998,12 @@ footer {
   }
 
   .news-description {
-    margin-right: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .news-read-more {
+    margin-left: 20px;
   }
 
   .news-image-container {
@@ -1022,12 +1041,6 @@ footer {
 
   .category-item img {
     width: 250px;
-  }
-
-  /* Partie comparateur */
-
-  .comparateur-container-blanc {
-    flex-direction: column;
   }
 
   /* Page panier */

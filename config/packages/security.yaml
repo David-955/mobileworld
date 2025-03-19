@@ -23,6 +23,11 @@ security:
                 enable_csrf: true
                 # redirection après la connexion
                 default_target_path: app_check_verified
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 604800 # Durée en secondes (ici: 7 jours)
+                path: / # cookie est actif sur toutes les pages
+                domain: ~ # domaine actuel
             logout:
                 path: app_logout
                 # redirection vers l'accueil après la déconnexion
@@ -39,7 +44,7 @@ security:
     access_control:
         # Les rôles doivent être préfixé par ROLE_ avec symfony donc mettre ADMIN seul bug
         - { path: ^/admin, roles: ROLE_ADMIN } # easyadmin pour administrer le site
-        - { path: ^/profil, roles: [ROLE_CLIENT, ROLE_ADMIN] } # Profil de l'utilisateur accessible par les clients et les admins
+        - { path: ^/profil, roles: [PUBLIC_ACCESS] } # Profil de l'utilisateur accessible par les clients et les admins
         #  Pour les utilisateurs anonymes qui puissent se connecter, pour bloquer l'accès à ceux connectés
         #  bug de redirection détécté sur la page de connexion quand on n'est pas connecté, ne pas utiliser
         #  - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
