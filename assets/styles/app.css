@@ -546,11 +546,6 @@ footer {
   padding: 30px 10px 0px 10px;
 }
 
-/* à revoir */
-.btn-search:hover {
-  background: #4caf50;
-}
-
 /* From Uiverse.io by vinodjangid07 */
 /* source : https://uiverse.io/vinodjangid07/brave-goose-29 */
 .CartBtn {
@@ -654,6 +649,13 @@ footer {
   margin: 0 auto;
   text-align: center;
   border-radius: 8px;
+}
+
+.caracteristiques {
+  background-color: white; 
+  border-radius: 8px; 
+  padding: 10px; 
+  margin-top: 20px;
 }
 
 /* Page panier */

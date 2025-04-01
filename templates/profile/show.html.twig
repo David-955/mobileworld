@@ -10,9 +10,9 @@
 
 	<section class="container-vert">
 		<section class="container-blanc">
-			<img src="{{ asset(personnalisation.avatar) }}" alt="Avatar de {{ personnalisation.pseudo }}">
+			<img src="{{ asset(personnalisation.avatar) }}" style="border-radius: 8px;" alt="Image de profil de {{ personnalisation.pseudo }}">
 			<br><br>
-			<p>Message de présentation : <em>{{ personnalisation.presentation }}</em></p>
+			<p><em>{{ personnalisation.presentation }}</em></p>
 			<br>
 			{# Bouton retour visible seulement si on est connecté #}
 			{% if app.user %}
