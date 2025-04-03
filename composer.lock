@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0aa8ec63991c35f7a28f0994b81fc9ac",
+    "content-hash": "c9cbdef3213e4abc739cfd78132315e6",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -1521,16 +1521,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "4.x-dev",
+            "version": "v4.24.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "0012cefe8686687b524ec161efc1a175007eb637"
+                "reference": "dcc64d06fc142f894667439e72837aa3742b5460"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/0012cefe8686687b524ec161efc1a175007eb637",
-                "reference": "0012cefe8686687b524ec161efc1a175007eb637",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/dcc64d06fc142f894667439e72837aa3742b5460",
+                "reference": "dcc64d06fc142f894667439e72837aa3742b5460",
                 "shasum": ""
             },
             "require": {
@@ -1581,7 +1581,6 @@
                 "symfony/process": "^5.4|^6.0|^7.0",
                 "symfony/web-link": "^5.4|^6.0|^7.0"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1612,7 +1611,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
-                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/4.x"
+                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.24.5"
             },
             "funding": [
                 {
@@ -1620,7 +1619,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-10T19:33:34+00:00"
+            "time": "2025-03-10T19:31:19+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -10774,9 +10773,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "easycorp/easyadmin-bundle": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
