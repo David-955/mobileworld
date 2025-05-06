@@ -51,9 +51,12 @@ class RegistrationController extends AbstractController
             $user->setPersonnalisation($personnalisation);
             $personnalisation->setUtilisateur($user);
 
-            // Persist et flush
+            // Persist (rien n'est encore envoyé à la base de données)
+            // informe Doctrine qu’on souhaite enregistrer l’entité $user dans la base de données
             $entityManager->persist($user);
+            // On fait de même pour la personnalisation
             $entityManager->persist($personnalisation);
+            // Flush : Doctrine exécute réellement les requêtes SQL nécessaires pour synchroniser l’état des entités persistées avec la base de données
             $entityManager->flush();
 
             // Générer le lien de confirmation
@@ -76,7 +79,6 @@ class RegistrationController extends AbstractController
                 );
             
             $mailer->send($email);
-            // (message ne s'affiche pas à revoir)
             $this->addFlash('success', 'Un e-mail de confirmation a été envoyé. Veuillez vérifier votre boîte de réception.');
         }
 

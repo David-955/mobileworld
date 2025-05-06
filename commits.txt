@@ -1,0 +1,96 @@
+7c407a7 - David-955 - Thu Apr 3 16:25:31 2025 +0200 - réparation easyadmin et page d'accueil
+bfb486f - David-955 - Tue Apr 1 15:14:14 2025 +0200 - amélioration des boutons, des select
+cac33db - David-955 - Wed Mar 19 10:28:15 2025 +0100 - ajout cookie rester connecté pendant 7 jours
+7955cfe - David-955 - Fri Mar 14 23:37:39 2025 +0100 - docker7
+8cf6686 - David-955 - Fri Mar 14 23:18:02 2025 +0100 - docker6
+76aa62e - David-955 - Fri Mar 14 22:57:32 2025 +0100 - docker5
+9b17154 - David-955 - Fri Mar 14 22:43:22 2025 +0100 - docker4
+6ccc0f0 - David-955 - Fri Mar 14 10:13:39 2025 +0100 - docker3
+9bfeb4c - David-955 - Thu Mar 13 16:26:56 2025 +0100 - docker2
+71d131a - David-955 - Thu Mar 13 16:21:18 2025 +0100 - docker2
+54f33e9 - David-955 - Thu Mar 13 16:17:13 2025 +0100 - ajout docker à la racine
+5ca6eb1 - David-955 - Thu Mar 13 15:16:26 2025 +0100 - maj reset mdp et formulaire /commande
+18c3af1 - David-955 - Wed Mar 12 20:41:12 2025 +0100 - maj facture dans "mes commandes": bouton pour télécharger pdf, bouton pour annuler un produit
+dabd8b6 - David-955 - Mon Mar 3 16:55:12 2025 +0100 - correction facturation pdf, fonctionne pour plusieurs produits
+dedacaa - David-955 - Mon Mar 3 16:22:36 2025 +0100 - ajout génération pdf dans confirmation commande
+f90997b - David-955 - Fri Feb 28 11:44:14 2025 +0100 - amélioration design page /comparateur et quelques correctifs (footer, panier)
+bc31256 - David-955 - Thu Feb 27 12:19:42 2025 +0100 - bootstrap: nav et footer
+b4f7e49 - David-955 - Wed Feb 26 22:12:00 2025 +0100 - ajout champ de recherche et de triage pour les pages de produits
+ec9a3f7 - David-955 - Tue Feb 25 14:28:49 2025 +0100 - Ajout réseaux sociaux footer et font-family (police: jetbrains mono)
+c04437e - David-955 - Tue Feb 25 10:22:40 2025 +0100 - Ajout du mot de passe oublié
+16dcb85 - David-955 - Mon Feb 24 14:56:09 2025 +0100 - correctifs et sauvegarde (backup version fonctionnelle)
+552f942 - David-955 - Mon Feb 24 11:22:04 2025 +0100 - noveaux boutons plus et moins du panier
+42cc501 - David-955 - Fri Feb 21 23:31:12 2025 +0100 - Ajout modal zoomage pour le panier et la page de confirmation de commande
+944b585 - David-955 - Fri Feb 21 23:28:20 2025 +0100 - Ajout modal zoomage pour le panier et la page de confirmation de commande
+760ed0f - David-955 - Fri Feb 21 19:32:47 2025 +0100 - ajout chemin arborescence news (article) et bouton + et - pour la quantité dans le panier
+dabfd74 - David-955 - Fri Feb 21 12:07:21 2025 +0100 - on peut se connecter que si verification est "true". Ajout renvoi du mail de confirmation sur la page /verification-pending qui s'affiche lorsque le compte n'est pas verifié et qu'on veut login
+397aa40 - David-955 - Thu Feb 20 16:49:09 2025 +0100 - ajout mail de confirmation à l'inscription
+a156d7d - David-955 - Wed Feb 19 23:43:39 2025 +0100 - gestion du stock
+d1a711e - David-955 - Wed Feb 19 22:42:00 2025 +0100 - amélioration section commentaires
+4c8e798 - David-955 - Wed Feb 19 12:55:07 2025 +0100 - maj affichage des produits dans la boutique
+fa61b73 - David-955 - Wed Feb 19 12:10:43 2025 +0100 - ajout bouton: retour vers le haut
+d4d2b50 - David-955 - Wed Feb 19 10:24:51 2025 +0100 - pagination /mes-commandes
+6917570 - David-955 - Wed Feb 19 10:01:28 2025 +0100 - pagination /mes-commandes
+c39599a - David-955 - Wed Feb 19 00:25:40 2025 +0100 - ajout page /mes_commandes
+b3370fd - David-955 - Tue Feb 18 23:44:12 2025 +0100 - responsive /commande
+f8991fa - David-955 - Tue Feb 18 23:16:59 2025 +0100 - maj confirmation de commande, ajout date commande
+acfc1c0 - David-955 - Tue Feb 18 22:09:26 2025 +0100 - page /confirmation avec mail de confirmation
+809af5f - David-955 - Tue Feb 18 12:29:34 2025 +0100 - nouveau bouton submit
+4696038 - David-955 - Tue Feb 18 11:44:01 2025 +0100 - maj /commande design
+b443ded - David-955 - Tue Feb 18 02:54:40 2025 +0100 - maj design page des produits (+ responsive)
+ab65115 - David-955 - Mon Feb 17 22:52:28 2025 +0100 - maj design /contact, /panier, /boutique, /profil
+2ebcee2 - David-955 - Mon Feb 17 15:08:55 2025 +0100 - maj des pages /register et /login, champs de formulaire
+4916f04 - David-955 - Mon Feb 17 12:24:23 2025 +0100 - correction pour l'icone de la poubelle, oublie du path
+11b9573 - David-955 - Mon Feb 17 12:16:31 2025 +0100 - modification des icones: panier du header, poubelle du panier, btn ajout panier de la boutique
+54199a1 - David-955 - Fri Feb 14 16:02:23 2025 +0100 - design /register /login /profil /profil/{pseudo}
+4c5e16e - David-955 - Thu Feb 13 12:23:07 2025 +0100 - quelques correctifs page d'accueil
+e983a7a - David-955 - Thu Feb 13 11:03:02 2025 +0100 - design /panier, /login, /register
+0fb5b5a - David-955 - Wed Feb 12 15:24:09 2025 +0100 - design /panier
+2563593 - David-955 - Tue Feb 11 22:03:27 2025 +0100 - design pour les produits de la boutique
+0793cc1 - David-955 - Tue Feb 11 16:43:55 2025 +0100 - design pour les pages /comparateur et /boutique
+483a9f0 - David-955 - Sun Feb 9 02:17:40 2025 +0100 - ajout design page article
+07022d9 - David-955 - Fri Feb 7 22:36:58 2025 +0100 - correction style accueil
+67b83bd - David-955 - Fri Feb 7 21:45:41 2025 +0100 - nouv design accueil conforme
+2f7203a - David-955 - Fri Feb 7 11:19:29 2025 +0100 - maj design accueil
+f2efecb - David-955 - Fri Feb 7 04:26:16 2025 +0100 - maj design
+01df9b7 - David-955 - Fri Feb 7 00:17:01 2025 +0100 - design page d'accueil
+ef3cb35 - David-955 - Thu Feb 6 21:55:25 2025 +0100 - ajout header et footer en vert
+855618a - David-955 - Thu Feb 6 16:55:51 2025 +0100 - maj fin de journée 06/02
+be989fc - David-955 - Thu Feb 6 16:10:31 2025 +0100 - ajout page /commande
+253dae9 - David-955 - Thu Feb 6 12:42:11 2025 +0100 - possibilité de modifier la quantité dans le panier en fonction du stock
+c61aa70 - David-955 - Thu Feb 6 12:20:41 2025 +0100 - ajout du /panier
+4812cce - David-955 - Wed Feb 5 11:11:25 2025 +0100 - pagination pour les commentaires
+fdba078 - David-955 - Wed Feb 5 09:45:03 2025 +0100 - Ajout du stock des produits
+887f79b - David-955 - Tue Feb 4 15:52:17 2025 +0100 - comparateur amélioré avec plrs marques
+1b87d25 - David-955 - Tue Feb 4 13:01:06 2025 +0100 - maj comparateur avec 2 modèles
+8da48db - David-955 - Tue Feb 4 12:32:08 2025 +0100 - page /comparateur ajouté
+60e01fb - David-955 - Sat Feb 1 21:24:05 2025 +0100 - maj fullContent
+0d95045 - David-955 - Sat Feb 1 14:17:02 2025 +0100 - Ajout Diffbot pour extraire contenu complet article + meilleur filtrage articles
+2178285 - David-955 - Sat Feb 1 13:35:31 2025 +0100 - ajout liens pour se connecter sur la page register et vice versa
+662c7fa - David-955 - Fri Jan 31 23:17:38 2025 +0100 - Version fonctionnelle avec correction affichage du pseudo des posteurs sous articles
+bdf6051 - David-955 - Wed Jan 29 16:54:05 2025 +0100 - sauvegarde fin de journée
+9b3ddeb - David-955 - Wed Jan 29 12:43:21 2025 +0100 - page de profil pour chaque pseudo /profil/{pseudo}
+7455935 - David-955 - Wed Jan 29 12:18:42 2025 +0100 - possibilité de maj le pseudo et de reset l'avatar
+a75ab60 - David-955 - Wed Jan 29 11:37:34 2025 +0100 - maj pour voir le pseudo de la personne qui a posté le commentaire
+bf3fc45 - David-955 - Wed Jan 29 10:39:41 2025 +0100 - ajout d'un message de présentation + avatar par défaut à l'inscription
+bf6bbb0 - David-955 - Tue Jan 28 16:47:57 2025 +0100 - ajout section commentaire sous les articles
+24c98f5 - David-955 - Tue Jan 28 11:38:59 2025 +0100 - page /profil fonctionnelle
+a0f8654 - David-955 - Mon Jan 27 14:50:24 2025 +0100 - grosse mise à jour d'optimisation (boutique)
+4d9f0f9 - David-955 - Fri Jan 24 15:34:57 2025 +0100 - ajout page /profil
+ee14dfa - David-955 - Thu Jan 23 12:34:30 2025 +0100 - ajout vérification mdp sur page register
+4d9a55f - David-955 - Thu Jan 23 09:50:04 2025 +0100 - login et register fonctionnent sans bug, accès /admin avec ROLE_ADMIN ok
+7c19e5b - David-955 - Wed Jan 22 12:42:20 2025 +0100 - amélioration register et login (s'affiche ou non en fonction de si on est connecté), /login accessible que si on a le ROLE_ADMIN
+77be1c2 - David-955 - Wed Jan 22 10:17:51 2025 +0100 - register, login et logout fonctionnent
+ab07772 - David-955 - Tue Jan 21 16:52:05 2025 +0100 - Ajout des fonctionnalités d'inscription et de connexion avec gestion des utilisateurs
+97805f5 - David-955 - Tue Jan 21 14:22:23 2025 +0100 - Ajout /boutique/{alias} pour afficher les produits d'une catégorie
+9b23279 - David-955 - Mon Jan 20 15:25:09 2025 +0100 - ajout easyadmin
+55025d9 - David-955 - Mon Jan 20 15:23:20 2025 +0100 - ajout easyadmin
+980ef59 - David-955 - Mon Jan 20 15:22:48 2025 +0100 - ajout easyadmin
+4da9423 - David-955 - Mon Jan 20 15:20:55 2025 +0100 - Ajout easyadmin pour interface admin
+97b3882 - David-955 - Fri Jan 17 16:32:20 2025 +0100 - Ajout page boutique
+c293324 - David-955 - Fri Jan 17 10:25:11 2025 +0100 - Ajout de la pagination sur la page d'accueil
+4f8a9e4 - David-955 - Thu Jan 16 16:29:22 2025 +0100 - Amélioration de la page d'accueil
+501cec0 - David-955 - Thu Jan 16 16:17:32 2025 +0100 - Amélioration de la page d'accueil
+3dbcf0c - David-955 - Thu Jan 16 14:51:26 2025 +0100 - accueil et page article
+8ba90a8 - David-955 - Wed Jan 15 12:18:52 2025 +0100 - Add webapp packages
+51d27f5 - David-955 - Wed Jan 15 12:16:45 2025 +0100 - Add initial set of files
