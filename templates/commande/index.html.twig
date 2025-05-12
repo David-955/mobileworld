@@ -15,7 +15,7 @@
 			</p>
 
 			{% if panier|length > 0 %}
-				<h2>Récapitulatif</h2>
+				<h2>1. Récapitulatif</h2>
 				<!-- Tableau de récapitulatif -->
 				<table class="table">
 					<thead>
@@ -53,7 +53,7 @@
 			<hr>
 
 			<!-- Formulaire global -->
-			<h2>Adresse de Livraison</h2>
+			<h2>2. Adresse de Livraison</h2>
 			<form method="post" action="{{ path('app_commande') }}">
 				<label for="nom">* Nom :</label>
 				<input type="text" id="nom" name="nom" class="form-control" placeholder="Entrez votre nom" maxlength="100" required>
@@ -75,7 +75,7 @@
 
 				<hr>
 
-				<h2>Paiement</h2>
+				<h2>3. Paiement</h2>
 				<div class="visa-card">
 					<div class="logoContainer">
 						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23" viewbox="0 0 48 48" class="svgLogo">

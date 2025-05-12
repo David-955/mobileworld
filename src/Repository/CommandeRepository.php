@@ -16,16 +16,30 @@ class CommandeRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Commande::class);
     }
-    
-    /**
-     * Récupère toutes les commandes d'un utilisateur donné.
-     */
-    public function findUserCommands(Utilisateur $user): array
+
+    public function findUniqueCommandeNumerosByUser(Utilisateur $user): array
     {
         return $this->createQueryBuilder('c')
+            ->select('DISTINCT c.numero, c.date')
             ->andWhere('c.utilisateur = :user')
             ->setParameter('user', $user)
-            ->orderBy('c.date', 'DESC') // Trier par date décroissante
+            ->orderBy('c.date', 'DESC')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
+    /**
+     * Récupère toutes les commandes d'un utilisateur ayant un certain numéro
+     */
+    public function findCommandesByNumero(string $numero, Utilisateur $user): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.numero = :numero')
+            ->andWhere('c.utilisateur = :user')
+            ->setParameter('numero', $numero)
+            ->setParameter('user', $user)
+            ->leftJoin('c.produit', 'p')
+            ->addSelect('p')
             ->getQuery()
             ->getResult();
     }

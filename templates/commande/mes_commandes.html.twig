@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Mes commandes
+{% block title %}Mobile World : Passer commande
 {% endblock %}
 
 {% block content %}
@@ -8,42 +8,85 @@
 
 	<section class="container-vert">
 		<section class="container-blanc">
-			{% if pagination|length == 0 %}
+			{% if commandesGroupedByNumero|length == 0 %}
 				<p>Vous n'avez passé aucune commande pour le moment.</p>
 				<p>
 					<a href="{{ path('app_boutique') }}" class="btn-submit">Accéder à la boutique</a>
 				</p>
 			{% else %}
-				<ul>
-					{% for commande in pagination %}
-						<li class="liste-confirmation">
-							<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="{{ commande.produit.nom }}" style="max-width: 100px;" class="zoomable-image" data-modal="image-modal"><br>
-							<strong>Numéro de commande :</strong>
-							{{ commande.numero }}<br>
-							<strong>Date :</strong>
-							{{ commande.date|date('d/m/Y H:i') }}<br>
-							<strong>Produit :</strong>
-							{{ commande.produit.nom }}<br>
-							<strong>Quantité :</strong>
-							{{ commande.quantite }}<br>
-							<strong>Prix unitaire :</strong>
-							{{ commande.produit.prix }}
-							€<br>
-							<strong>Montant total TTC :</strong>
-							{{ commande.produit.prix * commande.quantite }}
-							€<br><br>
-							<strong>Statut :</strong>
-							{{ commande.statut }}
-							<br><br>
+				<ul class="liste-commande1">
+					{# Affichage du message de confirmation #}
+					{# Boucle sur chaque numéro de commande #}
+					{% for numeroCommande, groupe in commandesGroupedByNumero %}
+						<li class="liste-commande2">
+							<div class="commande-header">
+								<p>
+									<strong>Numéro de commande :</strong>
+									{{ numeroCommande }}</p>
+								<p>
+									<strong>Date :</strong>
+									{{ groupe.date|date('d/m/Y H:i') }}</p>
+
+								<address class="adresse-livraison">
+									<strong>Adresse de livraison :</strong><br>
+									{{ groupe.produits[0].nom }}
+									{{ groupe.produits[0].prenom }}<br>
+									{{ groupe.produits[0].adresse }}<br>
+									{{ groupe.produits[0].codePostal }}
+									{{ groupe.produits[0].ville }}<br>
+									Tél :
+									{{ groupe.produits[0].tel }}
+								</address>
+							</div>
+
+							{# <strong>Statut :</strong>
+														{{ groupe.statut }}<br><br> #}
+
+							{# Boucle sur les produits de cette commande #}
+							{% for commande in groupe.produits %}
+								<div class="produit-item">
+									<strong>Produit :</strong>
+									{{ commande.produit.nom }}<br>
+									<strong>ID Produit :</strong>
+									{{ commande.produit.id }}<br>
+									<strong>Quantité :</strong>
+									{{ commande.quantite }}<br>
+									<strong>Prix unitaire :</strong>
+									{{ commande.produit.prix }}
+									€<br>
+									<strong>Sous-total :</strong>
+									{{ commande.produit.prix * commande.quantite }}
+									€<br>
+									{# Affichage de l'image du produit #}
+									<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="Image de {{ commande.produit.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; border-radius: 8px;"><br>
+									{# Affichage du statut de la commande #}
+
+
+									{% if commande.statut != 'Produit annulé par le client' %}
+										<br>
+										<a href="{{ path('app_commande_annuler', { 'numero': numeroCommande, 'produitId': commande.produit.id, '_csrf_token': csrf_token('annuler_commande') }) }}" class="btn-submit" onclick="return confirm('Êtes-vous sûr de vouloir annuler ce produit ?');">
+											Annuler ce produit
+										</a>
+									{% else %}
+										<em>Ce produit a été annulé.</em>
+									{% endif %}
+									<br><br>
+									<br>
+								</div>
+							{% endfor %}
+
+							{# Affichage du total TTC de la commande entière #}
+							{% set totalCommande = groupe.produits|map(p => p.produit.prix * p.quantite)|reduce((a, b) => a + b) %}
+							<h3>
+								<strong>Total TTC de la commande :</strong>
+								{{ totalCommande }}
+								€</h3>
+							<br>
+
 							{# Lien pour télécharger le récapitulatif de commande #}
-							{% if commande.statut != 'Produit annulé par le client' %}
-								<a href="{{ path('app_commande_pdf', {'numero': commande.numero, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
+							{% if groupe.statut != 'Produit annulé par le client' %}
+								<a href="{{ path('app_commande_pdf', {'numero': numeroCommande, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
 									Télécharger le récapitulatif de commande
-								</a>
-								<br><br>
-								{# Lien pour annuler la commande #}
-								<a href="{{ path('app_commande_annuler', {'numero': commande.numero, 'produitId': commande.produit.id, '_csrf_token': csrf_token('annuler_commande') }) }}" class="btn-submit" onclick="return confirm('Êtes-vous sûr de vouloir annuler ce produit ?');">
-									Annuler ce produit
 								</a>
 								<br><br>
 							{% endif %}
@@ -51,9 +94,11 @@
 					{% endfor %}
 				</ul>
 			{% endif %}
+
 			<div class="pagination">
 				{{ knp_pagination_render(pagination) }}
 			</div>
+
 			<br>
 			<p>
 				<a href="{{ path('app_profil') }}" class="btn-submit">Retour vers mon profil</a>
@@ -65,9 +110,9 @@
 		</section>
 	</section>
 
+	<!-- Modal image -->
 	<div id="image-modal" class="modal">
 		<span class="close">&times;</span>
-		{# class pour css, id pour js #}
 		<img class="modal-content" id="modal-image">
 	</div>
 {% endblock %}

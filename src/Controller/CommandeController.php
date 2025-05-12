@@ -187,29 +187,43 @@ class CommandeController extends AbstractController
     }
 
     #[Route('/mes-commandes', name: 'app_mes_commandes')]
-    public function mesCommandes(CommandeRepository $commandeRepository, Request $request, PaginatorInterface $paginator): Response
-    {
-        // Récupérer l'utilisateur connecté
+    public function mesCommandes(
+        CommandeRepository $commandeRepository,
+        Request $request,
+        PaginatorInterface $paginator
+    ): Response {
         $user = $this->getUser();
-
-        // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
         if (!$user) {
             return $this->redirectToRoute('app_login');
         }
 
-        // Récupérer les commandes de l'utilisateur
-        $commandes = $commandeRepository->findUserCommands($user);
+        // Récupérer tous les numéros de commande uniques
+        $allNumeros = $commandeRepository->findUniqueCommandeNumerosByUser($user);
+        $allNumeros = array_column($allNumeros, 'numero'); // Extraire juste les numéros
 
-        // Paginer les commentaires avec KnpPaginator
+        // Paginer les numéros de commande
         $pagination = $paginator->paginate(
-            $commandes, // Requête Doctrine, les données filtrées
-            $request->query->getInt('page', 1), // Numéro de page actuelle (par défaut 1)
-            5 // Nombre d'éléments par page
+            $allNumeros,
+            $request->query->getInt('page', 1),
+            5
         );
 
-        // Passer les commandes au template
+        // Regrouper les commandes par numéro
+        $commandesGroupedByNumero = [];
+        foreach ($pagination->getItems() as $numero) {
+            $commandes = $commandeRepository->findCommandesByNumero($numero, $user);
+
+            if (!empty($commandes)) {
+                $commandesGroupedByNumero[$numero] = [
+                    'date' => $commandes[0]->getDate(),
+                    'statut' => $commandes[0]->getStatut(),
+                    'produits' => $commandes,
+                ];
+            }
+        }
+
         return $this->render('commande/mes_commandes.html.twig', [
-            // 'commandes' => $commandes,
+            'commandesGroupedByNumero' => $commandesGroupedByNumero,
             'pagination' => $pagination,
         ]);
     }
@@ -257,35 +271,55 @@ class CommandeController extends AbstractController
             ]
         );
     }
-    
-    #[Route('/commande/annuler/{numero}/{produitId}', name: 'app_commande_annuler')]
-    public function annulerCommande(
+
+#[Route('/commande/annuler/{numero}/{produitId}', name: 'app_commande_annuler')]
+    public function annulerProduit(
         string $numero,
         int $produitId,
+        Request $request,
+        CsrfTokenManagerInterface $csrfTokenManager,
+        EntityManagerInterface $entityManager
     ): Response {
-        // Récupérer la commande spécifique (par numéro et ID produit)
-        $commande = $this->entityManager->getRepository(Commande::class)->findOneBy([
+        // Vérifier le jeton CSRF
+        $token = new CsrfToken('annuler_commande', $request->query->get('_csrf_token'));
+        if (!$csrfTokenManager->isTokenValid($token)) {
+            throw $this->createAccessDeniedException('Jeton CSRF invalide.');
+        }
+    
+        // Récupérer la commande spécifique (par numéro et ID du produit)
+        $commande = $entityManager->getRepository(Commande::class)->findOneBy([
             'numero' => $numero,
             'produit' => $produitId,
         ]);
-
+    
         if (!$commande) {
-            throw $this->createNotFoundException('Produit ou commande non trouvée.');
+            throw $this->createNotFoundException('Commande ou produit non trouvé.');
         }
-
-        // Mettre à jour le statut de la commande
+    
+        // Vérifier que le statut n'est pas déjà "annulé"
+        if ($commande->getStatut() === "Produit annulé par le client") {
+            $this->addFlash('warning', 'Ce produit a déjà été annulé.');
+            return $this->redirectToRoute('app_mes_commandes');
+        }
+    
+        // Mettre à jour le statut
         $commande->setStatut("Produit annulé par le client");
-
-        // Récupérer le produit associé et mettre à jour le stock
+    
+        // Réajuster le stock du produit
         $produit = $commande->getProduit();
         $nouveauStock = $produit->getStock() + $commande->getQuantite();
         $produit->setStock($nouveauStock);
-
-        // Enregistrer les modifications
-        $this->entityManager->persist($produit);
-        $this->entityManager->flush();
-
-        // Rediriger vers la page des commandes
+    
+        // Persister les modifications
+        $entityManager->persist($commande);
+        $entityManager->persist($produit);
+        $entityManager->flush();
+    
+        // Message flash
+        $this->addFlash('success', 'Le produit a été annulé avec succès.');
+    
+        // Redirection
         return $this->redirectToRoute('app_mes_commandes');
     }
 }
+   

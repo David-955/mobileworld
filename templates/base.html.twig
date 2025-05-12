@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		{# Pour tester responsive sur navigateur correctement #}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<meta name="description" content="Mobile World - L'endroit idéal pour trouver les dernières actualités sur l'univers des appareils mobiles. Un comparateur est également à votre disposition ainsi que notre boutique possédant des accessoires divers et variés pour vous, pour offrir, pour votre maison et même pour votre voiture.">
 		<title>
 			{% block title %}{% endblock %}
@@ -68,7 +70,7 @@
 								{# si connecté donc pour les membres #}
 								<li class="nav-item">
 									<a class="nav-link" href="{{ path('app_profil') }}">
-										<img src="{{ asset(app.user.personnalisation.avatar) }}" alt="Image de profil" class="profile-image" style="max-height: 50px; border-radius: 50%;">
+										<img src="{{ asset(app.user.personnalisation.avatar) }}" alt="Image de profil" class="profile-image-header" style="max-height: 50px; border-radius: 50%;">
 									</a>
 								</li>
 								<li class="nav-item">
