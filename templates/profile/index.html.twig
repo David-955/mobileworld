@@ -31,74 +31,80 @@
 					Voir l'aperçu de mon profil</a>
 			</p>
 			<img src="{{ personnalisation.avatar }}" alt="Image de profil de {{ personnalisation.pseudo }}" class="profile-image" style="border-radius: 8px;"></img>
-		<br><br>
-		<p>
-			<em>{{ personnalisation.presentation }}</em>
-		</p>
+			<br><br>
+			<p>
+				<em>{{ personnalisation.presentation }}</em>
+			</p>
 
-		<hr>
-		<form action="{{ path('app_profil_update_pseudo') }}" method="post">
-			<h2>Personnalisation :</h2>
+			<hr>
+			<form action="{{ path('app_profil_update_pseudo') }}" method="post">
+				<h2>Personnalisation :</h2>
+				<br>
+				<div class="form-group">
+					<label for="pseudo">Changer le pseudo :</label>
+				</div>
+
+				<div class="form-group">
+					<input type="text" id="pseudo" name="pseudo" value="{{ personnalisation.pseudo }}" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<button class="btn-submit" type="submit">Mettre à jour le pseudo</button>
+				</div>
+			</form>
+
+			<hr>
+			<form action="{{ path('app_profil_update_avatar') }}" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="avatar">Changer l'avatar :</label>
+				</div>
+
+				<div class="form-group">
+					<input type="file" id="avatar" name="avatar">
+				</div>
+
+				<div class="form-group">
+					<button class="btn-submit" type="submit">Mettre à jour l'avatar</button>
+				</div>
+
+				<div class="form-group">
+					<button class="btn-submit" type="submit" formaction="{{ path('app_profil_reset_avatar') }}">Remettre l'avatar par défaut</button>
+				</div>
+			</form>
+
+			<hr>
+			<form action="{{ path('app_profil_update_presentation') }}" method="post">
+				<div class="form-group">
+					<label for="presentation">Personnaliser la présentation :</label>
+				</div>
+
+				<div class="form-group">
+					<textarea id="presentation" name="presentation" class="form-control" placeholder="Entrez votre présentation ici."></textarea>
+				</div>
+
+				<div class="form-group">
+					<button class="btn-submit" type="submit">Mettre à jour mon message de présentation</button>
+				</div>
+			</form>
+			<hr>
+			<h2>Autres services :</h2>
 			<br>
-			<div class="form-group">
-				<label for="pseudo">Changer le pseudo :</label>
-			</div>
-
-			<div class="form-group">
-				<input type="text" id="pseudo" name="pseudo" value="{{ personnalisation.pseudo }}" class="form-control">
-			</div>
-
-			<div class="form-group">
-				<button class="btn-submit" type="submit">Mettre à jour le pseudo</button>
-			</div>
-		</form>
-
-		<hr>
-		<form action="{{ path('app_profil_update_avatar') }}" method="post" enctype="multipart/form-data">
-			<div class="form-group">
-				<label for="avatar">Changer l'avatar :</label>
-			</div>
-
-			<div class="form-group">
-				<input type="file" id="avatar" name="avatar">
-			</div>
-
-			<div class="form-group">
-				<button class="btn-submit" type="submit">Mettre à jour l'avatar</button>
-			</div>
-
-			<div class="form-group">
-				<button class="btn-submit" type="submit" formaction="{{ path('app_profil_reset_avatar') }}">Remettre l'avatar par défaut</button>
-			</div>
-		</form>
-
-		<hr>
-		<form action="{{ path('app_profil_update_presentation') }}" method="post">
-			<div class="form-group">
-				<label for="presentation">Personnaliser la présentation :</label>
-			</div>
-
-			<div class="form-group">
-				<textarea id="presentation" name="presentation" class="form-control" placeholder="Entrez votre présentation ici."></textarea>
-			</div>
-
-			<div class="form-group">
-				<button class="btn-submit" type="submit">Mettre à jour mon message de présentation</button>
-			</div>
-		</form>
-		<hr>
-		<h2>Autres services :</h2>
-		<br>
-		<p>
-			<a href="{{ path('app_mes_commandes') }}" class="btn-submit">Mes commandes</a>
-		</p>
-		<br>
-		<p>
-			<a href="{{ path('app_contact') }}" class="btn-submit">Service client</a>
-		</p>
-		<br>
-		<p>
-			<a href="{{ path('app_logout') }}" class="btn-submit">Déconnexion</a>
-		</p>
+			<p>
+				<a href="{{ path('app_mes_commandes') }}" class="btn-submit">Mes commandes</a>
+			</p>
+			<br>
+			<p>
+				<a href="{{ path('app_new_password') }}" class="btn-submit">Changer mon mot de passe</a>
+			</p>
+			<br>
+			<p>
+				<a href="{{ path('app_contact') }}" class="btn-submit">Service client</a>
+			</p>
+			<br>
+			<p>
+				<a href="{{ path('app_logout') }}" class="btn-submit">Déconnexion</a>
+			</p>
+		</section>
 	</section>
-</section>{% endif %}{% endblock %}
+{% endif %}
+{% endblock %}

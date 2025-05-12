@@ -87,6 +87,26 @@ class SecurityController extends AbstractController
         ]);
     }
 
+    #[Route('/new-password', name: 'app_new_password')]
+    public function newPassword(
+        EntityManagerInterface $entityManager,
+    ): Response {
+        // Vérifier si l'utilisateur est connecté
+        $user = $this->getUser();
+        if (!$user) {
+            $this->addFlash('error', 'Vous devez être connecté pour changer votre mot de passe.');
+            return $this->redirectToRoute('app_login');
+        }
+    
+        // Générer un token unique pour la réinitialisation
+        $resetToken = uniqid('', true);
+        $user->setToken($resetToken); // Assurez-vous que votre entité Utilisateur a une méthode `setToken`
+        $entityManager->flush();
+    
+        // Rediriger vers la page de réinitialisation avec le token
+        return $this->redirectToRoute('app_reset_password', ['token' => $resetToken]);
+    }
+
     #[Route('/reset-password/{token}', name: 'app_reset_password')]
     public function resetPassword(
         string $token,
