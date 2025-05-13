@@ -28,45 +28,31 @@ class RegistrationController extends AbstractController
         $user = new Utilisateur();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-
+    
         if ($form->isSubmitted() && $form->isValid()) {
-            // Hashage du mot de passe
             $user->setMotdepasse($userPasswordHasher->hashPassword($user, $form->get('plainPassword')->getData()));
-
-            // Attribuer un rôle par défaut
             $user->setRole('ROLE_CLIENT');
-            // compte non vérifié de base car il faut confirmer grâce à l'email envoyé avec un lien
             $user->setVerification(false);
-
-            // Générer un token unique basé sur le temps
             $user->setToken(uniqid('', true));
-
-            // Créer une Personnalisation et l'associer à l'utilisateur
+    
             $personnalisation = new Personnalisation();
             $personnalisation->setPresentation('Bonjour, ceci est un message de présentation par défaut.');
             $personnalisation->setAvatar('/images/profils/defaut.webp');
             $personnalisation->setPseudo('utilisateur' . random_int(10000, 99999));
-
-            // Associer la Personnalisation à l'utilisateur (relation bidirectionnelle)
+    
             $user->setPersonnalisation($personnalisation);
             $personnalisation->setUtilisateur($user);
-
-            // Persist (rien n'est encore envoyé à la base de données)
-            // informe Doctrine qu’on souhaite enregistrer l’entité $user dans la base de données
+    
             $entityManager->persist($user);
-            // On fait de même pour la personnalisation
             $entityManager->persist($personnalisation);
-            // Flush : Doctrine exécute réellement les requêtes SQL nécessaires pour synchroniser l’état des entités persistées avec la base de données
             $entityManager->flush();
-
-            // Générer le lien de confirmation
+    
             $confirmationUrl = $this->generateUrl(
                 'app_confirm_email',
                 ['token' => $user->getToken()],
                 UrlGeneratorInterface::ABSOLUTE_URL
             );
-
-            // Créer et envoyer l'e-mail
+    
             $email = (new Email())
                 ->from('dngo3819@gmail.com')
                 ->to($user->getEmail())
@@ -77,15 +63,22 @@ class RegistrationController extends AbstractController
                     '<p>Veuillez confirmer votre compte en cliquant sur le lien ci-dessous :</p>' .
                     '<a href="' . htmlspecialchars($confirmationUrl) . '">Confirmer mon compte</a>'
                 );
-            
+    
             $mailer->send($email);
+    
             $this->addFlash('success', 'Un e-mail de confirmation a été envoyé. Veuillez vérifier votre boîte de réception.');
-        }
+            return $this->redirectToRoute('app_login');
 
+            // Éventuellement : return $this->redirectToRoute('app_login');
+        } elseif ($form->isSubmitted()) {
+            $this->addFlash('danger', 'Votre inscription comporte des erreurs. Veuillez corriger les champs. Minimum de 6 caractères pour le mot de passe, et maximum de 100 caractères.');
+        }
+    
         return $this->render('security/register.html.twig', [
             'registrationForm' => $form,
         ]);
     }
+    
 
     #[Route('/confirm-email/{token}', name: 'app_confirm_email')]
     public function confirmEmail(string $token, EntityManagerInterface $entityManager): Response

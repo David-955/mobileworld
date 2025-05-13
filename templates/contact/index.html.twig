@@ -6,40 +6,46 @@
 {% block content %}
 	<h1>Contactez-nous</h1>
 
-	<section
-		class="container-vert">
-		<section class="container-blanc">
+	<section class="container-vert">
+		<section
+			class="container-blanc">
+			{# Afficher les messages flash #}
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+				{% endfor %}
+			{% endfor %}
 
 			<h2>Formulaire de contact :</h2>
 
 			<form method="post" action="{{ path('app_contact') }}">
 				<div class="form-group">
 					<label for="nom">Votre nom :</label>
-                    <br>
+					<br>
 					<input type="text" id="nom" name="nom" value="{{ formData.nom }}" class="form-control" placeholder="Entrez votre nom" required>
 				</div>
 
 				<div class="form-group">
 					<label for="prenom">Votre prénom :</label>
-                    <br>
+					<br>
 					<input type="text" id="prenom" name="prenom" value="{{ formData.prenom }}" class="form-control" placeholder="Entrez votre prénom" required>
 				</div>
 
 				<div class="form-group">
 					<label for="email">Votre adresse Email :</label>
-                    <br>
+					<br>
 					<input type="email" id="email" name="email" value="{{ formData.email }}" class="form-control" placeholder="Entrez votre adresse Email" required>
 				</div>
 
 				<div class="form-group">
 					<label for="sujet">Sujet du message :</label>
-                    <br>
+					<br>
 					<input type="text" id="sujet" name="sujet" value="{{ formData.sujet }}" class="form-control" placeholder="Entrez le sujet du message" required>
 				</div>
 
 				<div class="form-group">
 					<label for="message">Votre message :</label>
-                    <br>
+					<br>
 					<textarea id="message" name="message" class="form-control" placeholder="Entrez votre message" required>{{ formData.message }}</textarea>
 				</div>
 
