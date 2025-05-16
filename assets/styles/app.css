@@ -1172,9 +1172,9 @@ footer {
 
   /* Pour les smartphones */
   @media (max-width: 480px) {
-    .btn-submit {
+    /* .btn-submit {
       font-size: 8px;
-    }
+    } */
 
     .container-vert {
       width: 95%;

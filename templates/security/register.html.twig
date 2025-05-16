@@ -15,7 +15,7 @@
 					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
 				{% endfor %}
 			{% endfor %}
-			
+
 			<p>
 				<strong>Bienvenue !</strong>
 			</p>
@@ -27,6 +27,11 @@
 		<p>
 			<a href="{{ path('app_login') }}">
 				<strong>Vous possédez déjà un compte ? Connectez-vous en cliquant ici.</strong>
+			</a>
+		</p>
+		<p>
+			<a href="{{ path('app_verification_pending') }}">
+				<strong>Renvoyer le lien de confirmation.</strong>
 			</a>
 		</p>
 		<br>

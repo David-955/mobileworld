@@ -7,13 +7,13 @@
 	<section class="container-vert">
 		<section class="container-blanc">
 			<h1>Compte non vérifié</h1>
-			<p>Votre compte n'est pas encore vérifié.</p>
-			<p>Veuillez vérifier votre adresse e-mail en cliquant sur le lien que nous vous avons envoyé.</p>
-			<br>
+			<p>Votre compte n'est pas encore vérifié ?</p>
+			<p>Un renvoi d'un nouveau lien est possible : Veuillez vérifier votre adresse Email en cliquant sur le lien que nous vous avons envoyé.</p>
+			
 			<!-- Formulaire pour saisir l'e-mail -->
 			<form method="get" action="{{ path('app_resend_confirmation') }}">
 				<div class="form-group">
-					<label for="email">Entrez votre adresse e-mail :</label>
+					<label for="email">Entrez votre adresse Email :</label>
 					<input type="email" id="email" name="email" class="form-control" required>
 				</div>
 				<button type="submit" class="btn-submit">Renvoyer le lien de vérification</button>
