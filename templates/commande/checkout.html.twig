@@ -1,0 +1,83 @@
+{# templates/commande/checkout.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    {# Définir la clé publique Stripe comme variable globale JS #}
+    <script>
+        console.log("Clé publique Stripe :", "{{ stripe_publishable_key }}");
+        window.stripePublishableKey = "{{ stripe_publishable_key }}";
+    </script>
+{% endblock %}
+
+{% block content %}
+<h1>Test Twig</h1>
+    <div class="container mt-5">
+        <h2 class="mb-4">Payer ma commande</h2>
+        <p>Veuillez cliquer sur le bouton ci-dessous pour effectuer votre paiement.</p>
+
+        <button id="checkout-button" class="btn btn-success btn-lg">
+            Payer ma commande
+        </button>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        const checkoutButton = document.getElementById('checkout-button');
+
+        if (!checkoutButton) {
+            console.error("Bouton Stripe introuvable !");
+        } else {
+            checkoutButton.addEventListener('click', async () => {
+                // Désactiver le bouton pendant le traitement
+                checkoutButton.disabled = true;
+                checkoutButton.textContent = "Veuillez patienter...";
+
+                try {
+                    // Récupérer la clé publique
+                    const publishableKey = window.stripePublishableKey;
+
+                    if (!publishableKey) {
+                        throw new Error("Clé publique Stripe manquante");
+                    }
+
+                    // Créer une session Stripe via ton API
+                    const response = await fetch("{{ path('create_checkout_session') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || "Erreur serveur");
+                    }
+
+                    const session = await response.json();
+
+                    // Rediriger vers Stripe Checkout
+                    const stripe = Stripe(publishableKey);
+                    const { error } = await stripe.redirectToCheckout({
+                        sessionId: session.id
+                    });
+
+                    if (error) {
+                        console.warn("Erreur Stripe :", error.message);
+                        alert("Échec du paiement : " + error.message);
+                    }
+
+                } catch (err) {
+                    console.error("Erreur lors du paiement :", err.message);
+                    alert("Une erreur est survenue : " + err.message);
+                } finally {
+                    // Réactiver le bouton en cas d’erreur
+                    checkoutButton.disabled = false;
+                    checkoutButton.textContent = "Payer ma commande";
+                }
+            });
+        }
+    </script>
+{% endblock %}

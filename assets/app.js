@@ -1,41 +1,58 @@
+// assets/app.js
+
 import './bootstrap.js';
 import './styles/app.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
-// Charger dynamiquement les pages
+// Charger Stripe uniquement si nécessaire
+let stripe = null;
+
+function loadStripe() {
+    if (!stripe) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://js.stripe.com/v3/ ';
+            script.onload = () => {
+                if (window.Stripe) {
+                    stripe = window.Stripe;
+                    resolve(stripe);
+                } else {
+                    reject(new Error('Stripe failed to load'));
+                }
+            };
+            script.onerror = () => {
+                reject(new Error('Failed to load Stripe.js'));
+            };
+            document.head.appendChild(script);
+        });
+    }
+    return Promise.resolve(stripe);
+}
+
 document.addEventListener('turbo:load', () => {
-    // Gestion du bouton Retour en haut
+    // ========== Retour en haut ==========
     const btn = document.querySelector('.Btn-retourhaut');
     if (btn) {
-        // Afficher/masquer le bouton en fonction du scroll
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                btn.style.display = 'block'; // Afficher le bouton après 300px de scroll
-            } else {
-                btn.style.display = 'none'; // Masquer le bouton sinon
-            }
+            btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
         });
 
-        // Faire défiler la page vers le haut au clic sur le bouton
         btn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // Défilement fluide
+                behavior: 'smooth'
             });
         });
     }
 
-    // Zoomer sur l'image
-    // à mettre dans les balises img que l'on veut zoomer
+    // ========== Zoom sur les images ==========
     const images = document.querySelectorAll('.zoomable-image');
-    // trouvable sous produit.html.twig et panier
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-image');
-    
     const closeBtn = document.querySelector('.close');
 
-    if (modal && modalImg && closeBtn) {
+    if (images.length > 0 && modal && modalImg && closeBtn) {
         images.forEach(img => {
             img.addEventListener('click', () => {
                 modal.style.display = 'block';
@@ -50,6 +67,57 @@ document.addEventListener('turbo:load', () => {
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 modal.style.display = 'none';
+            }
+        });
+    }
+
+    // ========== Gestion du paiement Stripe ==========
+    const checkoutButton = document.getElementById('checkout-button');
+
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', async () => {
+            try {
+                await loadStripe(); // Charge Stripe si pas encore chargé
+
+                // Récupère la clé publique Stripe définie dans le template Twig
+                const publishableKey = "pk_test_51RPoNtQ5TDJoAfap7bXvZpvwuxfQ4y3GNz3rzjISL5PIuMobaOWqzglna1UfXQE0H5d6rC9bYpa2Rqe0inmZwqQc00SDBsckQy";
+
+                console.log("Clé publique Stripe (dur) :", publishableKey);
+
+                if (!publishableKey) {
+                    throw new Error("Clé publique Stripe manquante");
+                }
+
+                // Appel à l'API pour créer la session Stripe
+                const response = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Erreur lors de la création de la session Stripe');
+                }
+
+                const session = await response.json();
+
+                // Redirection vers Stripe
+                const stripeInstance = Stripe(publishableKey);
+                const { error } = await stripeInstance.redirectToCheckout({
+                    sessionId: session.id
+                });
+
+                if (error) {
+                    console.warn("Erreur Stripe :", error.message);
+                    alert("Échec du paiement : " + error.message);
+                }
+
+            } catch (err) {
+                console.error("Erreur lors du paiement :", err.message);
+                alert("Une erreur est survenue : " + err.message);
+            } finally {
+                // Réactive le bouton en cas d'erreur
+                checkoutButton.disabled = false;
+                checkoutButton.textContent = "Payer ma commande";
             }
         });
     }
