@@ -10,7 +10,6 @@ use App\Repository\ProduitRepository;
 use App\Repository\CommandeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Stripe\Checkout\Session as StripeSession;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,17 +25,22 @@ class CommandeController extends AbstractController
 {
     private $produitRepository;
     private $entityManager;
+    private $mailer;
 
-    public function __construct(ProduitRepository $produitRepository, EntityManagerInterface $entityManager)
-    {
+    public function __construct(
+        ProduitRepository $produitRepository,
+        EntityManagerInterface $entityManager,
+        MailerInterface $mailer
+    ) {
         $this->produitRepository = $produitRepository;
         $this->entityManager = $entityManager;
+        $this->mailer = $mailer;
     }
 
     #[Route('/commande', name: 'app_commande')]
-    public function index(SessionInterface $session, Request $request, MailerInterface $mailer): Response
+    public function index(SessionInterface $session, Request $request): Response
     {
-        // Récupérer le contenu du panier depuis la session
+        // Récupérer le panier depuis la session
         $panier = $session->get('panier', []);
         if (empty($panier)) {
             return $this->redirectToRoute('app_boutique');
@@ -57,14 +61,14 @@ class CommandeController extends AbstractController
             $total += $product->getPrix() * $quantity;
         }
 
-        // Vérifier si l'utilisateur est connecté
+        // Vérifier que l'utilisateur est connecté
         $user = $this->getUser();
         if (!$user) {
             $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
             return $this->redirectToRoute('app_login');
         }
 
-        // Traiter la soumission du formulaire
+        // Si formulaire soumis, valider l’adresse et rediriger vers Stripe
         if ($request->isMethod('POST')) {
             $nom = $request->request->get('nom');
             $prenom = $request->request->get('prenom');
@@ -78,7 +82,7 @@ class CommandeController extends AbstractController
                 return $this->redirectToRoute('app_commande');
             }
 
-            // Vérifier le stock avant de créer les commandes
+            // Vérifier le stock avant de créer la commande
             foreach ($paniervalide as $item) {
                 $product = $item['product'];
                 $quantitepanier = $item['quantity'];
@@ -88,14 +92,14 @@ class CommandeController extends AbstractController
                         $product->getNom(),
                         $product->getStock()
                     ));
-                    return $this->redirectToRoute('app_panier'); // Rediriger vers le panier
+                    return $this->redirectToRoute('app_panier');
                 }
             }
 
-            // Génération du numéro de commande aléatoire
+            // Génère un numéro de commande temporaire
             $aleatoire = random_int(10000, 99999);
 
-            // Stocker temporairement les informations dans la session
+            // Sauvegarde les données dans la session
             $session->set('temp_commande_numero', $aleatoire);
             $session->set('temp_commande_adresse', [
                 'nom' => $nom,
@@ -106,11 +110,10 @@ class CommandeController extends AbstractController
                 'tel' => $tel,
             ]);
 
-            // Rediriger vers la page de paiement Stripe
+            // Redirige vers la page de paiement Stripe
             return $this->redirectToRoute('stripe_checkout');
         }
 
-        // Afficher la page de commande sans formulaire AdresseType
         return $this->render('commande/index.html.twig', [
             'panier' => $paniervalide,
             'total' => $total,
@@ -161,7 +164,7 @@ class CommandeController extends AbstractController
         }
 
         if (empty($lineItems)) {
-            return new Response(json_encode(['error' => 'Aucun produit valide trouvé dans le panier']), 400, ['Content-Type' => 'application/json']);
+            return new Response(json_encode(['error' => 'Aucun produit valide trouvé']), 400, ['Content-Type' => 'application/json']);
         }
 
         try {
@@ -172,7 +175,7 @@ class CommandeController extends AbstractController
 
             $sessionStripe = \Stripe\Checkout\Session::create([
                 'payment_method_types' => ['card'],
-                'line_items' => [$lineItems],
+                'line_items' => $lineItems,
                 'mode' => 'payment',
                 'success_url' => $successUrl,
                 'cancel_url' => $cancelUrl,
@@ -187,6 +190,7 @@ class CommandeController extends AbstractController
     #[Route('/confirmation/{numero}', name: 'app_confirmation')]
     public function confirmation(string $numero): Response
     {
+        // Récupérer les commandes associées au numéro
         $commandes = $this->createCommandeFromSession($numero);
 
         $total = 0;
@@ -195,6 +199,50 @@ class CommandeController extends AbstractController
         }
 
         $dateCommande = $commandes[0]->getDate();
+
+        // Récupérer l'utilisateur connecté
+        $user = $this->getUser();
+        if (!$user) {
+            throw $this->createAccessDeniedException('Utilisateur non connecté');
+        }
+
+        // Préparer les données pour l'e-mail
+        $paniervalide = [];
+
+        foreach ($commandes as $commande) {
+            $produit = $commande->getProduit();
+            $paniervalide[] = [
+                'nom' => $produit->getNom(),
+                'quantite' => $commande->getQuantite(),
+                'prixUnitaire' => $produit->getPrix(),
+                'total' => $produit->getPrix() * $commande->getQuantite()
+            ];
+        }
+
+        // Récupère l'adresse depuis la première commande
+        $adresseLivraison = $commandes[0]->getAdresse();
+        $ville = $commandes[0]->getVille();
+        $codePostal = $commandes[0]->getCodePostal();
+        $tel = $commandes[0]->getTel();
+
+        // Envoyer un e-mail de confirmation
+        $email = (new Email())
+            ->from('dngo3819@example.com')
+            ->to($user->getEmail())
+            ->subject('Mobile World : Confirmation de votre commande')
+            ->html($this->renderView('commande/email.html.twig', [
+                'user' => $user,
+                'numero' => $numero,
+                'panier' => $paniervalide,
+                'total' => $total,
+                'date' => $dateCommande,
+                'adresse' => $adresseLivraison,
+                'ville' => $ville,
+                'code_postal' => $codePostal,
+                'tel' => $tel,
+            ]));
+
+        $this->mailer->send($email);
 
         return $this->render('commande/confirmation.html.twig', [
             'commandes' => $commandes,
@@ -247,7 +295,7 @@ class CommandeController extends AbstractController
 
         $this->entityManager->flush();
 
-        // Supprimer les données temporaires après validation
+        // Supprimer les données temporaires
         $session->remove('panier');
         $session->remove('temp_commande_adresse');
         $session->remove('temp_commande_numero');
