@@ -111,27 +111,12 @@ class CommandeController extends AbstractController
             ]);
 
             // Redirige vers la page de paiement Stripe
-            return $this->redirectToRoute('stripe_checkout');
+            return $this->redirectToRoute('app_commande');
         }
 
         return $this->render('commande/index.html.twig', [
             'panier' => $paniervalide,
             'total' => $total,
-        ]);
-    }
-
-    #[Route('/checkout', name: 'stripe_checkout')]
-    public function checkout(): Response
-    {
-        $stripePublicKey = $_ENV['STRIPE_PUBLISHABLE_KEY'] ?? '';
-
-        if (!$stripePublicKey) {
-            $this->addFlash('error', 'Clé publique Stripe manquante');
-            return $this->redirectToRoute('app_commande');
-        }
-
-        return $this->render('commande/checkout.html.twig', [
-            'stripe_publishable_key' => $stripePublicKey,
         ]);
     }
 
@@ -171,7 +156,7 @@ class CommandeController extends AbstractController
             $aleatoire = $session->get('temp_commande_numero', random_int(10000, 99999));
 
             $successUrl = $this->generateUrl('app_confirmation', ['numero' => $aleatoire], UrlGeneratorInterface::ABSOLUTE_URL);
-            $cancelUrl = $this->generateUrl('stripe_checkout', [], UrlGeneratorInterface::ABSOLUTE_URL);
+            $cancelUrl = $this->generateUrl('app_cancel', [], UrlGeneratorInterface::ABSOLUTE_URL);
 
             $sessionStripe = \Stripe\Checkout\Session::create([
                 'payment_method_types' => ['card'],
@@ -185,6 +170,21 @@ class CommandeController extends AbstractController
         } catch (\Exception $e) {
             return new Response(json_encode(['error' => 'Erreur lors de la création de la session Stripe : ' . $e->getMessage()]), 500, ['Content-Type' => 'application/json']);
         }
+    }
+
+    #[Route('/annuler-commande', name: 'app_cancel')]
+    public function cancel(SessionInterface $session): Response
+    {
+        // Supprimer les données temporaires de la session
+        $session->remove('panier');
+        $session->remove('temp_commande_adresse');
+        $session->remove('temp_commande_numero');
+
+        // Ajouter un message flash pour informer l'utilisateur
+        $this->addFlash('info', 'Votre commande a été annulée avec succès.');
+
+        // Rediriger vers la page de la boutique ou une autre page
+        return $this->redirectToRoute('app_boutique');
     }
 
     #[Route('/confirmation/{numero}', name: 'app_confirmation')]
