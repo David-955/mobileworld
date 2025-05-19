@@ -1,11 +1,8 @@
-// assets/app.js
-
 import './bootstrap.js';
 import './styles/app.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
-// Charger Stripe uniquement si nécessaire
 let stripe = null;
 
 function loadStripe() {
@@ -77,25 +74,22 @@ document.addEventListener('turbo:load', () => {
     if (checkoutButton) {
         checkoutButton.addEventListener('click', async () => {
             try {
-                await loadStripe(); // Charge Stripe si pas encore chargé
+                await loadStripe(); // Charge Stripe si nécessaire
 
-                // Récupère la clé publique Stripe définie dans le template Twig
-                const publishableKey = "pk_test_51RPoNtQ5TDJoAfap7bXvZpvwuxfQ4y3GNz3rzjISL5PIuMobaOWqzglna1UfXQE0H5d6rC9bYpa2Rqe0inmZwqQc00SDBsckQy";
-
-                console.log("Clé publique Stripe (dur) :", publishableKey);
+                const publishableKey = 'pk_test_51RPoNtQ5TDJoAfap7bXvZpvwuxfQ4y3GNz3rzjISL5PIuMobaOWqzglna1UfXQE0H5d6rC9bYpa2Rqe0inmZwqQc00SDBsckQy';
 
                 if (!publishableKey) {
                     throw new Error("Clé publique Stripe manquante");
                 }
 
-                // Appel à l'API pour créer la session Stripe
-                const response = await fetch('/create-checkout-session', {
-                    method: 'POST',
+                // Appel vers ton API Symfony
+                const response = await fetch("/create-checkout-session", {
+                    method: "POST",
                 });
 
                 if (!response.ok) {
                     const errorData = await response.json();
-                    throw new Error(errorData.error || 'Erreur lors de la création de la session Stripe');
+                    throw new Error(errorData.error || 'Erreur serveur');
                 }
 
                 const session = await response.json();
@@ -107,7 +101,6 @@ document.addEventListener('turbo:load', () => {
                 });
 
                 if (error) {
-                    console.warn("Erreur Stripe :", error.message);
                     alert("Échec du paiement : " + error.message);
                 }
 
@@ -115,7 +108,6 @@ document.addEventListener('turbo:load', () => {
                 console.error("Erreur lors du paiement :", err.message);
                 alert("Une erreur est survenue : " + err.message);
             } finally {
-                // Réactive le bouton en cas d'erreur
                 checkoutButton.disabled = false;
                 checkoutButton.textContent = "Payer ma commande";
             }

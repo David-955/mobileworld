@@ -5,16 +5,17 @@ namespace App\Controller;
 use Stripe\Stripe;
 use App\Entity\Commande;
 use App\Service\PdfGenerator;
+use Symfony\Component\Mime\Email;
 use App\Repository\ProduitRepository;
 use App\Repository\CommandeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Stripe\Checkout\Session as StripeSession;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
@@ -33,7 +34,7 @@ class CommandeController extends AbstractController
     }
 
     #[Route('/commande', name: 'app_commande')]
-    public function index(SessionInterface $session, Request $request): Response
+    public function index(SessionInterface $session, Request $request, MailerInterface $mailer): Response
     {
         // Récupérer le contenu du panier depuis la session
         $panier = $session->get('panier', []);
@@ -60,12 +61,11 @@ class CommandeController extends AbstractController
         $user = $this->getUser();
         if (!$user) {
             $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
-            return $this->redirectToRoute('app_login'); // Rediriger vers la page de connexion
+            return $this->redirectToRoute('app_login');
         }
 
-        // Traiter la soumission du formulaire (sans AdresseType)
+        // Traiter la soumission du formulaire
         if ($request->isMethod('POST')) {
-            // Récupérer les données d'adresse depuis la requête
             $nom = $request->request->get('nom');
             $prenom = $request->request->get('prenom');
             $adresse = $request->request->get('adresse');
@@ -73,7 +73,6 @@ class CommandeController extends AbstractController
             $codePostal = $request->request->get('codePostal');
             $tel = $request->request->get('tel');
 
-            // Valider les données d'adresse
             if (empty($nom) || empty($prenom) || empty($adresse) || empty($ville) || empty($codePostal) || empty($tel)) {
                 $this->addFlash('error', 'Veuillez remplir tous les champs de l\'adresse.');
                 return $this->redirectToRoute('app_commande');
@@ -121,74 +120,73 @@ class CommandeController extends AbstractController
     #[Route('/checkout', name: 'stripe_checkout')]
     public function checkout(): Response
     {
-        $stripeKey = $this->getParameter('stripe_publishable_key');
-        dump($stripeKey); // Vérifiez la valeur dans la barre de débogage Symfony
+        $stripePublicKey = $_ENV['STRIPE_PUBLISHABLE_KEY'] ?? '';
+
+        if (!$stripePublicKey) {
+            $this->addFlash('error', 'Clé publique Stripe manquante');
+            return $this->redirectToRoute('app_commande');
+        }
+
         return $this->render('commande/checkout.html.twig', [
-            'stripe_publishable_key' => $stripeKey,
+            'stripe_publishable_key' => $stripePublicKey,
         ]);
     }
 
-    // #[Route('/create-checkout-session', name: 'create_checkout_session', methods: ['POST'])]
-    // public function createCheckoutSession(Request $request): Response
-    // {
-    //     // Récupère la clé secrète depuis .env.local
-    //     $stripeSecretKey = 'sk_test_51RPQKbQ7QAlYQxfgucC7OxvvuT9aNmEn14krkuWtDAOwBuSgQRnKPHmfdSB7BTETtzg3gRdwEse1H6qpNLpPEqLb00pbl1u7YO';
+    #[Route('/create-checkout-session', name: 'create_checkout_session', methods: ['POST'])]
+    public function createCheckoutSession(Request $request): Response
+    {
+        \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
 
-    //     if (!$stripeSecretKey) {
-    //         return new JsonResponse(['error' => 'Clé secrète Stripe manquante'], 500);
-    //     }
+        $session = $request->getSession();
+        $panier = $session->get('panier', []);
 
-    //     \Stripe\Stripe::setApiKey('sk_test_51RPQKbQ7QAlYQxfgucC7OxvvuT9aNmEn14krkuWtDAOwBuSgQRnKPHmfdSB7BTETtzg3gRdwEse1H6qpNLpPEqLb00pbl1u7YO');
+        if (empty($panier)) {
+            return new Response(json_encode(['error' => 'Votre panier est vide']), 400, ['Content-Type' => 'application/json']);
+        }
 
-    //     $session = $request->getSession();
-    //     $panier = $session->get('panier', []);
+        $lineItems = [];
 
-    //     if (empty($panier)) {
-    //         return new JsonResponse(['error' => 'Votre panier est vide'], 400);
-    //     }
+        foreach ($panier as $id => $quantity) {
+            $produit = $this->produitRepository->find($id);
+            if (!$produit) continue;
 
-    //     $lineItems = [];
-    //     foreach ($panier as $id => $quantity) {
-    //         $produit = $this->produitRepository->find($id);
-    //         if (!$produit) {
-    //             continue;
-    //         }
+            $lineItems[] = [
+                'price_data' => [
+                    'currency' => 'eur',
+                    'product_data' => ['name' => $produit->getNom()],
+                    'unit_amount' => (int) ($produit->getPrix() * 100),
+                ],
+                'quantity' => $quantity,
+            ];
+        }
 
-    //         $lineItems[] = [
-    //             'price_data' => [
-    //                 'currency' => 'eur',
-    //                 'product_data' => [
-    //                     'name' => $produit->getNom(),
-    //                 ],
-    //                 'unit_amount' => $produit->getPrix() * 100,
-    //             ],
-    //             'quantity' => $quantity,
-    //         ];
-    //     }
+        if (empty($lineItems)) {
+            return new Response(json_encode(['error' => 'Aucun produit valide trouvé dans le panier']), 400, ['Content-Type' => 'application/json']);
+        }
 
-    //     if (empty($lineItems)) {
-    //         return new JsonResponse(['error' => 'Aucun produit valide dans le panier'], 400);
-    //     }
+        try {
+            $aleatoire = $session->get('temp_commande_numero', random_int(10000, 99999));
 
-    //     try {
-    //         $sessionStripe = \Stripe\Checkout\Session::create([
-    //             'payment_method_types' => ['card'],
-    //             'line_items' => $lineItems,
-    //             'mode' => 'payment',
-    //             'success_url' => $this->generateUrl('success_url', [], UrlGeneratorInterface::ABSOLUTE_URL),
-    //             'cancel_url' => $this->generateUrl('cancel_url', [], UrlGeneratorInterface::ABSOLUTE_URL),
-    //         ]);
+            $successUrl = $this->generateUrl('app_confirmation', ['numero' => $aleatoire], UrlGeneratorInterface::ABSOLUTE_URL);
+            $cancelUrl = $this->generateUrl('stripe_checkout', [], UrlGeneratorInterface::ABSOLUTE_URL);
 
-    //         return new JsonResponse(['id' => $sessionStripe->id]);
-    //     } catch (\Exception $e) {
-    //         return new JsonResponse(['error' => 'Erreur lors de la création de la session Stripe : ' . $e->getMessage()], 500);
-    //     }
-    // }
+            $sessionStripe = \Stripe\Checkout\Session::create([
+                'payment_method_types' => ['card'],
+                'line_items' => [$lineItems],
+                'mode' => 'payment',
+                'success_url' => $successUrl,
+                'cancel_url' => $cancelUrl,
+            ]);
+
+            return new Response(json_encode(['id' => $sessionStripe->id]), 200, ['Content-Type' => 'application/json']);
+        } catch (\Exception $e) {
+            return new Response(json_encode(['error' => 'Erreur lors de la création de la session Stripe : ' . $e->getMessage()]), 500, ['Content-Type' => 'application/json']);
+        }
+    }
 
     #[Route('/confirmation/{numero}', name: 'app_confirmation')]
     public function confirmation(string $numero): Response
     {
-        // Créer la commande si elle n’existe pas encore
         $commandes = $this->createCommandeFromSession($numero);
 
         $total = 0;
@@ -248,6 +246,8 @@ class CommandeController extends AbstractController
         }
 
         $this->entityManager->flush();
+
+        // Supprimer les données temporaires après validation
         $session->remove('panier');
         $session->remove('temp_commande_adresse');
         $session->remove('temp_commande_numero');
@@ -328,7 +328,6 @@ class CommandeController extends AbstractController
         }
 
         $commande = $entityManager->getRepository(Commande::class)->findOneBy(['numero' => $numero, 'produit' => $produitId]);
-
         if (!$commande) {
             throw $this->createNotFoundException('Commande ou produit non trouvé.');
         }
@@ -351,110 +350,5 @@ class CommandeController extends AbstractController
         $this->addFlash('success', 'Le produit a été annulé avec succès.');
 
         return $this->redirectToRoute('app_mes_commandes');
-    }
-
-    #[Route('/paiement/success', name: 'success_url')]
-    public function success(): Response
-    {
-        return $this->render('paiement/success.html.twig', [
-            'message' => 'Votre paiement a été effectué avec succès !',
-        ]);
-    }
-
-    #[Route('/paiement/cancel', name: 'cancel_url')]
-    public function cancel(): Response
-    {
-        return $this->render('paiement/cancel.html.twig', [
-            'message' => 'Votre paiement a été annulé.',
-        ]);
-    }
-
-
-
-
-
-
-
-
-    #[Route('/panier/test', name: 'test_panier')]
-    public function testPanier(SessionInterface $session): Response
-    {
-        // Faux panier avec quelques produits (id => quantité)
-        $panierTest = [
-            17 => 2,  // Produit ID 17, quantité 2
-            18 => 1   // Produit ID 18, quantité 1
-        ];
-
-        // Remplace le panier actuel par le panier de test
-        $session->set('panier', $panierTest);
-
-        // Redirige vers la page de commande
-        return $this->redirectToRoute('app_commande');
-    }
-
-    #[Route('/stripe/test', name: 'stripe_test')]
-    public function stripeTest(): Response
-    {
-        // Récupère la clé publique depuis les paramètres ou .env.local
-        $stripePublicKey = $_ENV['STRIPE_PUBLISHABLE_KEY'] ?? '';
-
-        if (!$stripePublicKey) {
-            throw new \Exception("Clé publique Stripe manquante");
-        }
-
-        return $this->render('commande/stripe_test.html.twig', [
-            'stripe_publishable_key' => $stripePublicKey,
-        ]);
-    }
-
-    #[Route('/create-checkout-session', name: 'create_checkout_session', methods: ['POST'])]
-    public function createCheckoutSession(Request $request): Response
-    {
-        \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
-
-        $session = $request->getSession();
-        $panier = $session->get('panier', []);
-
-        if (empty($panier)) {
-            return new JsonResponse(['error' => 'Votre panier est vide'], 400);
-        }
-
-        $lineItems = [];
-        foreach ($panier as $id => $quantity) {
-            $produit = $this->produitRepository->find($id);
-            if (!$produit) continue;
-
-            $lineItems[] = [
-                'price_data' => [
-                    'currency' => 'eur',
-                    'product_data' => ['name' => $produit->getNom()],
-                    'unit_amount' => $produit->getPrix() * 100,
-                ],
-                'quantity' => $quantity,
-            ];
-        }
-
-        if (empty($lineItems)) {
-            return new JsonResponse(['error' => 'Aucun produit valide trouvé'], 400);
-        }
-
-        try {
-            $aleatoire = random_int(10000, 99999);
-
-            $successUrl = $this->generateUrl('success_url', [], UrlGeneratorInterface::ABSOLUTE_URL);
-            $cancelUrl = $this->generateUrl('cancel_url', [], UrlGeneratorInterface::ABSOLUTE_URL);
-
-            $sessionStripe = \Stripe\Checkout\Session::create([
-                'payment_method_types' => ['card'],
-                'line_items' => $lineItems,
-                'mode' => 'payment',
-                'success_url' => $successUrl,
-                'cancel_url' => $cancelUrl,
-            ]);
-
-            return new JsonResponse(['id' => $sessionStripe->id]);
-        } catch (\Exception $e) {
-            return new JsonResponse(['error' => 'Erreur lors de la création de la session Stripe : ' . $e->getMessage()], 500);
-        }
     }
 }

@@ -5,7 +5,7 @@
 {% block head %}
     {# Définir la clé publique Stripe comme variable globale JS #}
     <script>
-        console.log("Clé publique Stripe :", "{{ stripe_publishable_key }}");
+        // console.log("Clé publique Stripe :", "{{ stripe_publishable_key }}");
         window.stripePublishableKey = "{{ stripe_publishable_key }}";
     </script>
 {% endblock %}
