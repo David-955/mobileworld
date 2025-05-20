@@ -1,0 +1,10 @@
+{% use "form_div_layout.html.twig" %}
+
+{# Personnalise l'affichage des erreurs d'un champ #}
+{% block form_errors %}
+  {% if errors|length > 0 %}
+    <div class="form-error" style="color: red; margin-top: 5px;">
+      {{ errors[0].message }}
+    </div>
+  {% endif %}
+{% endblock %}

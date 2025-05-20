@@ -71,7 +71,7 @@ class RegistrationController extends AbstractController
 
             // Éventuellement : return $this->redirectToRoute('app_login');
         } elseif ($form->isSubmitted()) {
-            $this->addFlash('danger', 'Votre inscription comporte des erreurs. Veuillez corriger les champs. Minimum de 6 caractères pour le mot de passe, et maximum de 100 caractères.');
+            $this->addFlash('danger', 'Votre inscription comporte des erreurs.');
         }
     
         return $this->render('security/register.html.twig', [

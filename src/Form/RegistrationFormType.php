@@ -23,10 +23,10 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez entrer un email',
+                        'message' => 'Veuillez entrer une adresse Email.',
                     ]),
                     new Email([
-                        'message' => 'Veuillez entrer un email valide',
+                        'message' => 'Veuillez entrer une adresse Email valide.',
                     ]),
                 ],
             ])
@@ -48,11 +48,11 @@ class RegistrationFormType extends AbstractType
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
                 'first_options' => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Répéter le mot de passe'],
+                'second_options' => ['label' => 'Répéter le mot de passe.'],
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Entrez un mot de passe s\'il vous plaît',
+                        'message' => 'Entrez un mot de passe s\'il vous plaît.',
                     ]),
                     new Length([
                         'min' => 6,

@@ -9,6 +9,7 @@ use App\Repository\UtilisateurRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
 // Vérifier si l'email est unique à l'inscription
@@ -29,7 +30,13 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     #[ORM\Column(length: 100)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(type: 'string')]
+    #[Assert\Length(
+        min: 6,
+        max: 100,
+        minMessage: "Le mot de passe doit faire au moins {{ limit }} caractères.",
+        maxMessage: "Le mot de passe ne peut pas dépasser {{ limit }} caractères."
+    )]
     private ?string $motdepasse = null;
 
     #[ORM\Column(length: 255)]
@@ -127,14 +134,14 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     {
         return $this->role;
     }
-    
+
     public function setRole(string $role): static
     {
         $this->role = $role;
-    
+
         return $this;
     }
-    
+
     // Il faut utiliser la méthode getPassword() requie par PasswordAuthenticatedUserInterface (et pas getMotdepasse())
     public function getPassword(): ?string
     {
@@ -254,5 +261,4 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
 
         return $this;
     }
-
 }
