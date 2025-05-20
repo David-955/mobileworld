@@ -944,7 +944,7 @@ footer {
 /* Page de mon profil */
 
 .profile-image {
-  width: 40%;
+  width: 25%;
 }
 
 /* Page mes commandes */
@@ -972,11 +972,29 @@ footer {
   padding: 10px;
 }
 
+/* Page de confirmation de commande */
+
+.liste-confirmation {
+  list-style: none;
+  border: 1px solid #9a9a9a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  width: 80%;
+  margin: 0 auto;
+  padding-right: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
 @media (max-width: 860px) {
   /* Partie comparateur */
 
   .comparateur-container-blanc {
     flex-direction: column;
+  }
+
+  .profile-image {
+    width: 40%;
   }
 }
 
@@ -1170,6 +1188,11 @@ footer {
     width: 100%;
   }
 
+  /* pagination */
+  .pagination {
+    gap: 3px;
+  }
+
   /* Pour les smartphones */
   @media (max-width: 480px) {
     /* .btn-submit {
@@ -1229,6 +1252,11 @@ footer {
 
     .product-container-blanc {
       padding: 15px 0px;
+    }
+
+    /* pagination */
+    .pagination {
+      gap: 1px;
     }
   }
 }

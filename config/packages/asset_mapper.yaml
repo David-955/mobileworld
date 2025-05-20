@@ -3,6 +3,7 @@ framework:
         # The paths to make available to the asset mapper.
         paths:
             - assets/
+            - '%kernel.project_dir%/assets'
         missing_import_mode: strict
 
 when@prod:
