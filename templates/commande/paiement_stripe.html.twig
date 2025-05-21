@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <section class="container-vert">
+		<section class="container-blanc">
+            <h1>Procéder au paiement sécurisé</h1>
+            <p>Cliquez sur le bouton ci-dessous pour être redirigé vers Stripe.</p>
+            <img src="{{ asset('images/stripe/stripe.webp') }}" alt="Logo Stripe" class="logo-stripe">
+            {# Bouton qui déclenchera Stripe #}
+            <p><button id="checkout-button" class="btn-submit">Payer ma commande</button></p>
+            <p><a href="{{ path('app_cancel') }}" class="btn-submit">Annuler</a></p>
+    	</section>
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {# Charger Stripe #}
+    <script src="https://js.stripe.com/v3/ "></script>
+
+    {# Script d'initialisation de Stripe au clic #}
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkoutButton = document.getElementById("checkout-button");
+
+            if (!checkoutButton) return;
+
+            checkoutButton.addEventListener("click", async function () {
+                try {
+                    // Étape 1 : Créer la session Stripe
+                    const response = await fetch("{{ path('create_checkout_session') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        }
+                    });
+
+                    const session = await response.json();
+
+                    if (session.error) {
+                        alert("Erreur lors du paiement : " + session.error);
+                        return;
+                    }
+
+                    // Étape 2 : Rediriger vers Stripe Checkout
+                    const { error } = await stripe.redirectToCheckout({
+                        sessionId: session.id
+                    });
+
+                    if (error) {
+                        console.error("Erreur Stripe :", error);
+                        alert("Une erreur est survenue lors de la redirection.");
+                    }
+
+                } catch (err) {
+                    console.error("Erreur réseau :", err);
+                    alert("Impossible de démarrer le paiement.");
+                }
+            });
+        });
+    </script>
+{% endblock %}

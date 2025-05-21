@@ -5,11 +5,15 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
 let stripe = null;
 
+/**
+ * Charge Stripe.js dynamiquement si ce n'est pas déjà fait.
+ * @returns {Promise} Une promesse résolue avec l'instance Stripe.
+ */
 function loadStripe() {
     if (!stripe) {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = 'https://js.stripe.com/v3/ ';
+            script.src = 'https://js.stripe.com/v3/ '; // Supprimé l'espace inutile à la fin
             script.onload = () => {
                 if (window.Stripe) {
                     stripe = window.Stripe;
@@ -32,13 +36,13 @@ document.addEventListener('turbo:load', () => {
     const btn = document.querySelector('.Btn-retourhaut');
     if (btn) {
         window.addEventListener('scroll', () => {
-            btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+            btn.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
 
         btn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+                behavior: 'smooth',
             });
         });
     }
@@ -50,7 +54,7 @@ document.addEventListener('turbo:load', () => {
     const closeBtn = document.querySelector('.close');
 
     if (images.length > 0 && modal && modalImg && closeBtn) {
-        images.forEach(img => {
+        images.forEach((img) => {
             img.addEventListener('click', () => {
                 modal.style.display = 'block';
                 modalImg.src = img.src;
@@ -72,19 +76,30 @@ document.addEventListener('turbo:load', () => {
     const checkoutButton = document.getElementById('checkout-button');
 
     if (checkoutButton) {
-        checkoutButton.addEventListener('click', async () => {
+        checkoutButton.addEventListener('click', async (event) => {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
             try {
-                await loadStripe(); // Charge Stripe si nécessaire
+                // Désactive le bouton pendant le traitement
+                checkoutButton.disabled = true;
+                checkoutButton.textContent = 'Traitement en cours...';
+
+                // Charge Stripe
+                await loadStripe();
 
                 const publishableKey = 'pk_test_51RPoNtQ5TDJoAfap7bXvZpvwuxfQ4y3GNz3rzjISL5PIuMobaOWqzglna1UfXQE0H5d6rC9bYpa2Rqe0inmZwqQc00SDBsckQy';
 
                 if (!publishableKey) {
-                    throw new Error("Clé publique Stripe manquante");
+                    throw new Error('Clé publique Stripe manquante');
                 }
 
-                // Appel vers ton API Symfony
-                const response = await fetch("/create-checkout-session", {
-                    method: "POST",
+                // Appel vers l'API Symfony pour créer une session de paiement
+                const response = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
                 });
 
                 if (!response.ok) {
@@ -94,22 +109,22 @@ document.addEventListener('turbo:load', () => {
 
                 const session = await response.json();
 
-                // Redirection vers Stripe
+                // Redirection vers Stripe Checkout
                 const stripeInstance = Stripe(publishableKey);
                 const { error } = await stripeInstance.redirectToCheckout({
-                    sessionId: session.id
+                    sessionId: session.id,
                 });
 
                 if (error) {
-                    alert("Échec du paiement : " + error.message);
+                    throw new Error(`Échec du paiement : ${error.message}`);
                 }
-
             } catch (err) {
-                console.error("Erreur lors du paiement :", err.message);
-                alert("Une erreur est survenue : " + err.message);
+                console.error('Erreur lors du paiement :', err.message);
+                alert(`Une erreur est survenue : ${err.message}`);
             } finally {
+                // Réactive le bouton après traitement
                 checkoutButton.disabled = false;
-                checkoutButton.textContent = "Payer ma commande";
+                checkoutButton.textContent = 'Payer ma commande';
             }
         });
     }

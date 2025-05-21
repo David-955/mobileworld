@@ -4,17 +4,21 @@
 {% endblock %}
 
 {% block content %}
+	{# Afficher les messages flash #}
+	{% for label, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+		{% endfor %}
+	{% endfor %}
+
 	<h1>Passer commande</h1>
 
 	<section class="container-vert">
 		<section class="container-blanc">
 
-
-		
 			<p style="margin-left: 15px; text-align: left;">
 				<a href="{{ path('app_panier') }}">Panier</a>
-				> 
-																								                Passer commande
+				> Passer commande
 			</p>
 
 			{% if panier|length > 0 %}
@@ -59,7 +63,7 @@
 			<h2>2. Adresse de Livraison</h2>
 			<form method="post" action="{{ path('app_commande') }}">
 				<label for="nom">* Nom :</label>
-				<input type="text" id="nom" name="nom" class="form-control" placeholder="Entrez votre nom" maxlength="100" required>
+				<input type="text" id="nom" name="nom" class="form-control" placeholder="Entrez votre nom" value="{{ app.request.get('nom')|default('') }}" minlength="3" maxlength="100" required>
 				<br>
 				<label for="prenom">* Prénom :</label>
 				<input type="text" id="prenom" name="prenom" class="form-control" placeholder="Entrez votre prénom" maxlength="100" required>
@@ -78,9 +82,9 @@
 				<br>
 
 				<h2>3. Payer ma commande</h2>
-				<p>Veuillez cliquer sur le bouton ci-dessous pour effectuer votre paiement sécurisé via la plateforme Stripe.</p>
+				<p>Veuillez cliquer sur le bouton ci-dessous pour effectuer votre paiement sécurisé via notre page de paiement.</p>
 				{# voir app.js pour id="checkout-button" #}
-				<button type="submit" id="checkout-button" class="btn-submit">Payer ma commande</button>
+				<button type="submit" class="btn-submit">Page de paiement</button>
 				<br><br>
 				<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
 				<br>

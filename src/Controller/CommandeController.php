@@ -68,7 +68,7 @@ class CommandeController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        // Si formulaire soumis, valider l’adresse et rediriger vers Stripe
+        // Si formulaire soumis
         if ($request->isMethod('POST')) {
             $nom = $request->request->get('nom');
             $prenom = $request->request->get('prenom');
@@ -77,43 +77,43 @@ class CommandeController extends AbstractController
             $codePostal = $request->request->get('codePostal');
             $tel = $request->request->get('tel');
 
+            // Vérifie ici si un champ est vide
             if (empty($nom) || empty($prenom) || empty($adresse) || empty($ville) || empty($codePostal) || empty($tel)) {
-                $this->addFlash('error', 'Veuillez remplir tous les champs de l\'adresse.');
-                return $this->redirectToRoute('app_commande');
-            }
-
-            // Vérifier le stock avant de créer la commande
-            foreach ($paniervalide as $item) {
-                $product = $item['product'];
-                $quantitepanier = $item['quantity'];
-                if ($product->getStock() < $quantitepanier) {
-                    $this->addFlash('error', sprintf(
-                        'Le stock du produit "%s" est insuffisant. Stock disponible : %d',
-                        $product->getNom(),
-                        $product->getStock()
-                    ));
-                    return $this->redirectToRoute('app_panier');
+                $this->addFlash('error', 'Veuillez remplir tous les champs obligatoires.');
+            } else {
+                // ✅ Tous les champs sont remplis — vérification du stock
+                foreach ($paniervalide as $item) {
+                    $product = $item['product'];
+                    $quantitepanier = $item['quantity'];
+                    if ($product->getStock() < $quantitepanier) {
+                        $this->addFlash('error', sprintf(
+                            'Le stock du produit "%s" est insuffisant. Stock disponible : %d',
+                            $product->getNom(),
+                            $product->getStock()
+                        ));
+                        return $this->redirectToRoute('app_panier');
+                    }
                 }
+
+                // Génère un numéro de commande temporaire
+                $aleatoire = random_int(10000, 99999);
+
+                // Sauvegarde les données dans la session
+                $session->set('temp_commande_numero', $aleatoire);
+                $session->set('temp_commande_adresse', [
+                    'nom' => $nom,
+                    'prenom' => $prenom,
+                    'adresse' => $adresse,
+                    'ville' => $ville,
+                    'codePostal' => $codePostal,
+                    'tel' => $tel,
+                ]);
+
+                return $this->redirectToRoute('app_paiement_stripe');
             }
-
-            // Génère un numéro de commande temporaire
-            $aleatoire = random_int(10000, 99999);
-
-            // Sauvegarde les données dans la session
-            $session->set('temp_commande_numero', $aleatoire);
-            $session->set('temp_commande_adresse', [
-                'nom' => $nom,
-                'prenom' => $prenom,
-                'adresse' => $adresse,
-                'ville' => $ville,
-                'codePostal' => $codePostal,
-                'tel' => $tel,
-            ]);
-
-            // Redirige vers la page de paiement Stripe
-            return $this->redirectToRoute('app_commande');
         }
 
+        // Toujours afficher la page — que ce soit GET ou POST (avec erreur)
         return $this->render('commande/index.html.twig', [
             'panier' => $paniervalide,
             'total' => $total,
@@ -170,6 +170,14 @@ class CommandeController extends AbstractController
         } catch (\Exception $e) {
             return new Response(json_encode(['error' => 'Erreur lors de la création de la session Stripe : ' . $e->getMessage()]), 500, ['Content-Type' => 'application/json']);
         }
+    }
+
+    #[Route('/paiement/stripe', name: 'app_paiement_stripe')]
+    public function paiementStripe(): Response
+    {
+        return $this->render('commande/paiement_stripe.html.twig', [
+            'stripe_key' => $_ENV['STRIPE_PUBLISHABLE_KEY'] // Assure-toi que cette variable existe dans .env
+        ]);
     }
 
     #[Route('/annuler-commande', name: 'app_cancel')]

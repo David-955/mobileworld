@@ -30,7 +30,7 @@ class Commande
     private ?Produit $produit = null;
 
     #[ORM\Column]
-    private ?int $numero = null;
+    private ?string $numero = null;
 
     // Partie adresse de livraison
     #[ORM\Column(length: 100, nullable: false)]
@@ -112,12 +112,12 @@ class Commande
         return $this;
     }
 
-    public function getNumero(): ?int
+    public function getNumero(): ?string
     {
         return $this->numero;
     }
 
-    public function setNumero(int $numero): static
+    public function setNumero(string $numero): static
     {
         $this->numero = $numero;
         return $this;
