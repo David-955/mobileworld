@@ -18,6 +18,11 @@
 				{% endfor %}
 			</div>
 
+			{# Affichage des erreurs d'authentification #}
+			{% if error %}
+				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
 			<p>
 				<strong>Content de vous revoir !</strong>
 			</p>
@@ -38,12 +43,7 @@
 				</a>
 			</p>
 
-			<form
-				method="post">
-				{# Affichage des erreurs d'authentification #}
-				{% if error %}
-					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-				{% endif %}
+			<form method="post">
 
 				{% if app.user %}
 					{# Si déjà connecté, on redirige la personne sur la page d'accueil #}

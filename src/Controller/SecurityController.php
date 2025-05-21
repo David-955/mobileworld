@@ -48,7 +48,7 @@ class SecurityController extends AbstractController
             // Rechercher l'utilisateur par son email
             $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
             if (!$user) {
-                $this->addFlash('error', 'Aucun compte trouvé avec cette adresse e-mail.');
+                $this->addFlash('danger', 'Aucun compte trouvé avec cette adresse Email.');
                 return $this->redirectToRoute('app_forgot_password');
             }
     
@@ -100,7 +100,7 @@ class SecurityController extends AbstractController
     
         // Générer un token unique pour la réinitialisation
         $resetToken = uniqid('', true);
-        $user->setToken($resetToken); // Assurez-vous que votre entité Utilisateur a une méthode `setToken`
+        $user->setToken($resetToken);
         $entityManager->flush();
     
         // Rediriger vers la page de réinitialisation avec le token

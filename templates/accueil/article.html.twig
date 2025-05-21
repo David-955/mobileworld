@@ -6,7 +6,9 @@
 
 {% block content %}
 	{# 10% ici / 80% contenu principal / 10% * #}
-	<p style="margin-left: 10%;"><a href="{{ path('app_accueil') }}">Accueil</a> > {{ title }}</p>
+	<p style="margin-left: 10%;">
+		<a href="{{ path('app_accueil') }}">Accueil</a>
+		{{ title }}</p>
 	<section class="article-container">
 		<section class="article-titre">
 			<h1>{{ article.title }}</h1>
@@ -54,7 +56,9 @@
 				</section>
 				<br>
 			{% else %}
-				<p><em>Aucun commentaire pour le moment.</em></p>
+				<p>
+					<em>Aucun commentaire pour le moment.</em>
+				</p>
 			{% endfor %}
 			{# Affichage de la barre de pagination #}
 			{{ knp_pagination_render(pagination) }}
@@ -64,23 +68,35 @@
 			{% if app.user %}
 				<h2>Ajouter un commentaire</h2>
 
+
 				<section class="ajout-commentaires">
 					{{ form_start(form, {'attr': {'class': 'commentaire-form'}}) }}
-					{{ form_label(form.contenu, 'Exprimez-vous : ', {'label_attr': {'class': 'form-label'}}) }}
-					{{ form_errors(form.contenu) }} {# Affiche les erreurs spécifiques au champ #}
-					{{ form_row(form.contenu, {'attr': {'class': 'form-control w-100 h-100', 'placeholder': 'Entrez votre commentaire ici (1500 caractères maximum)'}}) }}
+
+					{{ form_row(form.contenu, {
+						label: 'Exprimez-vous :',
+						attr: {
+							placeholder: 'Entrez votre commentaire ici (1500 caractères maximum)',
+							class: 'form-control',
+							maxlength: 1500
+						},
+						label_attr: { class: 'form-label' }
+					}) }}
 					<br>
 					<button class="btn-submit" type="submit">Ajouter un commentaire</button>
+
 					{{ form_end(form) }}
 				</section>
 				<br>
 			{% else %}
-				<p><em>Vous devez être
-					<a href="{{ path('app_login') }}">connecté</a>
-					pour pouvoir poster un commentaire.</em></p>
+				<p>
+					<em>Vous devez être
+						<a href="{{ path('app_login') }}">connecté</a>
+						pour pouvoir poster un commentaire.</em>
+				</p>
 			{% endif %}
-			<hr><br
-			{# Bouton pour continuer les achats #}
-			<p><a href="{{ path('app_accueil') }}" class="btn-submit">Retour aux news</a></p>
+			<hr>
+			<p>
+				<a href="{{ path('app_accueil') }}" class="btn-submit">Retour aux news</a>
+			</p>
 		</section>
 	{% endblock %}

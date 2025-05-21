@@ -131,13 +131,13 @@ class RegistrationController extends AbstractController
         // Récupérer l'e-mail depuis la requête
         $email = $request->query->get('email');
         if (!$email) {
-            $this->addFlash('error', 'Veuillez fournir une adresse e-mail.');
+            $this->addFlash('danger', 'Veuillez fournir une adresse e-mail.');
             return $this->redirectToRoute('app_verification_pending');
         }
         // Rechercher l'utilisateur par son email
         $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
         if (!$user) {
-            $this->addFlash('error', 'Aucun compte trouvé avec cette adresse e-mail.');
+            $this->addFlash('danger', 'Aucun compte trouvé avec cette adresse e-mail.');
             return $this->redirectToRoute('app_verification_pending');
         }
         // Vérifier si l'utilisateur est déjà vérifié

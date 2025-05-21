@@ -3,7 +3,7 @@
 	{# <head>
 				<title>Mobile World : Confirmation de commande n°
 					{{ numero }}</title>
-			</head> #}
+	</head> #}
 	<body>
 		<h1>Bonjour {{ user.prenom }} {{ user.nom }},</h1>
 		<p>Votre commande a bien été passée !</p>
@@ -22,7 +22,7 @@
 
 		<p>
 			<strong>Date de la commande :</strong>
-			{{ date|date('d/m/Y H:i') }}</p>
+			{{ date|date('d/m/Y H:i', 'Europe/Paris') }}</p>
 		<p>
 			<ul>
 				{% for item in panier %}
@@ -33,7 +33,7 @@
 						- Prix unitaire :
 						{{ item.prixUnitaire }}
 						€
-																	            - Total :
+						- Total :
 						{{ item.total }}
 						€
 					</li>

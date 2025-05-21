@@ -12,7 +12,7 @@
             <h2>Détails de la commande numéro <u>{{ commandes[0].numero }}</u> :</h2>
             <p>
                 <strong>Date de la commande :</strong>
-                {{ date|date('d/m/Y') }} à {{ date|date('H:i:s') }}
+                {{ date|date('d/m/Y') }} à {{ date|date('H:i:s', 'Europe/Paris') }}
             </p>
 
             {# Lien pour télécharger le récapitulatif de commande #}

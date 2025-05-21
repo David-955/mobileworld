@@ -5,11 +5,18 @@
 
 {% block content %}
 	<section class="container-vert">
-		<section class="container-blanc">
+		<section
+			class="container-blanc">
+			{# Afficher les messages flash #}
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+				{% endfor %}
+			{% endfor %}
 			<h1>Compte non vérifié</h1>
 			<p>Votre compte n'est pas encore vérifié ?</p>
 			<p>Un renvoi d'un nouveau lien est possible : Veuillez vérifier votre adresse Email en cliquant sur le lien que nous vous avons envoyé.</p>
-			
+
 			<!-- Formulaire pour saisir l'e-mail -->
 			<form method="get" action="{{ path('app_resend_confirmation') }}">
 				<div class="form-group">

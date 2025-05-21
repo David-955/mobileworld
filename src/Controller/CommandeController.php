@@ -262,7 +262,7 @@ class CommandeController extends AbstractController
             throw new \Exception("Données manquantes.");
         }
 
-        $dateCommande = new \DateTime();
+        $dateCommande = new \DateTime('now', new \DateTimeZone('Europe/Paris'));
         $commandes = [];
 
         foreach ($panier as $id => $quantity) {
