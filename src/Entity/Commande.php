@@ -35,15 +35,18 @@ class Commande
 
     // Partie adresse de livraison
     #[ORM\Column(length: 100, nullable: false)]
+    #[Assert\Regex(pattern: '/^[\p{L}\s\-]+$/u', message: 'Le nom ne doit contenir que des lettres, espaces ou tirets.')]
     private string $nom;
 
     #[ORM\Column(length: 100, nullable: false)]
+    #[Assert\Regex(pattern: '/^[\p{L}\s\-]+$/u', message: 'Le prénom ne doit contenir que des lettres, espaces ou tirets.')]
     private string $prenom;
 
     #[ORM\Column(length: 255, nullable: false)] // Plus long pour les adresses complètes
     private string $adresse;
 
     #[ORM\Column(length: 100, nullable: false)]
+    #[Assert\Regex(pattern: '/^[\p{L}\s\-]+$/u', message: 'La ville ne doit contenir que des lettres, espaces ou tirets.')]
     private string $ville;
 
     #[ORM\Column(length: 5, nullable: false)] // Code postal sur 5 caractères

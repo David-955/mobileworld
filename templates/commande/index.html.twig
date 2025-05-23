@@ -68,8 +68,10 @@
 
 			<!-- Formulaire global -->
 			<h2>2. Adresse de Livraison</h2>
+
 			{# Personnalisation des messages d'erreurs #}
-{% form_theme formAdresse "form/champs.html.twig" %}
+			{% form_theme formAdresse "form/champs.html.twig" %}
+			
 			{{ form_start(formAdresse) }}
 			<div class="form-group">
 				{{ form_row(formAdresse.nom) }}
