@@ -1,58 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Contactez-nous
-{% endblock %}
+{% block title %}Mobile World : Contactez-nous{% endblock %}
 
 {% block content %}
-	<h1>Contactez-nous</h1>
+    <h1>Contactez-nous</h1>
 
-	<section class="container-vert">
-		<section
-			class="container-blanc">
-			{# Afficher les messages flash #}
-			{% for label, messages in app.flashes %}
-				{% for message in messages %}
-					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
-				{% endfor %}
-			{% endfor %}
+    <section class="container-vert">
+        <section class="container-blanc">
+            {# Afficher les messages flash #}
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+                {% endfor %}
+            {% endfor %}
 
-			<h2>Formulaire de contact :</h2>
+            <h2>Formulaire de contact :</h2>
 
-			<form method="post" action="{{ path('app_contact') }}">
-				<div class="form-group">
-					<label for="nom">Votre nom :</label>
-					<br>
-					<input type="text" id="nom" name="nom" value="{{ formData.nom }}" class="form-control" placeholder="Entrez votre nom" required>
-				</div>
+			{# Personnalisation des messages d'erreurs #}
+			{% form_theme form "form/champs.html.twig" %}
+            {{ form_start(form) }}
+                <div class="form-group">
+                    {{ form_label(form.nom) }}
+					{{ form_errors(form.nom) }}
+                    {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre nom'}}) }}
+                </div>
 
-				<div class="form-group">
-					<label for="prenom">Votre prénom :</label>
-					<br>
-					<input type="text" id="prenom" name="prenom" value="{{ formData.prenom }}" class="form-control" placeholder="Entrez votre prénom" required>
-				</div>
+                <div class="form-group">
+                    {{ form_label(form.prenom) }}
+					{{ form_errors(form.prenom) }}
+                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre prénom'}}) }}
+                </div>
 
-				<div class="form-group">
-					<label for="email">Votre adresse Email :</label>
-					<br>
-					<input type="email" id="email" name="email" value="{{ formData.email }}" class="form-control" placeholder="Entrez votre adresse Email" required>
-				</div>
+                <div class="form-group">
+                    {{ form_label(form.email) }}
+					{{ form_errors(form.email) }}
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre adresse Email'}}) }}
+                </div>
 
-				<div class="form-group">
-					<label for="sujet">Sujet du message :</label>
-					<br>
-					<input type="text" id="sujet" name="sujet" value="{{ formData.sujet }}" class="form-control" placeholder="Entrez le sujet du message" required>
-				</div>
+                <div class="form-group">
+                    {{ form_label(form.sujet) }}
+					{{ form_errors(form.sujet) }}
+                    {{ form_widget(form.sujet, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le sujet du message'}}) }}
+                </div>
 
-				<div class="form-group">
-					<label for="message">Votre message :</label>
-					<br>
-					<textarea id="message" name="message" class="form-control" placeholder="Entrez votre message" required>{{ formData.message }}</textarea>
-				</div>
+                <div class="form-group">
+                    {{ form_label(form.message) }}
+					{{ form_errors(form.message) }}
+                    {{ form_widget(form.message, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre message'}}) }} 
+                </div>
 
-				<button class="btn-submit" type="submit">Envoyer</button>
-			</form>
-
-		</section>
-	</section>
-
+                <button class="btn-submit" type="submit">Envoyer</button>
+            {{ form_end(form) }}
+        </section>
+    </section>
 {% endblock %}
