@@ -17,9 +17,8 @@
 				<ul class="liste-commande1">
 					{# Affichage du message de confirmation #}
 					{# Boucle sur chaque numéro de commande #}
-					{% for numeroCommande, groupe in commandesGroupedByNumero %}
-						<li class="liste-commande2">
-							<div class="commande-header">
+						{% for numeroCommande, groupe in commandesGroupedByNumero %}
+							<li class="liste-commande2"> <div class="commande-header">
 								<p>
 									<strong>Numéro de commande :</strong>
 									{{ numeroCommande }}</p>
@@ -40,7 +39,7 @@
 							</div>
 
 							{# <strong>Statut :</strong>
-														{{ groupe.statut }}<br><br> #}
+																					{{ groupe.statut }}<br><br> #}
 
 							{# Boucle sur les produits de cette commande #}
 							{% for commande in groupe.produits %}
@@ -84,10 +83,16 @@
 							<br>
 
 							{# Lien pour télécharger le récapitulatif de commande #}
-							{% if groupe.statut != 'Produit annulé par le client' %}
-								<a href="{{ path('app_commande_pdf', {'numero': numeroCommande, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
-									Télécharger le récapitulatif de commande
+							{# Compte combien de produits ne sont pas annulés #}
+							{% set produitsNonAnnules = groupe.produits|filter(p => p.statut != 'Produit annulé par le client') %}
+
+							{# Affiche le lien seulement s'il y a des produits non annulés #}
+								{% if produitsNonAnnules|length > 0 %}
+									<a href="{{ path('app_commande_pdf', {'numero': numeroCommande, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit"> Télécharger le récapitulatif de commande
 								</a>
+								<br><br>
+							{% else %}
+								<em>Tous les produits de cette commande ont été annulés.</em>
 								<br><br>
 							{% endif %}
 						</li>
