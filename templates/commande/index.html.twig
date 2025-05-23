@@ -4,17 +4,18 @@
 {% endblock %}
 
 {% block content %}
-	{# Afficher les messages flash #}
-	{% for label, messages in app.flashes %}
-		{% for message in messages %}
-			<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
-		{% endfor %}
-	{% endfor %}
+
 
 	<h1>Passer commande</h1>
 
 	<section class="container-vert">
 		<section class="container-blanc">
+			{# Afficher les messages flash #}
+			{# {% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+				{% endfor %}
+			{% endfor %} #}
 
 			<p style="margin-left: 15px; text-align: left;">
 				<a href="{{ path('app_panier') }}">Panier</a>
@@ -59,41 +60,51 @@
 			{% endif %}
 			<hr>
 
+			{% if formAdresse is not empty and formAdresse.vars.errors|length > 0 %}
+				<div class="alert alert-danger">
+					Veuillez corriger les erreurs ci-dessous.
+				</div>
+			{% endif %}
+
 			<!-- Formulaire global -->
 			<h2>2. Adresse de Livraison</h2>
-			<form method="post" action="{{ path('app_commande') }}">
-				<label for="nom">* Nom :</label>
-				<input type="text" id="nom" name="nom" class="form-control" placeholder="Entrez votre nom" value="{{ app.request.get('nom')|default('') }}" minlength="3" maxlength="100" required>
-				<br>
-				<label for="prenom">* Prénom :</label>
-				<input type="text" id="prenom" name="prenom" class="form-control" placeholder="Entrez votre prénom" maxlength="100" required>
-				<br>
-				<label for="adresse">* Adresse :</label>
-				<input type="text" id="adresse" name="adresse" class="form-control" placeholder="Entrez votre adresse" maxlength="100" required>
-				<br>
-				<label for="ville">* Ville :</label>
-				<input type="text" id="ville" name="ville" class="form-control" placeholder="Entrez votre ville" maxlength="100" required>
-				<br>
-				<label for="codePostal">* Code Postal :</label>
-				<input type="text" id="codePostal" name="codePostal" class="form-control" placeholder="Entrez votre code postal" maxlength="5" required>
-				<br>
-				<label for="tel">* Téléphone :</label>
-				<input type="text" id="tel" name="tel" class="form-control" placeholder="Entrez votre numéro de téléphone" maxlength="10" required>
-				<br>
+			{# Personnalisation des messages d'erreurs #}
+{% form_theme formAdresse "form/champs.html.twig" %}
+			{{ form_start(formAdresse) }}
+			<div class="form-group">
+				{{ form_row(formAdresse.nom) }}
+			</div>
+			<div class="form-group">
+				{{ form_row(formAdresse.prenom) }}
+			</div>
+			<div class="form-group">
+				{{ form_row(formAdresse.adresse) }}
+			</div>
+			<div class="form-group">
+				{{ form_row(formAdresse.ville) }}
+			</div>
+			<div class="form-group">
+				{{ form_row(formAdresse.codePostal) }}
+			</div>
+			<div class="form-group">
+				{{ form_row(formAdresse.tel) }}
+			</div>
 
-				<h2>3. Payer ma commande</h2>
-				<p>Veuillez cliquer sur le bouton ci-dessous pour effectuer votre paiement sécurisé via notre page de paiement.</p>
-				{# voir app.js pour id="checkout-button" #}
-				<button type="submit" class="btn-submit">Page de paiement</button>
-				<br><br>
-				<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
-				<br>
-				<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
-			</form>
-		</section>
+			<h2>3. Payer ma commande</h2>
+			<p>Veuillez cliquer sur le bouton ci-dessous pour effectuer votre paiement sécurisé via notre page de paiement.</p>
+
+			<button type="submit" class="btn-submit">Valider l'adresse et payer</button>
+			{{ form_end(formAdresse) }}
+
+			{# <button type="submit" class="btn-submit">Page de paiement</button> #}
+			<br><br>
+			<small class="required-note">{{ "(*) Tous les champs sont obligatoire" }}</small>
+			<br>
+			<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
+		</form>
 	</section>
-	<div id="image-modal" class="modal">
-		<span class="close">&times;</span>
-		<img class="modal-content" id="modal-image">
-	</div>
-{% endblock %}
+</section>
+<div id="image-modal" class="modal">
+	<span class="close">&times;</span>
+	<img class="modal-content" id="modal-image">
+</div>{% endblock %}

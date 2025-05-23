@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CommandeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CommandeRepository::class)]
 class Commande
@@ -39,19 +40,22 @@ class Commande
     #[ORM\Column(length: 100, nullable: false)]
     private string $prenom;
 
-    #[ORM\Column(length: 100, nullable: false)]
+    #[ORM\Column(length: 255, nullable: false)] // Plus long pour les adresses complètes
     private string $adresse;
 
     #[ORM\Column(length: 100, nullable: false)]
     private string $ville;
 
-    #[ORM\Column(length: 4, nullable: false)]
-    private int $codePostal;
+    #[ORM\Column(length: 5, nullable: false)] // Code postal sur 5 caractères
+    #[Assert\Regex(pattern: '/^\d{5}$/', message: 'Le code postal doit contenir exactement 5 chiffres.')]
+    private string $codePostal;
 
-    #[ORM\Column(length: 9, nullable: false)]
-    private int $tel;
+    #[ORM\Column(length: 10, nullable: false)] // Numéro de téléphone sur 10 chiffres
+    #[Assert\Regex(pattern: '/^0\d{9}$/', message: 'Le numéro de téléphone doit contenir exactement 10 chiffres et commencer par un zéro.')]
+    private string $tel;
 
     // Getters et setters
+
     public function getId(): ?int
     {
         return $this->id;
@@ -168,7 +172,7 @@ class Commande
         return $this;
     }
 
-    public function getCodePostal(): int
+    public function getCodePostal(): string
     {
         return $this->codePostal;
     }
@@ -179,7 +183,7 @@ class Commande
         return $this;
     }
 
-    public function getTel(): int
+    public function getTel(): string
     {
         return $this->tel;
     }

@@ -1521,16 +1521,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "v4.24.5",
+            "version": "v4.24.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "dcc64d06fc142f894667439e72837aa3742b5460"
+                "reference": "b61cd46c454d853438ded3ca21eac1ad537589aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/dcc64d06fc142f894667439e72837aa3742b5460",
-                "reference": "dcc64d06fc142f894667439e72837aa3742b5460",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/b61cd46c454d853438ded3ca21eac1ad537589aa",
+                "reference": "b61cd46c454d853438ded3ca21eac1ad537589aa",
                 "shasum": ""
             },
             "require": {
@@ -1611,7 +1611,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
-                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.24.5"
+                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.24.7"
             },
             "funding": [
                 {
@@ -1619,7 +1619,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-10T19:31:19+00:00"
+            "time": "2025-05-14T17:55:05+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -7822,16 +7822,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v6.4.19",
+            "version": "v6.4.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "f3e853dffe7c5db675686b8216d6d890dad8c885"
+                "reference": "47610116f476595b90c368ff2a22514050712785"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/f3e853dffe7c5db675686b8216d6d890dad8c885",
-                "reference": "f3e853dffe7c5db675686b8216d6d890dad8c885",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/47610116f476595b90c368ff2a22514050712785",
+                "reference": "47610116f476595b90c368ff2a22514050712785",
                 "shasum": ""
             },
             "require": {
@@ -7899,7 +7899,7 @@
             "description": "Provides tools to validate values",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/validator/tree/v6.4.19"
+                "source": "https://github.com/symfony/validator/tree/v6.4.21"
             },
             "funding": [
                 {
@@ -7915,7 +7915,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-19T13:12:02+00:00"
+            "time": "2025-04-30T18:50:04+00:00"
         },
         {
             "name": "symfony/var-dumper",

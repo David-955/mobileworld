@@ -20,7 +20,6 @@ class Commentaire
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: "Le contenu ne peut pas être vide.")]
-    // à placer avant la propriété $contenu pour que ce soit spécifique qu'à cette propriété
     #[Assert\Length(
         max: 1500, // Longueur maximale
         maxMessage: 'Le contenu ne doit pas dépasser {{ limit }} caractères.' // Message d'erreur

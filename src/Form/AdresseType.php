@@ -2,12 +2,10 @@
 
 namespace App\Form;
 
-use App\Entity\Commande;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Validator\Constraints as Assert;
 
 class AdresseType extends AbstractType
 {
@@ -15,25 +13,65 @@ class AdresseType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, [
-                'label' => 'Nom',
-                'constraints' => [
-                    new Assert\Length([
-                        'max' => 100,
-                        'maxMessage' => 'Votre Nom ne doit pas dépasser {{ limit }} caractères.',
-                    ]),
+                'label' => '* Nom',
+                'attr' => [
+                    'placeholder' => 'Entrez votre nom',
+                    'minlength' => 3,
+                    'maxlength' => 100,
+                    'class' => 'form-control'
                 ],
             ])
-            ->add('prenom', TextType::class, ['label' => 'Prénom'])
-            ->add('adresse', TextType::class, ['label' => 'Adresse'])
-            ->add('ville', TextType::class, ['label' => 'Ville'])
-            ->add('codePostal', TextType::class, ['label' => 'Code Postal'])
-            ->add('tel', TextType::class, ['label' => 'Téléphone']);
+            ->add('prenom', TextType::class, [
+                'label' => '* Prénom',
+                'attr' => [
+                    'placeholder' => 'Entrez votre prénom',
+                    'minlength' => 3,
+                    'maxlength' => 100,
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('adresse', TextType::class, [
+                'label' => '* Adresse',
+                'attr' => [
+                    'placeholder' => 'Entrez votre adresse',
+                    'minlength' => 3,
+                    'maxlength' => 255,
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('ville', TextType::class, [
+                'label' => '* Ville',
+                'attr' => [
+                    'placeholder' => 'Entrez votre ville',
+                    'minlength' => 1,
+                    'maxlength' => 100,
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('codePostal', TextType::class, [
+                'label' => '* Code Postal',
+                'attr' => [
+                    'placeholder' => 'Exemple : 75000',
+                    'minlength' => 5,
+                    'maxlength' => 5,
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('tel', TextType::class, [
+                'label' => '* Téléphone',
+                'attr' => [
+                    'placeholder' => 'Exemple : 0612345678',
+                    'minlength' => 10,
+                    'maxlength' => 10,
+                    'class' => 'form-control'
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Commande::class,
+            'data_class' => \App\Entity\Commande::class,
         ]);
     }
 }

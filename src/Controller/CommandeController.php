@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Stripe\Stripe;
 use App\Entity\Commande;
+use App\Form\AdresseType;
 use App\Service\PdfGenerator;
 use Symfony\Component\Mime\Email;
 use App\Repository\ProduitRepository;
@@ -45,14 +46,14 @@ class CommandeController extends AbstractController
         if (empty($panier)) {
             return $this->redirectToRoute('app_boutique');
         }
-
+    
         // Récupérer les produits correspondants
         $paniervalide = [];
         $total = 0;
         foreach ($panier as $id => $quantity) {
             $product = $this->produitRepository->find($id);
             if (!$product) continue;
-
+    
             $paniervalide[] = [
                 'product' => $product,
                 'quantity' => $quantity,
@@ -60,61 +61,56 @@ class CommandeController extends AbstractController
             ];
             $total += $product->getPrix() * $quantity;
         }
-
+    
         // Vérifier que l'utilisateur est connecté
         $user = $this->getUser();
         if (!$user) {
             $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
             return $this->redirectToRoute('app_login');
         }
-
-        // Si formulaire soumis
-        if ($request->isMethod('POST')) {
-            $nom = $request->request->get('nom');
-            $prenom = $request->request->get('prenom');
-            $adresse = $request->request->get('adresse');
-            $ville = $request->request->get('ville');
-            $codePostal = $request->request->get('codePostal');
-            $tel = $request->request->get('tel');
-
-            // Vérifie ici si un champ est vide
-            if (empty($nom) || empty($prenom) || empty($adresse) || empty($ville) || empty($codePostal) || empty($tel)) {
-                $this->addFlash('error', 'Veuillez remplir tous les champs obligatoires.');
-            } else {
-                // ✅ Tous les champs sont remplis — vérification du stock
-                foreach ($paniervalide as $item) {
-                    $product = $item['product'];
-                    $quantitepanier = $item['quantity'];
-                    if ($product->getStock() < $quantitepanier) {
-                        $this->addFlash('error', sprintf(
-                            'Le stock du produit "%s" est insuffisant. Stock disponible : %d',
-                            $product->getNom(),
-                            $product->getStock()
-                        ));
-                        return $this->redirectToRoute('app_panier');
-                    }
+    
+        // Création du formulaire d'adresse
+        $commande = new Commande();
+        $form = $this->createForm(AdresseType::class, $commande);
+    
+        // Gestion de la soumission du formulaire
+        $form->handleRequest($request);
+    
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Vérification du stock avant de continuer
+            foreach ($paniervalide as $item) {
+                $product = $item['product'];
+                $quantitepanier = $item['quantity'];
+                if ($product->getStock() < $quantitepanier) {
+                    $this->addFlash('danger', sprintf(
+                        'Le stock du produit "%s" est insuffisant. Stock disponible : %d',
+                        $product->getNom(),
+                        $product->getStock()
+                    ));
+                    return $this->redirectToRoute('app_panier');
                 }
-
-                // Génère un numéro de commande temporaire
-                $aleatoire = random_int(10000, 99999);
-
-                // Sauvegarde les données dans la session
-                $session->set('temp_commande_numero', $aleatoire);
-                $session->set('temp_commande_adresse', [
-                    'nom' => $nom,
-                    'prenom' => $prenom,
-                    'adresse' => $adresse,
-                    'ville' => $ville,
-                    'codePostal' => $codePostal,
-                    'tel' => $tel,
-                ]);
-
-                return $this->redirectToRoute('app_paiement_stripe');
             }
+    
+            // Génère un numéro de commande temporaire
+            $aleatoire = random_int(10000, 99999);
+    
+            // Sauvegarde les données dans la session
+            $session->set('temp_commande_numero', $aleatoire);
+            $session->set('temp_commande_adresse', [
+                'nom' => $commande->getNom(),
+                'prenom' => $commande->getPrenom(),
+                'adresse' => $commande->getAdresse(),
+                'ville' => $commande->getVille(),
+                'codePostal' => $commande->getCodePostal(),
+                'tel' => $commande->getTel(),
+            ]);
+    
+            return $this->redirectToRoute('app_paiement_stripe');
         }
-
-        // Toujours afficher la page — que ce soit GET ou POST (avec erreur)
+    
+        // Afficher la vue avec le formulaire
         return $this->render('commande/index.html.twig', [
+            'formAdresse' => $form,
             'panier' => $paniervalide,
             'total' => $total,
         ]);
