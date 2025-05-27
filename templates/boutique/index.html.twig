@@ -1,21 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Boutique{% endblock %}
-
-{% block content %}
-    <h1 style="text-align: center;">Bienvenue sur notre boutique !</h1>
-    
-    <section class="container-vert">
-        <section class="category-container-blanc">
-            {% for categorie in categories %}
-                <div class="category-item">
-                    <a href="{{ path('app_categorie', { 'id': categorie.id }) }}">
-                        <img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}">
-                    </a>
-                    <p>{{ categorie.nom }}</p>
-                </div>
-            {% endfor %}
-        </section>
-    </section>
+{% block title %}Mobile World : Boutique
 {% endblock %}
 
+{% block content %}
+	<h1 style="text-align: center;">Bienvenue sur notre boutique !</h1>
+
+	<section
+		class="container-vert">
+		{# Afficher les messages flash #}
+		{% for label, messages in app.flashes %}
+			{% for message in messages %}
+				<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+			{% endfor %}
+		{% endfor %}
+		<section class="category-container-blanc">
+
+			{% for categorie in categories %}
+				<div class="category-item">
+					<a href="{{ path('app_categorie', { 'id': categorie.id }) }}">
+						<img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}">
+					</a>
+					<p>{{ categorie.nom }}</p>
+				</div>
+			{% endfor %}
+		</section>
+	</section>
+{% endblock %}

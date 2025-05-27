@@ -139,7 +139,7 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
             'article' => $article,
             'title' => $title,
-            'form' => $form->createView(),
+            'form' => $form,
             'pagination' => $pagination, // Passer la pagination au template
             'personnalisation' => $personnalisation,
         ]);

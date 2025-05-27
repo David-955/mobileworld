@@ -167,7 +167,11 @@ class CommandeController extends AbstractController
             $successUrl = $this->generateUrl('app_confirmation', ['numero' => $aleatoire], UrlGeneratorInterface::ABSOLUTE_URL);
             $cancelUrl = $this->generateUrl('app_cancel', [], UrlGeneratorInterface::ABSOLUTE_URL);
 
+            // Récupérer l'utilisateur connecté
+            $user = $this->getUser();
+
             $sessionStripe = \Stripe\Checkout\Session::create([
+                'customer_email' => $user->getEmail(), // Email de l'utilisateur donné à Stripe
                 'payment_method_types' => ['card'],
                 'line_items' => $lineItems,
                 'mode' => 'payment',
