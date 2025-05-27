@@ -66,12 +66,14 @@ class ContactType extends AbstractType
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Votre message',
+                'attr' => [
+                    'class' => 'form-control', // Style standard de Bootstrap
+                    'rows' => 6, // Hauteur fixe
+                    'style' => 'height: auto;', // Permettre à rows de fonctionner correctement
+
+                ],
                 'constraints' => [
                     new Assert\NotBlank(message: 'Le message est obligatoire.'),
-                    // new Assert\Regex([
-                    //     'pattern' => '/^[a-zA-Z0-9À-ÿ\s\-\.,!?]+$/',
-                    //     'message' => 'Le message contient des caractères invalides.',
-                    // ]),
                     new Assert\Length([
                         'max' => 2500,
                         'maxMessage' => 'Le message ne peut pas dépasser {{ limit }} caractères.',

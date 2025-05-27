@@ -38,6 +38,18 @@ class CommandeController extends AbstractController
         $this->mailer = $mailer;
     }
 
+    /**
+     * Vérifie si l'utilisateur est connecté ET vérifié
+     */
+    protected function checkVerifiedUser(): ?Response
+    {
+        $user = $this->getUser();
+        if (!$user || !$user->isVerification()) {
+            return $this->redirectToRoute('app_verification_pending');
+        }
+        return null;
+    }
+
     #[Route('/commande', name: 'app_commande')]
     public function index(SessionInterface $session, Request $request): Response
     {
@@ -46,14 +58,24 @@ class CommandeController extends AbstractController
         if (empty($panier)) {
             return $this->redirectToRoute('app_boutique');
         }
-    
+
+        // Vérifier que l'utilisateur est connecté
+        $user = $this->getUser();
+        if (!$user) {
+            $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
+            return $this->redirectToRoute('app_login');
+        }
+
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         // Récupérer les produits correspondants
         $paniervalide = [];
         $total = 0;
         foreach ($panier as $id => $quantity) {
             $product = $this->produitRepository->find($id);
             if (!$product) continue;
-    
             $paniervalide[] = [
                 'product' => $product,
                 'quantity' => $quantity,
@@ -61,21 +83,13 @@ class CommandeController extends AbstractController
             ];
             $total += $product->getPrix() * $quantity;
         }
-    
-        // Vérifier que l'utilisateur est connecté
-        $user = $this->getUser();
-        if (!$user) {
-            $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
-            return $this->redirectToRoute('app_login');
-        }
-    
+
         // Création du formulaire d'adresse
         $commande = new Commande();
         $form = $this->createForm(AdresseType::class, $commande);
-    
+
         // Gestion de la soumission du formulaire
         $form->handleRequest($request);
-    
         if ($form->isSubmitted() && $form->isValid()) {
             // Vérification du stock avant de continuer
             foreach ($paniervalide as $item) {
@@ -90,10 +104,10 @@ class CommandeController extends AbstractController
                     return $this->redirectToRoute('app_panier');
                 }
             }
-    
+
             // Génère un numéro de commande temporaire
             $aleatoire = random_int(10000, 99999);
-    
+
             // Sauvegarde les données dans la session
             $session->set('temp_commande_numero', $aleatoire);
             $session->set('temp_commande_adresse', [
@@ -104,10 +118,10 @@ class CommandeController extends AbstractController
                 'codePostal' => $commande->getCodePostal(),
                 'tel' => $commande->getTel(),
             ]);
-    
+
             return $this->redirectToRoute('app_paiement_stripe');
         }
-    
+
         // Afficher la vue avec le formulaire
         return $this->render('commande/index.html.twig', [
             'formAdresse' => $form,
@@ -119,21 +133,21 @@ class CommandeController extends AbstractController
     #[Route('/create-checkout-session', name: 'create_checkout_session', methods: ['POST'])]
     public function createCheckoutSession(Request $request): Response
     {
-        \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
 
+        \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
         $session = $request->getSession();
         $panier = $session->get('panier', []);
-
         if (empty($panier)) {
             return new Response(json_encode(['error' => 'Votre panier est vide']), 400, ['Content-Type' => 'application/json']);
         }
 
         $lineItems = [];
-
         foreach ($panier as $id => $quantity) {
             $produit = $this->produitRepository->find($id);
             if (!$produit) continue;
-
             $lineItems[] = [
                 'price_data' => [
                     'currency' => 'eur',
@@ -150,7 +164,6 @@ class CommandeController extends AbstractController
 
         try {
             $aleatoire = $session->get('temp_commande_numero', random_int(10000, 99999));
-
             $successUrl = $this->generateUrl('app_confirmation', ['numero' => $aleatoire], UrlGeneratorInterface::ABSOLUTE_URL);
             $cancelUrl = $this->generateUrl('app_cancel', [], UrlGeneratorInterface::ABSOLUTE_URL);
 
@@ -171,14 +184,128 @@ class CommandeController extends AbstractController
     #[Route('/paiement/stripe', name: 'app_paiement_stripe')]
     public function paiementStripe(): Response
     {
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         return $this->render('commande/paiement_stripe.html.twig', [
-            'stripe_key' => $_ENV['STRIPE_PUBLISHABLE_KEY'] // Assure-toi que cette variable existe dans .env
+            'stripe_key' => $_ENV['STRIPE_PUBLISHABLE_KEY']
         ]);
+    }
+
+    #[Route('/mes-commandes', name: 'app_mes_commandes')]
+    public function mesCommandes(CommandeRepository $commandeRepository, Request $request, PaginatorInterface $paginator): Response
+    {
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
+        $user = $this->getUser();
+        $allNumeros = $commandeRepository->findUniqueCommandeNumerosByUser($user);
+        $allNumeros = array_column($allNumeros, 'numero');
+
+        $pagination = $paginator->paginate($allNumeros, $request->query->getInt('page', 1), 5);
+
+        $commandesGroupedByNumero = [];
+        foreach ($pagination->getItems() as $numero) {
+            $commandes = $commandeRepository->findCommandesByNumero($numero, $user);
+            if (!empty($commandes)) {
+                $commandesGroupedByNumero[$numero] = [
+                    'date' => $commandes[0]->getDate(),
+                    'statut' => $commandes[0]->getStatut(),
+                    'produits' => $commandes,
+                ];
+            }
+        }
+
+        return $this->render('commande/mes_commandes.html.twig', [
+            'commandesGroupedByNumero' => $commandesGroupedByNumero,
+            'pagination' => $pagination,
+        ]);
+    }
+
+    #[Route('/commande/pdf/{numero}', name: 'app_commande_pdf')]
+    public function generatePdf(
+        string $numero,
+        Request $request,
+        CsrfTokenManagerInterface $csrfTokenManager,
+        PdfGenerator $pdfGenerator
+    ): Response {
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        $token = new CsrfToken('generate_pdf', $request->query->get('_csrf_token'));
+        if (!$csrfTokenManager->isTokenValid($token)) {
+            throw new AccessDeniedException('Jeton CSRF invalide.');
+        }
+
+        $user = $this->getUser();
+        $commandes = $this->entityManager->getRepository(Commande::class)->findBy(['numero' => $numero, 'utilisateur' => $user]);
+
+        if (empty($commandes)) {
+            throw $this->createNotFoundException('Commande non trouvée ou non autorisée.');
+        }
+
+        $pdfContent = $pdfGenerator->generateRecap($commandes);
+        $filename = sprintf('recapitulatif-%s.pdf', $numero);
+
+        return new Response($pdfContent, 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => sprintf('inline; filename="%s"', $filename),
+        ]);
+    }
+
+    #[Route('/commande/annuler/{numero}/{produitId}', name: 'app_commande_annuler')]
+    public function annulerProduit(
+        string $numero,
+        int $produitId,
+        Request $request,
+        CsrfTokenManagerInterface $csrfTokenManager,
+        EntityManagerInterface $entityManager
+    ): Response {
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
+        $token = new CsrfToken('annuler_commande', $request->query->get('_csrf_token'));
+        if (!$csrfTokenManager->isTokenValid($token)) {
+            throw $this->createAccessDeniedException('Jeton CSRF invalide.');
+        }
+
+        $commande = $entityManager->getRepository(Commande::class)->findOneBy(['numero' => $numero, 'produit' => $produitId]);
+        if (!$commande) {
+            throw $this->createNotFoundException('Commande ou produit non trouvé.');
+        }
+
+        if ($commande->getStatut() === "Produit annulé par le client") {
+            $this->addFlash('warning', 'Ce produit a déjà été annulé.');
+            return $this->redirectToRoute('app_mes_commandes');
+        }
+
+        $commande->setStatut("Produit annulé par le client");
+        $produit = $commande->getProduit();
+        $nouveauStock = $produit->getStock() + $commande->getQuantite();
+        $produit->setStock($nouveauStock);
+
+        $entityManager->persist($commande);
+        $entityManager->persist($produit);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Le produit a été annulé avec succès.');
+
+        return $this->redirectToRoute('app_mes_commandes');
     }
 
     #[Route('/annuler-commande', name: 'app_cancel')]
     public function cancel(SessionInterface $session): Response
     {
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         // Supprimer les données temporaires de la session
         $session->remove('panier');
         $session->remove('temp_commande_adresse');
@@ -194,7 +321,11 @@ class CommandeController extends AbstractController
     #[Route('/confirmation/{numero}', name: 'app_confirmation')]
     public function confirmation(string $numero): Response
     {
-        // Récupérer les commandes associées au numéro
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
+        // Créer les commandes à partir de la session
         $commandes = $this->createCommandeFromSession($numero);
 
         $total = 0;
@@ -212,7 +343,6 @@ class CommandeController extends AbstractController
 
         // Préparer les données pour l'e-mail
         $paniervalide = [];
-
         foreach ($commandes as $commande) {
             $produit = $commande->getProduit();
             $paniervalide[] = [
@@ -305,102 +435,5 @@ class CommandeController extends AbstractController
         $session->remove('temp_commande_numero');
 
         return $commandes;
-    }
-
-    #[Route('/mes-commandes', name: 'app_mes_commandes')]
-    public function mesCommandes(CommandeRepository $commandeRepository, Request $request, PaginatorInterface $paginator): Response
-    {
-        $user = $this->getUser();
-        if (!$user) return $this->redirectToRoute('app_login');
-
-        $allNumeros = $commandeRepository->findUniqueCommandeNumerosByUser($user);
-        $allNumeros = array_column($allNumeros, 'numero');
-
-        $pagination = $paginator->paginate($allNumeros, $request->query->getInt('page', 1), 5);
-
-        $commandesGroupedByNumero = [];
-        foreach ($pagination->getItems() as $numero) {
-            $commandes = $commandeRepository->findCommandesByNumero($numero, $user);
-            if (!empty($commandes)) {
-                $commandesGroupedByNumero[$numero] = [
-                    'date' => $commandes[0]->getDate(),
-                    'statut' => $commandes[0]->getStatut(),
-                    'produits' => $commandes,
-                ];
-            }
-        }
-
-        return $this->render('commande/mes_commandes.html.twig', [
-            'commandesGroupedByNumero' => $commandesGroupedByNumero,
-            'pagination' => $pagination,
-        ]);
-    }
-
-    #[Route('/commande/pdf/{numero}', name: 'app_commande_pdf')]
-    public function generatePdf(
-        string $numero,
-        Request $request,
-        CsrfTokenManagerInterface $csrfTokenManager,
-        PdfGenerator $pdfGenerator
-    ): Response {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
-        $token = new CsrfToken('generate_pdf', $request->query->get('_csrf_token'));
-        if (!$csrfTokenManager->isTokenValid($token)) {
-            throw new AccessDeniedException('Jeton CSRF invalide.');
-        }
-
-        $user = $this->getUser();
-        $commandes = $this->entityManager->getRepository(Commande::class)->findBy(['numero' => $numero, 'utilisateur' => $user]);
-
-        if (empty($commandes)) {
-            throw $this->createNotFoundException('Commande non trouvée ou non autorisée.');
-        }
-
-        $pdfContent = $pdfGenerator->generateRecap($commandes);
-        $filename = sprintf('recapitulatif-%s.pdf', $numero);
-
-        return new Response($pdfContent, 200, [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => sprintf('inline; filename="%s"', $filename),
-        ]);
-    }
-
-    #[Route('/commande/annuler/{numero}/{produitId}', name: 'app_commande_annuler')]
-    public function annulerProduit(
-        string $numero,
-        int $produitId,
-        Request $request,
-        CsrfTokenManagerInterface $csrfTokenManager,
-        EntityManagerInterface $entityManager
-    ): Response {
-        $token = new CsrfToken('annuler_commande', $request->query->get('_csrf_token'));
-        if (!$csrfTokenManager->isTokenValid($token)) {
-            throw $this->createAccessDeniedException('Jeton CSRF invalide.');
-        }
-
-        $commande = $entityManager->getRepository(Commande::class)->findOneBy(['numero' => $numero, 'produit' => $produitId]);
-        if (!$commande) {
-            throw $this->createNotFoundException('Commande ou produit non trouvé.');
-        }
-
-        if ($commande->getStatut() === "Produit annulé par le client") {
-            $this->addFlash('warning', 'Ce produit a déjà été annulé.');
-            return $this->redirectToRoute('app_mes_commandes');
-        }
-
-        $commande->setStatut("Produit annulé par le client");
-
-        $produit = $commande->getProduit();
-        $nouveauStock = $produit->getStock() + $commande->getQuantite();
-        $produit->setStock($nouveauStock);
-
-        $entityManager->persist($commande);
-        $entityManager->persist($produit);
-        $entityManager->flush();
-
-        $this->addFlash('success', 'Le produit a été annulé avec succès.');
-
-        return $this->redirectToRoute('app_mes_commandes');
     }
 }

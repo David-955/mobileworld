@@ -16,7 +16,13 @@ class CommentaireType extends AbstractType
         $builder
             ->add('contenu', TextareaType::class, [
                 'label' => false, // sans ça le label s'affiche, "Contenu" par défaut
-                'attr' => ['placeholder' => 'Exprimez-vous : '],
+                'attr' => [
+                    'placeholder' => 'Exprimez-vous : ',
+                    'class' => 'form-control', // Style standard de Bootstrap
+                    'rows' => 6, // Hauteur fixe
+                    'style' => 'height: auto;', // Permettre à rows de fonctionner correctement
+
+                ],
                 'constraints' => [
                     new Assert\Length([
                         'max' => 1500,
@@ -33,4 +39,3 @@ class CommentaireType extends AbstractType
         ]);
     }
 }
-

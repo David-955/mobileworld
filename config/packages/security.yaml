@@ -22,7 +22,7 @@ security:
                 check_path: app_login
                 enable_csrf: true
                 # redirection après la connexion
-                default_target_path: app_check_verified
+                # default_target_path: app_check_verified
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # Durée en secondes (ici: 7 jours)

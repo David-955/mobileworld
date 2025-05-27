@@ -9,13 +9,31 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 final class ProfileController extends AbstractController
 {
+
+        /**
+     * Vérifie si l'utilisateur est connecté ET vérifié
+     */
+    protected function checkVerifiedUser(): ?Response
+    {
+        $user = $this->getUser();
+        if (!$user || !$user->isVerification()) {
+            return $this->redirectToRoute('app_verification_pending');
+        }
+        return null;
+    }
+
     #[Route('/profil/', name: 'app_profil')]
     public function profile(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
         return $this->render('profile/index.html.twig', [
             'personnalisation' => $personnalisation,
@@ -26,6 +44,10 @@ final class ProfileController extends AbstractController
     public function updateAvatar(Request $request, ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
         $avatarFile = $request->files->get('avatar');
@@ -41,7 +63,6 @@ final class ProfileController extends AbstractController
                 }
             }
 
-            // Convertir l'image en .webp
             $image = null;
             switch ($avatarFile->getMimeType()) {
                 case 'image/jpeg':
@@ -61,15 +82,11 @@ final class ProfileController extends AbstractController
             }
 
             if ($image) {
-                // Redimensionner l'image à 350x350 pixels
                 $resizedImage = imagescale($image, 350, 350);
-
-                // Convertir l'image redimensionnée en .webp
                 imagewebp($resizedImage, $uploadDir.'/'.$newFilename);
                 imagedestroy($image);
                 imagedestroy($resizedImage);
 
-                // Mettre à jour le chemin de l'avatar dans la base de données
                 $personnalisation->setAvatar('/images/profils/'.$newFilename);
                 $doctrine->getManager()->flush();
             }
@@ -82,9 +99,12 @@ final class ProfileController extends AbstractController
     public function resetAvatar(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
-        // Définir l'avatar par défaut
         $personnalisation->setAvatar('/images/profils/defaut.webp');
         $doctrine->getManager()->flush();
 
@@ -95,6 +115,10 @@ final class ProfileController extends AbstractController
     public function updateProfile(ManagerRegistry $doctrine, RequestStack $requestStack): Response
     {
         $user = $this->getUser();
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         $entityManager = $doctrine->getManager();
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
@@ -112,6 +136,10 @@ final class ProfileController extends AbstractController
     public function updatePseudo(Request $request, ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
 
         $pseudo = $request->request->get('pseudo');
@@ -125,6 +153,10 @@ final class ProfileController extends AbstractController
     #[Route('/profil/{pseudo}', name: 'app_profil_pseudo')]
     public function profileByPseudo($pseudo, ManagerRegistry $doctrine): Response
     {
+        // Bloquer si l'utilisateur n'est pas vérifié
+        $redirect = $this->checkVerifiedUser();
+        if ($redirect) return $redirect;
+
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['pseudo' => $pseudo]);
 
         return $this->render('profile/show.html.twig', [
@@ -132,4 +164,3 @@ final class ProfileController extends AbstractController
         ]);
     }
 }
-

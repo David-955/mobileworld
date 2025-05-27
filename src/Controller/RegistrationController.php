@@ -131,13 +131,13 @@ class RegistrationController extends AbstractController
         // Récupérer l'e-mail depuis la requête
         $email = $request->query->get('email');
         if (!$email) {
-            $this->addFlash('danger', 'Veuillez fournir une adresse e-mail.');
+            $this->addFlash('danger', 'Veuillez fournir une adresse Email.');
             return $this->redirectToRoute('app_verification_pending');
         }
         // Rechercher l'utilisateur par son email
         $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
         if (!$user) {
-            $this->addFlash('danger', 'Aucun compte trouvé avec cette adresse e-mail.');
+            $this->addFlash('danger', 'Aucun compte trouvé avec cette adresse Email.');
             return $this->redirectToRoute('app_verification_pending');
         }
         // Vérifier si l'utilisateur est déjà vérifié
@@ -154,7 +154,7 @@ class RegistrationController extends AbstractController
             ['token' => $user->getToken()],
             UrlGeneratorInterface::ABSOLUTE_URL
         );
-        // Envoyer l'e-mail de confirmation
+        // Envoyer l'Email de confirmation
         $emailContent = (new Email())
             ->from('dngo3819@gmail.com')
             ->to($user->getEmail())
@@ -165,7 +165,7 @@ class RegistrationController extends AbstractController
                     '<a href="' . htmlspecialchars($confirmationUrl) . '">Confirmer mon compte</a>'
             );
         $mailer->send($emailContent);
-        $this->addFlash('success', 'Un nouveau lien de confirmation a été envoyé à votre adresse e-mail.');
+        $this->addFlash('success', 'Un nouveau lien de confirmation a été envoyé à votre adresse Email.');
         return $this->redirectToRoute('app_login');
     }
 }
