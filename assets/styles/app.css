@@ -849,6 +849,10 @@ footer {
   gap: 40px;
 }
 
+.logo-stripe {
+  width: 350px;
+}
+
 /* Page de mon profil */
 
 .profil-image {
@@ -916,6 +920,10 @@ footer {
 
   .profile-image {
     width: 40%;
+  }
+
+  .logo-stripe {
+    width: 80%;
   }
 }
 

@@ -62,7 +62,7 @@ class CommandeController extends AbstractController
         // Vérifier que l'utilisateur est connecté
         $user = $this->getUser();
         if (!$user) {
-            $this->addFlash('error', 'Veuillez vous connecter pour passer commande.');
+            $this->addFlash('warning', 'Veuillez vous connecter pour passer commande.');
             return $this->redirectToRoute('app_login');
         }
 

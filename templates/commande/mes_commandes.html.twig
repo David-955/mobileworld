@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Passer commande
+{% block title %}
+	Mobile World : Passer commande
 {% endblock %}
 
 {% block content %}
 	<h1>Mes commandes</h1>
 
 	<section class="container-vert">
-		<section class="container-blanc">
+		<section
+			class="container-blanc">
 			{# Afficher les messages flash #}
 			{% for label, messages in app.flashes %}
 				{% for message in messages %}
@@ -22,16 +24,17 @@
 				</p>
 			{% else %}
 				<ul class="liste-commande1">
-					{# Affichage du message de confirmation #}
-					{# Boucle sur chaque numéro de commande #}
-						{% for numeroCommande, groupe in commandesGroupedByNumero %}
-							<li class="liste-commande2"> <div class="commande-header">
+					{% for numeroCommande, groupe in commandesGroupedByNumero %}
+						<li class="liste-commande2">
+							<div class="commande-header">
 								<p>
 									<strong>Numéro de commande :</strong>
-									{{ numeroCommande }}</p>
+									{{ numeroCommande }}
+								</p>
 								<p>
 									<strong>Date :</strong>
-									{{ groupe.date|date('d/m/Y H:i') }}</p>
+									{{ groupe.date|date('d/m/Y H:i') }}
+								</p>
 
 								<address class="adresse-livraison">
 									<strong>Adresse de livraison :</strong><br>
@@ -45,10 +48,6 @@
 								</address>
 							</div>
 
-							{# <strong>Statut :</strong>
-																					{{ groupe.statut }}<br><br> #}
-
-							{# Boucle sur les produits de cette commande #}
 							{% for commande in groupe.produits %}
 								<div class="produit-item">
 									<strong>Produit :</strong>
@@ -63,39 +62,38 @@
 									<strong>Sous-total :</strong>
 									{{ commande.produit.prix * commande.quantite }}
 									€<br>
-									{# Affichage de l'image du produit #}
-									<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="Image de {{ commande.produit.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; border-radius: 8px;"><br>
-									{# Affichage du statut de la commande #}
 
+									{# Affichage de l'image du produit #}
+									<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="Image de {{ commande.produit.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; border-radius: 8px; margin: 10px"><br>
+
+									{# Affichage du statut de la commande (TOUJOURS visible) #}
+									<p><em>Statut :
+										{{ commande.statut }}</em></p>
 
 									{% if commande.statut != 'Produit annulé par le client' %}
-										<br>
 										<a href="{{ path('app_commande_annuler', { 'numero': numeroCommande, 'produitId': commande.produit.id, '_csrf_token': csrf_token('annuler_commande') }) }}" class="btn-submit" onclick="return confirm('Êtes-vous sûr de vouloir annuler ce produit ?');">
 											Annuler ce produit
 										</a>
-									{% else %}
-										<em>Ce produit a été annulé.</em>
 									{% endif %}
 									<br><br>
-									<br>
 								</div>
 							{% endfor %}
 
-							{# Affichage du total TTC de la commande entière #}
+							{# Calcul du total TTC de la commande entière #}
 							{% set totalCommande = groupe.produits|map(p => p.produit.prix * p.quantite)|reduce((a, b) => a + b) %}
 							<h3>
 								<strong>Total TTC de la commande :</strong>
 								{{ totalCommande }}
-								€</h3>
+								€
+							</h3>
 							<br>
 
 							{# Lien pour télécharger le récapitulatif de commande #}
-							{# Compte combien de produits ne sont pas annulés #}
 							{% set produitsNonAnnules = groupe.produits|filter(p => p.statut != 'Produit annulé par le client') %}
 
-							{# Affiche le lien seulement s'il y a des produits non annulés #}
-								{% if produitsNonAnnules|length > 0 %}
-									<a href="{{ path('app_commande_pdf', {'numero': numeroCommande, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit"> Télécharger le récapitulatif de commande
+							{% if produitsNonAnnules|length > 0 %}
+								<a href="{{ path('app_commande_pdf', {'numero': numeroCommande, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
+									Télécharger le récapitulatif de commande
 								</a>
 								<br><br>
 							{% else %}

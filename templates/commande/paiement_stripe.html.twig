@@ -6,6 +6,7 @@
 			<h1>Procéder au paiement sécurisé</h1>
 			<p>Cliquez sur le bouton ci-dessous pour être redirigé vers Stripe.</p>
 			<img src="{{ asset('images/stripe/stripe.webp') }}" alt="Logo Stripe" class="logo-stripe">
+			<hr>
 			{# Bouton qui déclenchera Stripe #}
 			{# voir app.js pour id="checkout-button" #}
 				<p><button id="checkout-button" class="btn-submit"> Payer ma commande</button>
@@ -58,7 +59,6 @@ alert("Une erreur est survenue lors de la redirection.");
 
 } catch (err) {
 console.error("Erreur réseau :", err);
-alert("Impossible de démarrer le paiement.");
 }
 });
 });
