@@ -8,7 +8,8 @@
 	{# 10% ici / 80% contenu principal / 10% * #}
 	<p style="margin-left: 10%;">
 		<a href="{{ path('app_accueil') }}">Accueil</a>
-		 > {{ title }}</p>
+		>
+		{{ title }}</p>
 	<section class="article-container">
 		<section class="article-titre">
 			<h1>{{ article.title }}</h1>
@@ -70,6 +71,8 @@
 
 
 				<section class="ajout-commentaires">
+					{% form_theme form "form/champs.html.twig" %}
+
 					{{ form_start(form, {'attr': {'class': 'commentaire-form'}}) }}
 
 					{{ form_row(form.contenu, {
@@ -82,8 +85,10 @@
 						label_attr: { class: 'form-label' }
 					}) }}
 					<br>
-					<button class="btn-submit" type="submit">Ajouter un commentaire</button>
-
+					<p>
+						<button class="btn-submit" type="submit">Ajouter un commentaire</button>
+					</p>
+					{{ form_rest(form) }}
 					{{ form_end(form) }}
 				</section>
 				<br>
@@ -95,7 +100,7 @@
 				</p>
 			{% endif %}
 			<hr>
-			<p>
+			<p style="margin-top: 20px;">
 				<a href="{{ path('app_accueil') }}" class="btn-submit">Retour aux news</a>
 			</p>
 		</section>

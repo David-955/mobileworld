@@ -519,7 +519,8 @@ footer {
   padding: 10px 10px;
   width: 60%;
   text-align: center;
-  font-size: 80%;
+  /* font-size: 80%; */
+  overflow: auto; /* Permet le défilement si le texte est trop long */
 }
 
 .product-colonne3 {
@@ -915,13 +916,6 @@ footer {
 
   .profile-image {
     width: 40%;
-  }
-
-  /* page produit d'une catégorie */
-
-  .product-colonne2 {
-    width: 80%;
-    font-size: 80%;
   }
 }
 

@@ -31,7 +31,7 @@ function loadStripe() {
     return Promise.resolve(stripe);
 }
 
-document.addEventListener('turbo:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // ========== Retour en haut ==========
     const btn = document.querySelector('.Btn-retourhaut');
     if (btn) {
