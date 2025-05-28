@@ -20,8 +20,6 @@ class CommentaireType extends AbstractType
                     'placeholder' => 'Exprimez-vous : ',
                     'class' => 'form-control', // Style standard de Bootstrap
                     'rows' => 6, // Hauteur fixe
-                    'style' => 'height: auto;', // Permettre à rows de fonctionner correctement
-
                 ],
                 'constraints' => [
                     new Assert\Length([

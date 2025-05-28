@@ -69,8 +69,6 @@ class ContactType extends AbstractType
                 'attr' => [
                     'class' => 'form-control', // Style standard de Bootstrap
                     'rows' => 6, // Hauteur fixe
-                    'style' => 'height: auto;', // Permettre à rows de fonctionner correctement
-
                 ],
                 'constraints' => [
                     new Assert\NotBlank(message: 'Le message est obligatoire.'),

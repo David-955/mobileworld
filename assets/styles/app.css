@@ -81,12 +81,9 @@ h1 {
   text-align: center;
 }
 
-/* trouvable dans /contact et dans /profil */
+/* trouvable dans /contact, dans /profil, /commentaire */
 textarea {
   resize: none; /* Désactive le redimensionnement */
-  width: 50%;
-  height: 50px; /* Hauteur fixe */
-  font-size: 30pt;
 }
 
 footer {
@@ -480,6 +477,7 @@ footer {
 
 .category-item img {
   width: 150px;
+  border-radius: 8px;
 }
 
 /* Page produits */
@@ -518,9 +516,10 @@ footer {
 
 .product-colonne2 {
   /* espacement entre colonne 1 et 3 */
-  padding: 10px 15px;
+  padding: 10px 10px;
   width: 60%;
   text-align: center;
+  font-size: 80%;
 }
 
 .product-colonne3 {
@@ -851,8 +850,17 @@ footer {
 
 /* Page de mon profil */
 
-.profile-image {
+.profil-image {
   width: 25%;
+  border-radius: 8px;
+}
+
+.container-blanc-profil {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 2.5%;
 }
 
 /* Page mes commandes */
@@ -907,6 +915,13 @@ footer {
 
   .profile-image {
     width: 40%;
+  }
+
+  /* page produit d'une catégorie */
+
+  .product-colonne2 {
+    width: 80%;
+    font-size: 80%;
   }
 }
 
@@ -977,15 +992,10 @@ footer {
     font-size: 11px;
   }
 
-  footer {
-    background: linear-gradient(#4caf50, #2dc5a9);
-    color: white;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  /* Page profil */
+
+  .container-blanc-profil {
+    margin-top: 5%;
   }
 
   /* Partie boutique catégories */

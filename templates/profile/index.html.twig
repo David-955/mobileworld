@@ -30,14 +30,14 @@
 					<a href="{{ path('app_profil_pseudo', {pseudo: personnalisation.pseudo}) }}">
 						Voir l'aperçu de mon profil</a>
 				</p>
-				<img src="{{ personnalisation.avatar }}" alt="Image de profil de {{ personnalisation.pseudo }}" class="profile-image" style="border-radius: 8px;"></img>
+				<img src="{{ personnalisation.avatar }}" alt="Image de profil de {{ personnalisation.pseudo }}" class="profil-image"></img>
 			<br><br>
 			<p>
 				<em>{{ personnalisation.presentation }}</em>
 			</p>
 		</section>
 		<section
-			class="container-blanc" style="margin-top: 2%;">
+			class="container-blanc-profil">
 
 			{# PARTIE PERSONNALISATION #}
 			<form action="{{ path('app_profil_update_pseudo') }}" method="post">
@@ -82,7 +82,7 @@
 				</div>
 
 				<div class="form-group">
-					<textarea id="presentation" name="presentation" class="form-control" placeholder="Entrez votre présentation ici." rows="5" style = 'height: auto;'></textarea>
+					<textarea id="presentation" name="presentation" class="form-control" placeholder="Entrez votre présentation ici." rows="5"></textarea>
 				</div>
 
 				<div class="form-group">
@@ -91,7 +91,7 @@
 			</form>
 			</section>
 
-			<section class="container-blanc" style="margin-top: 2%;">
+			<section class="container-blanc-profil">
 
 				<h2>Autres services :</h2>
 				<br>
