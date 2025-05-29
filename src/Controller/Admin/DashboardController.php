@@ -7,6 +7,7 @@ use App\Entity\Categorie;
 use App\Entity\Commentaire;
 use App\Entity\Utilisateur;
 use App\Entity\Personnalisation;
+use App\Entity\Commande;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -39,6 +40,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Utilisateur::class);
         yield MenuItem::linkToCrud('Personnalisations', 'fas fa-list', Personnalisation::class);
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-list', Commentaire::class);
+        yield MenuItem::linkToCrud('Commandes', 'fas fa-list', Commande::class);
     }
 }
 

@@ -9,7 +9,6 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 final class ProfileController extends AbstractController
 {
@@ -153,10 +152,6 @@ final class ProfileController extends AbstractController
     #[Route('/profil/{pseudo}', name: 'app_profil_pseudo')]
     public function profileByPseudo($pseudo, ManagerRegistry $doctrine): Response
     {
-        // Bloquer si l'utilisateur n'est pas vérifié
-        $redirect = $this->checkVerifiedUser();
-        if ($redirect) return $redirect;
-
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['pseudo' => $pseudo]);
 
         return $this->render('profile/show.html.twig', [

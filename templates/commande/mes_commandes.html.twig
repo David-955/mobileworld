@@ -67,7 +67,7 @@
 									<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="Image de {{ commande.produit.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; border-radius: 8px; margin: 10px"><br>
 
 									{# Affichage du statut de la commande (TOUJOURS visible) #}
-									<p><em>Statut :
+									<p><em><strong>Statut :</strong>
 										{{ commande.statut }}</em></p>
 
 									{% if commande.statut != 'Produit annulé par le client' %}
