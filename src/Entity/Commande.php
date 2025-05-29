@@ -42,7 +42,7 @@ class Commande
     #[Assert\Regex(pattern: '/^[\p{L}\s\-]+$/u', message: 'Le prénom ne doit contenir que des lettres, espaces ou tirets.')]
     private string $prenom;
 
-    #[ORM\Column(length: 255, nullable: false)] // Plus long pour les adresses complètes
+    #[ORM\Column(length: 150, nullable: false)] 
     private string $adresse;
 
     #[ORM\Column(length: 100, nullable: false)]

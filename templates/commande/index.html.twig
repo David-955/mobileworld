@@ -10,17 +10,18 @@
 
 	<section class="container-vert">
 		<section class="container-blanc">
-			{# Afficher les messages flash #}
-			{# {% for label, messages in app.flashes %}
-				{% for message in messages %}
-					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
-				{% endfor %}
-			{% endfor %} #}
 
 			<p style="margin-left: 15px; text-align: left;">
 				<a href="{{ path('app_panier') }}">Panier</a>
 				> Passer commande
 			</p>
+
+			{# Afficher les messages flash #}
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+				{% endfor %}
+			{% endfor %}
 
 			{% if panier|length > 0 %}
 				<h2>1. Récapitulatif</h2>
@@ -71,7 +72,7 @@
 
 			{# Personnalisation des messages d'erreurs #}
 			{% form_theme formAdresse "form/champs.html.twig" %}
-			
+
 			{{ form_start(formAdresse) }}
 			<div class="form-group">
 				{{ form_row(formAdresse.nom) }}

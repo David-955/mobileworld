@@ -35,7 +35,7 @@ class AdresseType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Entrez votre adresse',
                     'minlength' => 3,
-                    'maxlength' => 255,
+                    'maxlength' => 150,
                     'class' => 'form-control'
                 ],
             ])

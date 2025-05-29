@@ -38,9 +38,8 @@ class CommandeController extends AbstractController
         $this->mailer = $mailer;
     }
 
-    /**
-     * Vérifie si l'utilisateur est connecté ET vérifié
-     */
+    
+    // Vérifie si l'utilisateur est connecté ET vérifié
     protected function checkVerifiedUser(): ?Response
     {
         $user = $this->getUser();
@@ -133,10 +132,6 @@ class CommandeController extends AbstractController
     #[Route('/create-checkout-session', name: 'create_checkout_session', methods: ['POST'])]
     public function createCheckoutSession(Request $request): Response
     {
-        // Bloquer si l'utilisateur n'est pas vérifié
-        $redirect = $this->checkVerifiedUser();
-        if ($redirect) return $redirect;
-
         \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
         $session = $request->getSession();
         $panier = $session->get('panier', []);
@@ -186,11 +181,16 @@ class CommandeController extends AbstractController
     }
 
     #[Route('/paiement/stripe', name: 'app_paiement_stripe')]
-    public function paiementStripe(): Response
+    public function paiementStripe(SessionInterface $session): Response
     {
-        // Bloquer si l'utilisateur n'est pas vérifié
-        $redirect = $this->checkVerifiedUser();
-        if ($redirect) return $redirect;
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        // Vérifie que les informations d'adresse sont présentes en session
+        $adresse = $session->get('temp_commande_adresse');
+        if (empty($adresse) || empty($adresse['nom']) || empty($adresse['prenom']) || empty($adresse['adresse']) || empty($adresse['ville']) || empty($adresse['codePostal']) || empty($adresse['tel'])) {
+            $this->addFlash('danger', 'Veuillez remplir correctement le formulaire d\'adresse avant de procéder au paiement.');
+            return $this->redirectToRoute('app_commande');
+        }
 
         return $this->render('commande/paiement_stripe.html.twig', [
             'stripe_key' => $_ENV['STRIPE_PUBLISHABLE_KEY']
@@ -235,9 +235,6 @@ class CommandeController extends AbstractController
         CsrfTokenManagerInterface $csrfTokenManager,
         PdfGenerator $pdfGenerator
     ): Response {
-        // Bloquer si l'utilisateur n'est pas vérifié
-        $redirect = $this->checkVerifiedUser();
-        if ($redirect) return $redirect;
 
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
@@ -270,9 +267,6 @@ class CommandeController extends AbstractController
         CsrfTokenManagerInterface $csrfTokenManager,
         EntityManagerInterface $entityManager
     ): Response {
-        // Bloquer si l'utilisateur n'est pas vérifié
-        $redirect = $this->checkVerifiedUser();
-        if ($redirect) return $redirect;
 
         $token = new CsrfToken('annuler_commande', $request->query->get('_csrf_token'));
         if (!$csrfTokenManager->isTokenValid($token)) {
@@ -306,9 +300,11 @@ class CommandeController extends AbstractController
     #[Route('/annuler-commande', name: 'app_cancel')]
     public function cancel(SessionInterface $session): Response
     {
-        // Bloquer si l'utilisateur n'est pas vérifié
-        $redirect = $this->checkVerifiedUser();
-        if ($redirect) return $redirect;
+        // Vérifier si le panier est déjà vide
+        if (empty($session->get('panier'))) {
+            $this->addFlash('info', 'Votre panier est déjà vide.');
+            return $this->redirectToRoute('app_boutique');
+        }
 
         // Supprimer les données temporaires de la session
         $session->remove('panier');
@@ -316,7 +312,7 @@ class CommandeController extends AbstractController
         $session->remove('temp_commande_numero');
 
         // Ajouter un message flash pour informer l'utilisateur
-        $this->addFlash('info', 'Votre commande a été annulée avec succès.');
+        $this->addFlash('info', 'Le panier est désormais vide.');
 
         // Rediriger vers la page de la boutique ou une autre page
         return $this->redirectToRoute('app_boutique');
@@ -325,9 +321,7 @@ class CommandeController extends AbstractController
     #[Route('/confirmation/{numero}', name: 'app_confirmation')]
     public function confirmation(string $numero): Response
     {
-        // Bloquer si l'utilisateur n'est pas vérifié
-        $redirect = $this->checkVerifiedUser();
-        if ($redirect) return $redirect;
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         // Créer les commandes à partir de la session
         $commandes = $this->createCommandeFromSession($numero);
