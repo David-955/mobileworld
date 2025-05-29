@@ -69,7 +69,6 @@ class RegistrationController extends AbstractController
             $this->addFlash('success', 'Un e-mail de confirmation a été envoyé. Veuillez vérifier votre boîte de réception.');
             return $this->redirectToRoute('app_login');
 
-            // Éventuellement : return $this->redirectToRoute('app_login');
         } elseif ($form->isSubmitted()) {
             $this->addFlash('danger', 'Votre inscription comporte des erreurs.');
         }

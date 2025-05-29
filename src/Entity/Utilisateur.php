@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
 // Vérifier si l'email est unique à l'inscription
-#[UniqueEntity(fields: ['email'], message: 'ERREUR : Cet email est déjà utilisé.')]
+#[UniqueEntity(fields: ['email'], message: 'Cet Email est déjà utilisé.')]
 class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
 {
     #[ORM\Id]

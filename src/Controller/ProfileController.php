@@ -13,9 +13,8 @@ use Symfony\Component\HttpFoundation\Request;
 final class ProfileController extends AbstractController
 {
 
-        /**
-     * Vérifie si l'utilisateur est connecté ET vérifié
-     */
+
+    // Vérifie si l'utilisateur est vérifié    
     protected function checkVerifiedUser(): ?Response
     {
         $user = $this->getUser();
