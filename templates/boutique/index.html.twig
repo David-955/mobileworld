@@ -6,16 +6,18 @@
 {% block content %}
 	<h1 style="text-align: center;">Bienvenue sur notre boutique !</h1>
 
-	<section
-		class="container-vert">
-		{# Afficher les messages flash #}
-		{% for label, messages in app.flashes %}
-			{% for message in messages %}
-				<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
-			{% endfor %}
-		{% endfor %}
-		<section class="category-container-blanc">
+	<section class="container-vert">
 
+		<section
+			class="category-container-blanc">
+			{# Afficher les messages flash #}
+			<div style="width: 100%; text-align: center;">
+				{% for label, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
+					{% endfor %}
+				{% endfor %}
+			</div>
 			{% for categorie in categories %}
 				<div class="category-item">
 					<a href="{{ path('app_categorie', { 'id': categorie.id }) }}">

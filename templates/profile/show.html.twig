@@ -6,13 +6,13 @@
 
 {% block content %}
 
-	<h1>Profil de <em>{{ personnalisation.pseudo }}</em></h1>
+	<h1 style="word-wrap: break-word;">Profil de <em>{{ personnalisation.pseudo }}</em></h1>
 
 	<section class="container-vert">
 		<section class="container-blanc">
 			<img src="{{ asset(personnalisation.avatar) }}" style="border-radius: 8px;" alt="Image de profil de {{ personnalisation.pseudo }}" class="profile-image"></img>
 			<br><br>
-			<p><em>{{ personnalisation.presentation }}</em></p>
+			<p style="word-wrap: break-word;"><em>{{ personnalisation.presentation }}</em></p>
 			<br>
 			{# Bouton retour visible seulement si on est connecté #}
 			{% if app.user %}

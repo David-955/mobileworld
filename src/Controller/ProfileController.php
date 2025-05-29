@@ -12,8 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class ProfileController extends AbstractController
 {
-
-
     // Vérifie si l'utilisateur est vérifié    
     protected function checkVerifiedUser(): ?Response
     {
@@ -50,12 +48,12 @@ final class ProfileController extends AbstractController
 
         $avatarFile = $request->files->get('avatar');
         if ($avatarFile) {
-            $newFilename = uniqid().'.webp';
+            $newFilename = uniqid() . '.webp';
             $uploadDir = $this->getParameter('avatars_directory');
 
             $currentAvatar = $personnalisation->getAvatar();
             if ($currentAvatar && $currentAvatar !== '/images/profils/defaut.webp') {
-                $currentAvatarPath = $this->getParameter('kernel.project_dir').'/public'.$currentAvatar;
+                $currentAvatarPath = $this->getParameter('kernel.project_dir') . '/public' . $currentAvatar;
                 if (file_exists($currentAvatarPath)) {
                     unlink($currentAvatarPath);
                 }
@@ -76,22 +74,28 @@ final class ProfileController extends AbstractController
                     $image = imagecreatefromwebp($avatarFile->getPathname());
                     break;
                 default:
-                    throw new \Exception('Format d\'image non supporté');
+                    $this->addFlash('danger', 'Format d\'image non supporté. Veuillez choisir une image en JPEG, PNG, GIF ou WEBP.');
+                    return $this->redirectToRoute('app_profil');
             }
 
             if ($image) {
                 $resizedImage = imagescale($image, 350, 350);
-                imagewebp($resizedImage, $uploadDir.'/'.$newFilename);
+                imagewebp($resizedImage, $uploadDir . '/' . $newFilename);
                 imagedestroy($image);
                 imagedestroy($resizedImage);
 
-                $personnalisation->setAvatar('/images/profils/'.$newFilename);
+                $personnalisation->setAvatar('/images/profils/' . $newFilename);
                 $doctrine->getManager()->flush();
+
+                $this->addFlash('success', 'Votre avatar a été mis à jour avec succès.');
             }
+        } else {
+            $this->addFlash('danger', 'Aucun fichier envoyé.');
         }
 
         return $this->redirectToRoute('app_profil');
     }
+
 
     #[Route('/profil/reset/avatar', name: 'app_profil_reset_avatar', methods: ['POST'])]
     public function resetAvatar(ManagerRegistry $doctrine): Response
@@ -105,6 +109,8 @@ final class ProfileController extends AbstractController
 
         $personnalisation->setAvatar('/images/profils/defaut.webp');
         $doctrine->getManager()->flush();
+
+        $this->addFlash('success', 'Votre avatar a été réinitialisé avec succès.');
 
         return $this->redirectToRoute('app_profil');
     }
@@ -122,30 +128,57 @@ final class ProfileController extends AbstractController
 
         $request = $requestStack->getCurrentRequest();
         $presentation = $request->request->get('presentation');
-        $personnalisation->setPresentation($presentation);
 
+        if (strlen($presentation) > 1000) {
+            $this->addFlash('danger', 'Votre présentation ne peut pas dépasser 1000 caractères.');
+            return $this->redirectToRoute('app_profil');
+        }
+
+        $personnalisation->setPresentation($presentation);
         $entityManager->persist($personnalisation);
         $entityManager->flush();
 
+        $this->addFlash('success', 'Votre présentation a bien été mise à jour.');
+
         return $this->redirectToRoute('app_profil');
     }
+
 
     #[Route('/profil/update/pseudo', name: 'app_profil_update_pseudo', methods: ['POST'])]
     public function updatePseudo(Request $request, ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
-        // Bloquer si l'utilisateur n'est pas vérifié
         $redirect = $this->checkVerifiedUser();
         if ($redirect) return $redirect;
 
-        $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $user]);
+        $entityManager = $doctrine->getManager();
+        $personnalisationRepo = $doctrine->getRepository(Personnalisation::class);
+        $personnalisation = $personnalisationRepo->findOneBy(['Utilisateur' => $user]);
 
-        $pseudo = $request->request->get('pseudo');
+        $pseudo = trim($request->request->get('pseudo'));
+
+        // Vérifie longueur max
+        if (strlen($pseudo) > 50) {
+            $this->addFlash('danger', 'Le pseudo ne peut pas dépasser 50 caractères.');
+            return $this->redirectToRoute('app_profil');
+        }
+
+        // Vérifie si ce pseudo est déjà utilisé
+        $existingPseudo = $personnalisationRepo->findOneBy(['pseudo' => $pseudo]);
+
+        if ($existingPseudo && $existingPseudo !== $personnalisation) {
+            $this->addFlash('danger', 'Ce pseudo est déjà utilisé.');
+            return $this->redirectToRoute('app_profil');
+        }
+
+        // Sauvegarde
         $personnalisation->setPseudo($pseudo);
-        $doctrine->getManager()->flush();
+        $entityManager->flush();
 
+        $this->addFlash('success', 'Pseudo mis à jour avec succès.');
         return $this->redirectToRoute('app_profil');
     }
+
 
     // Page de profil pour chaque utilisateur
     #[Route('/profil/{pseudo}', name: 'app_profil_pseudo')]
