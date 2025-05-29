@@ -25,59 +25,61 @@ class RegistrationController extends AbstractController
         EntityManagerInterface $entityManager,
         MailerInterface $mailer
     ): Response {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_accueil');
+        }
+
         $user = new Utilisateur();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-    
+
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setMotdepasse($userPasswordHasher->hashPassword($user, $form->get('plainPassword')->getData()));
             $user->setRole('ROLE_CLIENT');
             $user->setVerification(false);
             $user->setToken(uniqid('', true));
-    
+
             $personnalisation = new Personnalisation();
             $personnalisation->setPresentation('Bonjour, ceci est un message de présentation par défaut.');
             $personnalisation->setAvatar('/images/profils/defaut.webp');
             $personnalisation->setPseudo('utilisateur' . random_int(10000, 99999));
-    
+
             $user->setPersonnalisation($personnalisation);
             $personnalisation->setUtilisateur($user);
-    
+
             $entityManager->persist($user);
             $entityManager->persist($personnalisation);
             $entityManager->flush();
-    
+
             $confirmationUrl = $this->generateUrl(
                 'app_confirm_email',
                 ['token' => $user->getToken()],
                 UrlGeneratorInterface::ABSOLUTE_URL
             );
-    
+
             $email = (new Email())
                 ->from('dngo3819@gmail.com')
                 ->to($user->getEmail())
                 ->subject('Mobile World - Confirmation de votre inscription')
                 ->html(
                     '<h1>Bienvenue chez Mobile World !</h1>' .
-                    '<p>Merci de vous être inscrit sur notre plateforme.</p>' .
-                    '<p>Veuillez confirmer votre compte en cliquant sur le lien ci-dessous :</p>' .
-                    '<a href="' . htmlspecialchars($confirmationUrl) . '">Confirmer mon compte</a>'
+                        '<p>Merci de vous être inscrit sur notre plateforme.</p>' .
+                        '<p>Veuillez confirmer votre compte en cliquant sur le lien ci-dessous :</p>' .
+                        '<a href="' . htmlspecialchars($confirmationUrl) . '">Confirmer mon compte</a>'
                 );
-    
+
             $mailer->send($email);
-    
+
             $this->addFlash('success', 'Un e-mail de confirmation a été envoyé. Veuillez vérifier votre boîte de réception.');
             return $this->redirectToRoute('app_login');
-
         } elseif ($form->isSubmitted()) {
             $this->addFlash('danger', 'Votre inscription comporte des erreurs.');
         }
-    
+
         return $this->render('security/register.html.twig', [
             'registrationForm' => $form,
         ]);
     }
-    
 
     #[Route('/confirm-email/{token}', name: 'app_confirm_email')]
     public function confirmEmail(string $token, EntityManagerInterface $entityManager): Response

@@ -38,7 +38,7 @@ class CommandeController extends AbstractController
         $this->mailer = $mailer;
     }
 
-    
+
     // Vérifie si l'utilisateur est connecté ET vérifié
     protected function checkVerifiedUser(): ?Response
     {
@@ -357,6 +357,13 @@ class CommandeController extends AbstractController
         $codePostal = $commandes[0]->getCodePostal();
         $tel = $commandes[0]->getTel();
 
+        // Générer le lien vers "Mes commandes"
+        $mesCommandesUrl = $this->generateUrl(
+            'app_mes_commandes',
+            [],
+            UrlGeneratorInterface::ABSOLUTE_URL
+        );
+
         // Envoyer un e-mail de confirmation
         $email = (new Email())
             ->from('dngo3819@example.com')
@@ -372,6 +379,7 @@ class CommandeController extends AbstractController
                 'ville' => $ville,
                 'code_postal' => $codePostal,
                 'tel' => $tel,
+                'mesCommandesUrl' => $mesCommandesUrl, // ✅ passer l'URL dans le contexte Twig
             ]));
 
         $this->mailer->send($email);
@@ -382,6 +390,7 @@ class CommandeController extends AbstractController
             'date' => $dateCommande,
         ]);
     }
+
 
     private function createCommandeFromSession(string $numero): array
     {

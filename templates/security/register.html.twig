@@ -39,7 +39,7 @@
 
 			{# form_row = label + widget + errors → inclut les messages d'erreur avec form_row #}
 			{{ form_row(registrationForm.email, {
-                label: "* Votre adresse Email",
+                label: "* Votre adresse Email :",
                 attr: { placeholder: "Entrez votre adresse Email", class: "form-control" },
                 label_attr: { class: "form-label" }
             }) }}
@@ -47,7 +47,7 @@
 			<br><br>
 
 			{{ form_row(registrationForm.plainPassword.first, {
-                label: "* Choisir un mot de passe (au moins 6 caractères dont 1 majuscule et 1 chiffre)",
+                label: "* Choisir un mot de passe (au moins 6 caractères dont 1 majuscule et 1 chiffre) :",
                 attr: { placeholder: "Entrez un mot de passe", class: "form-control" },
                 label_attr: { class: "form-label" }
             }) }}
@@ -55,7 +55,7 @@
 			<br>
 
 			{{ form_row(registrationForm.plainPassword.second, {
-                label: "* Confirmez le mot de passe",
+                label: "* Confirmez le mot de passe :",
                 attr: { placeholder: "Confirmez le mot de passe", class: "form-control" },
                 label_attr: { class: "form-label" }
             }) }}

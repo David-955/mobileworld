@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class SecurityController extends AbstractController
 {
@@ -39,31 +41,31 @@ class SecurityController extends AbstractController
         $form = $this->createFormBuilder()
             ->add('email', \Symfony\Component\Form\Extension\Core\Type\EmailType::class)
             ->getForm();
-    
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // Récupérer l'email depuis le formulaire
             $email = $form->get('email')->getData();
-    
+
             // Rechercher l'utilisateur par son email
             $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
             if (!$user) {
                 $this->addFlash('danger', 'Aucun compte trouvé avec cette adresse Email.');
                 return $this->redirectToRoute('app_forgot_password');
             }
-    
+
             // Générer un token unique pour la réinitialisation
             $resetToken = uniqid('', true);
             $user->setToken($resetToken); // Ajoutez une méthode `setToken` dans votre entité Utilisateur
             $entityManager->flush();
-    
+
             // Générer le lien de réinitialisation
             $resetUrl = $this->generateUrl(
                 'app_reset_password',
                 ['token' => $resetToken],
                 UrlGeneratorInterface::ABSOLUTE_URL
             );
-    
+
             // Envoyer l'e-mail de réinitialisation
             $emailContent = (new Email())
                 ->from('dngo3819@gmail.com')
@@ -71,19 +73,19 @@ class SecurityController extends AbstractController
                 ->subject('Mobile World - Réinitialisation de votre mot de passe')
                 ->html(
                     '<h1>Réinitialisation de votre mot de passe</h1>' .
-                    '<p>Vous avez demandé à réinitialiser votre mot de passe. Cliquez sur le lien ci-dessous pour profiter pleinement de l\'univers Mobile World :</p>' .
-                    '<a href="' . htmlspecialchars($resetUrl) . '">Réinitialiser mon mot de passe</a>'
+                        '<p>Vous avez demandé à réinitialiser votre mot de passe. Cliquez sur le lien ci-dessous pour profiter pleinement de l\'univers Mobile World :</p>' .
+                        '<a href="' . htmlspecialchars($resetUrl) . '">Réinitialiser mon mot de passe</a>'
                 );
-    
+
             $mailer->send($emailContent);
-            
+
             $this->addFlash('success', 'Email pour réinitialiser le mot de passe envoyé avec succès.');
             return $this->redirectToRoute('app_login');
-            }
-    
+        }
+
         // Afficher le formulaire
         return $this->render('security/forgot-password.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
         ]);
     }
 
@@ -94,15 +96,15 @@ class SecurityController extends AbstractController
         // Vérifier si l'utilisateur est connecté
         $user = $this->getUser();
         if (!$user) {
-            $this->addFlash('error', 'Vous devez être connecté pour changer votre mot de passe.');
+            $this->addFlash('danger', 'Vous devez être connecté pour changer votre mot de passe.');
             return $this->redirectToRoute('app_login');
         }
-    
+
         // Générer un token unique pour la réinitialisation
         $resetToken = uniqid('', true);
         $user->setToken($resetToken);
         $entityManager->flush();
-    
+
         // Rediriger vers la page de réinitialisation avec le token
         return $this->redirectToRoute('app_reset_password', ['token' => $resetToken]);
     }
@@ -119,37 +121,57 @@ class SecurityController extends AbstractController
         if (!$user) {
             throw $this->createNotFoundException('Token invalide.');
         }
-    
-        // Formulaire pour saisir le nouveau mot de passe
+
+        // Formulaire pour saisir le nouveau mot de passe avec contraintes
         $form = $this->createFormBuilder()
-            ->add('plainPassword', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class)
-            ->add('confirmPassword', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class)
+            ->add('plainPassword', PasswordType::class, [
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Veuillez entrer un mot de passe.']),
+                    new Assert\Length([
+                        'min' => 6,
+                        'minMessage' => 'Minimum de 6 caractères pour le mot de passe, et maximum de 100 caractères.',
+                        'max' => 100,
+                    ]),
+                    new Assert\Regex([
+                        'pattern' => '/^(?=.*[A-Z])(?=.*\d).+$/',
+                        'message' => 'Votre mot de passe doit contenir au moins 1 majuscule et 1 chiffre.',
+                    ]),
+                ],
+                'label' => 'Nouveau mot de passe'
+            ])
+            ->add('confirmPassword', PasswordType::class, [
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Veuillez confirmer votre mot de passe.']),
+                ],
+                'label' => 'Confirmation'
+            ])
             ->getForm();
-    
+
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-    
+
             // Vérifier que les deux mots de passe correspondent
             if ($data['plainPassword'] !== $data['confirmPassword']) {
-                $this->addFlash('error', 'Les mots de passe ne correspondent pas.');
+                $this->addFlash('danger', 'Les mots de passe ne correspondent pas.');
                 return $this->redirectToRoute('app_reset_password', ['token' => $token]);
             }
-    
+
             // Hasher le nouveau mot de passe
             $hashedPassword = $passwordHasher->hashPassword($user, $data['plainPassword']);
             $user->setMotdepasse($hashedPassword);
-    
+
             // Effacer le token après utilisation
             $user->setToken(null);
             $entityManager->flush();
-    
-            $this->addFlash('success', 'Votre mot de passe a été réinitialisé avec succès.');
-            return $this->redirectToRoute('app_login');
+
+            $this->addFlash('success', 'Votre mot de passe a été modifié avec succès.');
+            return $this->redirectToRoute('app_profil');
         }
-    
+
         return $this->render('security/reset-password.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
         ]);
     }
 
