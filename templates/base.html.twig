@@ -97,22 +97,16 @@
 		</main>
 
 		<footer>
-			<section>
+			<section class="footer-liens">
 				<a href="{{ path('app_contact') }}" class="nav-link">Nous contacter</a>
-				<a href="{{ path('app_mentions') }}" class="nav-link">Mentions légales</a>
-				<a href="https://www.iubenda.com/privacy-policy/79901867" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Politique de confidentialité ">Politique de confidentialité</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-				{# <a href="https://www.iubenda.com/privacy-policy/79901867" class="nav-link">Politique de confidentialité</a> #}
-				<a href="https://www.iubenda.com/privacy-policy/79901867/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Politique relative aux Cookies ">Politique relative aux Cookies</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-				{# <a href="https://www.iubenda.com/privacy-policy/79901867/cookie-policy" class="nav-link">Politique relative aux Cookies</a> #}
+				<a href="{{ path('app_mentions') }}" target="_blank" class="nav-link">Mentions légales</a>
+				<a href="https://www.iubenda.com/privacy-policy/79901867" target="_blank" class="nav-link">Politique de confidentialité</a>
+				<a href="https://www.iubenda.com/privacy-policy/79901867/cookie-policy" target="_blank" class="nav-link">Politique Cookies</a>
 			</section>
-			<br>
-			<p>Mobile World ©
-				{{ "now"|date("Y") }}
-				- tous droits réservés</p>
+
 			{# Réseaux Sociaux #}
 			{# https://uiverse.io/david-mohseni/brave-shrimp-86 #}
-			<ul class="wrapper">
-				<li class="icon facebook">
+				<ul class="wrapper"> <li class="icon facebook">
 					<span class="tooltip">Facebook</span>
 					<a href="https://www.facebook.com/" target="_blank">
 						<svg viewbox="0 0 320 512" height="1.2em" xmlns="http://www.w3.org/2000/svg">
@@ -137,6 +131,10 @@
 					</a>
 				</li>
 			</ul>
+
+			<p>Mobile World ©
+				{{ "now"|date("Y") }}
+				- tous droits réservés</p>
 
 		</footer>
 

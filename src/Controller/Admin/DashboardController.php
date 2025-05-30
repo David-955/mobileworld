@@ -32,8 +32,9 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
-        // Lien vers le site
+        // Lien vers le site et stripe
         yield MenuItem::linktoRoute('Retour vers le site', 'fas fa-home', 'app_accueil');
+        yield MenuItem::linkToUrl('Stripe (Test)', 'fab fa-stripe', 'https://dashboard.stripe.com/test/dashboard')->setLinkTarget('_blank');
         // Relier les CRUDs
         yield MenuItem::linkToCrud('Catégories de la boutique', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('Produits de la boutique', 'fas fa-list', Produit::class);
