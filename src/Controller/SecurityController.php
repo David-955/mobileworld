@@ -167,7 +167,7 @@ class SecurityController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Votre mot de passe a été modifié avec succès.');
-            return $this->redirectToRoute('app_profil');
+            return $this->redirectToRoute('app_accueil');
         }
 
         return $this->render('security/reset-password.html.twig', [

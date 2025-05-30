@@ -1,14 +1,12 @@
 {% extends 'base.html.twig' %}
-{% block title %}Mobile World : Panier
+{% block title %}Mobile World : Mon panier
 {% endblock %}
 {% block content %}
-	<h1>Panier</h1>
+	<h1>Mon panier</h1>
 	<section class="container-vert">
 		<section class="container-blanc">
 
 			{% if panier|length > 0 %}
-				{# <p style="margin-left: 15px; text-align: left;"><a href="{{ path('app_boutique') }}">Boutique</a> > Panier</p> #}
-
 				<table class="table">
 					<thead>
 						<tr>
@@ -150,6 +148,7 @@
 			{% endif %}
 		</section>
 	</section>
+
 	<div id="image-modal" class="modal">
 		<span class="close">&times;</span>
 		{# class pour css, id pour js #}

@@ -4,37 +4,46 @@
 {% endblock %}
 
 {% block content %}
-    <section class="main">
-        <h1>Les dernières news</h1>
-        <ul id="news-container">
-            {% for article in pagination.items %}
-                {# Vérifier si le titre est valide #}
-                {% if article.title is not empty %}
-                    {# Encoder le titre pour l'URL #}
-                    {% set encodedTitle = article.title|url_encode %}
-                    {# Vérifier que le titre encodé ne contient pas de barre oblique (/) #}
-                    {% if '/' not in encodedTitle %}
-                        <li class="news-article">
-                            <div class="news-image-container">
-                                <a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank">
-                                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="news-image">
-                                </a>
-                            </div>
-                            <div class="news-contenu">
-                                <a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" style="text-decoration: none;">
-                                    <h2 class="news-title">{{ article.title }}</h2>
-                                    <p class="news-description">{{ article.description }}</p>
-                                </a>
-                                <a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" class="news-lireplus">Lire la suite...</a>
-                            </div>
-                        </li>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-        </ul>
+	<section
+		class="main">
 
-        <div class="pagination">
-            {{ knp_pagination_render(pagination) }}
-        </div>
-    </section>
+		{# Afficher les messages flash #}
+		{% for label, messages in app.flashes %}
+			{% for message in messages %}
+				<div class="alert alert-{{ label }}" style="width: 100%; text-align: center;">{{ message }}</div>
+			{% endfor %}
+		{% endfor %}
+        
+		<h1>Les dernières news</h1>
+		<ul id="news-container">
+			{% for article in pagination.items %}
+				{# Vérifier si le titre est valide #}
+				{% if article.title is not empty %}
+					{# Encoder le titre pour l'URL #}
+					{% set encodedTitle = article.title|url_encode %}
+					{# Vérifier que le titre encodé ne contient pas de barre oblique (/) #}
+					{% if '/' not in encodedTitle %}
+						<li class="news-article">
+							<div class="news-image-container">
+								<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank">
+									<img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="news-image">
+								</a>
+							</div>
+							<div class="news-contenu">
+								<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" style="text-decoration: none;">
+									<h2 class="news-title">{{ article.title }}</h2>
+									<p class="news-description">{{ article.description }}</p>
+								</a>
+								<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" class="news-lireplus">Lire la suite...</a>
+							</div>
+						</li>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</ul>
+
+		<div class="pagination">
+			{{ knp_pagination_render(pagination) }}
+		</div>
+	</section>
 {% endblock %}
