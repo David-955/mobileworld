@@ -20,30 +20,38 @@
 	</head>
 	<body>
 		<header>
-			<nav
-				class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(#2dc5a9, #4caf50);">
-				<!-- Logo -->
-				<div class="container-fluid" style="width: 80%;">
-					<a class="navbar-brand" href="{{ path('app_accueil') }}">
-						<img src="{{ asset('/images/logos/logo-mobileworld.webp') }}" alt="logo du site Mobile World" class="logo-site" style="max-height: 100px;">
-					</a>
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(#2dc5a9, #4caf50);">
+				<div
+					class="container-fluid d-flex align-items-center justify-content-between" style="width: 80%;">
 
-					<!-- Bouton burger (affiché uniquement sur les petits écrans) -->
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<!-- Bouton Burger Gauche -->
+					<button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
-					<!-- Menu principal -->
-					<div class="collapse navbar-collapse" id="navbarNav">
+					<!-- Logo Centré -->
+					<a class="navbar-brand order-2 mx-auto" href="{{ path('app_accueil') }}">
+						<img src="{{ asset('/images/logos/logo-mobileworld.webp') }}" alt="logo du site Mobile World" class="logo-site" style="max-height: 100px;">
+					</a>
+
+					<!-- Bouton Burger Droit -->
+					<button class="navbar-toggler order-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle right navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<!-- Menu déroulant commun -->
+					<div class="collapse navbar-collapse order-4" id="navbarNav">
 						<ul
 							class="navbar-nav ms-auto align-items-center">
-							{# accessible aux administrateurs #}
+
+							{# Admin #}
 							{% if is_granted('ROLE_ADMIN') %}
 								<li class="nav-item">
 									<a class="nav-link mx-auto" href="{{ path('admin') }}">Admin</a>
 								</li>
 							{% endif %}
-							{# Pour tout le monde #}
+
+							{# Pages publiques #}
 							<li class="nav-item">
 								<a class="nav-link" href="{{ path('app_accueil') }}">Actualités</a>
 							</li>
@@ -60,7 +68,8 @@
 									</svg>
 								</a>
 							</li>
-							{# Si on est connecté alors on fait disparaitre "s'inscrire" et "se connecter" #}
+
+							{# Connexion / Inscription #}
 							{% if not app.user %}
 								<li class="nav-item">
 									<a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
@@ -69,7 +78,6 @@
 									<a class="nav-link" href="{{ path('app_login') }}">Se connecter</a>
 								</li>
 							{% else %}
-								{# si connecté donc pour les membres #}
 								<li class="nav-item">
 									<a class="nav-link" href="{{ path('app_profil') }}">
 										<img src="{{ asset(app.user.personnalisation.avatar) }}" alt="Image de profil" class="profile-image-header" style="max-height: 50px; border-radius: 50%;">
@@ -81,6 +89,7 @@
 							{% endif %}
 						</ul>
 					</div>
+
 				</div>
 			</nav>
 		</header>
@@ -106,7 +115,8 @@
 
 			{# Réseaux Sociaux #}
 			{# https://uiverse.io/david-mohseni/brave-shrimp-86 #}
-				<ul class="wrapper"> <li class="icon facebook">
+			<ul class="wrapper">
+				<li class="icon facebook">
 					<span class="tooltip">Facebook</span>
 					<a href="https://www.facebook.com/" target="_blank">
 						<svg viewbox="0 0 320 512" height="1.2em" xmlns="http://www.w3.org/2000/svg">
