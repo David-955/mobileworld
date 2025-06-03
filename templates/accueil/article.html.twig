@@ -46,9 +46,7 @@
                     <div class="commentaires-colonne2">
                         <strong>Posté par
                             <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
-                                {{ commentaire.utilisateur.personnalisation.pseudo }}
-                            </a>
-                        </strong>, le {{ commentaire.date|date('d/m/Y') }} à {{ commentaire.date|date('H:i') }}
+                                {{ commentaire.utilisateur.personnalisation.pseudo }}</a></strong>, le {{ commentaire.date|date('d/m/Y') }} à {{ commentaire.date|date('H:i') }}
                         <p>{{ commentaire.contenu }}</p>
                     </div>
                 </article>
