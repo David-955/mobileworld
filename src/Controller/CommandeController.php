@@ -379,7 +379,7 @@ class CommandeController extends AbstractController
                 'ville' => $ville,
                 'code_postal' => $codePostal,
                 'tel' => $tel,
-                'mesCommandesUrl' => $mesCommandesUrl, // ✅ passer l'URL dans le contexte Twig
+                'mesCommandesUrl' => $mesCommandesUrl, 
             ]));
 
         $this->mailer->send($email);

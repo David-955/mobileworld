@@ -129,7 +129,7 @@ class RegistrationController extends AbstractController
         EntityManagerInterface $entityManager,
         MailerInterface $mailer
     ): Response {
-        // Récupérer l'e-mail depuis la requête
+        // Récupérer l'email depuis la requête
         $email = $request->query->get('email');
         if (!$email) {
             $this->addFlash('danger', 'Veuillez fournir une adresse Email.');
@@ -155,7 +155,7 @@ class RegistrationController extends AbstractController
             ['token' => $user->getToken()],
             UrlGeneratorInterface::ABSOLUTE_URL
         );
-        // Envoyer l'Email de confirmation
+        // Envoyer l'email de confirmation
         $emailContent = (new Email())
             ->from('dngo3819@gmail.com')
             ->to($user->getEmail())
