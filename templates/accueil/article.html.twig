@@ -1,107 +1,95 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}mobile World :
-	{{ article.title }}
-{% endblock %}
+{% block title %}Mobile World : {{ article.title }}{% endblock %}
 
 {% block content %}
-	{# 10% ici / 80% contenu principal / 10% * #}
-	<p style="margin-left: 10%;">
-		<a href="{{ path('app_accueil') }}">Accueil</a>
-		>
-		{{ title }}</p>
-	<section class="article-container">
-		<section class="article-titre">
-			<h1>{{ article.title }}</h1>
-		</section>
+	{# fil d'Ariane #}
+    <p style="margin-left: 10%;">
+        <a href="{{ path('app_accueil') }}">Accueil</a> &gt; {{ title }}
+    </p>
 
-		<section class="article-contenu">
-			<p>
-				<em>{{ article.description }}</em>
-			</p>
-			<img
-			src="{{ article.urlToImage }}" alt="{{ article.title }}" class="article-image">
+    <section class="article-container">
+        <header class="article-titre">
+            <h1>{{ article.title }}</h1>
+        </header>
 
-			{# Afficher le contenu complet récupéré via Diffbot #}
-			<div
-				class="full-content">
-				{# Convertit les sauts de ligne (\n) en deux balises <br> #}
-				<p>{{ article.fullContent | replace({'\n': '<br><br>'}) | raw }}</p>
-			</div>
+        <section class="article-contenu">
+            {% if article.description %}
+                <p><em>{{ article.description }}</em></p>
+            {% endif %}
 
-			<a href="{{ article.url }}" target="_blank">Source pour lire l'article original :
-				{{ article.source.name }}
-				-
-				{{ article.publishedAt|date('d/m/Y H:i') }}</a>
-		</section>
+            {% if article.urlToImage %}
+                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="article-image">
+            {% endif %}
 
-		<section class="container-commentaires">
-			<h2>Commentaires</h2>
+            <div class="full-content">
+                {{ article.htmlContent | raw }}
+            </div>
 
-			{% for commentaire in pagination %}
-				<section class="liste-commentaires">
-					<div class="commentaires-colonne1">
-						<a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
-							<img src="{{ commentaire.utilisateur.personnalisation.avatar }}" alt="Avatar de {{ commentaire.utilisateur.personnalisation.pseudo }}" width="50px">
-						</a>
-					</div>
-					<div class="commentaires-colonne2">
-						<strong>Posté par
-							<a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">{{ commentaire.utilisateur.personnalisation.pseudo }}</a>
-						</strong>, le :
-						{{ commentaire.date|date('d/m/Y') }}
-						à
-						{{ commentaire.date|date('H:i') }}
-						<p>{{ commentaire.contenu }}</p>
-					</div>
-				</section>
+            <p class="source-article">
+                <a href="{{ article.url }}" target="_blank">
+                    Source originale : {{ article.source.name }} — {{ article.publishedAt|date('d/m/Y H:i') }}
+                </a>
+            </p>
+        </section>
+
+        <section class="container-commentaires">
+            <h2>Commentaires</h2>
+
+            {% for commentaire in pagination %}
+                <article class="liste-commentaires">
+                    <div class="commentaires-colonne1">
+                        <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
+                            <img src="{{ commentaire.utilisateur.personnalisation.avatar }}" alt="Avatar de {{ commentaire.utilisateur.personnalisation.pseudo }}" width="50">
+                        </a>
+                    </div>
+                    <div class="commentaires-colonne2">
+                        <strong>Posté par
+                            <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
+                                {{ commentaire.utilisateur.personnalisation.pseudo }}
+                            </a>
+                        </strong>, le {{ commentaire.date|date('d/m/Y') }} à {{ commentaire.date|date('H:i') }}
+                        <p>{{ commentaire.contenu }}</p>
+                    </div>
+                </article>
 				<br>
-			{% else %}
-				<p>
-					<em>Aucun commentaire pour le moment.</em>
-				</p>
-			{% endfor %}
-			{# Affichage de la barre de pagination #}
-			{{ knp_pagination_render(pagination) }}
+            {% else %}
+                <p><em>Aucun commentaire pour le moment.</em></p>
+            {% endfor %}
+
+            {{ knp_pagination_render(pagination) }}
 			<br>
 
+			{# Formulaire d'ajout de commentaire #}
+            {% if app.user %}
+                <h2>Ajouter un commentaire</h2>
 
-			{% if app.user %}
-				<h2>Ajouter un commentaire</h2>
+                <section class="ajout-commentaires">
+                    {% form_theme form "form/champs.html.twig" %}
 
+                    {{ form_start(form, {'attr': {'class': 'commentaire-form'}}) }}
 
-				<section class="ajout-commentaires">
-					{% form_theme form "form/champs.html.twig" %}
-
-					{{ form_start(form, {'attr': {'class': 'commentaire-form'}}) }}
-
-					{{ form_row(form.contenu, {
-						label: 'Exprimez-vous :',
-						attr: {
-							placeholder: 'Entrez votre commentaire ici (1500 caractères maximum)',
-							class: 'form-control',
-							maxlength: 1500
-						},
-						label_attr: { class: 'form-label' }
-					}) }}
+                    {{ form_row(form.contenu, {
+                        label: 'Exprimez-vous :',
+                        attr: {
+                            placeholder: 'Entrez votre commentaire ici (1500 caractères maximum)',
+                            class: 'form-control',
+                            maxlength: 1500
+                        },
+                        label_attr: { class: 'form-label' }
+                    }) }}
 					<br>
-					<p>
-						<button class="btn-submit" type="submit">Ajouter un commentaire</button>
-					</p>
-					{{ form_rest(form) }}
-					{{ form_end(form) }}
-				</section>
-				<br>
-			{% else %}
-				<p>
-					<em>Vous devez être
-						<a href="{{ path('app_login') }}">connecté</a>
-						pour pouvoir poster un commentaire.</em>
-				</p>
-			{% endif %}
-			<hr>
-			<p style="margin-top: 20px;">
-				<a href="{{ path('app_accueil') }}" class="btn-submit">Retour aux news</a>
-			</p>
-		</section>
-	{% endblock %}
+                    <p><button class="btn-submit" type="submit">Ajouter un commentaire</button></p>
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </section>
+            {% else %}
+                <p><em>Vous devez être <a href="{{ path('app_login') }}">connecté</a> pour poster un commentaire.</em></p>
+            {% endif %}
+			<br>
+			<p><a href="{{ path('app_accueil') }}" class="btn-submit">Retour aux news</a></p>
+
+        </section>
+    </section>
+{% endblock %}

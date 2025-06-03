@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use andreskrey\Readability\Readability;
+use andreskrey\Readability\Configuration;
 
 class AccueilController extends AbstractController
 {
@@ -72,7 +74,6 @@ class AccueilController extends AbstractController
         $data = $this->apiService->fetchData("https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c");
         $article = null;
 
-        // Trouver l'article avec le titre correspondant
         foreach ($data['articles'] as $item) {
             if ($item['title'] === $title) {
                 $article = $item;
@@ -84,18 +85,38 @@ class AccueilController extends AbstractController
             throw $this->createNotFoundException('Article non trouvé');
         }
 
-        // Appeler l'API Diffbot pour récupérer le contenu complet de l'article
-        $diffbotToken = "88225fa3e6849e4d29aa997e777d670b";
-        $diffbotUrl = "https://api.diffbot.com/v3/analyze?url=" . urlencode($article['url']) . "&token=" . $diffbotToken;
-        $diffbotResponse = $this->apiService->fetchData($diffbotUrl);
+        $articleUrl = $article['url'];
+        $htmlContent = '';
+        $images = [];
 
-        // Extraire le contenu complet de la réponse Diffbot
-        $fullContent = $diffbotResponse['objects'][0]['text'] ?? "Contenu complet non disponible.";
+        try {
+            // Récupérer le contenu de la page
+            $html = file_get_contents($articleUrl);
 
-        // Ajouter le contenu complet à l'article
-        $article['fullContent'] = $fullContent;
+            // Configurer Readability
+            $config = new Configuration();
+            $config->setFixRelativeURLs(true);
+            $config->setOriginalURL($articleUrl);
 
-        // Gestion des commentaires
+            $readability = new Readability($config);
+
+            // Passer directement le HTML (string)
+            $readability->parse($html);
+
+            // Récupérer le contenu nettoyé
+            $htmlContent = $readability->getContent();
+
+            // Extraire les images principales
+            preg_match_all('/<img[^>]+src="([^">]+)"/', $htmlContent, $matches);
+            $images = $matches[1] ?? [];
+        } catch (\Exception $e) {
+            $htmlContent = '<p>Erreur lors de l’extraction du contenu : ' . $e->getMessage() . '</p>';
+        }
+
+
+        $article['htmlContent'] = $htmlContent;
+        $article['images'] = $images;
+
         $commentaire = new Commentaire();
         $form = $this->createForm(CommentaireType::class, $commentaire);
         $form->handleRequest($request);
@@ -104,7 +125,6 @@ class AccueilController extends AbstractController
             $articleUrl = $this->generateUrl('app_article', ['title' => urlencode($title)], true);
             $commentaire->setArticle($articleUrl);
             $commentaire->setUtilisateur($this->getUser());
-            // spécifier le fuseau horaire pour la date
             $commentaire->setDate(new \DateTime('now', new \DateTimeZone('Europe/Paris')));
 
             $entityManager = $doctrine->getManager();
@@ -114,25 +134,19 @@ class AccueilController extends AbstractController
             return $this->redirectToRoute('app_article', ['title' => urlencode($title)]);
         }
 
-        // Récupérer tous les commentaires associés à cet article
         $repository = $doctrine->getRepository(Commentaire::class);
-        // moyen trouvé pour récupérer les commentaires car il n'a pas d'entité article où l'on pourrait faire un findBy (après jointure)
         $query = $repository->createQueryBuilder('c')
-            // c.article c'est dans l'entité Commentaire
-            // articleUrl c'est le lien de l'article actuel donc s'il y a correspondance alors on affiche les commentaires de l'article en question
             ->where('c.article = :articleUrl')
-            // :articleUrl aura comme paramètre l'url encodé pour matcher avec l'url de l'article dans la bdd sinon on ne pourra pas comparer correctement
             ->setParameter('articleUrl', $this->generateUrl('app_article', ['title' => urlencode($title)], true))
-            ->orderBy('c.date', 'DESC') // Tri par date décroissante
-            ->getQuery();   // Récupérer la requête
+            ->orderBy('c.date', 'DESC')
+            ->getQuery();
 
-        // Paginer les commentaires avec KnpPaginator
         $pagination = $paginator->paginate(
-            $query, // Requête Doctrine
-            $request->query->getInt('page', 1), // Numéro de page actuelle (par défaut 1)
-            5 // Nombre d'éléments par page
+            $query,
+            $request->query->getInt('page', 1),
+            5
         );
-        // Récupérer la personnalisation de l'Utilisateur actuel
+
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $this->getUser()]);
 
         return $this->render('accueil/article.html.twig', [
@@ -140,7 +154,7 @@ class AccueilController extends AbstractController
             'article' => $article,
             'title' => $title,
             'form' => $form,
-            'pagination' => $pagination, // Passer la pagination au template
+            'pagination' => $pagination,
             'personnalisation' => $personnalisation,
         ]);
     }

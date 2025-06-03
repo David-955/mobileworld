@@ -415,6 +415,27 @@ footer {
 .full-content {
   text-align: left;
   padding: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.full-content img {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+/* supression de la première image de l'article car readability et newsapi affichent la même image */
+.full-content img:first-of-type {
+  display: none;
+}
+
+/* supression du chapo de l'article car readability et newsapi affichent la même phrase */
+.full-content p:first-of-type {
+  display: none;
 }
 
 /* Partie commentaires */
