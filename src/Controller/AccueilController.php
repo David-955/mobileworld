@@ -29,11 +29,15 @@ class AccueilController extends AbstractController
     {
         $url = "https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c";
         $data = $this->apiService->fetchData($url);
+        // Filtrer pour exclure les articles venant de lesnumeriques.com (trop trop de pubs)
+        $data['articles'] = array_filter($data['articles'], function ($article) {
+            return strpos($article['url'], 'lesnumeriques.com') === false;
+        });
 
         // Filtrer les articles 
         $filteredArticles = array_filter($data['articles'], function ($article) {
             $keywords = ['smartphone', 'mobile', 'Android', 'iOS', 'Samsung', 'iPhone', 'Xiaomi', 'Huawei', 'honor', 'OnePlus', 'Oppo', 'Realme', 'vivo', 'Sony', 'Asus', 'Google', 'Pixel', 'Nokia', 'Motorola', 'LG', 'BlackBerry', 'Fairphone', 'ZTE', 'Lenovo'];
-            $excludedKeywords = ['jeu', 'game', 'jeu vidéo', 'sport', 'politique', 'électrique', 'voiture', 'automobile', 'soldes', 'promotion', 'réduction', 'sponso', 'sponsorisé', 'pub', 'publicité', 'offres', 'offre', 'bon plan', 'code promo', 'coupon', 'remise', 'cadeau', 'gratuit', 'gratuite', 'gratuitement', 'geek', 'fou', 'explose'];
+            $excludedKeywords = ['sport', 'politique', 'soldes', 'promotion', 'réduction', 'sponso', 'sponsorisé', 'pub', 'publicité', 'offres', 'offre', 'bon plan', 'code promo', 'coupon', 'remise', 'cadeau', 'gratuit', 'gratuite', 'gratuitement'];
 
             // Vérifier les mots-clés pertinents dans le titre et la description de l'article 
             $pertinant = false;
@@ -105,6 +109,9 @@ class AccueilController extends AbstractController
 
             // Récupérer le contenu nettoyé
             $htmlContent = $readability->getContent();
+
+            // Supprimer la première image
+            $htmlContent = preg_replace('/<img[^>]+>/i', '', $htmlContent, 1);
 
             // Extraire les images principales
             preg_match_all('/<img[^>]+src="([^">]+)"/', $htmlContent, $matches);

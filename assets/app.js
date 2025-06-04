@@ -13,7 +13,7 @@ function loadStripe() {
     if (!stripe) {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = 'https://js.stripe.com/v3/ '; // Supprimé l'espace inutile à la fin
+            script.src = 'https://js.stripe.com/v3/ ';
             script.onload = () => {
                 if (window.Stripe) {
                     stripe = window.Stripe;
