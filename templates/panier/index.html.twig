@@ -62,7 +62,7 @@
 				</table>
 				<p>
 					<em>Vider le panier</em>
-					<a href="{{ path('app_cancel') }}">
+					<a href="{{ path('app_cancel') }}" onclick="return confirm('Êtes-vous sûr de vouloir vider le panier ?');">
 						<button aria-label="supprimer" class="delete-button">
 							<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
 								<g id="trash-can">

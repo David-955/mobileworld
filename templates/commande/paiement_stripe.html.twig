@@ -11,8 +11,9 @@
 			{# voir app.js pour id="checkout-button" #}
 				<p><button id="checkout-button" class="btn-submit"> Payer ma commande</button>
 			</p>
+			<br>
 			<p>
-				<a href="{{ path('app_cancel') }}" class="btn-submit">Annuler</a>
+				<a href="{{ path('app_cancel') }}" class="btn-submit" onclick="return confirm('Êtes-vous sûr de vouloir annuler votre commande ?');">Annuler</a>
 			</p>
 		</section>
 	</section>

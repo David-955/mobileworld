@@ -32,7 +32,11 @@ class AccueilController extends AbstractController
 
         // Filtrer pour exclure les articles venant de lesnumeriques.com
         $articles = array_filter($data['articles'], function ($article) {
-            return strpos($article['url'], 'lesnumeriques.com') === false;
+            $url = $article['url'];
+            return (
+                strpos($url, 'lesnumeriques.com') === false &&
+                strpos($url, 'dhnet.be') === false
+            );
         });
 
         // Paginer les articles filtrés

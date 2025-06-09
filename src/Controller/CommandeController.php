@@ -205,14 +205,14 @@ class CommandeController extends AbstractController
         if ($redirect) return $redirect;
 
         $user = $this->getUser();
-        $allNumeros = $commandeRepository->findUniqueCommandeNumerosByUser($user);
+        $allNumeros = $commandeRepository->findUniqueCommandeNumeros($user);
         $allNumeros = array_column($allNumeros, 'numero');
 
         $pagination = $paginator->paginate($allNumeros, $request->query->getInt('page', 1), 5);
 
         $commandesGroupedByNumero = [];
         foreach ($pagination->getItems() as $numero) {
-            $commandes = $commandeRepository->findCommandesByNumero($numero, $user);
+            $commandes = $commandeRepository->findCommandes($numero, $user);
             if (!empty($commandes)) {
                 $commandesGroupedByNumero[$numero] = [
                     'date' => $commandes[0]->getDate(),
