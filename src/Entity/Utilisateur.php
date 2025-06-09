@@ -45,7 +45,7 @@ class Utilisateur implements PasswordAuthenticatedUserInterface, UserInterface
     /**
      * @var Collection<int, Commentaire>
      */
-    #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'Utilisateur')]
+    #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'utilisateur')]
     private Collection $commentaires;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]

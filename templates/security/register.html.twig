@@ -32,13 +32,13 @@
 			</p>
 			<br>
 
-			{# Personnalisation des messages d'erreurs provenant de registrationformtype.php #}
-			{% form_theme registrationForm "form/champs.html.twig" %}
+			{# Personnalisation des messages d'erreurs #}
+			{% form_theme form "form/champs.html.twig" %}
 			{# Formulaire avec affichage automatique des erreurs #}
-			{{ form_start(registrationForm, {'attr': {'class': 'form-container'}}) }}
+			{{ form_start(form, {'attr': {'class': 'form-container'}}) }}
 
 			{# form_row = label + widget + errors → inclut les messages d'erreur avec form_row #}
-			{{ form_row(registrationForm.email, {
+			{{ form_row(form.email, {
                 label: "* Votre adresse Email :",
                 attr: { placeholder: "Entrez votre adresse Email", class: "form-control" },
                 label_attr: { class: "form-label" }
@@ -46,7 +46,7 @@
 
 			<br><br>
 
-			{{ form_row(registrationForm.plainPassword.first, {
+			{{ form_row(form.plainPassword.first, {
                 label: "* Choisir un mot de passe (au moins 6 caractères dont 1 majuscule et 1 chiffre) :",
                 attr: { placeholder: "Entrez un mot de passe", class: "form-control" },
                 label_attr: { class: "form-label" }
@@ -54,7 +54,7 @@
 
 			<br>
 
-			{{ form_row(registrationForm.plainPassword.second, {
+			{{ form_row(form.plainPassword.second, {
                 label: "* Confirmez le mot de passe :",
                 attr: { placeholder: "Confirmez le mot de passe", class: "form-control" },
                 label_attr: { class: "form-label" }
@@ -62,7 +62,7 @@
 
 			<br>
 
-			{{ form_row(registrationForm.agreeTerms, {
+			{{ form_row(form.agreeTerms, {
                 label: "* J’accepte les conditions générales d’utilisation et la politique de confidentialité...",
                 label_attr: { class: "form-check-label" }
             }) }}
@@ -73,7 +73,7 @@
 			<br><br>
 			<small class="required-note">{{ "(*) Tous les champs sont obligatoires" }}</small>
 
-			{{ form_end(registrationForm) }}
+			{{ form_end(form) }}
 		</section>
 	</section>
 {% endblock %}

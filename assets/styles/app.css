@@ -857,11 +857,9 @@ footer {
   margin-bottom: 15px; /* Espacement entre chaque groupe */
 }
 
-/* Styles pour les labels */
+/* Style pour les labels */
 .form-label {
-  display: block; /* Force le label à être sur sa propre ligne */
   margin-bottom: 5px; /* Espace entre le label et le champ */
-  color: #333;
 }
 
 /* Page /commande */

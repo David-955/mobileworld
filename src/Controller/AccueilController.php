@@ -29,40 +29,17 @@ class AccueilController extends AbstractController
     {
         $url = "https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c";
         $data = $this->apiService->fetchData($url);
-        // Filtrer pour exclure les articles venant de lesnumeriques.com (trop trop de pubs)
-        $data['articles'] = array_filter($data['articles'], function ($article) {
+
+        // Filtrer pour exclure les articles venant de lesnumeriques.com
+        $articles = array_filter($data['articles'], function ($article) {
             return strpos($article['url'], 'lesnumeriques.com') === false;
-        });
-
-        // Filtrer les articles 
-        $filteredArticles = array_filter($data['articles'], function ($article) {
-            $keywords = ['smartphone', 'mobile', 'Android', 'iOS', 'Samsung', 'iPhone', 'Xiaomi', 'Huawei', 'honor', 'OnePlus', 'Oppo', 'Realme', 'vivo', 'Sony', 'Asus', 'Google', 'Pixel', 'Nokia', 'Motorola', 'LG', 'BlackBerry', 'Fairphone', 'ZTE', 'Lenovo'];
-            $excludedKeywords = ['sport', 'politique', 'soldes', 'promotion', 'réduction', 'sponso', 'sponsorisé', 'pub', 'publicité', 'offres', 'offre', 'bon plan', 'code promo', 'coupon', 'remise', 'cadeau', 'gratuit', 'gratuite', 'gratuitement'];
-
-            // Vérifier les mots-clés pertinents dans le titre et la description de l'article 
-            $pertinant = false;
-            foreach ($keywords as $keyword) {
-                if (stripos($article['title'], $keyword) !== false || stripos($article['description'], $keyword) !== false) {
-                    $pertinant = true;
-                    break;
-                }
-            }
-
-            // Vérifier les mots-clés non pertinents
-            foreach ($excludedKeywords as $keyword) {
-                if (stripos($article['title'], $keyword) !== false || stripos($article['description'], $keyword) !== false) {
-                    return false;
-                }
-            }
-
-            return $pertinant;
         });
 
         // Paginer les articles filtrés
         $pagination = $paginator->paginate(
-            $filteredArticles, // les données filtrées
-            $request->query->getInt('page', 1), // numéro de la page actuelle
-            10 // nombre d'articles par page
+            $articles,
+            $request->query->getInt('page', 1),
+            10
         );
 
         return $this->render('accueil/index.html.twig', [
@@ -119,7 +96,6 @@ class AccueilController extends AbstractController
         } catch (\Exception $e) {
             $htmlContent = '<p>Erreur lors de l’extraction du contenu : ' . $e->getMessage() . '</p>';
         }
-
 
         $article['htmlContent'] = $htmlContent;
         $article['images'] = $images;

@@ -18,17 +18,14 @@ class ContactController extends AbstractController
         // Créer un tableau vide pour les données du formulaire
         $formData = [];
 
-        // Créer le formulaire en utilisant ContactFormType
         $form = $this->createForm(ContactType::class, $formData);
 
         // Gérer la soumission du formulaire
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer les données validées
             $formData = $form->getData();
 
-            // Envoyer l'email à l'admin
             $email = (new Email())
                 ->from($formData['email'])
                 ->to('dngo3819@gmail.com')
@@ -36,12 +33,10 @@ class ContactController extends AbstractController
                 ->text("Message de {$formData['prenom']} {$formData['nom']} ({$formData['email']}):\n\n{$formData['message']}");
             $mailer->send($email);
 
-            // Rediriger avec un message de succès
             $this->addFlash('success', 'Merci, votre message a bien été envoyé.');
             return $this->redirectToRoute('app_contact');
         }
 
-        // Afficher le formulaire
         return $this->render('contact/index.html.twig', [
             'form' => $form,
         ]);

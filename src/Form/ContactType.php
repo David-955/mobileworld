@@ -16,7 +16,8 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, [
-                'label' => 'Votre nom',
+                'label' => 'Votre nom :',
+                'label_attr' => ['class' => 'form-label'],
                 'constraints' => [
                     new Assert\NotBlank(message: 'Le nom est obligatoire.'),
                     new Assert\Regex([
@@ -30,7 +31,8 @@ class ContactType extends AbstractType
                 ],
             ])
             ->add('prenom', TextType::class, [
-                'label' => 'Votre prénom',
+                'label' => 'Votre prénom :',
+                'label_attr' => ['class' => 'form-label'],
                 'constraints' => [
                     new Assert\NotBlank(message: 'Le prénom est obligatoire.'),
                     new Assert\Regex([
@@ -44,14 +46,16 @@ class ContactType extends AbstractType
                 ],
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Votre adresse Email',
+                'label' => 'Votre adresse Email :',
+                'label_attr' => ['class' => 'form-label'],
                 'constraints' => [
                     new Assert\NotBlank(message: 'L\'adresse Email est obligatoire.'),
                     new Assert\Email(message: 'L\'adresse Email n\'est pas valide.'),
                 ],
             ])
             ->add('sujet', TextType::class, [
-                'label' => 'Sujet du message',
+                'label' => 'Sujet du message :',
+                'label_attr' => ['class' => 'form-label'],
                 'constraints' => [
                     new Assert\NotBlank(message: 'Le sujet est obligatoire.'),
                     new Assert\Regex([
@@ -65,7 +69,8 @@ class ContactType extends AbstractType
                 ],
             ])
             ->add('message', TextareaType::class, [
-                'label' => 'Votre message',
+                'label' => 'Votre message :',
+                'label_attr' => ['class' => 'form-label'],
                 'attr' => [
                     'class' => 'form-control', // Style standard de Bootstrap
                     'rows' => 6, // Hauteur fixe
