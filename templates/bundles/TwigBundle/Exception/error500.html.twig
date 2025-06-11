@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page non trouvée – 404{% endblock %}
+{% block title %}Mobile World : Erreur serveur{% endblock %}
 
 {% block content %}
-    <h1>Erreur 404</h1>
-    <p>La page que vous cherchez n'existe pas.</p>
-    <a href="{{ path('accueil') }}" class="btn">Retour à l'accueil</a>
+	<section class="container-vert">
+		<section class="container-blanc">
+			<h1>500</h1>
+			<p>Oups… une erreur s'est produite sur le serveur.</p>
+			<p><a href="{{ path('app_accueil') }}" class="btn-submit">Retour à l'accueil</a></p>
+		</section>
+	</section>
 {% endblock %}

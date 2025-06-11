@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Page non trouvée
-{% endblock %}
+{% block title %}Mobile World : Accès refusé{% endblock %}
 
 {% block content %}
 	<section class="container-vert">
 		<section class="container-blanc">
-			<h1>404</h1>
-			<p>Oups… la page que vous cherchez n'existe pas.</p>
+			<h1>403</h1>
+			<p>Vous n'avez pas l'autorisation d'accéder à cette page.</p>
 			<p><a href="{{ path('app_accueil') }}" class="btn-submit">Retour à l'accueil</a></p>
 		</section>
 	</section>
