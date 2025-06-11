@@ -171,7 +171,6 @@ final class ProfileController extends AbstractController
             return $this->redirectToRoute('app_profil');
         }
 
-        // Sauvegarde
         $personnalisation->setPseudo($pseudo);
         $entityManager->flush();
 

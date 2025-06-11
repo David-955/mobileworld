@@ -35,7 +35,8 @@ class AccueilController extends AbstractController
             $url = $article['url'];
             return (
                 strpos($url, 'lesnumeriques.com') === false &&
-                strpos($url, 'dhnet.be') === false
+                strpos($url, 'dhnet.be') === false &&
+                strpos($url, 'linuxfr.org') === false
             );
         });
 
