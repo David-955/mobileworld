@@ -81,11 +81,11 @@
 
 							{# Calcul du total TTC de la commande entière #}
 							{% set totalCommande = groupe.produits|map(p => p.produit.prix * p.quantite)|reduce((a, b) => a + b) %}
-							<h3>
+							<h2>
 								<strong>Total TTC de la commande :</strong>
 								{{ totalCommande }}
 								€
-							</h3>
+							</h2>
 							<br>
 
 							{# Lien pour télécharger le récapitulatif de commande #}

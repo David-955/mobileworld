@@ -67,7 +67,7 @@ h1 {
 /* Cadre vert en commun avec différentes pages car même thème */
 .container-vert {
   border-radius: 8px;
-  background-color: #48A34B;
+  background-color: #48a34b;
   padding: 2%;
   width: 80%;
   margin: 0 auto;
@@ -88,7 +88,7 @@ textarea {
 
 /* footer */
 footer {
-  background: linear-gradient(#48A34B, #2dc5a9);
+  background: linear-gradient(#48a34b, #2dc5a9);
   color: white;
   text-align: center;
   padding-top: 20px;
@@ -254,7 +254,7 @@ footer {
   flex-direction: column;
   /* espacement entre chaque news */
   gap: 8px;
-  background-color: #48A34B;
+  background-color: #48a34b;
   border-radius: 8px;
 }
 
@@ -295,7 +295,7 @@ footer {
 .news-title {
   font-size: 30px;
   margin: 0 10px 10px 10px;
-  color: #48A34B;
+  color: #48a34b;
 }
 
 .news-description {
@@ -341,7 +341,7 @@ footer {
 }
 
 .pagination .current {
-  background-color: #43B14B;
+  background-color: #43b14b;
   padding: 6px 16px 8px 16px;
   margin: -5px 2px;
   border-radius: 8px;
@@ -353,7 +353,7 @@ footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(#48A34B, #2dc5a9);
+  background: linear-gradient(#48a34b, #2dc5a9);
   color: white;
   border: none;
   border-radius: 50%;
@@ -405,7 +405,7 @@ footer {
 }
 
 .article-container {
-  background-color: #48A34B;
+  background-color: #48a34b;
   border-radius: 8px;
   padding: 5px 0px;
   width: 80%;
@@ -588,6 +588,10 @@ footer {
   position: relative;
 }
 
+.CartBtn:hover {
+  background-color: #45a049;
+}
+
 .IconContainer {
   position: absolute;
   left: -55px;
@@ -647,7 +651,7 @@ footer {
 /* Page comparateur */
 
 .comparateur-container-vert {
-  background-color: #48A34B;
+  background-color: #48a34b;
   border-radius: 8px;
   /* épaisseur cadre vert identique boutique */
   padding: 2%;
@@ -690,18 +694,46 @@ footer {
   border-radius: 8px;
 }
 
-.table {
-  width: 100%; /* il faut étirer au max sinon tout est serré et à gauche */
-  text-align: center;
-  border-radius: 8px;
+.panier-header {
+  display: grid;
+  grid-template-columns: 100px 1fr 220px 100px 100px;
+  font-weight: bold;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
-.table th,
-.table td {
-  padding: 12px;
-  /* ligne de démarcation entre chaque produits comme <hr> */
-  border-bottom: 3px solid #ddd;
+.panier-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.panier-article {
+  display: grid;
+  grid-template-columns: 100px 1fr 200px 100px 100px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #9a9a9a;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.label-mobile {
+  display: none;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.quantite-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantite-input {
+  width: 50px;
+  text-align: center;
 }
 
 .boutons-action {
@@ -740,23 +772,15 @@ footer {
 }
 
 .quantite-input {
-  width: 50px;
+  width: 35px;
+  height: 35px;
   text-align: center;
   border: 1px solid #ccc;
   margin: 0 5px;
   border-radius: 8px;
 }
 
-.qte-cache {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
+
 
 /* From Uiverse.io by philipo30 */
 /* source : https://uiverse.io/philipo30/afraid-ape-40 */
@@ -820,7 +844,7 @@ footer {
   outline-color: #e8e8e8;
   background-color: #fff;
   color: #333;
-  box-shadow: 5px 5px #48A34B;
+  box-shadow: 5px 5px #48a34b;
   border-color: #e8e8e8;
 }
 
@@ -866,6 +890,13 @@ footer {
   display: flex;
   justify-content: center;
   gap: 40px;
+}
+
+.table {
+  width: 100%; /* il faut étirer au max sinon tout est serré et à gauche */
+  text-align: center;
+  border: 1px solid #bdbdbd;
+  padding: 10px;
 }
 
 .logo-stripe {
@@ -924,6 +955,32 @@ footer {
   border-radius: 8px;
   margin-bottom: 10px;
   padding: 15px;
+}
+
+/* Page panier */
+
+@media (max-width: 1000px) {
+  .panier-header {
+    display: none; /* On masque l’en-tête en mobile */
+  }
+
+  .panier-article {
+    padding: 10px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .label-mobile {
+    display: inline-block;
+  }
+
+  .panier-article > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px 0;
+  }
 }
 
 @media (max-width: 860px) {
@@ -1038,8 +1095,7 @@ footer {
     height: 250px;
   }
 
-  /* Page panier */
-  /* cela va impacter /commande */
+  /* Panier de la page commande */
 
   .table th,
   .table td {

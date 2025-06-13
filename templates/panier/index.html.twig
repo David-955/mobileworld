@@ -1,64 +1,76 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Mobile World : Mon panier
 {% endblock %}
+
 {% block content %}
 	<h1>Mon panier</h1>
 	<section class="container-vert">
 		<section class="container-blanc">
-
 			{% if panier|length > 0 %}
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Image</th>
-							<th>Désignation</th>
-							<th>Quantité</th>
-							<th>Prix</th>
-							<th>Sous-total</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for item in panier %}
-							<tr>
-								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width : 100px; border-radius: 8px;"></td>
-								<td data-label="Nom du produit: ">
-									{{ item.product.nom }}</td>
-								<td data-label="Quantité: ">
-									<div class="quantite-container">
-										{% if item.quantity > 1 %}
-											<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'moins'}) }}">
-												<button class="btn-moins">-</button>
-											</a>
-										{% else %}
-											<a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}" aria-label="Bouton pour supprimer cet article" class="delete-button">
-												{# source : https://uiverse.io/philipo30/afraid-ape-40  #}
-												<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
-													<g id="trash-can">
-														<rect x="16" y="24" width="32" height="30" rx="3" ry="3" fill="#e74c3c"></rect>
-														<g transform-origin="12 18" id="lid-group">
-															<rect x="12" y="12" width="40" height="6" rx="2" ry="2" fill="#c0392b"></rect>
-															<rect x="26" y="8" width="12" height="4" rx="2" ry="2" fill="#c0392b"></rect>
-														</g>
-													</g>
-												</svg>
-											</a>
-										{% endif %}
-										<label for="quantite" class="qte-cache">Quantité</label>
-										<input type="number" id="quantite" class="quantite-input" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" readonly/>
-										<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'plus'}) }}">
-											<button class="btn-plus">+</button>
+				<div class="panier-container">
+					<div class="panier-header">
+						<div>Image</div>
+						<div>Désignation</div>
+						<div>Quantité</div>
+						<div>Prix</div>
+						<div>Sous-total</div>
+					</div>
+
+					{% for item in panier %}
+						<section class="panier-article">
+							<div>
+								<img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" style="width: 100px; border-radius: 8px;">
+							</div>
+
+							<div>
+								<span class="label-mobile">Désignation :</span>
+								{{ item.product.nom }}
+							</div>
+
+							<div>
+								<span class="label-mobile">Quantité :</span>
+								<div class="quantite-container">
+									{% if item.quantity > 1 %}
+										<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'moins'}) }}">
+											<button class="btn-moins">-</button>
 										</a>
-									</div>
-								</td>
-								<td data-label="Prix unitaire:">
-									{{ item.product.prix }}€</td>
-								<td data-label="Total:">
-									{{ item.total }}€</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-				<a href="{{ path('app_cancel') }}" onclick="return confirm('Êtes-vous sûr de vouloir vider le panier ?');" aria-label="Bouton pour vider le panier" class="delete-button" style="padding: 5px; text-decoration: none; color: black;">
+									{% else %}
+										<a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}" aria-label="Supprimer cet article" class="delete-button">
+											<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
+												<g id="trash-can">
+													<rect x="16" y="24" width="32" height="30" rx="3" ry="3" fill="#e74c3c"></rect>
+													<g transform-origin="12 18" id="lid-group">
+														<rect x="12" y="12" width="40" height="6" rx="2" ry="2" fill="#c0392b"></rect>
+														<rect x="26" y="8" width="12" height="4" rx="2" ry="2" fill="#c0392b"></rect>
+													</g>
+												</g>
+											</svg>
+										</a>
+									{% endif %}
+									<input type="number" id="quantite" class="quantite-input" aria-label="Quantité" value="1" min="1" max="13" readonly>
+									<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'plus'}) }}">
+										<button class="btn-plus">+</button>
+									</a>
+								</div>
+							</div>
+
+							<div>
+								<span class="label-mobile">Prix unitaire :</span>
+								{{ item.product.prix }}€
+							</div>
+
+							<div>
+								<span class="label-mobile">Sous-total :</span>
+								{{ item.total }}€
+							</div>
+
+						</section>
+					{% endfor %}
+				</div>
+
+				<br>
+				<a href="{{ path('app_cancel') }}" onclick="return confirm('Êtes-vous sûr de vouloir vider le panier ?');" aria-label="Bouton pour vider le panier" class="delete-button" style="padding: 10px; text-decoration: none; color: black;">
 					{# source : https://uiverse.io/philipo30/afraid-ape-40  #}
 					<em>Vider le panier</em>
 					<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
@@ -72,6 +84,7 @@
 					</svg>
 				</a>
 				<br><br>
+
 				<p>La livraison est
 					<strong>offerte</strong>
 					pour toute commande pour fêter l'ouverture de notre site !</p>
