@@ -67,7 +67,7 @@ h1 {
 /* Cadre vert en commun avec différentes pages car même thème */
 .container-vert {
   border-radius: 8px;
-  background-color: #4caf50;
+  background-color: #48A34B;
   padding: 2%;
   width: 80%;
   margin: 0 auto;
@@ -88,7 +88,7 @@ textarea {
 
 /* footer */
 footer {
-  background: linear-gradient(#4caf50, #2dc5a9);
+  background: linear-gradient(#48A34B, #2dc5a9);
   color: white;
   text-align: center;
   padding-top: 20px;
@@ -170,21 +170,21 @@ footer {
 .wrapper .facebook:hover .tooltip,
 .wrapper .facebook:hover .tooltip::before {
   background: #1877f2;
-  color: #fff;
+  color: black;
 }
 
 .wrapper .twitter:hover,
 .wrapper .twitter:hover .tooltip,
 .wrapper .twitter:hover .tooltip::before {
   background: #fff;
-  color: #000000;
+  color: black;
 }
 
 .wrapper .instagram:hover,
 .wrapper .instagram:hover .tooltip,
 .wrapper .instagram:hover .tooltip::before {
   background: #e4405f;
-  color: #fff;
+  color: black;
 }
 
 /* Conteneur de l'image */
@@ -254,7 +254,7 @@ footer {
   flex-direction: column;
   /* espacement entre chaque news */
   gap: 8px;
-  background-color: #4caf50;
+  background-color: #48A34B;
   border-radius: 8px;
 }
 
@@ -295,7 +295,7 @@ footer {
 .news-title {
   font-size: 30px;
   margin: 0 10px 10px 10px;
-  color: #4caf50;
+  color: #48A34B;
 }
 
 .news-description {
@@ -309,7 +309,7 @@ footer {
 
 .news-lireplus {
   padding: 10px 15px;
-  background-color: #4caf50;
+  background-color: #438443;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -330,18 +330,18 @@ footer {
 
 .pagination a {
   padding: 8px 16px;
-  background-color: rgb(76, 175, 80);
+  background-color: #438443;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
 }
 
 .pagination a:hover {
-  background-color: #45a049;
+  background-color: #2e7a32;
 }
 
 .pagination .current {
-  background-color: #45a049;
+  background-color: #43B14B;
   padding: 6px 16px 8px 16px;
   margin: -5px 2px;
   border-radius: 8px;
@@ -353,7 +353,7 @@ footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(#4caf50, #2dc5a9);
+  background: linear-gradient(#48A34B, #2dc5a9);
   color: white;
   border: none;
   border-radius: 50%;
@@ -405,7 +405,7 @@ footer {
 }
 
 .article-container {
-  background-color: #4caf50;
+  background-color: #48A34B;
   border-radius: 8px;
   padding: 5px 0px;
   width: 80%;
@@ -578,7 +578,7 @@ footer {
   height: 40px;
   border-radius: 8px;
   border: none;
-  background-color: #4caf50;
+  background-color: #438443;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -647,7 +647,7 @@ footer {
 /* Page comparateur */
 
 .comparateur-container-vert {
-  background-color: #4caf50;
+  background-color: #48A34B;
   border-radius: 8px;
   /* épaisseur cadre vert identique boutique */
   padding: 2%;
@@ -724,19 +724,6 @@ footer {
   text-decoration: none; /* Supprimer le soulignement des liens */
 }
 
-/* .quantite-container button {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ccc;
-  background-color: #4caf50;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.quantite-container button:hover {
-  background-color: #45a049;
-}  */
-
 .btn-plus,
 .btn-moins {
   background: transparent;
@@ -758,6 +745,17 @@ footer {
   border: 1px solid #ccc;
   margin: 0 5px;
   border-radius: 8px;
+}
+
+.qte-cache {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 /* From Uiverse.io by philipo30 */
@@ -822,7 +820,7 @@ footer {
   outline-color: #e8e8e8;
   background-color: #fff;
   color: #333;
-  box-shadow: 5px 5px #4caf50;
+  box-shadow: 5px 5px #48A34B;
   border-color: #e8e8e8;
 }
 
@@ -830,11 +828,11 @@ footer {
 /* source : https://uiverse.io/levxyca/tidy-mayfly-7 */
 
 .btn-submit {
-  color: #fafafa;
+  color: #fff;
   padding: 10px 20px;
   border-radius: 8px;
   border: 2px solid #fafafa;
-  background: #4caf50;
+  background: #438443;
   box-shadow: 3px 3px #666;
   cursor: pointer;
   text-decoration: none;
@@ -907,7 +905,7 @@ footer {
 }
 
 .commande-header {
-  background-color: #4caf50;
+  background-color: #438443;
   color: white;
   border-radius: 8px 8px 0px 0px;
   margin-bottom: 15px;
