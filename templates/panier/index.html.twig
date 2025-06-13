@@ -6,7 +6,17 @@
 {% block content %}
 	<h1>Mon panier</h1>
 	<section class="container-vert">
-		<section class="container-blanc">
+		<section
+			class="container-blanc">
+			{# Affichage des messages flash #}
+			<div class="flash-messages">
+				{% for label, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="alert alert-{{ label }}">{{ message }}</div>
+					{% endfor %}
+				{% endfor %}
+			</div>
+			
 			{% if panier|length > 0 %}
 				<div class="panier-container">
 					<div class="panier-header">

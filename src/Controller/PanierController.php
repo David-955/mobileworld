@@ -110,6 +110,7 @@ class PanierController extends AbstractController
             if ($panier[$id] > $product->getStock()) {
                 $panier[$id] = $product->getStock();
                 $this->addFlash('warning', 'Vous avez atteint le stock maximum pour ce produit.');
+                return $this->redirectToRoute('app_panier');
             }
         } elseif ($action === 'moins') {
             // Diminuer la quantité (ne pas descendre en dessous de 1)
