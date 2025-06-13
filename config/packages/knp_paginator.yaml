@@ -1,16 +1,5 @@
-# knp_paginator:
-#     page_range: 5                       # nombre de pages à afficher dans la pagination
-#     default_options:
-#         page_name: page                 # nom du paramètre de la page
-#         sort_field_name: sort           # nom du paramètre de tri
-#         sort_direction_name: direction  # nom du paramètre de direction de tri
-#         distinct: true                  # distinct dans la requête SQL
-#     template:
-#         pagination: '@KnpPaginator/Pagination/sliding.html.twig'  # chemin du template de pagination
-#         sortable: '@KnpPaginator/Pagination/sortable_link.html.twig'  # chemin du template de lien triable
-
 knp_paginator:
-    page_range: 5                       # nombre de pages à afficher dans la pagination
+    page_range: 3                       # nombre de pages à afficher dans la pagination
     default_options:
         page_name: page                 # nom du paramètre de la page
         sort_field_name: false          # désactive le tri par champ

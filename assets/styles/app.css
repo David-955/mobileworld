@@ -1032,6 +1032,10 @@ footer {
     padding: 4%;
   }
 
+  .pagination {
+    gap: 7px;
+  }
+
   /* Partie page d'accueil */
   .news-article {
     flex-direction: column; /* Empile l'image et le contenu */
@@ -1192,78 +1196,71 @@ footer {
   .liste-commande2 {
     width: 100%;
   }
+}
 
-  /* pagination */
-  .pagination {
-    gap: 3px;
+@media (max-width: 480px) {
+  .container-vert {
+    width: 95%;
   }
 
-  /* Pour les smartphones */
-  @media (max-width: 480px) {
-    .container-vert {
-      width: 95%;
-    }
+  .pagination {
+    gap: 5px;
+  }
 
-    /* Page d'accueil */
+  /* Page d'accueil */
 
-    #news-container {
-      /* épaisseur cadre vert */
-      padding: 5px 0px;
-      /* espacement entre chaque news */
-      gap: 0px;
-    }
+  #news-container {
+    /* épaisseur cadre vert */
+    padding: 5px 0px;
+    /* espacement entre chaque news */
+    gap: 0px;
+  }
 
-    .news-article {
-      padding: 0px;
-      /* épaisseur cadre vert qui couvre tous les articles */
-      margin: 15px 17.5px;
-    }
+  .news-article {
+    padding: 0px;
+    /* épaisseur cadre vert qui couvre tous les articles */
+    margin: 15px 17.5px;
+  }
 
-    .news-contenu {
-      margin-bottom: 20px;
-    }
+  .news-contenu {
+    margin-bottom: 20px;
+  }
 
-    /* Partie page d'article */
+  /* Partie page d'article */
 
-    .article-titre,
-    .article-contenu,
-    .container-commentaires {
-      margin: 15px; /* Réctrécissement cadre vert */
-      padding: 5px;
-    }
+  .article-titre,
+  .article-contenu,
+  .container-commentaires {
+    margin: 15px; /* Réctrécissement cadre vert */
+    padding: 5px;
+  }
 
-    .article-image {
-      width: 90%;
-    }
+  .article-image {
+    width: 90%;
+  }
 
-    .article-container {
-      padding: 1px;
-      width: 95%;
-    }
+  .article-container {
+    padding: 1px;
+    width: 95%;
+  }
 
-    /* Page comparateur */
+  /* Page comparateur */
 
-    .comparateur-container-vert {
-      /* épaisseur cadre vert identique boutique */
-      padding: 15px;
-      width: 95%;
-    }
+  .comparateur-container-vert {
+    /* épaisseur cadre vert identique boutique */
+    padding: 15px;
+    width: 95%;
+  }
 
-    /* Page boutique */
+  /* Page boutique */
 
-    .product-container-blanc {
-      padding: 15px 0px;
-    }
+  .product-container-blanc {
+    padding: 15px 0px;
+  }
 
-    /* pagination */
-    .pagination {
-      gap: 1px;
-    }
-
-    /* footer */
-    .footer-liens {
-      flex-direction: column;
-      align-items: stretch;
-    }
+  /* footer */
+  .footer-liens {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
