@@ -39,7 +39,7 @@
 					<tbody>
 						{% for item in panier %}
 							<tr>
-								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; border-radius: 8px;"></td>
+								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px;"></td>
 								<td data-label="Nom du produit: ">{{ item.product.nom }}</td>
 								<td data-label="Quantité: ">{{ item.quantity }}</td>
 								<td data-label="Prix unitaire: ">{{ item.product.prix }}€</td>

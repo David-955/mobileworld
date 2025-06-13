@@ -780,8 +780,6 @@ footer {
   border-radius: 8px;
 }
 
-
-
 /* From Uiverse.io by philipo30 */
 /* source : https://uiverse.io/philipo30/afraid-ape-40 */
 .delete-button {
@@ -957,9 +955,9 @@ footer {
   padding: 15px;
 }
 
-/* Page panier */
-
 @media (max-width: 1000px) {
+  /* Page panier */
+
   .panier-header {
     display: none; /* On masque l’en-tête en mobile */
   }
@@ -1008,7 +1006,6 @@ footer {
   }
 }
 
-/* Pour les tablettes */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column; /* Empile le logo et les liens */
