@@ -48,7 +48,7 @@
 											</svg>
 										</a>
 									{% endif %}
-									<input type="number" id="quantite" class="quantite-input" aria-label="Quantité" value="1" min="1" max="13" readonly>
+									<input type="number" id="quantite" class="quantite-input" aria-label="Quantité" value="{{ item.quantity }}" min="1" max="13" readonly>
 									<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'plus'}) }}">
 										<button class="btn-plus">+</button>
 									</a>
@@ -70,7 +70,8 @@
 				</div>
 
 				<br>
-				<a href="{{ path('app_cancel') }}" onclick="return confirm('Êtes-vous sûr de vouloir vider le panier ?');" aria-label="Bouton pour vider le panier" class="delete-button" style="padding: 10px; text-decoration: none; color: black;">
+				<a
+					href="{{ path('app_cancel') }}" onclick="return confirm('Êtes-vous sûr de vouloir vider le panier ?');" aria-label="Bouton pour vider le panier" class="delete-button" style="padding: 10px; text-decoration: none; color: black;">
 					{# source : https://uiverse.io/philipo30/afraid-ape-40  #}
 					<em>Vider le panier</em>
 					<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
