@@ -15,6 +15,16 @@
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
+		{# pour améliorer le score de "bonnes pratiques", on charge h1 immédiatement #}
+		<style>:where(h1)
+		{
+			font-size: 2rem;
+			text-align: center;
+			margin: 15px 0px;
+			color: #333;
+		}
+		</style>
+
 		</head>
 	<body>
 		<header>

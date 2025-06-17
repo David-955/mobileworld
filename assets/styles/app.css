@@ -58,17 +58,6 @@ main {
   width: 80%;
 }
 
-section h1,
-article h1,
-aside h1,
-nav h1,
-h1 {
-  font-size: 2rem;
-  text-align: center;
-  margin: 15px 0px;
-  color: #333;
-}
-
 /* Cadre vert en commun avec différentes pages car même thème */
 .container-vert {
   border-radius: 8px;
