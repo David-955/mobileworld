@@ -16,16 +16,26 @@
 		{% endblock %}
 
 		{# pour améliorer le score de "bonnes pratiques", on charge h1 immédiatement #}
-		<style>:where(h1)
+		<style>
+		:where(h1)
 		{
-			font-size: 2rem;
+			font-size: 2rem !important;
 			text-align: center;
 			margin: 15px 0px;
-			color: #333;
+			color: #333 !important;
+			font-weight: bold !important;
 		}
 		</style>
 
-		</head>
+		{# Préchargmeent des images de la page d'accueil #}
+		{% if pagination.items|length > 0 %}
+		{% set lcp = pagination.items[0].urlToImage %}
+		{% set clean = lcp|replace({'https://': '', 'http://': ''}) %}
+		<link rel="preload" as="image" href="https://images.weserv.nl/?url={{ clean }}&w=426&h=240&output=webp">
+		{% endif %}
+
+	</head>
+	
 	<body>
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(#2dc5a9, #4caf50);">

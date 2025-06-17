@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-	<h1 style="text-align: center;">Bienvenue sur notre boutique !</h1>
+	<h1>Bienvenue sur notre boutique !</h1>
 
 	<section class="container-vert">
 		<section class="category-container-blanc">
@@ -19,7 +19,7 @@
 			{% for categorie in categories %}
 				<div class="category-item">
 					<a href="{{ path('app_categorie', { 'id': categorie.id }) }}">
-						<img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}">
+						<img src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}" loading="lazy" style="width: 150px; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;">
 					</a>
 					<p>{{ categorie.nom }}</p>
 				</div>

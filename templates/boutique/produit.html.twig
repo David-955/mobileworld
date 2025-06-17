@@ -47,7 +47,7 @@
 						class="product-item">
 						{# colonne 1: image #}
 						<div class="product-colonne1">
-							<img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}" class="zoomable-image" data-modal="image-modal"></div>
+							<img src="{{ asset('images/produits/' ~ product.image) }}" alt="{{ product.nom }}" loading="lazy" class="zoomable-image" data-modal="image-modal"></div>
 						{# colonne 2: nom et description #}
 						<div class="product-colonne2">
 							<p>

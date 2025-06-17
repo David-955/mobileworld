@@ -64,57 +64,58 @@ class AccueilController extends AbstractController
     }
 
     #[Route('/article/{title}', name: 'app_article')]
-    public function article($title, Request $request, ManagerRegistry $doctrine, PaginatorInterface $paginator): Response
-    {
+    public function article(
+        $title,
+        Request $request,
+        ManagerRegistry $doctrine,
+        PaginatorInterface $paginator,
+        CacheInterface $cache
+    ): Response {
         $title = urldecode($title);
-        $data = $this->apiService->fetchData("https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c");
-        $article = null;
 
-        foreach ($data['articles'] as $item) {
-            if ($item['title'] === $title) {
-                $article = $item;
-                break;
+        // 1. Cache sur la version nettoyée
+        $cacheKey = 'article_' . md5($title);
+        $articleData = $cache->get($cacheKey, function () use ($title) {
+            $data = $this->apiService->fetchData("https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c");
+
+            $article = null;
+            foreach ($data['articles'] as $item) {
+                if ($item['title'] === $title) {
+                    $article = $item;
+                    break;
+                }
             }
-        }
 
-        if (!$article) {
-            throw $this->createNotFoundException('Article non trouvé');
-        }
+            if (!$article) {
+                throw new \Exception('Article non trouvé');
+            }
 
-        $articleUrl = $article['url'];
-        $htmlContent = '';
-        $images = [];
+            $articleUrl = $article['url'];
+            $htmlContent = '';
+            $images = [];
 
-        try {
-            // Récupérer le contenu de la page
-            $html = file_get_contents($articleUrl);
+            try {
+                $html = file_get_contents($articleUrl);
+                $config = new Configuration();
+                $config->setFixRelativeURLs(true);
+                $config->setOriginalURL($articleUrl);
+                $readability = new Readability($config);
+                $readability->parse($html);
+                $htmlContent = $readability->getContent();
+                $htmlContent = preg_replace('/<img[^>]+>/i', '', $htmlContent, 1);
+                preg_match_all('/<img[^>]+src="([^">]+)"/', $htmlContent, $matches);
+                $images = $matches[1] ?? [];
+            } catch (\Exception $e) {
+                $htmlContent = '<p>Erreur lors de l’extraction du contenu : ' . $e->getMessage() . '</p>';
+            }
 
-            // Configurer Readability
-            $config = new Configuration();
-            $config->setFixRelativeURLs(true);
-            $config->setOriginalURL($articleUrl);
+            $article['htmlContent'] = $htmlContent;
+            $article['images'] = $images;
 
-            $readability = new Readability($config);
+            return $article;
+        });
 
-            // Passer directement le HTML (string)
-            $readability->parse($html);
-
-            // Récupérer le contenu nettoyé
-            $htmlContent = $readability->getContent();
-
-            // Supprimer la première image
-            $htmlContent = preg_replace('/<img[^>]+>/i', '', $htmlContent, 1);
-
-            // Extraire les images principales
-            preg_match_all('/<img[^>]+src="([^">]+)"/', $htmlContent, $matches);
-            $images = $matches[1] ?? [];
-        } catch (\Exception $e) {
-            $htmlContent = '<p>Erreur lors de l’extraction du contenu : ' . $e->getMessage() . '</p>';
-        }
-
-        $article['htmlContent'] = $htmlContent;
-        $article['images'] = $images;
-
+        // 2. Système de commentaires (pas mis en cache pour conserver l’interactivité)
         $commentaire = new Commentaire();
         $form = $this->createForm(CommentaireType::class, $commentaire);
         $form->handleRequest($request);
@@ -149,7 +150,7 @@ class AccueilController extends AbstractController
 
         return $this->render('accueil/article.html.twig', [
             'controller_name' => 'AccueilController',
-            'article' => $article,
+            'article' => $articleData,
             'title' => $title,
             'form' => $form,
             'pagination' => $pagination,

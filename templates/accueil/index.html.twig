@@ -22,15 +22,17 @@
 						<div class="news-image-container">
 							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank">
 								{% set original = article.urlToImage %}
-								{% set encoded_url = original|url_encode %}
-								{% set proxy_url = 'https://images.weserv.nl/?url=' ~ encoded_url ~ '&w=320&h=240&output=webp' %}
+								{% set clean_url = original|replace({'https://': '', 'http://': ''}) %}
+								{% set proxy_url = 'https://images.weserv.nl/?url=' ~ clean_url ~ '&w=426&h=240&output=webp' %}
 								<img 
 									src="{{ proxy_url }}"
 									onerror="this.onerror=null;this.src='{{ original }}'" 
 									alt="{{ article.title }}" 
-									loading="lazy"
+									width="426" height="240"
+									{% if not loop.first %}loading="lazy"{% endif %}
 									decoding="async"
-									style="width: 100%; height: auto; border-radius: 8px;"
+									fetchpriority="{{ loop.first ? 'high' : 'low' }}"
+									class="news-image"
 								/>
 							</a>
 						</div>
