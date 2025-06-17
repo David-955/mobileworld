@@ -1,49 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobile World : Les actualités
-{% endblock %}
+{% block title %}Mobile World : Les actualités{% endblock %}
 
 {% block content %}
-	<section
-		class="main">
+<section class="main">
 
-		{# Afficher les messages flash #}
-		{% for label, messages in app.flashes %}
-			{% for message in messages %}
-				<div class="alert alert-{{ label }}" style="width: 100%; text-align: center;">{{ message }}</div>
-			{% endfor %}
+	{# Afficher les messages flash #}
+	{% for label, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="alert alert-{{ label }}" style="width: 100%; text-align: center;">{{ message }}</div>
 		{% endfor %}
-        
-		<h1>Les dernières news</h1>
-		<ul id="news-container">
-			{% for article in pagination.items %}
-				{# Vérifier si le titre est valide #}
-				{% if article.title is not empty %}
-					{# Encoder le titre pour l'URL #}
-					{% set encodedTitle = article.title|url_encode %}
-					{# Vérifier que le titre encodé ne contient pas de barre oblique (/) #}
-					{% if '/' not in encodedTitle %}
-						<li class="news-article">
-							<div class="news-image-container">
-								<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank">
-									<img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="news-image">
-								</a>
-							</div>
-							<div class="news-contenu">
-								<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" style="text-decoration: none;">
-									<h2 class="news-title">{{ article.title }}</h2>
-									<p class="news-description">{{ article.description }}</p>
-								</a>
-								<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" class="news-lireplus">Lire la suite...</a>
-							</div>
-						</li>
-					{% endif %}
-				{% endif %}
-			{% endfor %}
-		</ul>
+	{% endfor %}
 
-		<div class="pagination">
-			{{ knp_pagination_render(pagination) }}
-		</div>
-	</section>
+	<h1>Les dernières news</h1>
+	<ul id="news-container">
+		{% for article in pagination.items %}
+			{% if article.title is not empty %}
+				{% set encodedTitle = article.title|url_encode %}
+				{% if '/' not in encodedTitle %}
+					<li class="news-article">
+						<div class="news-image-container">
+							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank">
+								{% set original = article.urlToImage %}
+								{% set clean_url = original|replace({'https://': '', 'http://': ''}) %}
+								{% set proxy_url = 'https://images.weserv.nl/?url=' ~ clean_url ~ '&w=426&h=240&output=webp' %}
+								<img 
+								src="{{ proxy_url }}"
+								onerror="this.onerror=null;this.src='{{ original }}'" 
+								alt="{{ article.title }}" 
+								width="320" 
+  								height="240"
+								loading="lazy"
+								decoding="async"
+  								style="width: 100%; height: auto; border-radius: 8px;"
+								/>
+							</a>
+						</div>
+						<div class="news-contenu">
+							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" style="text-decoration: none;">
+								<h2 class="news-title">{{ article.title }}</h2>
+								<p class="news-description">{{ article.description }}</p>
+							</a>
+							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" class="news-lireplus">Lire la suite...</a>
+						</div>
+					</li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</ul>
+
+	<div class="pagination">
+		{{ knp_pagination_render(pagination) }}
+	</div>
+</section>
 {% endblock %}

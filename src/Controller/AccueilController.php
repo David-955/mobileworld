@@ -6,14 +6,15 @@ use App\Entity\Commentaire;
 use App\Service\ApiService;
 use App\Form\CommentaireType;
 use App\Entity\Personnalisation;
+use andreskrey\Readability\Readability;
+use andreskrey\Readability\Configuration;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use andreskrey\Readability\Readability;
-use andreskrey\Readability\Configuration;
 
 class AccueilController extends AbstractController
 {
@@ -25,12 +26,16 @@ class AccueilController extends AbstractController
     }
 
     #[Route('/', name: 'app_accueil')]
-    public function index(Request $request, PaginatorInterface $paginator): Response
+    public function index(Request $request, PaginatorInterface $paginator, CacheInterface $cache): Response
     {
         $url = "https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c";
-        $data = $this->apiService->fetchData($url);
 
-        // Filtrer pour exclure les articles venant de lesnumeriques.com
+        // ⏱️ Cache des données d'API pendant 15 minutes
+        $data = $cache->get('homepage_articles', function () use ($url) {
+            return $this->apiService->fetchData($url);
+        });
+
+        // Filtrer les sources indésirables
         $articles = array_filter($data['articles'], function ($article) {
             $url = $article['url'];
             return (
@@ -40,17 +45,22 @@ class AccueilController extends AbstractController
             );
         });
 
-        // Paginer les articles filtrés
         $pagination = $paginator->paginate(
             $articles,
             $request->query->getInt('page', 1),
             10
         );
 
-        return $this->render('accueil/index.html.twig', [
+        // ⏱️ Cache HTTP client (navigateur, reverse proxy, CDN)
+        $response = $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
             'pagination' => $pagination,
         ]);
+
+        $response->setSharedMaxAge(900); // 15 minutes
+        $response->setPublic();
+
+        return $response;
     }
 
     #[Route('/article/{title}', name: 'app_article')]

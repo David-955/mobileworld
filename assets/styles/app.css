@@ -1,8 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 html,
 body {
   background-color: #fff;
   height: 100%;
-  /* font-family: "Fira Sans", monospace; */
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   margin: 0;
@@ -57,9 +58,13 @@ main {
   width: 80%;
 }
 
+section h1,
+article h1,
+aside h1,
+nav h1,
 h1 {
+  font-size: 2rem;
   text-align: center;
-  font-size: 30px;
   margin: 15px 0px;
   color: #333;
 }
@@ -283,7 +288,8 @@ footer {
 }
 
 .news-image {
-  width: 100%; /* L'image remplit tout l'espace disponible */
+  width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 
