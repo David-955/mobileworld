@@ -64,7 +64,7 @@
 									€<br>
 
 									{# Affichage de l'image du produit #}
-									<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="Image de {{ commande.produit.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; border-radius: 8px; margin: 10px"><br>
+									<img src="{{ asset('images/produits/' ~ commande.produit.image) }}" alt="Image de {{ commande.produit.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin: 10px 10px 15px 10px">
 
 									{# Affichage du statut de la commande (TOUJOURS visible) #}
 									<p><em><strong>Statut :</strong>

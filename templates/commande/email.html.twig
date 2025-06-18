@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html>
-	<body>
-		<h1>Bonjour,</h1>
-		<p>Votre commande a bien été passée !</p>
+  <body>
+    <h1>Cher(e) client(e),</h1>
+    <p>Votre commande a bien été passée !</p>
 
-		<h2>Détails de la commande :</h2>
-		<p>Numéro de commande :
-			{{ numero }}</p>
+    <h2>Détails de la commande :</h2>
+    <p><strong>Numéro de commande :</strong> {{ numero }}</p>
 
-		<strong>Adresse de livraison :</strong>
-		<p>{{ adresse }}</p>
-		<p>{{ ville }}
-		</p>
-		<p>{{ code_postal }}</p>
-		<p>
-			<strong>Numéro de téléphone pour la livraison :</strong>
-			{{ tel }}</p>
+    <p><strong>Adresse de livraison :</strong></p>
+    <p>{{ nom }} {{ prenom }}</p>
+    <p>{{ adresse }}</p>
+    <p>{{ ville }}</p>
+    <p>{{ code_postal }}</p>
+    <p><strong>Numéro de téléphone pour la livraison :</strong> {{ tel }}</p>
+	<p><strong>Date de la commande :</strong> {{ date|date('d/m/Y', 'Europe/Paris') }} à {{ date|date('H:i', 'Europe/Paris') }}</p>
 
-		<p>
-			<strong>Date de la commande :</strong>
-			{{ date|date('d/m/Y H:i', 'Europe/Paris') }}</p>
-		<p>
-			<ul>
-				{% for item in panier %}
-					<li>
-						{{ item.nom }}
-						- Quantité :
-						{{ item.quantite }}
-						- Prix unitaire :
-						{{ item.prixUnitaire }}
-						€
-												- Total :
-						{{ item.total }}
-						€
-					</li>
-				{% endfor %}
-			</ul>
-		</p>
-		<p>
-			<strong>Montant total TTC :
-				{{ total }}
-				€</strong>
-		</p>
+    <p><strong>Contenu de votre panier :</strong></p>
+    <ul>
+      {% for item in panier %}
+        <li>
+          {{ item.nom }} – Quantité : {{ item.quantite }} – Prix unitaire : {{ item.prixUnitaire }} € – Total : {{ item.total }} €
+        </li>
+      {% endfor %}
+    </ul>
 
-		<p>La livraison est
-			<strong>offerte</strong>
-			pour toute commande pour fêter l'ouverture de notre site !</p>
+    <p><strong>Montant total TTC : {{ total }} €</strong></p>
 
-		<p>Merci pour votre achat !</p>
-		<p>Toute l'équipe de Mobile World.</p>
-		{# Lien pour télécharger le récapitulatif de commande #}
-		<a href="{{ mesCommandesUrl }}" target="_blank">
-			Voir mes commandes
-		</a>
-		<br><br>
-	</body>
+    <p>La livraison est <strong>offerte</strong> pour toute commande pour fêter l'ouverture de notre site !</p>
+
+    <p>Merci pour votre confiance !<br>
+    Toute l'équipe de Mobile World.</p>
+
+    <p>
+      <a href="{{ mesCommandesUrl }}" target="_blank">Voir mes commandes</a>
+    </p>
+  </body>
 </html>

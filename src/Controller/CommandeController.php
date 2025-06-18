@@ -352,6 +352,8 @@ class CommandeController extends AbstractController
         }
 
         // Récupère l'adresse depuis la première commande
+        $nom = $commandes[0]->getNom();
+        $prenom = $commandes[0]->getPrenom();
         $adresseLivraison = $commandes[0]->getAdresse();
         $ville = $commandes[0]->getVille();
         $codePostal = $commandes[0]->getCodePostal();
@@ -370,7 +372,8 @@ class CommandeController extends AbstractController
             ->to($user->getEmail())
             ->subject('Mobile World : Confirmation de votre commande')
             ->html($this->renderView('commande/email.html.twig', [
-                'user' => $user,
+                'nom' => $nom,
+                'prenom' => $prenom,
                 'numero' => $numero,
                 'panier' => $paniervalide,
                 'total' => $total,

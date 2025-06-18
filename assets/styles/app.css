@@ -191,6 +191,7 @@ footer {
   aspect-ratio: 1/1;
   object-fit: cover;
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .zoomable-image:hover {
@@ -529,7 +530,6 @@ footer {
   padding: 10px 10px;
   width: 70%;
   text-align: center;
-  /* font-size: 80%; */
   overflow: auto; /* Permet le défilement si le texte est trop long */
 }
 

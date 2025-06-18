@@ -1,14 +1,9 @@
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './bootstrap.js';
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-
 let stripe = null;
 
-/**
- * Charge Stripe.js dynamiquement si ce n'est pas déjà fait.
- * @returns {Promise} Une promesse résolue avec l'instance Stripe.
- */
 function loadStripe() {
     if (!stripe) {
         return new Promise((resolve, reject) => {
@@ -32,7 +27,7 @@ function loadStripe() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ========== Retour en haut ==========
+    // Retour en haut
     const btn = document.querySelector('.Btn-retourhaut');
     if (btn) {
         window.addEventListener('scroll', () => {
@@ -47,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ========== Zoom sur les images ==========
+    // Zoom sur les images
     const images = document.querySelectorAll('.zoomable-image');
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-image');
@@ -72,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ========== Gestion du paiement Stripe ==========
+    // Gestion du paiement Stripe
     const checkoutButton = document.getElementById('checkout-button');
 
     if (checkoutButton) {
@@ -84,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 checkoutButton.disabled = true;
                 checkoutButton.textContent = 'Traitement en cours...';
 
-                // Charge Stripe
                 await loadStripe();
 
                 const publishableKey = 'pk_test_51RPoNtQ5TDJoAfap7bXvZpvwuxfQ4y3GNz3rzjISL5PIuMobaOWqzglna1UfXQE0H5d6rC9bYpa2Rqe0inmZwqQc00SDBsckQy';
