@@ -6,12 +6,12 @@
 {% block content %}
 	<h1>Notre comparateur d'appareils mobiles</h1>
 
-	<section class="comparateur-container-vert">
-		<section class="comparateur-container-blanc">
+	<section class="comparator-container-green">
+		<section class="comparator-container-white">
 			<!-- Première colonne -->
-			<div class="comparateur-colonne1">
+			<div class="comparator-column1">
 				<h3>Sélection 1</h3>
-				<form method="GET" action="{{ path('app_comparateur') }}">
+				<form method="GET" action="{{ path('app_comparator') }}">
 					<label for="marque1">Choisissez une marque:</label>
 					{# class="form-select" = bootstrap #}
 					<select class="form-select" name="marque1" id="marque1" onchange="this.form.submit()">
@@ -25,7 +25,7 @@
 				</form>
 
 				{% if models1 is not empty %}
-					<form method="GET" action="{{ path('app_comparateur') }}">
+					<form method="GET" action="{{ path('app_comparator') }}">
 						<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
 						<label for="model1">Choisissez un modèle:</label>
 						<select class="form-select" name="modelId1" id="model1" onchange="this.form.submit()">
@@ -40,7 +40,7 @@
 				{% endif %}
 
 				{% if modelData1 %}
-					<div class="caracteristiques">
+					<div class="specs">
 						{# Affichage des caractéristiques du modèle sélectionné #}
 						{# On utilise le filtre replace pour remplacer les points par des sauts de ligne #}
 						{# raw pour éviter que Twig n'échappe le HTML #}
@@ -52,9 +52,9 @@
 			</div>
 
 			<!-- Deuxième colonne -->
-			<div class="comparateur-colonne2">
+			<div class="comparator-column2">
 				<h3>Sélection 2</h3>
-				<form method="GET" action="{{ path('app_comparateur') }}">
+				<form method="GET" action="{{ path('app_comparator') }}">
 					<label for="marque2">Choisissez une marque:</label>
 					<select class="form-select" name="marque2" id="marque2" onchange="this.form.submit()">
 						<option value="">-- Sélectionnez une marque --</option>
@@ -67,7 +67,7 @@
 				</form>
 
 				{% if models2 is not empty %}
-					<form method="GET" action="{{ path('app_comparateur') }}">
+					<form method="GET" action="{{ path('app_comparator') }}">
 						<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
 						<label for="model2">Choisissez un modèle:</label>
 						<select class="form-select" name="modelId2" id="model2" onchange="this.form.submit()">
@@ -82,7 +82,7 @@
 				{% endif %}
 
 				{% if modelData2 %}
-					<div class="caracteristiques">
+					<div class="specs">
 						<h2>{{ modelData2.name }}</h2>
 						<img src="{{ modelData2.img }}" alt="{{ modelData2.name }}">
 						<p>{{ modelData2.description|replace({'. ': '.<br>'})|raw }}</p>

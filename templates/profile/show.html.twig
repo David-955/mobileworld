@@ -8,15 +8,15 @@
 
 	<h1 style="word-wrap: break-word;">Profil de <em>{{ personnalisation.pseudo }}</em></h1>
 
-	<section class="container-vert">
-		<section class="container-blanc">
+	<section class="container-green">
+		<section class="container-white">
 			<img src="{{ asset(personnalisation.avatar) }}" style="border-radius: 8px;" alt="Image de profil de {{ personnalisation.pseudo }}" class="profile-image"></img>
 			<br><br>
 			<p style="word-wrap: break-word;"><em>{{ personnalisation.presentation }}</em></p>
 			<br>
 			{# Bouton retour visible seulement si on est connecté #}
 			{% if app.user %}
-				<p><a href="{{ path('app_profil') }}" class="btn-submit">Personnalisation de mon profil ici</a></p>
+				<p><a href="{{ path('app_profile') }}" class="btn-submit">Personnalisation de mon profil ici</a></p>
 			{% endif %}
 		</section>
 	</section>

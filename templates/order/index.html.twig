@@ -8,11 +8,11 @@
 
 	<h1>Passer commande</h1>
 
-	<section class="container-vert">
-		<section class="container-blanc">
+	<section class="container-green">
+		<section class="container-white">
 
 			<p style="margin-left: 15px; text-align: left;">
-				<a href="{{ path('app_panier') }}">Panier</a>
+				<a href="{{ path('app_cart') }}">Panier</a>
 				> Passer commande
 			</p>
 
@@ -23,7 +23,7 @@
 				{% endfor %}
 			{% endfor %}
 
-			{% if panier|length > 0 %}
+			{% if cart|length > 0 %}
 				<h2>1. Récapitulatif</h2>
 				<!-- Tableau de récapitulatif -->
 				<table class="table">
@@ -37,7 +37,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{% for item in panier %}
+						{% for item in cart %}
 							<tr>
 								<td><img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" data-modal="image-modal" style="width: 100px;"></td>
 								<td data-label="Nom du produit: ">{{ item.product.nom }}</td>
@@ -92,7 +92,7 @@
 			<div class="form-group">
 				{{ form_row(formAdresse.tel) }}
 			</div>
-
+			<hr>
 			<h2>3. Payer ma commande</h2>
 			<p>Veuillez cliquer sur le bouton ci-dessous pour effectuer votre paiement sécurisé via notre page de paiement.</p>
 

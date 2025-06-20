@@ -3,8 +3,8 @@
 {% block title %}Mobile World : Confirmation de commande{% endblock %}
 
 {% block content %}
-    <section class="container-vert">
-        <section class="container-blanc">
+    <section class="container-green">
+        <section class="container-white">
             <h1>Confirmation de votre commande</h1>
             <p>Votre superbe commande a été passée avec succès !</p>
 
@@ -16,14 +16,14 @@
             </p>
 
             {# Lien pour télécharger le récapitulatif de commande #}
-            <a href="{{ path('app_commande_pdf', {'numero': commandes[0].numero, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
+            <a href="{{ path('app_order_pdf', {'numero': commandes[0].numero, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
                 Télécharger le récapitulatif de commande
             </a>
             <br><br>
 
             {# Liste des produits dans la commande #}
             {% for commande in commandes %}
-                <p class="liste-confirmation">
+                <p class="list-confirmation">
                     {{ commande.produit.nom }}
                     - Quantité : {{ commande.quantite }}
                     - Prix unitaire : {{ commande.produit.prix }} €
@@ -36,11 +36,11 @@
             <p>Merci pour votre achat !</p>
             <br>
             <p>
-                <a href="{{ path('app_mes_commandes') }}" class="btn-submit">Voir mes commandes</a>
+                <a href="{{ path('app_my_orders') }}" class="btn-submit">Voir mes commandes</a>
             </p>
             <br>
             <p>
-                <a href="{{ path('app_accueil') }}" class="btn-submit">Retour à l'accueil</a>
+                <a href="{{ path('app_home') }}" class="btn-submit">Retour à l'accueil</a>
             </p>
         </section>
     </section>

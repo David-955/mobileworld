@@ -7,9 +7,9 @@
 {% block content %}
 	<h1>Mes commandes</h1>
 
-	<section class="container-vert">
+	<section class="container-green">
 		<section
-			class="container-blanc">
+			class="container-white">
 			{# Afficher les messages flash #}
 			{% for label, messages in app.flashes %}
 				{% for message in messages %}
@@ -23,10 +23,10 @@
 					<a href="{{ path('app_boutique') }}" class="btn-submit">Accéder à la boutique</a>
 				</p>
 			{% else %}
-				<ul class="liste-commande1">
+				<ul class="list-order1">
 					{% for numeroCommande, groupe in commandesGroupedByNumero %}
-						<li class="liste-commande2">
-							<div class="commande-header">
+						<li class="list-order2">
+							<div class="order-header">
 								<p>
 									<strong>Numéro de commande :</strong>
 									{{ numeroCommande }}
@@ -71,7 +71,7 @@
 										{{ commande.statut }}</em></p>
 
 									{% if commande.statut != 'Produit annulé par le client' %}
-										<a href="{{ path('app_commande_annuler', { 'numero': numeroCommande, 'produitId': commande.produit.id, '_csrf_token': csrf_token('annuler_commande') }) }}" class="btn-submit" onclick="return confirm('Êtes-vous sûr de vouloir annuler ce produit ?');">
+										<a href="{{ path('app_order_cancel', { 'numero': numeroCommande, 'produitId': commande.produit.id, '_csrf_token': csrf_token('cancel_order') }) }}" class="btn-submit" onclick="return confirm('Êtes-vous sûr de vouloir annuler ce produit ?');">
 											Annuler ce produit
 										</a>
 									{% endif %}
@@ -92,7 +92,7 @@
 							{% set produitsNonAnnules = groupe.produits|filter(p => p.statut != 'Produit annulé par le client') %}
 
 							{% if produitsNonAnnules|length > 0 %}
-								<a href="{{ path('app_commande_pdf', {'numero': numeroCommande, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
+								<a href="{{ path('app_order_pdf', {'numero': numeroCommande, '_csrf_token': csrf_token('generate_pdf') }) }}" class="btn-submit">
 									Télécharger le récapitulatif de commande
 								</a>
 								<br><br>
@@ -111,11 +111,11 @@
 
 			<br>
 			<p>
-				<a href="{{ path('app_profil') }}" class="btn-submit">Retour vers mon profil</a>
+				<a href="{{ path('app_profile') }}" class="btn-submit">Retour vers mon profil</a>
 			</p>
 			<br>
 			<p>
-				<a href="{{ path('app_accueil') }}" class="btn-submit">Accéder à l'accueil</a>
+				<a href="{{ path('app_home') }}" class="btn-submit">Accéder à l'accueil</a>
 			</p>
 		</section>
 	</section>

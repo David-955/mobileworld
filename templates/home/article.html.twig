@@ -5,15 +5,15 @@
 {% block content %}
 	{# fil d'Ariane #}
     <p style="margin-left: 10%;">
-        <a href="{{ path('app_accueil') }}">Accueil</a> &gt; {{ title }}
+        <a href="{{ path('app_home') }}">Accueil</a> &gt; {{ title }}
     </p>
 
     <section class="article-container">
-        <header class="article-titre">
+        <header class="article-title">
             <h1>{{ article.title }}</h1>
         </header>
 
-        <section class="article-contenu">
+        <section class="article-content">
             {% if article.description %}
                 <p><em>{{ article.description }}</em></p>
             {% endif %}
@@ -33,20 +33,20 @@
             </p>
         </section>
 
-        <section class="container-commentaires">
+        <section class="container-comments">
             <h2>Commentaires</h2>
 
             {% for commentaire in pagination %}
-                <article class="liste-commentaires">
-                    <div class="commentaires-colonne1">
-                        <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
-                            <img src="{{ commentaire.utilisateur.personnalisation.avatar }}" alt="Avatar de {{ commentaire.utilisateur.personnalisation.pseudo }}" width="50">
+                <article class="list-comments">
+                    <div>
+                        <a href="{{ path('app_profile_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
+                            <img src="{{ commentaire.utilisateur.personnalisation.avatar }}" alt="Avatar de {{ commentaire.utilisateur.personnalisation.pseudo }}" class="comments-img">
                         </a>
                     </div>
-                    <div class="commentaires-colonne2">
-                        <strong>Posté par
-                            <a href="{{ path('app_profil_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
-                                {{ commentaire.utilisateur.personnalisation.pseudo }}</a></strong>, le {{ commentaire.date|date('d/m/Y') }} à {{ commentaire.date|date('H:i') }}
+                    <div class="comments-column2">
+                        <em><strong>Posté par
+                            <a href="{{ path('app_profile_pseudo', {pseudo: commentaire.utilisateur.personnalisation.pseudo}) }}">
+                                {{ commentaire.utilisateur.personnalisation.pseudo }}</a></strong>, le {{ commentaire.date|date('d/m/Y') }} à {{ commentaire.date|date('H:i') }}</em>
                         <p>{{ commentaire.contenu }}</p>
                     </div>
                 </article>
@@ -62,10 +62,10 @@
             {% if app.user %}
                 <h2>Ajouter un commentaire</h2>
 
-                <section class="ajout-commentaires">
+                <section class="add-comments">
                     {% form_theme form "form/champs.html.twig" %}
 
-                    {{ form_start(form, {'attr': {'class': 'commentaire-form'}}) }}
+                    {{ form_start(form, {'attr': {'class': 'comment-form'}}) }}
 
                     {{ form_row(form.contenu, {
                         label: 'Exprimez-vous :',
@@ -86,7 +86,7 @@
                 <p><em>Vous devez être <a href="{{ path('app_login') }}">connecté</a> pour poster un commentaire.</em></p>
             {% endif %}
 			<br>
-			<p><a href="{{ path('app_accueil') }}" class="btn-submit">Retour aux news</a></p>
+			<p><a href="{{ path('app_home') }}" class="btn-submit">Retour aux news</a></p>
 
         </section>
     </section>

@@ -7,9 +7,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
-class ComparateurController extends AbstractController
+class ComparatorController extends AbstractController
 {
-    #[Route('/comparateur', name: 'app_comparateur')]
+    #[Route('/comparator', name: 'app_comparator')]
     public function index(Request $request): Response
     {
         $marque1 = $request->query->get('marque1');
@@ -55,7 +55,7 @@ class ComparateurController extends AbstractController
             }
         }
 
-        return $this->render('comparateur/index.html.twig', [
+        return $this->render('comparator/index.html.twig', [
             'marques' => $marquesValides,
             'models1' => $data1['models'] ?? [],
             'modelData1' => $modelData1,

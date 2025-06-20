@@ -39,7 +39,7 @@ body {
   color: #333;
 }
 
-.cart-header:hover {
+.logocart-header:hover {
   transform: scale(1.3); /* Effet de zoom au survol */
 }
 
@@ -59,7 +59,7 @@ main {
 }
 
 /* Cadre vert en commun avec différentes pages car même thème */
-.container-vert {
+.container-green {
   border-radius: 8px;
   background-color: #48a34b;
   padding: 2%;
@@ -68,7 +68,7 @@ main {
 }
 
 /* Cadre blanc en commun avec différentes pages car même thème */
-.container-blanc {
+.container-white {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -281,7 +281,7 @@ footer {
   border-radius: 8px;
 }
 
-.news-contenu {
+.news-content {
   flex: 1;
   padding-left: 20px; /* Espace entre l'image et le texte */
 }
@@ -301,7 +301,7 @@ footer {
   margin-left: 25px;
 }
 
-.news-lireplus {
+.news-readmore {
   padding: 10px 15px;
   background-color: #438443;
   color: white;
@@ -311,7 +311,7 @@ footer {
   margin-left: 25px;
 }
 
-.news-lireplus:hover {
+.news-readmore:hover {
   background-color: #45a049;
 }
 
@@ -343,7 +343,7 @@ footer {
 
 /* From Uiverse.io by vinodjangid07 */
 /* source : https://uiverse.io/vinodjangid07/curly-panda-17 */
-.Btn-retourhaut {
+.Btn-up {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -365,7 +365,7 @@ footer {
   fill: white;
 }
 
-.Btn-retourhaut:hover .arrow {
+.Btn-up:hover .arrow {
   animation: slide-in-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
@@ -383,9 +383,9 @@ footer {
 
 /* Partie page d'article */
 
-.article-titre,
-.article-contenu,
-.container-commentaires {
+.article-title,
+.article-content,
+.container-comments {
   text-align: center;
   background-color: #fff;
   border-radius: 8px;
@@ -429,7 +429,7 @@ footer {
 
 /* Partie commentaires */
 
-.liste-commentaires {
+.list-comments {
   display: flex;
   flex-direction: row;
   border: 1px solid #9a9a9a;
@@ -439,19 +439,19 @@ footer {
   margin: 0 auto;
 }
 
-.commentaires-colonne1 img {
+.comments-img {
   width: 84px;
   text-align: center;
   border-radius: 8px;
 }
 
-.commentaires-colonne2 {
+.comments-column2 {
   padding: 10px;
   width: 85%;
   word-wrap: break-word; /* Pour éviter que le texte ne déborde */
 }
 
-.ajout-commentaires {
+.add-comments {
   display: flex;
   flex-direction: column;
   border: 1px solid #9a9a9a;
@@ -461,13 +461,13 @@ footer {
   margin: 0 auto;
 }
 
-.commentaire-form {
+.comment-form {
   padding: 10px;
 }
 
 /* Page boutique catégories */
 
-.category-container-blanc {
+.category-container-white {
   display: flex;
   justify-content: center;
   /* on passe à la ligne à chaque rétrécissement de la fenêtre */
@@ -493,7 +493,7 @@ footer {
 
 /* Page produits */
 
-.product-container-blanc {
+.product-container-white {
   display: flex;
   flex-wrap: wrap;
   background-color: #fff;
@@ -515,17 +515,17 @@ footer {
   height: 151.5px;
 }
 
-.product-colonne1 {
+.product-column1 {
   text-align: center;
 }
 
-.product-colonne1 img {
+.product-column1 img {
   width: 150px;
   height: 150px;
   border-radius: 8px;
 }
 
-.product-colonne2 {
+.product-column2 {
   /* espacement entre colonne 1 et 3 */
   padding: 10px 10px;
   width: 70%;
@@ -533,13 +533,13 @@ footer {
   overflow: auto; /* Permet le défilement si le texte est trop long */
 }
 
-.product-colonne3 {
+.product-column3 {
   flex: 1;
   text-align: center;
   padding: 0px 10px 10px 10px;
 }
 
-.product-colonne3 p {
+.product-column3 p {
   /* espacement en haut et en bas des éléments : prix, stock, btn ajout panier */
   margin: 13px 0;
 }
@@ -637,7 +637,7 @@ footer {
 
 /* Page comparateur */
 
-.comparateur-container-vert {
+.comparator-container-green {
   background-color: #48a34b;
   border-radius: 8px;
   /* épaisseur cadre vert identique boutique */
@@ -646,7 +646,7 @@ footer {
   margin: 0 auto;
 }
 
-.comparateur-container-blanc {
+.comparator-container-white {
   background-color: #fff;
   border-radius: 8px;
   /* épaisseur cadre blanc identique boutique */
@@ -657,8 +657,8 @@ footer {
 }
 
 /* les 2 en même temps car côte à côte et identique */
-.comparateur-colonne1,
-.comparateur-colonne2 {
+.comparator-column1,
+.comparator-column2 {
   background-color: #f4f4f9;
   width: 100%;
   padding: 10px;
@@ -667,7 +667,7 @@ footer {
   border-radius: 8px;
 }
 
-.caracteristiques {
+.specs {
   background-color: white;
   border-radius: 8px;
   padding: 10px;
@@ -676,27 +676,22 @@ footer {
 
 /* Page panier */
 
-.panier-container-blanc {
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.panier-header {
-  display: grid;
-  grid-template-columns: 100px 1fr 220px 100px 100px;
-  font-weight: bold;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.panier-container {
+.cart-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
 }
 
-.panier-article {
+.cart-header {
+  display: grid;
+  grid-template-columns: 100px 1fr 220px 140px 100px;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-item {
   display: grid;
   grid-template-columns: 100px 1fr 200px 100px 100px;
   align-items: center;
@@ -712,35 +707,34 @@ footer {
   margin-right: 5px;
 }
 
-.quantite-container {
+.quantity-container {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.quantite-input {
-  width: 50px;
-  text-align: center;
+.quantity-container a {
+  text-decoration: none; /* Supprimer le soulignement des liens */
 }
 
-.boutons-action {
+.quantity-input {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  border-radius: 8px;
+}
+
+.btns-action {
   display: flex;
   justify-content: center; /* Centrer les boutons horizontalement */
   margin-top: 20px; /* Espace au-dessus des boutons */
   gap: 10px; /* Espace entre les boutons */
 }
 
-.panier-total {
+.cart-total {
   text-align: center;
-}
-
-.quantite-container {
-  display: flex;
-  justify-content: center;
-}
-
-.quantite-container a {
-  text-decoration: none; /* Supprimer le soulignement des liens */
 }
 
 .btn-plus,
@@ -756,15 +750,6 @@ footer {
 .btn-plus:hover,
 .btn-moins:hover {
   background-color: #45a049;
-}
-
-.quantite-input {
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  border: 1px solid #ccc;
-  margin: 0 5px;
-  border-radius: 8px;
 }
 
 /* From Uiverse.io by philipo30 */
@@ -869,13 +854,7 @@ footer {
   margin-bottom: 5px; /* Espace entre le label et le champ */
 }
 
-/* Page /commande */
-
-.container-commande {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
+/* Page /order */
 
 .table {
   width: 100%; /* il faut étirer au max sinon tout est serré et à gauche */
@@ -890,12 +869,12 @@ footer {
 
 /* Page de mon profil */
 
-.profil-image {
+.profile-image {
   width: 25%;
   border-radius: 8px;
 }
 
-.container-blanc-profil {
+.container-white-profile {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -905,12 +884,12 @@ footer {
 
 /* Page mes commandes */
 
-.liste-commande1 {
+.list-order1 {
   /* J'ai ajouté cela pour réparer le petit espace laissé par le list-style none en dessous en commande2 car c'était l'espace du petit point de liste */
   padding: 0px 0px;
 }
 
-.liste-commande2 {
+.list-order2 {
   list-style: none;
   border: 1px solid #9a9a9a;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
@@ -920,7 +899,7 @@ footer {
   width: 80%;
 }
 
-.commande-header {
+.order-header {
   background-color: #438443;
   color: white;
   border-radius: 8px 8px 0px 0px;
@@ -930,7 +909,7 @@ footer {
 
 /* Page de confirmation de commande */
 
-.liste-confirmation {
+.list-confirmation {
   list-style: none;
   border: 1px solid #9a9a9a;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
@@ -945,11 +924,11 @@ footer {
 @media (max-width: 1000px) {
   /* Page panier */
 
-  .panier-header {
+  .cart-header {
     display: none; /* On masque l’en-tête en mobile */
   }
 
-  .panier-article {
+  .cart-item {
     padding: 10px;
     grid-template-columns: 1fr;
     text-align: center;
@@ -959,7 +938,7 @@ footer {
     display: inline-block;
   }
 
-  .panier-article > div {
+  .cart-item > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -971,11 +950,11 @@ footer {
 @media (max-width: 860px) {
   /* Partie comparateur */
 
-  .comparateur-container-blanc {
+  .comparator-container-white {
     flex-direction: column;
   }
 
-  .commentaires-colonne2 {
+  .comments-column2 {
     width: 70%;
   }
 
@@ -983,7 +962,7 @@ footer {
     width: 40%;
   }
 
-  .product-colonne2 {
+  .product-column2 {
     padding: 1px 1px;
     width: 50%;
   }
@@ -1015,7 +994,7 @@ footer {
   }
 
   /* réutilisable pour plusieurs pages, ajustement épaisseur du cadre */
-  .container-vert {
+  .container-green {
     padding: 4%;
   }
 
@@ -1039,7 +1018,7 @@ footer {
     margin-right: 20px;
   }
 
-  .news-lireplus {
+  .news-readmore {
     margin-left: 20px;
   }
 
@@ -1065,12 +1044,12 @@ footer {
 
   /* Page profil */
 
-  .container-blanc-profil {
+  .container-white-profile {
     margin-top: 5%;
   }
 
   /* Partie boutique catégories */
-  .category-container-blanc {
+  .category-container-white {
     padding: 6%;
   }
 
@@ -1101,7 +1080,7 @@ footer {
     margin-bottom: 5px;
   }
 
-  .boutons-action {
+  .btns-action {
     /* bouton "continuer les achats" en haut et bouton "commander" en bas */
     flex-direction: column;
     align-items: center;
@@ -1114,7 +1093,7 @@ footer {
 
   /* Page produits */
 
-  .product-container-blanc {
+  .product-container-white {
     gap: 20px;
   }
 
@@ -1127,19 +1106,19 @@ footer {
     margin: 0 auto;
   }
 
-  .product-colonne1 img {
+  .product-column1 img {
     width: 100%;
     height: auto;
   }
 
-  .product-colonne2 {
+  .product-column2 {
     /* plus besoin d'espacement entre colonne 1 et 3 */
     padding: 10px;
     /* on reprend toute la largeur */
     width: 100%;
   }
 
-  .product-colonne3 {
+  .product-column3 {
     /* espace entre chaque article */
     padding: 20px;
   }
@@ -1166,22 +1145,15 @@ footer {
     padding: 10px;
   }
 
-  /* Page /commande */
+  /* Page /my-orders */
 
-  .container-commande {
-    flex-wrap: wrap;
-    gap: 0px;
-  }
-
-  /* Page mes commandes */
-
-  .liste-commande2 {
+  .list-order2 {
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .container-vert {
+  .container-green {
     width: 95%;
   }
 
@@ -1210,9 +1182,9 @@ footer {
 
   /* Partie page d'article */
 
-  .article-titre,
-  .article-contenu,
-  .container-commentaires {
+  .article-title,
+  .article-content,
+  .container-comments {
     margin: 15px; /* Réctrécissement cadre vert */
     padding: 5px;
   }
@@ -1228,7 +1200,7 @@ footer {
 
   /* Page comparateur */
 
-  .comparateur-container-vert {
+  .comparator-container-green {
     /* épaisseur cadre vert identique boutique */
     padding: 15px;
     width: 95%;
@@ -1236,7 +1208,7 @@ footer {
 
   /* Page boutique */
 
-  .product-container-blanc {
+  .product-container-white {
     padding: 15px 0px;
   }
 

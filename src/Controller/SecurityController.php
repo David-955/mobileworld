@@ -4,17 +4,18 @@ namespace App\Controller;
 
 use App\Entity\Utilisateur;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class SecurityController extends AbstractController
 {
@@ -68,7 +69,7 @@ class SecurityController extends AbstractController
 
             // Envoyer l'e-mail de réinitialisation
             $emailContent = (new Email())
-                ->from('dngo3819@gmail.com')
+                ->from(new Address('dngo3819@example.com', 'Mobile World'))
                 ->to($user->getEmail())
                 ->subject('Mobile World - Réinitialisation de votre mot de passe')
                 ->html(

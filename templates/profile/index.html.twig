@@ -8,9 +8,9 @@
 
 {# Vérifier si l'utilisateur est connecté #}
 {% if not app.user %}
-	<section class="container-vert">
+	<section class="container-green">
 		<section
-			class="container-blanc">
+			class="container-white">
 			{# Affichage des messages flash #}
 			<div class="flash-messages">
 				{% for label, messages in app.flashes %}
@@ -32,8 +32,8 @@
 {% else %}
 	{# Afficher le contenu du profil uniquement si l'utilisateur est connecté #}
 	{# PARTIE PERSONNALISATION #}
-		<section class="container-vert"> <section
-			class="container-blanc">
+		<section class="container-green"> <section
+			class="container-white">
 
 			{# Affichage des messages flash #}
 			<div class="flash-messages">
@@ -48,20 +48,20 @@
 				<strong>{{ personnalisation.pseudo }}</strong>
 			</p>
 			<p>
-				<a href="{{ path('app_profil_pseudo', {pseudo: personnalisation.pseudo}) }}">
+				<a href="{{ path('app_profile_pseudo', {pseudo: personnalisation.pseudo}) }}">
 					Voir l'aperçu de mon profil</a>
 			</p>
-			<img src="{{ personnalisation.avatar }}" alt="Image de profil de {{ personnalisation.pseudo }}" class="profil-image"></img>
+			<img src="{{ personnalisation.avatar }}" alt="Image de profil de {{ personnalisation.pseudo }}" class="profile-image"></img>
 		<br><br>
 		<p style="word-wrap: break-word;">
 			<em>{{ personnalisation.presentation }}</em>
 		</p>
 	</section>
 	<section
-		class="container-blanc-profil">
+		class="container-white-profile">
 
 		{# PARTIE PERSONNALISATION #}
-		<form action="{{ path('app_profil_update_pseudo') }}" method="post">
+		<form action="{{ path('app_profile_update_pseudo') }}" method="post">
 			<h2>Personnalisation :</h2>
 			<br>
 			<div class="form-group">
@@ -78,7 +78,7 @@
 		</form>
 
 		<hr>
-		<form action="{{ path('app_profil_update_avatar') }}" method="post" enctype="multipart/form-data">
+		<form action="{{ path('app_profile_update_avatar') }}" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="avatar">Changer l'avatar :</label>
 			</div>
@@ -92,12 +92,12 @@
 			</div>
 
 			<div class="form-group">
-				<button class="btn-submit" type="submit" formaction="{{ path('app_profil_reset_avatar') }}">Remettre l'avatar par défaut</button>
+				<button class="btn-submit" type="submit" formaction="{{ path('app_profile_reset_avatar') }}">Remettre l'avatar par défaut</button>
 			</div>
 		</form>
 
 		<hr>
-		<form action="{{ path('app_profil_update_presentation') }}" method="post">
+		<form action="{{ path('app_profile_update_presentation') }}" method="post">
 			<div class="form-group">
 				<label for="presentation">Personnaliser la présentation :</label>
 			</div>
@@ -113,12 +113,12 @@
 
 	</section>
 
-	<section class="container-blanc-profil">
+	<section class="container-white-profile">
 
 		<h2>Autres services :</h2>
 		<br>
 		<p>
-			<a href="{{ path('app_mes_commandes') }}" class="btn-submit">Mes commandes</a>
+			<a href="{{ path('app_my_orders') }}" class="btn-submit">Mes commandes</a>
 		</p>
 		<br>
 		<p>

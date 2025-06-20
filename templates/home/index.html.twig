@@ -36,12 +36,12 @@
 								/>
 							</a>
 						</div>
-						<div class="news-contenu">
+						<div class="news-content">
 							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" style="text-decoration: none;">
 								<h2 class="news-title">{{ article.title }}</h2>
 								<p class="news-description">{{ article.description }}</p>
 							</a>
-							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" class="news-lireplus">Lire la suite...</a>
+							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" class="news-readmore">Lire la suite...</a>
 						</div>
 					</li>
 				{% endif %}

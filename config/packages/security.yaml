@@ -31,7 +31,7 @@ security:
             logout:
                 path: app_logout
                 # redirection vers l'accueil après la déconnexion
-                target: app_accueil
+                target: app_home
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall

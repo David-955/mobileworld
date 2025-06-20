@@ -28,11 +28,11 @@
 		</style>
 
 		{# Préchargmeent des images de la page d'accueil #}
-		{% if pagination.items|length > 0 %}
+		{# {% if pagination.items|length > 0 %}
 		{% set lcp = pagination.items[0].urlToImage %}
 		{% set clean = lcp|replace({'https://': '', 'http://': ''}) %}
 		<link rel="preload" as="image" href="https://images.weserv.nl/?url={{ clean }}&w=426&h=240&output=webp">
-		{% endif %}
+		{% endif %} #}
 
 	</head>
 	
@@ -42,7 +42,7 @@
 				<div
 					class="container-fluid d-flex align-items-center justify-content-between" style="width: 80%;">
 
-					<a class="navbar-brand order-1 me-auto" href="{{ path('app_accueil') }}">
+					<a class="navbar-brand order-1 me-auto" href="{{ path('app_home') }}">
 						<img src="{{ asset('/images/logos/logo-mobileworld.webp') }}" alt="logo du site Mobile World" class="logo-site" style="max-height: 100px;">
 					</a>
 
@@ -63,17 +63,17 @@
 
 							{# Pages publiques #}
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_accueil') }}">Actualités</a>
+								<a class="nav-link" href="{{ path('app_home') }}">Actualités</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_comparateur') }}">Comparateur</a>
+								<a class="nav-link" href="{{ path('app_comparator') }}">Comparateur</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_boutique') }}">Boutique</a>
+								<a class="nav-link" href="{{ path('app_shop') }}">Boutique</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_panier') }}" aria-label="Voir le panier">
-									<svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewbox="0 0 576 512" fill="currentColor" class="cart-header">
+								<a class="nav-link" href="{{ path('app_cart') }}" aria-label="Voir le panier">
+									<svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewbox="0 0 576 512" fill="currentColor" class="logocart-header">
 										<path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
 									</svg>
 								</a>
@@ -89,7 +89,7 @@
 								</li>
 							{% else %}
 								<li class="nav-item">
-									<a class="nav-link" href="{{ path('app_profil') }}">
+									<a class="nav-link" href="{{ path('app_profile') }}">
 										<img src="{{ asset(app.user.personnalisation.avatar) }}" alt="Image de profil" class="profile-image-header" style="max-height: 50px; border-radius: 50%;">
 									</a>
 								</li>
@@ -108,7 +108,7 @@
 			{# Bloc pour le contenu principal #}
 			{% block content %}{% endblock %}
 			<!-- From Uiverse.io by vinodjangid07 -->
-			<button class="Btn-retourhaut" aria-label="Retour vers le haut">
+			<button class="Btn-up" aria-label="Retour vers le haut">
 				<svg height="1.2em" class="arrow" viewbox="0 0 512 512">
 					<path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path>
 				</svg>

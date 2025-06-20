@@ -28,7 +28,7 @@ function loadStripe() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Retour en haut
-    const btn = document.querySelector('.Btn-retourhaut');
+    const btn = document.querySelector('.Btn-up');
     if (btn) {
         window.addEventListener('scroll', () => {
             btn.style.display = window.scrollY > 300 ? 'block' : 'none';

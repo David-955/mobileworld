@@ -5,9 +5,9 @@
 
 {% block content %}
 	<h1>Mon panier</h1>
-	<section class="container-vert">
+	<section class="container-green">
 		<section
-			class="container-blanc">
+			class="container-white">
 			{# Affichage des messages flash #}
 			<div class="flash-messages">
 				{% for label, messages in app.flashes %}
@@ -17,9 +17,9 @@
 				{% endfor %}
 			</div>
 			
-			{% if panier|length > 0 %}
-				<div class="panier-container">
-					<div class="panier-header">
+			{% if cart|length > 0 %}
+				<div class="cart-container">
+					<div class="cart-header">
 						<div>Image</div>
 						<div>Désignation</div>
 						<div>Quantité</div>
@@ -27,8 +27,8 @@
 						<div>Sous-total</div>
 					</div>
 
-					{% for item in panier %}
-						<section class="panier-article">
+					{% for item in cart %}
+						<section class="cart-item">
 							<div>
 								<img src="{{ asset('images/produits/' ~ item.product.image) }}" alt="Image de {{ item.product.nom }}" class="zoomable-image" style="width: 100px; border-radius: 8px;">
 							</div>
@@ -40,13 +40,13 @@
 
 							<div>
 								<span class="label-mobile">Quantité :</span>
-								<div class="quantite-container">
+								<div class="quantity-container">
 									{% if item.quantity > 1 %}
-										<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'moins'}) }}">
+										<a href="{{ path('app_cart_update', {'id': item.product.id, 'action': 'moins'}) }}">
 											<button class="btn-moins">-</button>
 										</a>
 									{% else %}
-										<a href="{{ path('app_panier_supprimer', {'id': item.product.id}) }}" aria-label="Supprimer cet article" class="delete-button">
+										<a href="{{ path('app_cart_remove', {'id': item.product.id}) }}" aria-label="Supprimer cet article" class="delete-button">
 											<svg class="trash-svg" viewbox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
 												<g id="trash-can">
 													<rect x="16" y="24" width="32" height="30" rx="3" ry="3" fill="#e74c3c"></rect>
@@ -58,8 +58,8 @@
 											</svg>
 										</a>
 									{% endif %}
-									<input type="number" id="quantite" class="quantite-input" aria-label="Quantité" value="{{ item.quantity }}" min="1" max="13" readonly>
-									<a href="{{ path('app_panier_modifier', {'id': item.product.id, 'action': 'plus'}) }}">
+									<input type="number" id="quantity" class="quantity-input" aria-label="Quantité" value="{{ item.quantity }}" min="1" max="13" readonly>
+									<a href="{{ path('app_cart_update', {'id': item.product.id, 'action': 'plus'}) }}">
 										<button class="btn-plus">+</button>
 									</a>
 								</div>
@@ -100,17 +100,17 @@
 					<strong>offerte</strong>
 					pour toute commande pour fêter l'ouverture de notre site !</p>
 
-				<p class="panier-total">
+				<p class="cart-total">
 					<strong>Montant total TTC :
 						{{ total }}€
 					</strong>
 				</p>
 			{% else %}
-				<p class="panier-total">Votre panier est vide.</p>
+				<p class="cart-total">Votre panier est vide.</p>
 			{% endif %}
 
-			<div class="boutons-action">
-				{% if panier|length > 0 %}
+			<div class="btns-action">
+				{% if cart|length > 0 %}
 
 					<button class="CartBtn">
 						<span
@@ -124,7 +124,7 @@
 								</g>
 							</svg>
 						</span>
-						<a href="{{ path('app_boutique') }}" class="text">Go faire des achats</a>
+						<a href="{{ path('app_shop') }}" class="text">Go faire des achats</a>
 					</button>
 
 					<button class="CartBtn">
@@ -142,7 +142,7 @@
 								</g>
 							</svg>
 						</span>
-						<a href="{{ path('app_commande') }}" class="text">Commander !</a>
+						<a href="{{ path('app_order') }}" class="text">Commander !</a>
 					</button>
 				{% else %}
 					<button class="CartBtn">
@@ -157,13 +157,13 @@
 								</g>
 							</svg>
 						</span>
-						<a href="{{ path('app_boutique') }}" class="text">Go faire des achats</a>
+						<a href="{{ path('app_shop') }}" class="text">Go faire des achats</a>
 					</button>
 				{% endif %}
 			</div>
 
 			<br>
-			{% if panier|length > 0 %}
+			{% if cart|length > 0 %}
 				<small class="required-note">{{ "Prix TTC, TVA appliquée sur la base du pays : France (métropolitaine)" }}</small>
 			{% endif %}
 		</section>

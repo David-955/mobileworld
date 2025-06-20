@@ -14,16 +14,16 @@ final class ShopController extends AbstractController
 {
     public function __construct(private CategorieRepository $categorieRepository, private ProduitRepository $produitRepository) {}
 
-    #[Route('/boutique', name: 'app_boutique')]
+    #[Route('/shop', name: 'app_shop')]
     public function shop(): Response
     {
         $categories = $this->categorieRepository->findAll();
-        return $this->render('boutique/index.html.twig', [
+        return $this->render('shop/index.html.twig', [
             'categories' => $categories,
         ]);
     }
 
-    #[Route('/boutique/{id}', name: 'app_categorie')]
+    #[Route('/shop/{id}', name: 'app_categorie')]
     public function product(int $id, PaginatorInterface $paginator, Request $request): Response
     {
         $category = $this->categorieRepository->find($id);
@@ -64,7 +64,7 @@ final class ShopController extends AbstractController
             10 // Nombre d'articles par page
         );
     
-        return $this->render('boutique/produit.html.twig', [
+        return $this->render('shop/produit.html.twig', [
             'category' => $category,
             'pagination' => $pagination,
             'search' => $search,

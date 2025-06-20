@@ -6,15 +6,16 @@ use App\Entity\Utilisateur;
 use App\Entity\Personnalisation;
 use Symfony\Component\Mime\Email;
 use App\Form\RegistrationFormType;
+use Symfony\Component\Mime\Address;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class RegistrationController extends AbstractController
 {
@@ -58,7 +59,7 @@ class RegistrationController extends AbstractController
             );
 
             $email = (new Email())
-                ->from('dngo3819@gmail.com')
+                ->from(new Address('dngo3819@example.com', 'Mobile World'))
                 ->to($user->getEmail())
                 ->subject('Mobile World - Confirmation de votre inscription')
                 ->html(
@@ -155,9 +156,9 @@ class RegistrationController extends AbstractController
             ['token' => $user->getToken()],
             UrlGeneratorInterface::ABSOLUTE_URL
         );
-        // Envoyer l'email de confirmation
+
         $emailContent = (new Email())
-            ->from('dngo3819@gmail.com')
+            ->from(new Address('dngo3819@example.com', 'Mobile World'))
             ->to($user->getEmail())
             ->subject('Nouveau lien de confirmation')
             ->html(
@@ -165,6 +166,7 @@ class RegistrationController extends AbstractController
                     '<p>Voici votre nouveau lien de confirmation :</p>' .
                     '<a href="' . htmlspecialchars($confirmationUrl) . '">Confirmer mon compte</a>'
             );
+        
         $mailer->send($emailContent);
         $this->addFlash('success', 'Un nouveau lien de confirmation a été envoyé à votre adresse Email.');
         return $this->redirectToRoute('app_login');

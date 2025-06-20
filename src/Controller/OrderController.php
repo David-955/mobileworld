@@ -7,6 +7,7 @@ use App\Entity\Commande;
 use App\Form\AdresseType;
 use App\Service\PdfGenerator;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
 use App\Repository\ProduitRepository;
 use App\Repository\CommandeRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -22,7 +23,7 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException;
 
-class CommandeController extends AbstractController
+class OrderController extends AbstractController
 {
     private $produitRepository;
     private $entityManager;
@@ -49,13 +50,13 @@ class CommandeController extends AbstractController
         return null;
     }
 
-    #[Route('/commande', name: 'app_commande')]
+    #[Route('/order', name: 'app_order')]
     public function index(SessionInterface $session, Request $request): Response
     {
         // Récupérer le panier depuis la session
-        $panier = $session->get('panier', []);
+        $panier = $session->get('cart', []);
         if (empty($panier)) {
-            return $this->redirectToRoute('app_boutique');
+            return $this->redirectToRoute('app_shop');
         }
 
         // Vérifier que l'utilisateur est connecté
@@ -100,7 +101,7 @@ class CommandeController extends AbstractController
                         $product->getNom(),
                         $product->getStock()
                     ));
-                    return $this->redirectToRoute('app_panier');
+                    return $this->redirectToRoute('app_cart');
                 }
             }
 
@@ -122,9 +123,9 @@ class CommandeController extends AbstractController
         }
 
         // Afficher la vue avec le formulaire
-        return $this->render('commande/index.html.twig', [
+        return $this->render('order/index.html.twig', [
             'formAdresse' => $form,
-            'panier' => $paniervalide,
+            'cart' => $paniervalide,
             'total' => $total,
         ]);
     }
@@ -134,7 +135,7 @@ class CommandeController extends AbstractController
     {
         \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
         $session = $request->getSession();
-        $panier = $session->get('panier', []);
+        $panier = $session->get('cart', []);
         if (empty($panier)) {
             return new Response(json_encode(['error' => 'Votre panier est vide']), 400, ['Content-Type' => 'application/json']);
         }
@@ -189,16 +190,16 @@ class CommandeController extends AbstractController
         $adresse = $session->get('temp_commande_adresse');
         if (empty($adresse) || empty($adresse['nom']) || empty($adresse['prenom']) || empty($adresse['adresse']) || empty($adresse['ville']) || empty($adresse['codePostal']) || empty($adresse['tel'])) {
             $this->addFlash('danger', 'Veuillez remplir correctement le formulaire d\'adresse avant de procéder au paiement.');
-            return $this->redirectToRoute('app_commande');
+            return $this->redirectToRoute('app_order');
         }
 
-        return $this->render('commande/paiement_stripe.html.twig', [
+        return $this->render('order/paiement_stripe.html.twig', [
             'stripe_key' => $_ENV['STRIPE_PUBLISHABLE_KEY']
         ]);
     }
 
-    #[Route('/mes-commandes', name: 'app_mes_commandes')]
-    public function mesCommandes(CommandeRepository $commandeRepository, Request $request, PaginatorInterface $paginator): Response
+    #[Route('/my-orders', name: 'app_my_orders')]
+    public function myOrders(CommandeRepository $commandeRepository, Request $request, PaginatorInterface $paginator): Response
     {
         // Bloquer si l'utilisateur n'est pas vérifié
         $redirect = $this->checkVerifiedUser();
@@ -222,13 +223,13 @@ class CommandeController extends AbstractController
             }
         }
 
-        return $this->render('commande/mes_commandes.html.twig', [
+        return $this->render('order/my_orders.html.twig', [
             'commandesGroupedByNumero' => $commandesGroupedByNumero,
             'pagination' => $pagination,
         ]);
     }
 
-    #[Route('/commande/pdf/{numero}', name: 'app_commande_pdf')]
+    #[Route('/order/pdf/{numero}', name: 'app_order_pdf')]
     public function generatePdf(
         string $numero,
         Request $request,
@@ -259,7 +260,7 @@ class CommandeController extends AbstractController
         ]);
     }
 
-    #[Route('/commande/annuler/{numero}/{produitId}', name: 'app_commande_annuler')]
+    #[Route('/order/cancel/{numero}/{produitId}', name: 'app_order_cancel')]
     public function annulerProduit(
         string $numero,
         int $produitId,
@@ -268,7 +269,7 @@ class CommandeController extends AbstractController
         EntityManagerInterface $entityManager
     ): Response {
 
-        $token = new CsrfToken('annuler_commande', $request->query->get('_csrf_token'));
+        $token = new CsrfToken('cancel_order', $request->query->get('_csrf_token'));
         if (!$csrfTokenManager->isTokenValid($token)) {
             throw $this->createAccessDeniedException('Jeton CSRF invalide.');
         }
@@ -280,7 +281,7 @@ class CommandeController extends AbstractController
 
         if ($commande->getStatut() === "Produit annulé par le client") {
             $this->addFlash('warning', 'Ce produit a déjà été annulé.');
-            return $this->redirectToRoute('app_mes_commandes');
+            return $this->redirectToRoute('app_my_orders');
         }
 
         $commande->setStatut("Produit annulé par le client");
@@ -294,20 +295,20 @@ class CommandeController extends AbstractController
 
         $this->addFlash('success', 'Le produit a été annulé avec succès.');
 
-        return $this->redirectToRoute('app_mes_commandes');
+        return $this->redirectToRoute('app_my_orders');
     }
 
-    #[Route('/annuler-commande', name: 'app_cancel')]
+    #[Route('/cancel-order', name: 'app_cancel')]
     public function cancel(SessionInterface $session): Response
     {
         // Vérifier si le panier est déjà vide
-        if (empty($session->get('panier'))) {
+        if (empty($session->get('cart'))) {
             $this->addFlash('info', 'Votre panier est déjà vide.');
-            return $this->redirectToRoute('app_boutique');
+            return $this->redirectToRoute('app_shop');
         }
 
         // Supprimer les données temporaires de la session
-        $session->remove('panier');
+        $session->remove('cart');
         $session->remove('temp_commande_adresse');
         $session->remove('temp_commande_numero');
 
@@ -315,7 +316,7 @@ class CommandeController extends AbstractController
         $this->addFlash('info', 'Le panier est désormais vide.');
 
         // Rediriger vers la page de la boutique ou une autre page
-        return $this->redirectToRoute('app_boutique');
+        return $this->redirectToRoute('app_shop');
     }
 
     #[Route('/confirmation/{numero}', name: 'app_confirmation')]
@@ -361,17 +362,17 @@ class CommandeController extends AbstractController
 
         // Générer le lien vers "Mes commandes"
         $mesCommandesUrl = $this->generateUrl(
-            'app_mes_commandes',
+            'app_my_orders',
             [],
             UrlGeneratorInterface::ABSOLUTE_URL
         );
 
         // Envoyer un e-mail de confirmation
         $email = (new Email())
-            ->from('dngo3819@example.com')
+            ->from(new Address('dngo3819@example.com', 'Mobile World'))
             ->to($user->getEmail())
             ->subject('Mobile World : Confirmation de votre commande')
-            ->html($this->renderView('commande/email.html.twig', [
+            ->html($this->renderView('order/email.html.twig', [
                 'nom' => $nom,
                 'prenom' => $prenom,
                 'numero' => $numero,
@@ -387,7 +388,7 @@ class CommandeController extends AbstractController
 
         $this->mailer->send($email);
 
-        return $this->render('commande/confirmation.html.twig', [
+        return $this->render('order/confirmation.html.twig', [
             'commandes' => $commandes,
             'total' => $total,
             'date' => $dateCommande,
@@ -399,7 +400,7 @@ class CommandeController extends AbstractController
     {
         $session = $this->container->get('request_stack')->getCurrentRequest()->getSession();
         $user = $this->getUser();
-        $panier = $session->get('panier', []);
+        $panier = $session->get('cart', []);
         $adresse = $session->get('temp_commande_adresse', []);
 
         if (empty($panier) || empty($adresse)) {
@@ -440,7 +441,7 @@ class CommandeController extends AbstractController
         $this->entityManager->flush();
 
         // Supprimer les données temporaires
-        $session->remove('panier');
+        $session->remove('cart');
         $session->remove('temp_commande_adresse');
         $session->remove('temp_commande_numero');
 

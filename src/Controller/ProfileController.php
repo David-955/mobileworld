@@ -22,7 +22,7 @@ final class ProfileController extends AbstractController
         return null;
     }
 
-    #[Route('/profil/', name: 'app_profil')]
+    #[Route('/profile/', name: 'app_profile')]
     public function profile(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
@@ -36,7 +36,7 @@ final class ProfileController extends AbstractController
         ]);
     }
 
-    #[Route('/profile/avatar', name: 'app_profil_update_avatar', methods: ['POST'])]
+    #[Route('/profile/avatar', name: 'app_profile_update_avatar', methods: ['POST'])]
     public function updateAvatar(Request $request, ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
@@ -75,7 +75,7 @@ final class ProfileController extends AbstractController
                     break;
                 default:
                     $this->addFlash('danger', 'Format d\'image non supporté. Veuillez choisir une image en JPEG, PNG, GIF ou WEBP.');
-                    return $this->redirectToRoute('app_profil');
+                    return $this->redirectToRoute('app_profile');
             }
 
             if ($image) {
@@ -93,11 +93,11 @@ final class ProfileController extends AbstractController
             $this->addFlash('danger', 'Aucun fichier envoyé.');
         }
 
-        return $this->redirectToRoute('app_profil');
+        return $this->redirectToRoute('app_profile');
     }
 
 
-    #[Route('/profil/reset/avatar', name: 'app_profil_reset_avatar', methods: ['POST'])]
+    #[Route('/profile/reset/avatar', name: 'app_profile_reset_avatar', methods: ['POST'])]
     public function resetAvatar(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
@@ -112,10 +112,10 @@ final class ProfileController extends AbstractController
 
         $this->addFlash('success', 'Votre avatar a été réinitialisé avec succès.');
 
-        return $this->redirectToRoute('app_profil');
+        return $this->redirectToRoute('app_profile');
     }
 
-    #[Route('/profil/update', name: 'app_profil_update_presentation', methods: ['GET', 'POST'])]
+    #[Route('/profile/update', name: 'app_profile_update_presentation', methods: ['GET', 'POST'])]
     public function updateProfile(ManagerRegistry $doctrine, RequestStack $requestStack): Response
     {
         $user = $this->getUser();
@@ -131,7 +131,7 @@ final class ProfileController extends AbstractController
 
         if (strlen($presentation) > 1000) {
             $this->addFlash('danger', 'Votre présentation ne peut pas dépasser 1000 caractères.');
-            return $this->redirectToRoute('app_profil');
+            return $this->redirectToRoute('app_profile');
         }
 
         $personnalisation->setPresentation($presentation);
@@ -140,11 +140,11 @@ final class ProfileController extends AbstractController
 
         $this->addFlash('success', 'Votre présentation a bien été mise à jour.');
 
-        return $this->redirectToRoute('app_profil');
+        return $this->redirectToRoute('app_profile');
     }
 
 
-    #[Route('/profil/update/pseudo', name: 'app_profil_update_pseudo', methods: ['POST'])]
+    #[Route('/profile/update/pseudo', name: 'app_profile_update_pseudo', methods: ['POST'])]
     public function updatePseudo(Request $request, ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
@@ -160,7 +160,7 @@ final class ProfileController extends AbstractController
         // Vérifie longueur max
         if (strlen($pseudo) > 50) {
             $this->addFlash('danger', 'Le pseudo ne peut pas dépasser 50 caractères.');
-            return $this->redirectToRoute('app_profil');
+            return $this->redirectToRoute('app_profile');
         }
 
         // Vérifie si ce pseudo est déjà utilisé
@@ -168,19 +168,19 @@ final class ProfileController extends AbstractController
 
         if ($existingPseudo && $existingPseudo !== $personnalisation) {
             $this->addFlash('danger', 'Ce pseudo est déjà utilisé.');
-            return $this->redirectToRoute('app_profil');
+            return $this->redirectToRoute('app_profile');
         }
 
         $personnalisation->setPseudo($pseudo);
         $entityManager->flush();
 
         $this->addFlash('success', 'Pseudo mis à jour avec succès.');
-        return $this->redirectToRoute('app_profil');
+        return $this->redirectToRoute('app_profile');
     }
 
 
     // Page de profil pour chaque utilisateur
-    #[Route('/profil/{pseudo}', name: 'app_profil_pseudo')]
+    #[Route('/profile/{pseudo}', name: 'app_profile_pseudo')]
     public function profileByPseudo($pseudo, ManagerRegistry $doctrine): Response
     {
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['pseudo' => $pseudo]);

@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class AccueilController extends AbstractController
+class HomeController extends AbstractController
 {
     private $apiService;
 
@@ -25,12 +25,12 @@ class AccueilController extends AbstractController
         $this->apiService = $apiService;
     }
 
-    #[Route('/', name: 'app_accueil')]
+    #[Route('/', name: 'app_home')]
     public function index(Request $request, PaginatorInterface $paginator, CacheInterface $cache): Response
     {
         $url = "https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c";
 
-        // ⏱️ Cache des données d'API pendant 15 minutes
+        //⏱Cache des données d'API pendant 15 minutes
         $data = $cache->get('homepage_articles', function () use ($url) {
             return $this->apiService->fetchData($url);
         });
@@ -51,9 +51,9 @@ class AccueilController extends AbstractController
             10
         );
 
-        // ⏱️ Cache HTTP client (navigateur, reverse proxy, CDN)
-        $response = $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
+        //⏱Cache HTTP client (navigateur, reverse proxy, CDN)
+        $response = $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
             'pagination' => $pagination,
         ]);
 
@@ -148,8 +148,8 @@ class AccueilController extends AbstractController
 
         $personnalisation = $doctrine->getRepository(Personnalisation::class)->findOneBy(['Utilisateur' => $this->getUser()]);
 
-        return $this->render('accueil/article.html.twig', [
-            'controller_name' => 'AccueilController',
+        return $this->render('home/article.html.twig', [
+            'controller_name' => 'HomeController',
             'article' => $articleData,
             'title' => $title,
             'form' => $form,
