@@ -12,21 +12,21 @@
 			<div class="comparator-column1">
 				<h3>Sélection 1</h3>
 				<form method="GET" action="{{ path('app_comparator') }}">
-					<label for="marque1">Choisissez une marque:</label>
+					<label for="brand1">Choisissez une marque:</label>
 					{# class="form-select" = bootstrap #}
-					<select class="form-select" name="marque1" id="marque1" onchange="this.form.submit()">
+					<select class="form-select" name="brand1" id="brand1" onchange="this.form.submit()">
 						<option value="">-- Sélectionnez une marque --</option>
-						{% for marque in marques %}
-							<option value="{{ marque }}" {% if marque == selectedMarque1 %} selected {% endif %}>{{ marque | capitalize }}</option>
+						{% for brand in brands %}
+							<option value="{{ brand }}" {% if brand == selectedbrand1 %} selected {% endif %}>{{ brand | capitalize }}</option>
 						{% endfor %}
 					</select>
-					<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
+					<input type="hidden" name="brand2" value="{{ selectedbrand2 }}">
 					<input type="hidden" name="modelId2" value="{{ selectedModelId2 }}">
 				</form>
 
 				{% if models1 is not empty %}
 					<form method="GET" action="{{ path('app_comparator') }}">
-						<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
+						<input type="hidden" name="brand1" value="{{ selectedbrand1 }}">
 						<label for="model1">Choisissez un modèle:</label>
 						<select class="form-select" name="modelId1" id="model1" onchange="this.form.submit()">
 							<option value="">-- Sélectionnez un modèle --</option>
@@ -34,7 +34,7 @@
 								<option value="{{ model.id }}" {% if model.id == selectedModelId1 %} selected {% endif %}>{{ model.name }}</option>
 							{% endfor %}
 						</select>
-						<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
+						<input type="hidden" name="brand2" value="{{ selectedbrand2 }}">
 						<input type="hidden" name="modelId2" value="{{ selectedModelId2 }}">
 					</form>
 				{% endif %}
@@ -55,20 +55,20 @@
 			<div class="comparator-column2">
 				<h3>Sélection 2</h3>
 				<form method="GET" action="{{ path('app_comparator') }}">
-					<label for="marque2">Choisissez une marque:</label>
-					<select class="form-select" name="marque2" id="marque2" onchange="this.form.submit()">
+					<label for="brand2">Choisissez une marque:</label>
+					<select class="form-select" name="brand2" id="brand2" onchange="this.form.submit()">
 						<option value="">-- Sélectionnez une marque --</option>
-						{% for marque in marques %}
-							<option value="{{ marque }}" {% if marque == selectedMarque2 %} selected {% endif %}>{{ marque | capitalize }}</option>
+						{% for brand in brands %}
+							<option value="{{ brand }}" {% if brand == selectedbrand2 %} selected {% endif %}>{{ brand | capitalize }}</option>
 						{% endfor %}
 					</select>
-					<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
+					<input type="hidden" name="brand1" value="{{ selectedbrand1 }}">
 					<input type="hidden" name="modelId1" value="{{ selectedModelId1 }}">
 				</form>
 
 				{% if models2 is not empty %}
 					<form method="GET" action="{{ path('app_comparator') }}">
-						<input type="hidden" name="marque2" value="{{ selectedMarque2 }}">
+						<input type="hidden" name="brand2" value="{{ selectedbrand2 }}">
 						<label for="model2">Choisissez un modèle:</label>
 						<select class="form-select" name="modelId2" id="model2" onchange="this.form.submit()">
 							<option value="">-- Sélectionnez un modèle --</option>
@@ -76,7 +76,7 @@
 								<option value="{{ model.id }}" {% if model.id == selectedModelId2 %} selected {% endif %}>{{ model.name }}</option>
 							{% endfor %}
 						</select>
-						<input type="hidden" name="marque1" value="{{ selectedMarque1 }}">
+						<input type="hidden" name="brand1" value="{{ selectedbrand1 }}">
 						<input type="hidden" name="modelId1" value="{{ selectedModelId1 }}">
 					</form>
 				{% endif %}

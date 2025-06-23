@@ -71,12 +71,12 @@ class OrderController extends AbstractController
         if ($redirect) return $redirect;
 
         // Récupérer les produits correspondants
-        $paniervalide = [];
+        $validCart = [];
         $total = 0;
         foreach ($panier as $id => $quantity) {
             $product = $this->produitRepository->find($id);
             if (!$product) continue;
-            $paniervalide[] = [
+            $validCart[] = [
                 'product' => $product,
                 'quantity' => $quantity,
                 'total' => $product->getPrix() * $quantity
@@ -92,10 +92,10 @@ class OrderController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // Vérification du stock avant de continuer
-            foreach ($paniervalide as $item) {
+            foreach ($validCart as $item) {
                 $product = $item['product'];
-                $quantitepanier = $item['quantity'];
-                if ($product->getStock() < $quantitepanier) {
+                $quantityCart = $item['quantity'];
+                if ($product->getStock() < $quantityCart) {
                     $this->addFlash('danger', sprintf(
                         'Le stock du produit "%s" est insuffisant. Stock disponible : %d',
                         $product->getNom(),
@@ -125,7 +125,7 @@ class OrderController extends AbstractController
         // Afficher la vue avec le formulaire
         return $this->render('order/index.html.twig', [
             'formAdresse' => $form,
-            'cart' => $paniervalide,
+            'cart' => $validCart,
             'total' => $total,
         ]);
     }
@@ -341,10 +341,10 @@ class OrderController extends AbstractController
         }
 
         // Préparer les données pour l'e-mail
-        $paniervalide = [];
+        $validCart = [];
         foreach ($commandes as $commande) {
             $produit = $commande->getProduit();
-            $paniervalide[] = [
+            $validCart[] = [
                 'nom' => $produit->getNom(),
                 'quantite' => $commande->getQuantite(),
                 'prixUnitaire' => $produit->getPrix(),
@@ -371,12 +371,12 @@ class OrderController extends AbstractController
         $email = (new Email())
             ->from(new Address('dngo3819@example.com', 'Mobile World'))
             ->to($user->getEmail())
-            ->subject('Mobile World : Confirmation de votre commande')
+            ->subject('Confirmation de votre commande')
             ->html($this->renderView('order/email.html.twig', [
                 'nom' => $nom,
                 'prenom' => $prenom,
                 'numero' => $numero,
-                'panier' => $paniervalide,
+                'panier' => $validCart,
                 'total' => $total,
                 'date' => $dateCommande,
                 'adresse' => $adresseLivraison,

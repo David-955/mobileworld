@@ -27,7 +27,7 @@ class RegistrationController extends AbstractController
         MailerInterface $mailer
     ): Response {
         if ($this->getUser()) {
-            return $this->redirectToRoute('app_accueil');
+            return $this->redirectToRoute('app_home');
         }
 
         $user = new Utilisateur();
@@ -61,7 +61,7 @@ class RegistrationController extends AbstractController
             $email = (new Email())
                 ->from(new Address('dngo3819@example.com', 'Mobile World'))
                 ->to($user->getEmail())
-                ->subject('Mobile World - Confirmation de votre inscription')
+                ->subject('Confirmation de votre inscription')
                 ->html(
                     '<h1>Bienvenue chez Mobile World !</h1>' .
                         '<p>Merci de vous être inscrit sur notre plateforme.</p>' .
@@ -115,7 +115,7 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_verification_pending');
         }
         // Rediriger vers la page d'accueil si l'utilisateur est vérifié
-        return $this->redirectToRoute('app_accueil');
+        return $this->redirectToRoute('app_home');
     }
 
     #[Route('/verification-pending', name: 'app_verification_pending')]

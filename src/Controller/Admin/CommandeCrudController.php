@@ -5,8 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Commande;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 
 class CommandeCrudController extends AbstractCrudController
 {
@@ -15,14 +17,25 @@ class CommandeCrudController extends AbstractCrudController
         return Commande::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            IdField::new('id')->hideOnForm(),
+
+            DateTimeField::new('date'),
+            TextField::new('statut'),
+            IntegerField::new('quantite'),
+            TextField::new('numero'),
+
+            AssociationField::new('utilisateur'),
+            AssociationField::new('produit'),
+
+            TextField::new('nom', 'Nom'),
+            TextField::new('prenom', 'Prénom'),
+            TextField::new('adresse'),
+            TextField::new('ville'),
+            TextField::new('codePostal', 'Code postal'),
+            TextField::new('tel', 'Téléphone'),
         ];
     }
-    */
 }

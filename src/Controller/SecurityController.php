@@ -71,7 +71,7 @@ class SecurityController extends AbstractController
             $emailContent = (new Email())
                 ->from(new Address('dngo3819@example.com', 'Mobile World'))
                 ->to($user->getEmail())
-                ->subject('Mobile World - Réinitialisation de votre mot de passe')
+                ->subject('Réinitialisation de votre mot de passe')
                 ->html(
                     '<h1>Réinitialisation de votre mot de passe</h1>' .
                         '<p>Vous avez demandé à réinitialiser votre mot de passe. Cliquez sur le lien ci-dessous pour profiter pleinement de l\'univers Mobile World :</p>' .
@@ -168,7 +168,7 @@ class SecurityController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Votre mot de passe a été modifié avec succès.');
-            return $this->redirectToRoute('app_accueil');
+            return $this->redirectToRoute('app_home');
         }
 
         return $this->render('security/reset-password.html.twig', [

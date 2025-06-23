@@ -8,14 +8,12 @@
 	<section class="container-green">
 		<section
 			class="container-white">
-			{# Affichage des messages flash #}
-			<div class="flash-messages">
-				{% for label, messages in app.flashes %}
-					{% for message in messages %}
-						<div class="alert alert-{{ label }}">{{ message }}</div>
-					{% endfor %}
+			{# Afficher les messages flash #}
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="flash-message alert alert-{{ label }}">{{ message }}</div>
 				{% endfor %}
-			</div>
+			{% endfor %}
 			
 			{% if cart|length > 0 %}
 				<div class="cart-container">

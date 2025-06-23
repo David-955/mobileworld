@@ -30,12 +30,11 @@ class HomeController extends AbstractController
     {
         $url = "https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c";
 
-        //⏱Cache des données d'API pendant 15 minutes
+        // Cache des données d'API pendant 15 minutes
         $data = $cache->get('homepage_articles', function () use ($url) {
             return $this->apiService->fetchData($url);
         });
 
-        // Filtrer les sources indésirables
         $articles = array_filter($data['articles'], function ($article) {
             $url = $article['url'];
             return (
@@ -51,7 +50,6 @@ class HomeController extends AbstractController
             10
         );
 
-        //⏱Cache HTTP client (navigateur, reverse proxy, CDN)
         $response = $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'pagination' => $pagination,
@@ -73,7 +71,6 @@ class HomeController extends AbstractController
     ): Response {
         $title = urldecode($title);
 
-        // 1. Cache sur la version nettoyée
         $cacheKey = 'article_' . md5($title);
         $articleData = $cache->get($cacheKey, function () use ($title) {
             $data = $this->apiService->fetchData("https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c");
@@ -102,6 +99,7 @@ class HomeController extends AbstractController
                 $readability = new Readability($config);
                 $readability->parse($html);
                 $htmlContent = $readability->getContent();
+                // Supprimer la première image pour éviter une redondance visuelle
                 $htmlContent = preg_replace('/<img[^>]+>/i', '', $htmlContent, 1);
                 preg_match_all('/<img[^>]+src="([^">]+)"/', $htmlContent, $matches);
                 $images = $matches[1] ?? [];
@@ -115,7 +113,6 @@ class HomeController extends AbstractController
             return $article;
         });
 
-        // 2. Système de commentaires (pas mis en cache pour conserver l’interactivité)
         $commentaire = new Commentaire();
         $form = $this->createForm(CommentaireType::class, $commentaire);
         $form->handleRequest($request);
