@@ -47,11 +47,10 @@ final class ShopController extends AbstractController
     
         // Définir le tri en fonction du paramètre 'sort'
         if ($sort === 'price_asc') {
-            $queryBuilder->orderBy('p.prix', 'ASC'); // Tri croissant sur le champ 'prix'
+            $queryBuilder->orderBy('p.prix', 'ASC'); 
         } elseif ($sort === 'price_desc') {
-            $queryBuilder->orderBy('p.prix', 'DESC'); // Tri décroissant sur le champ 'prix'
+            $queryBuilder->orderBy('p.prix', 'DESC'); 
         } else {
-            // Par défaut, trier par prix croissant si la valeur est invalide
             $queryBuilder->orderBy('p.prix', 'ASC');
         }
     

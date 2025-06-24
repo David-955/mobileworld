@@ -39,8 +39,6 @@ class OrderController extends AbstractController
         $this->mailer = $mailer;
     }
 
-
-    // Vérifie si l'utilisateur est connecté ET vérifié
     protected function checkVerifiedUser(): ?Response
     {
         $user = $this->getUser();
@@ -53,13 +51,11 @@ class OrderController extends AbstractController
     #[Route('/order', name: 'app_order')]
     public function index(SessionInterface $session, Request $request): Response
     {
-        // Récupérer le panier depuis la session
         $panier = $session->get('cart', []);
         if (empty($panier)) {
             return $this->redirectToRoute('app_shop');
         }
 
-        // Vérifier que l'utilisateur est connecté
         $user = $this->getUser();
         if (!$user) {
             $this->addFlash('warning', 'Veuillez vous connecter pour passer commande.');
@@ -88,7 +84,6 @@ class OrderController extends AbstractController
         $commande = new Commande();
         $form = $this->createForm(AdresseType::class, $commande);
 
-        // Gestion de la soumission du formulaire
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // Vérification du stock avant de continuer
@@ -105,7 +100,6 @@ class OrderController extends AbstractController
                 }
             }
 
-            // Génère un numéro de commande temporaire
             $aleatoire = random_int(10000, 99999);
 
             // Sauvegarde les données dans la session
@@ -122,7 +116,6 @@ class OrderController extends AbstractController
             return $this->redirectToRoute('app_paiement_stripe');
         }
 
-        // Afficher la vue avec le formulaire
         return $this->render('order/index.html.twig', [
             'formAdresse' => $form,
             'cart' => $validCart,
@@ -163,11 +156,10 @@ class OrderController extends AbstractController
             $successUrl = $this->generateUrl('app_confirmation', ['numero' => $aleatoire], UrlGeneratorInterface::ABSOLUTE_URL);
             $cancelUrl = $this->generateUrl('app_cancel', [], UrlGeneratorInterface::ABSOLUTE_URL);
 
-            // Récupérer l'utilisateur connecté
             $user = $this->getUser();
 
             $sessionStripe = \Stripe\Checkout\Session::create([
-                'customer_email' => $user->getEmail(), // Email de l'utilisateur donné à Stripe
+                'customer_email' => $user->getEmail(),
                 'payment_method_types' => ['card'],
                 'line_items' => $lineItems,
                 'mode' => 'payment',
@@ -301,21 +293,17 @@ class OrderController extends AbstractController
     #[Route('/cancel-order', name: 'app_cancel')]
     public function cancel(SessionInterface $session): Response
     {
-        // Vérifier si le panier est déjà vide
         if (empty($session->get('cart'))) {
             $this->addFlash('info', 'Votre panier est déjà vide.');
             return $this->redirectToRoute('app_shop');
         }
 
-        // Supprimer les données temporaires de la session
         $session->remove('cart');
         $session->remove('temp_commande_adresse');
         $session->remove('temp_commande_numero');
 
-        // Ajouter un message flash pour informer l'utilisateur
         $this->addFlash('info', 'Le panier est désormais vide.');
 
-        // Rediriger vers la page de la boutique ou une autre page
         return $this->redirectToRoute('app_shop');
     }
 
@@ -324,7 +312,6 @@ class OrderController extends AbstractController
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        // Créer les commandes à partir de la session
         $commandes = $this->createCommandeFromSession($numero);
 
         $total = 0;
@@ -440,7 +427,6 @@ class OrderController extends AbstractController
 
         $this->entityManager->flush();
 
-        // Supprimer les données temporaires
         $session->remove('cart');
         $session->remove('temp_commande_adresse');
         $session->remove('temp_commande_numero');

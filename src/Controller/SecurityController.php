@@ -22,13 +22,11 @@ class SecurityController extends AbstractController
     #[Route('/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // Récupérer l'erreur d'authentification s'il y en a une
         $error = $authenticationUtils->getLastAuthenticationError();
-        // Dernier nom d'utilisateur saisi par l'utilisateur
         $lastUsername = $authenticationUtils->getLastUsername();
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
-            'error' => $error, // Passer l'erreur au template
+            'error' => $error, 
         ]);
     }
 
@@ -45,29 +43,24 @@ class SecurityController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer l'email depuis le formulaire
             $email = $form->get('email')->getData();
 
-            // Rechercher l'utilisateur par son email
             $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
             if (!$user) {
                 $this->addFlash('danger', 'Aucun compte trouvé avec cette adresse Email.');
                 return $this->redirectToRoute('app_forgot_password');
             }
 
-            // Générer un token unique pour la réinitialisation
             $resetToken = uniqid('', true);
-            $user->setToken($resetToken); // Ajoutez une méthode `setToken` dans votre entité Utilisateur
+            $user->setToken($resetToken);
             $entityManager->flush();
 
-            // Générer le lien de réinitialisation
             $resetUrl = $this->generateUrl(
                 'app_reset_password',
                 ['token' => $resetToken],
                 UrlGeneratorInterface::ABSOLUTE_URL
             );
 
-            // Envoyer l'e-mail de réinitialisation
             $emailContent = (new Email())
                 ->from(new Address('dngo3819@example.com', 'Mobile World'))
                 ->to($user->getEmail())
@@ -84,7 +77,6 @@ class SecurityController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        // Afficher le formulaire
         return $this->render('security/forgot-password.html.twig', [
             'form' => $form,
         ]);
@@ -101,12 +93,10 @@ class SecurityController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        // Générer un token unique pour la réinitialisation
         $resetToken = uniqid('', true);
         $user->setToken($resetToken);
         $entityManager->flush();
 
-        // Rediriger vers la page de réinitialisation avec le token
         return $this->redirectToRoute('app_reset_password', ['token' => $resetToken]);
     }
 
@@ -123,7 +113,6 @@ class SecurityController extends AbstractController
             throw $this->createNotFoundException('Token invalide.');
         }
 
-        // Formulaire pour saisir le nouveau mot de passe avec contraintes
         $form = $this->createFormBuilder()
             ->add('plainPassword', PasswordType::class, [
                 'constraints' => [
@@ -153,13 +142,11 @@ class SecurityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
-            // Vérifier que les deux mots de passe correspondent
             if ($data['plainPassword'] !== $data['confirmPassword']) {
                 $this->addFlash('danger', 'Les mots de passe ne correspondent pas.');
                 return $this->redirectToRoute('app_reset_password', ['token' => $token]);
             }
 
-            // Hasher le nouveau mot de passe
             $hashedPassword = $passwordHasher->hashPassword($user, $data['plainPassword']);
             $user->setMotdepasse($hashedPassword);
 

@@ -20,7 +20,6 @@ class CartController extends AbstractController
     #[Route('/cart', name: 'app_cart')]
     public function index(SessionInterface $session): Response
     {
-        // Récupérer le contenu du panier depuis la session sinon un tableau vide
         $cart = $session->get('cart', []);
 
         // Récupérer les produits correspondants
@@ -49,12 +48,10 @@ class CartController extends AbstractController
     public function add(int $id, SessionInterface $session): Response
     {
         $product = $this->produitRepository->find($id);
-        // Vérifier si le produit existe
         if (!$product) {
             throw $this->createNotFoundException('Le produit n\'existe pas.');
         }
 
-        // Récupérer le panier actuel
         $cart = $session->get('cart', []);
 
         // Ajouter ou mettre à jour la quantité
@@ -64,7 +61,6 @@ class CartController extends AbstractController
             $cart[$id] = 1;
         }
 
-        // Sauvegarder le panier mis à jour
         $session->set('cart', $cart);
 
         return $this->redirectToRoute('app_cart');
@@ -73,15 +69,12 @@ class CartController extends AbstractController
     #[Route('/cart/remove/{id}', name: 'app_cart_remove')]
     public function remove(int $id, SessionInterface $session): Response
     {
-        // Récupérer le panier actuel
         $cart = $session->get('cart', []);
 
-        // Supprimer le produit du panier
         if (!empty($cart[$id])) {
             unset($cart[$id]);
         }
 
-        // Sauvegarder le panier mis à jour
         $session->set('cart', $cart);
 
         return $this->redirectToRoute('app_cart');
@@ -90,7 +83,6 @@ class CartController extends AbstractController
     #[Route('/cart/update/{id}/{action}', name: 'app_cart_update', requirements: ['action' => 'plus|moins'])]
     public function update(int $id, string $action, SessionInterface $session): Response
     {
-        // Vérifier si le produit existe
         $product = $this->produitRepository->find($id);
         if (!$product) {
             throw $this->createNotFoundException('Le produit n\'existe pas.');
@@ -98,9 +90,7 @@ class CartController extends AbstractController
 
         $cart = $session->get('cart', []);
     
-        // Mettre à jour la quantité en fonction de l'action
         if ($action === 'plus') {
-            // Augmenter la quantité (sans dépasser le stock)
             if (!empty($cart[$id])) {
                 $cart[$id]++;
             } else {
@@ -112,7 +102,6 @@ class CartController extends AbstractController
                 return $this->redirectToRoute('app_cart');
             }
         } elseif ($action === 'moins') {
-            // Diminuer la quantité (ne pas descendre en dessous de 1)
             if (!empty($cart[$id])) {
                 $cart[$id]--;
                 if ($cart[$id] <= 0) {
@@ -121,7 +110,6 @@ class CartController extends AbstractController
             }
         }
     
-        // Sauvegarder le panier mis à jour
         $session->set('cart', $cart);
     
         return $this->redirectToRoute('app_cart');

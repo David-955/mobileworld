@@ -99,7 +99,7 @@ class HomeController extends AbstractController
                 $readability = new Readability($config);
                 $readability->parse($html);
                 $htmlContent = $readability->getContent();
-                // Supprimer la première image pour éviter une redondance visuelle
+                // Supprimer la première image
                 $htmlContent = preg_replace('/<img[^>]+>/i', '', $htmlContent, 1);
                 preg_match_all('/<img[^>]+src="([^">]+)"/', $htmlContent, $matches);
                 $images = $matches[1] ?? [];

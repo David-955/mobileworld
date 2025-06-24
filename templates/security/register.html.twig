@@ -37,7 +37,6 @@
 			{# Formulaire avec affichage automatique des erreurs #}
 			{{ form_start(form, {'attr': {'class': 'form-container'}}) }}
 
-			{# form_row = label + widget + errors → inclut les messages d'erreur avec form_row #}
 			{{ form_row(form.email, {
                 label: "* Votre adresse Email :",
                 attr: { placeholder: "Entrez votre adresse Email", class: "form-control" },

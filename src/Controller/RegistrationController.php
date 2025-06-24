@@ -71,7 +71,7 @@ class RegistrationController extends AbstractController
 
             $mailer->send($email);
 
-            $this->addFlash('success', 'Un e-mail de confirmation a été envoyé. Veuillez vérifier votre boîte de réception.');
+            $this->addFlash('success', 'Un Email de confirmation a été envoyé. Veuillez vérifier votre boîte de réception.');
             return $this->redirectToRoute('app_login');
         } elseif ($form->isSubmitted()) {
             $this->addFlash('danger', 'Votre inscription comporte des erreurs.');
@@ -105,13 +105,11 @@ class RegistrationController extends AbstractController
     #[Route('/check-verified', name: 'app_check_verified')]
     public function checkVerified(Request $request): RedirectResponse
     {
-        // Récupérer l'utilisateur connecté
         $user = $this->getUser();
         if ($user && !$user->isVerification()) {
             // Déconnecter l'utilisateur s'il n'est pas vérifié
             $this->container->get('security.token_storage')->setToken(null);
             $request->getSession()->invalidate();
-            // Rediriger vers /verification-pending
             return $this->redirectToRoute('app_verification_pending');
         }
         // Rediriger vers la page d'accueil si l'utilisateur est vérifié
@@ -136,21 +134,21 @@ class RegistrationController extends AbstractController
             $this->addFlash('danger', 'Veuillez fournir une adresse Email.');
             return $this->redirectToRoute('app_verification_pending');
         }
-        // Rechercher l'utilisateur par son email
+
         $user = $entityManager->getRepository(Utilisateur::class)->findOneBy(['email' => $email]);
         if (!$user) {
             $this->addFlash('danger', 'Aucun compte trouvé avec cette adresse Email.');
             return $this->redirectToRoute('app_verification_pending');
         }
-        // Vérifier si l'utilisateur est déjà vérifié
+
         if ($user->isVerification()) {
             $this->addFlash('info', 'Votre compte est déjà vérifié.');
             return $this->redirectToRoute('app_login');
         }
-        // Générer un nouveau token pour la confirmation
+        
         $user->setToken(uniqid('', true));
         $entityManager->flush();
-        // Générer le lien de confirmation
+
         $confirmationUrl = $this->generateUrl(
             'app_confirm_email',
             ['token' => $user->getToken()],
