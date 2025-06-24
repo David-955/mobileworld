@@ -97,7 +97,7 @@ class RegistrationController extends AbstractController
 
         $entityManager->flush();
 
-        return $this->render('security/email-confirme.html.twig', [
+        return $this->render('security/email-confirm.html.twig', [
             'message' => 'Votre compte a été confirmé avec succès.',
         ]);
     }

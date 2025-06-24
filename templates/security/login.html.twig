@@ -46,7 +46,7 @@
 				{% if app.user %}
 					{# Si déjà connecté, on redirige la personne sur la page d'accueil #}
 					<script type="text/javascript">
-						window.location.href = "{{ path('app_accueil') }}";
+						window.location.href = "{{ path('app_home') }}";
 					</script>
 				{% endif %}
 
