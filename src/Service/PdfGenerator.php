@@ -8,13 +8,10 @@ class PdfGenerator
 {
     public function generateRecap(array $commandes): string
     {
-        // Initialiser FPDF
         $pdf = new Fpdi();
 
-        // Ajouter une page
         $pdf->AddPage();
 
-        // Ajouter le logo
         $pdf->Image(__DIR__ . '/../../public/images/logos/logo-mobileworld.png', 10, 10, 40);
         $pdf->Ln(20); // Espace après le logo
 

@@ -19,7 +19,7 @@
 				{% set encodedTitle = article.title|url_encode %}
 				{% if '/' not in encodedTitle %}
 					<li class="news-article">
-						<div class="news-image-container">
+						<article class="news-image-container">
 							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank">
 								{% set original = article.urlToImage %}
 								{% set clean_url = original|replace({'https://': '', 'http://': ''}) %}
@@ -35,14 +35,21 @@
 									class="news-image"
 								/>
 							</a>
-						</div>
-						<div class="news-content">
+						</article>
+						<article class="news-content">
+							<p style="font-size: 0.8em; color: #666;">
+								{% if article.publishedAt %}
+									{{ article.publishedAt|date('d/m/Y') }}
+								{% else %}
+									{{ '' }}
+								{% endif %}
+							</p>
 							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" style="text-decoration: none;">
 								<h2 class="news-title">{{ article.title }}</h2>
 								<p class="news-description">{{ article.description }}</p>
 							</a>
 							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" class="news-readmore">Lire la suite...</a>
-						</div>
+						</article>
 					</li>
 				{% endif %}
 			{% endif %}
