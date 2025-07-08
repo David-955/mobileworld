@@ -37,13 +37,14 @@
 							</a>
 						</article>
 						<article class="news-content">
-							<p style="font-size: 0.8em; color: #666;">
+							<div style="color: #666; margin: 5px 10px;">
 								{% if article.publishedAt %}
 									{{ article.publishedAt|date('d/m/Y') }}
 								{% else %}
 									{{ '' }}
-								{% endif %}
-							</p>
+								{% endif %} / 
+								{{ article.source.name }}
+							</div>
 							<a href="{{ path('app_article', {'title': encodedTitle}) }}" target="_blank" style="text-decoration: none;">
 								<h2 class="news-title">{{ article.title }}</h2>
 								<p class="news-description">{{ article.description }}</p>

@@ -26,14 +26,12 @@ class HomeController extends AbstractController
     }
 
     #[Route('/', name: 'app_home')]
-    public function index(Request $request, PaginatorInterface $paginator, CacheInterface $cache): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
         $url = "https://newsapi.org/v2/everything?q=smartphone&language=fr&sortBy=publishedAt&apiKey=2e45d3d4f2b9445f84b7919840c8d42c";
 
-        // Cache des données d'API pendant 15 minutes
-        $data = $cache->get('homepage_articles', function () use ($url) {
-            return $this->apiService->fetchData($url);
-        });
+        // Appel direct sans mise en cache
+        $data = $this->apiService->fetchData($url);
 
         $articles = array_filter($data['articles'], function ($article) {
             $url = $article['url'];
@@ -54,10 +52,9 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'pagination' => $pagination,
         ]);
-
-        $response->setSharedMaxAge(900); // 15 minutes
-        $response->setPublic();
-
+        $response->setPrivate();
+        $response->setMaxAge(0);
+        $response->headers->addCacheControlDirective('no-store', true);
         return $response;
     }
 
